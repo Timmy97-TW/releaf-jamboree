@@ -1,0 +1,967 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ReLEAF to Paris</title>
+<meta name="description" content="GEMS Taiwan · ReLEAF: everything from now to the Grand Jamboree final day, 13–16 November 2026.">
+<meta name="theme-color" content="#00061C">
+<link rel="icon" href="img/logo.png">
+<link rel="apple-touch-icon" href="img/logo.png">
+<style>
+:root{
+  --navy:#00061C; --navy2:#0A1433;
+  --blue:#0167EF; --blue2:#2887FF; --sky:#61ABFE;
+  --green:#00B87A; --green2:#00D492; --mint:#E6FAF2;
+  --ink:#1D1D1F; --ink2:#6E6E73; --ink3:#86868B;
+  --bg:#F5F5F7; --card:#FFFFFF; --line:rgba(0,0,0,.08);
+  --red:#E5484D; --violet:#7C5CFF; --amber:#F59E0B; --pink:#E8A6C1;
+  --g1:#0167EF; --g2:#00A86B; --g3:#7C5CFF; --g4:#F08C00;
+  --grad:linear-gradient(100deg,var(--blue) 0%,#00A3C4 50%,var(--green) 100%);
+  --r:22px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue","PingFang TC","Noto Sans TC",Arial,sans-serif;
+  font-size:17px;line-height:1.47;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{margin:0;letter-spacing:-.025em;line-height:1.08}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.tw{font-variant-numeric:tabular-nums}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(0,6,28,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;gap:22px;height:52px}
+.brand{display:flex;align-items:center;gap:9px;color:#fff;font-weight:600;font-size:15px;white-space:nowrap}
+.brand img{width:28px;height:28px;border-radius:50%}
+.brand:hover{text-decoration:none}
+.nav ul{display:flex;gap:20px;list-style:none;margin:0 0 0 auto;padding:0;overflow-x:auto;scrollbar-width:none}
+.nav ul::-webkit-scrollbar{display:none}
+.nav ul a{color:rgba(255,255,255,.78);font-size:13px;white-space:nowrap}
+.nav ul a:hover{color:#fff;text-decoration:none}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:72px 0 64px}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(80px);opacity:.55;pointer-events:none}
+.hero:before{width:620px;height:620px;left:-180px;top:-260px;background:radial-gradient(circle,var(--blue) 0%,transparent 65%)}
+.hero:after{width:560px;height:560px;right:-160px;bottom:-300px;background:radial-gradient(circle,var(--green) 0%,transparent 65%)}
+.hero .wrap{position:relative;z-index:1}
+.hero-top{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--green2);letter-spacing:.02em}
+.kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--green2);box-shadow:0 0 0 4px rgba(0,212,146,.18);animation:pulse 2.2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(0,212,146,0)}}
+.hero h1{font-size:clamp(44px,7vw,84px);font-weight:700;margin:14px 0 12px}
+.hero h1 .gt{background:linear-gradient(100deg,var(--sky),var(--green2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lede{font-size:clamp(18px,2vw,21px);color:rgba(255,255,255,.72);max-width:34em;margin:0}
+.big{display:flex;align-items:baseline;gap:14px;margin-top:34px}
+.big .n{font-size:clamp(84px,13vw,148px);font-weight:700;letter-spacing:-.05em;line-height:.9;background:linear-gradient(180deg,#fff 30%,rgba(255,255,255,.55));-webkit-background-clip:text;background-clip:text;color:transparent}
+.big .u{font-size:clamp(20px,2.4vw,26px);font-weight:600;color:rgba(255,255,255,.85);line-height:1.2}
+.big .u small{display:block;font-size:15px;font-weight:400;color:rgba(255,255,255,.55)}
+
+/* boarding pass */
+.pass{background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.14);border-radius:24px;padding:22px 24px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transform:rotate(-1.5deg);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.pass:hover{transform:rotate(0) translateY(-4px)}
+.pass-head{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.pass-head img{width:34px;height:34px;border-radius:50%}
+.leg{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;margin:16px 0 4px}
+.leg .code{font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1}
+.leg .code small{display:block;font-size:12px;font-weight:500;letter-spacing:0;color:rgba(255,255,255,.55);margin-top:5px}
+.leg .path{position:relative;height:2px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.4) 0 6px,transparent 6px 12px)}
+.leg .path svg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:22px;height:22px;fill:var(--green2)}
+.pass-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;padding-top:14px;border-top:1px dashed rgba(255,255,255,.2)}
+.pass-row div{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.pass-row b{display:block;font-size:15px;letter-spacing:0;text-transform:none;color:#fff;font-weight:600;margin-top:3px}
+
+/* countdown chips */
+.chips{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:44px}
+.chip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:16px 18px}
+.chip .l{font-size:13px;color:rgba(255,255,255,.6)}
+.chip .v{font-size:22px;font-weight:600;margin-top:4px;letter-spacing:-.02em}
+.chip .s{font-size:12px;color:rgba(255,255,255,.45);margin-top:2px}
+.chip.done .v{color:var(--green2)}
+
+/* clocks + journey */
+.journey{margin-top:40px}
+.jbar{position:relative;height:4px;border-radius:2px;background:rgba(255,255,255,.12);margin:64px 10px 50px}
+.jfill{position:absolute;left:0;top:0;bottom:0;border-radius:2px;background:linear-gradient(90deg,var(--blue2),var(--green2))}
+.jstop{position:absolute;top:50%;transform:translate(-50%,-50%)}
+.jstop i{display:block;width:12px;height:12px;border-radius:50%;background:var(--navy);border:2px solid rgba(255,255,255,.4)}
+.jstop.past i{background:var(--green2);border-color:var(--green2)}
+.jstop span{position:absolute;top:16px;left:50%;transform:translateX(-50%);font-size:12px;color:rgba(255,255,255,.65);white-space:nowrap;text-align:center;line-height:1.25}
+.jstop span b{display:block;color:#fff;font-weight:600}
+.jstop.up span{top:auto;bottom:16px}
+.jstop.first span{left:-6px;transform:none;text-align:left}
+.jstop.last span{left:auto;right:-6px;transform:none;text-align:right}
+.jplane{position:absolute;top:50%;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 0 0 6px rgba(97,171,254,.25),0 6px 20px rgba(0,0,0,.4)}
+.jplane svg{width:17px;height:17px;fill:var(--blue)}
+.clocks{display:flex;gap:28px;flex-wrap:wrap;font-size:14px;color:rgba(255,255,255,.6)}
+.clocks b{color:#fff;font-weight:600;font-size:17px;margin-left:6px}
+
+/* sections */
+section.s{padding:84px 0 12px}
+.eyebrow{font-size:15px;font-weight:600;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+.s h2{font-size:clamp(34px,4.6vw,52px);font-weight:700;margin:6px 0 10px}
+.s .sub{font-size:19px;color:var(--ink2);max-width:40em;margin:0 0 34px}
+.card{background:var(--card);border-radius:var(--r);padding:26px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+/* today */
+.today{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}
+.today .card h3{font-size:24px;margin:4px 0 16px}
+.label{font-size:13px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+.tlist{list-style:none;margin:0;padding:0}
+.tlist li{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
+.tlist li:first-child{border-top:0}
+.tlist .when{margin-left:auto;font-size:14px;color:var(--ink2);white-space:nowrap}
+.bul{width:10px;height:10px;border-radius:50%;flex:none}
+.empty{color:var(--ink2);margin:0}
+
+/* categories */
+.c-mock{--c:var(--blue)} .c-deliv{--c:var(--red)} .c-stage{--c:var(--green)} .c-final{--c:var(--violet)}
+.c-paris{--c:var(--amber)} .c-travel{--c:var(--navy)} .c-jam{--c:#00A3C4}
+.bul{background:var(--c)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 18px;font-size:14px;color:var(--ink2)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+
+/* calendar */
+.cal{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.cal-h,.cal-w{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.cal-h div{padding:12px 12px 8px;font-size:12px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+.cal-w{border-top:1px solid var(--line)}
+.day{min-height:128px;padding:10px 10px 12px;border-left:1px solid var(--line);position:relative}
+.day:first-child{border-left:0}
+.day .d{font-size:14px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:6px}
+.day .d .m{font-size:11px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+.day.past{background:#FAFAFB}
+.day.past .ev{opacity:.45}
+.day.past .d{color:var(--ink3)}
+.day.jam{background:linear-gradient(160deg,rgba(1,103,239,.07),rgba(0,184,122,.09))}
+.day.is-today .d .num{background:var(--blue);color:#fff;border-radius:999px;padding:1px 8px}
+.day.is-today:after{content:"";position:absolute;inset:0;border:2px solid var(--blue);pointer-events:none}
+.ev{display:block;font-size:12.5px;line-height:1.3;margin-top:6px;padding:4px 7px 4px 8px;border-radius:7px;background:color-mix(in srgb,var(--c) 11%,#fff);color:color-mix(in srgb,var(--c) 78%,#000);font-weight:500;border-left:3px solid var(--c)}
+.ev.key{background:var(--c);color:#fff;font-weight:600;border-left-color:transparent}
+.ev .ck{font-weight:700;margin-right:3px}
+.agenda{display:none}
+
+/* jamboree schedule */
+.seg{display:none;background:#E8E8ED;border-radius:10px;padding:3px;margin-bottom:16px;gap:2px}
+.seg button{flex:1;border:0;background:none;font:inherit;font-size:14px;font-weight:600;padding:8px 4px;border-radius:8px;color:var(--ink);cursor:pointer}
+.seg button.on{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.sched{display:grid;grid-template-columns:52px repeat(4,1fr);background:var(--card);border-radius:var(--r);padding:18px 18px 22px 8px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.hours{position:relative}
+.hours div{position:absolute;right:10px;font-size:12px;color:var(--ink3);transform:translateY(-50%)}
+.col{position:relative;border-left:1px solid var(--line)}
+.col-h{height:62px;padding:0 10px}
+.col-h b{display:block;font-size:19px;letter-spacing:-.02em}
+.col-h span{font-size:13px;color:var(--ink2)}
+.col-h.now b{color:var(--blue)}
+.col-body{position:relative}
+.col-body .hl{position:absolute;left:0;right:0;border-top:1px solid var(--line)}
+.blk{position:absolute;left:5px;right:5px;border-radius:10px;padding:6px 9px;font-size:13px;line-height:1.25;overflow:hidden;background:color-mix(in srgb,var(--c) 13%,#fff);color:color-mix(in srgb,var(--c) 75%,#000);border-left:3px solid var(--c);transition:opacity .25s,transform .25s}
+.blk b{display:block;font-weight:600}
+.blk small{display:block;font-size:11.5px;opacity:.8}
+.blk.solid{background:var(--c);color:#fff;border-left-color:transparent;box-shadow:0 6px 18px color-mix(in srgb,var(--c) 35%,transparent)}
+.blk.solid small{opacity:.85}
+.blk.grad{background:var(--grad);color:#fff;border-left:0}
+.blk.half-l{right:calc(50% + 2px)} .blk.half-r{left:calc(50% + 2px)}
+.blk.g1{--c:var(--g1)} .blk.g2{--c:var(--g2)} .blk.g3{--c:var(--g3)} .blk.g4{--c:var(--g4)}
+.blk.meal{--c:#8E8E93} .blk.prep{--c:var(--green)} .blk.tour{--c:#D9578E}
+.blk.nowblk{outline:2px solid var(--ink);outline-offset:1px}
+.nowline{position:absolute;left:0;right:0;height:2px;background:var(--red);z-index:3}
+.nowline:before{content:"";position:absolute;left:-5px;top:-4px;width:10px;height:10px;border-radius:50%;background:var(--red)}
+body.me .blk.booth{opacity:.22}
+body.me .blk.booth.mine{opacity:1;transform:scale(1.02);box-shadow:0 8px 20px color-mix(in srgb,var(--c) 40%,transparent)}
+.note{font-size:14px;color:var(--ink2);margin:14px 4px 0}
+
+/* key moments */
+.moments{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px}
+.mo{border-radius:var(--r);padding:22px;color:#fff;min-height:180px;display:flex;flex-direction:column}
+.mo .t{font-size:13px;font-weight:600;opacity:.8;text-transform:uppercase;letter-spacing:.06em}
+.mo h3{font-size:24px;margin:8px 0 auto}
+.mo .time{font-size:30px;font-weight:700;letter-spacing:-.03em;margin-top:14px}
+.mo .tw2{font-size:13px;opacity:.78}
+.mo.a{background:linear-gradient(150deg,#1A2B5C,var(--navy))}
+.mo.b{background:linear-gradient(150deg,#FF6B6B,var(--red))}
+.mo.c{background:linear-gradient(150deg,var(--green2),#00936A)}
+.mo.d{background:linear-gradient(150deg,#9B83FF,#5B3FE0)}
+
+/* shifts */
+.who{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.names{display:flex;flex-wrap:wrap;gap:8px}
+.names button{font:inherit;font-size:14px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;cursor:pointer;color:var(--ink);transition:all .15s}
+.names button:hover{border-color:var(--blue);color:var(--blue)}
+.names button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.names button i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;vertical-align:1px}
+.me-card{border-radius:var(--r);padding:26px;background:var(--navy);color:#fff;position:relative;overflow:hidden;min-height:100%}
+.me-card:after{content:"";position:absolute;right:-120px;top:-120px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,146,.4),transparent 65%)}
+.me-card>*{position:relative;z-index:1}
+.me-card h3{font-size:32px;margin:6px 0 4px}
+.me-card .role{color:rgba(255,255,255,.65)}
+.me-card .label{color:rgba(255,255,255,.5);margin-top:20px}
+.me-card ul{list-style:none;margin:8px 0 0;padding:0}
+.me-card li{padding:8px 0;border-top:1px solid rgba(255,255,255,.1);display:flex;gap:10px;align-items:center}
+.me-card li:first-child{border-top:0}
+.me-card .gpill{display:inline-block;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--c);color:#fff;margin-right:6px}
+.me-card .hrs{margin-left:auto;color:rgba(255,255,255,.55);font-size:14px}
+.me-card .clear{position:absolute;right:20px;top:20px;z-index:2;border:0;background:rgba(255,255,255,.12);color:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}
+.me-card.idle{display:flex;flex-direction:column;justify-content:center}
+.me-card.idle h3{font-size:26px}
+.me-card.idle p{color:rgba(255,255,255,.65);margin:6px 0 0}
+table.roster{width:100%;border-collapse:collapse;font-size:15px}
+.roster th,.roster td{text-align:left;padding:11px 12px;border-top:1px solid var(--line);vertical-align:top}
+.roster thead th{border-top:0;font-size:13px;font-weight:600}
+.roster thead th i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:0}
+.roster tbody th{font-weight:600;color:var(--ink2);font-size:14px;white-space:nowrap}
+.roster td span{display:block}
+.roster td span.hit{color:var(--blue);font-weight:600}
+.tablewrap{overflow-x:auto}
+.rmob{display:none}
+.rg{border-left:3px solid var(--c);padding:2px 0 2px 12px;margin:14px 0 18px}
+.rg b{display:block;color:var(--c);font-size:15px;margin-bottom:4px}
+.rg div{font-size:14px;padding:3px 0;display:grid;grid-template-columns:118px 1fr;gap:8px}
+.rg span{color:var(--ink3);font-size:13px;padding-top:1px}
+.rg p{margin:0}
+.rg em{font-style:normal}
+.rg em.hit{color:var(--blue);font-weight:600}
+.shiftgrid{display:grid;grid-template-columns:40px repeat(9,minmax(0,1fr));gap:5px;font-size:13px;margin-top:6px}
+.shiftgrid div{padding:9px 4px}
+.shiftgrid div{padding:7px 4px;border-radius:7px;text-align:center}
+.shiftgrid .hd{color:var(--ink3);font-weight:600}
+.shiftgrid .rl{color:var(--ink2);font-weight:600;text-align:left;padding-left:0}
+.shiftgrid .gx{color:#fff;font-weight:600}
+.shiftgrid .nx{background:#F0F0F3}
+
+/* links */
+.links{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.lk h3{font-size:21px;display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.lk h3 .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--grad);flex:none}
+.lk h3 .ic svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lk a{display:flex;align-items:center;gap:10px;padding:10px 12px;margin:0 -12px;border-radius:12px;color:var(--ink);transition:background .15s}
+.lk a:hover{background:#F2F4F8;text-decoration:none}
+.lk a .k{margin-left:auto;font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:999px;background:#F0F0F3;color:var(--ink2);white-space:nowrap}
+.lk a .k.doc{background:#E7F0FE;color:#1A5FD0} .lk a .k.sheet{background:#E6F7EE;color:#11804F}
+.lk a .k.canva{background:#F1EBFF;color:#6440D8} .lk a .k.site{background:#E6FAF6;color:#008C6E}
+.lk a .k.drive{background:#FFF4E0;color:#B26A00} .lk a .k.igem{background:var(--navy);color:#fff}
+.lk a .arr{color:var(--ink3);font-size:15px}
+.lk.official{background:var(--navy);color:#fff}
+.lk.official a{color:#fff}
+.lk.official a:hover{background:rgba(255,255,255,.08)}
+.lk.official .arr{color:rgba(255,255,255,.5)}
+
+/* packing */
+.mat{width:100%;border-collapse:collapse;font-size:15px}
+.mat td,.mat th{padding:10px 8px;border-top:1px solid var(--line);text-align:left}
+.mat th{border-top:0;font-size:13px;color:var(--ink3);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.mat small.q{display:block;font-size:13px;color:var(--ink3)}
+.mat td.who{white-space:nowrap}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.p-arr{background:#E6F7EE;color:#11804F} .p-print{background:#FFF4E0;color:#B26A00}
+.p-buy{background:#FDECEC;color:#C2343A} .p-paris{background:#F1EBFF;color:#6440D8} .p-none{color:var(--ink3);padding-left:0}
+.bag{list-style:none;margin:0;padding:0}
+.bag li{border-top:1px solid var(--line)}
+.bag li:first-child{border-top:0}
+.bag label{display:flex;gap:12px;align-items:flex-start;padding:11px 0;cursor:pointer}
+.bag input{appearance:none;-webkit-appearance:none;width:22px;height:22px;border-radius:50%;border:2px solid #C7C7CC;flex:none;margin:0;display:grid;place-items:center;transition:all .15s;cursor:pointer}
+.bag input:checked{background:var(--green);border-color:var(--green)}
+.bag input:checked:after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.bag input:checked+span{color:var(--ink3);text-decoration:line-through}
+.bag span small{display:block;color:var(--ink3);font-size:13px;text-decoration:none}
+.meter{height:6px;background:#EDEDF0;border-radius:3px;overflow:hidden;margin:4px 0 14px}
+.meter i{display:block;height:100%;width:0;background:var(--grad);transition:width .4s}
+
+/* paris */
+.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:18px}
+.stat{background:var(--card);border-radius:18px;padding:18px}
+.stat b{display:block;font-size:30px;font-weight:700;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:14px;color:var(--ink2)}
+.info h3{font-size:21px;margin-bottom:10px}
+.info p{margin:0 0 10px;color:var(--ink2);font-size:15.5px}
+.info p b{color:var(--ink)}
+.info .btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.btn{display:inline-block;font-size:14px;font-weight:500;padding:8px 16px;border-radius:999px;background:var(--blue);color:#fff}
+.btn.ghost{background:#EEF4FE;color:var(--blue)}
+.btn:hover{text-decoration:none;filter:brightness(1.06)}
+.steps{margin:0;padding-left:20px;color:var(--ink2);font-size:15.5px}
+.steps li{margin:4px 0}
+
+footer{padding:70px 0 60px;color:var(--ink3);font-size:13px;text-align:center}
+footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.kicker .dot{animation:none}html{scroll-behavior:auto}}
+
+/* responsive */
+@media (max-width:980px){
+  .chips{grid-template-columns:repeat(2,1fr)}
+  .moments{grid-template-columns:repeat(2,1fr)}
+  .links{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .grid3{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .nav ul{gap:16px}
+  .brand span{display:none}
+  .hero{padding:44px 0 40px}
+  .hero-top{grid-template-columns:1fr;gap:34px}
+  .pass{transform:none}
+  .pass-row b{font-size:14px}
+  .jstop span{font-size:10.5px}
+  .jstop.hide-s span{display:none}
+  section.s{padding:60px 0 6px}
+  .s .sub{font-size:17px;margin-bottom:24px}
+  .today,.grid2,.who,.links,.grid3{grid-template-columns:1fr}
+  .cal{display:none}
+  .agenda{display:block}
+  .seg{display:flex}
+  .sched{grid-template-columns:44px 1fr;padding:14px 12px 18px 4px}
+  .col{display:none}
+  .col.show{display:block}
+  .moments{grid-template-columns:1fr 1fr;gap:12px}
+  .mo{min-height:150px;padding:18px}
+  .mo h3{font-size:19px}
+  .mo .time{font-size:24px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .card{padding:20px}
+  .shiftgrid{font-size:10.5px;gap:3px;grid-template-columns:30px repeat(9,minmax(0,1fr))}
+  .rdesk{display:none}
+  .rmob{display:block}
+  .roster{font-size:13px}
+  .roster th,.roster td{padding:9px 6px}
+  .roster thead th i{display:block;margin:0 0 4px}
+  .mat{font-size:14px}
+  .mat td,.mat th{padding:9px 5px}
+  .pill{font-size:11px;padding:3px 7px}
+  .shiftgrid div{padding:6px 1px}
+}
+/* agenda (phone calendar) */
+.agenda .wk{margin-bottom:22px}
+.agenda .wkh{font-size:13px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin:0 4px 8px}
+.agenda .row{display:grid;grid-template-columns:56px 1fr;gap:12px;background:var(--card);padding:12px 14px;border-radius:16px;margin-bottom:8px}
+.agenda .row .dd{font-size:12px;color:var(--ink3);font-weight:600;text-transform:uppercase;line-height:1.1}
+.agenda .row .dd b{display:block;font-size:24px;color:var(--ink);letter-spacing:-.03em}
+.agenda .row.past{opacity:.5}
+.agenda .row.is-today{box-shadow:inset 0 0 0 2px var(--blue)}
+.agenda .row.jam{background:linear-gradient(160deg,#EEF4FE,#E6FAF2)}
+.agenda .ev{margin-top:0;margin-bottom:5px}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/logo.png" alt=""><span>ReLEAF · Paris 2026</span></a>
+    <ul>
+      <li><a href="#today">Today</a></li>
+      <li><a href="#calendar">Calendar</a></li>
+      <li><a href="#jamboree">Jamboree</a></li>
+      <li><a href="#shifts">Shifts</a></li>
+      <li><a href="#links">Links</a></li>
+      <li><a href="#packing">Packing</a></li>
+      <li><a href="#paris">Paris</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-top">
+      <div>
+        <div class="kicker"><span class="dot"></span><span id="kick">GEMS Taiwan · ReLEAF</span></div>
+        <h1 id="h1">Next stop,<br><span class="gt">Paris.</span></h1>
+        <p class="lede">The iGEM Grand Jamboree, 13–16 November 2026 at the Paris Convention Centre. Everything between today and the final day is on this page.</p>
+        <div class="big" id="big"></div>
+      </div>
+      <div class="pass" aria-label="Trip summary">
+        <div class="pass-head"><span>Boarding pass · Team ReLEAF</span><img src="img/logo.png" alt=""></div>
+        <div class="leg">
+          <div class="code">TPE<small>Taipei · Tue 10 Nov</small></div>
+          <div class="path"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" transform="rotate(90 12 12)"/></svg></div>
+          <div class="code" style="text-align:right">PAR<small>Paris</small></div>
+        </div>
+        <div class="leg">
+          <div class="code">PAR<small>Paris · Wed 18 Nov</small></div>
+          <div class="path"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" transform="rotate(90 12 12)"/></svg></div>
+          <div class="code" style="text-align:right">TPE<small>Home</small></div>
+        </div>
+        <div class="pass-row">
+          <div>Gate<b>Pavilion 7, 3F</b></div>
+          <div>Crew<b>31 people</b></div>
+          <div>Booth<b>4 groups</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chips" id="chips"></div>
+
+    <div class="journey">
+      <div class="clocks"><span>Taipei<b class="tw" id="clk-tw">--:--</b></span><span>Paris<b class="tw" id="clk-pa">--:--</b></span><span>Taipei is 7 hours ahead of Paris</span></div>
+      <div class="jbar" id="jbar"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="s" id="today">
+  <div class="wrap">
+    <span class="eyebrow">Today</span>
+    <h2 id="today-h">Today</h2>
+    <p class="sub" id="today-sub"></p>
+    <div class="today">
+      <div class="card rv"><div class="label" id="today-label">On the calendar</div><h3 id="today-title"></h3><ul class="tlist" id="today-list"></ul></div>
+      <div class="card rv"><div class="label">Coming up</div><h3>Next on the road</h3><ul class="tlist" id="next-list"></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="calendar">
+  <div class="wrap">
+    <span class="eyebrow">The road to Paris</span>
+    <h2>Five weeks, one calendar.</h2>
+    <p class="sub">Wiki freeze is behind us. Next come the video, three more weekends of judging mocks and stage-talk run-throughs, then the flight.</p>
+    <div class="legend">
+      <span class="c-mock"><i class="bul"></i>Judging mock</span>
+      <span class="c-deliv"><i class="bul"></i>Deadlines &amp; deliverables</span>
+      <span class="c-stage"><i class="bul"></i>Stage talk &amp; booth</span>
+      <span class="c-final"><i class="bul"></i>Finalist</span>
+      <span class="c-paris"><i class="bul"></i>Paris prep</span>
+      <span class="c-travel"><i class="bul"></i>Travel</span>
+    </div>
+    <div class="cal rv" id="cal"></div>
+    <div class="agenda" id="agenda"></div>
+  </div>
+</section>
+
+<section class="s" id="jamboree">
+  <div class="wrap">
+    <span class="eyebrow">Jamboree days · Paris time</span>
+    <h2>Four days in Pavilion 7.</h2>
+    <p class="sub">Our plan for 13–16 November, hour by hour. Every time on this board is Paris time; add 7 hours for Taipei.</p>
+    <div class="seg" id="seg" role="tablist"></div>
+    <div class="sched rv" id="sched"></div>
+    <p class="note">Booth groups rotate every hour on Friday afternoon and all day Saturday. Pick your name under Shifts and your hours light up here.</p>
+    <div class="moments" id="moments"></div>
+  </div>
+</section>
+
+<section class="s" id="shifts">
+  <div class="wrap">
+    <span class="eyebrow">Booth shifts</span>
+    <h2>Find your hours.</h2>
+    <p class="sub">Four booth groups, five roles in each. Tap your name to see when you're on, and what you're bringing.</p>
+    <div class="who">
+      <div class="card rv"><div class="label" style="margin-bottom:14px">Who are you?</div><div class="names" id="names"></div></div>
+      <div class="me-card idle rv" id="me"></div>
+    </div>
+    <div class="card rv" style="margin-top:18px"><div class="label" style="margin-bottom:8px">Roster</div><div class="tablewrap rdesk"><table class="roster" id="roster"></table></div><div class="rmob" id="roster-m"></div></div>
+    <div class="card rv" style="margin-top:18px"><div class="label" style="margin-bottom:8px">Who's at the booth, hour by hour</div><div id="shiftgrid"></div>
+        <p class="note" style="margin:16px 0 0">Group 1 covers four hours, groups 2–4 cover three. Anna is on math model for groups 1 and 4. Roommates are in the <a href="https://docs.google.com/document/d/1h6CjlTRBBMTqecasaQd02sijgG1yzgMr1PYtCc0ARmk/edit?usp=sharing" target="_blank" rel="noopener">Shifts and Roomies</a> doc.</p></div>
+  </div>
+</section>
+
+<section class="s" id="links">
+  <div class="wrap">
+    <span class="eyebrow">Links</span>
+    <h2>Every doc, one tap away.</h2>
+    <p class="sub">Slides, scripts, prep sheets and training sites, grouped by what you're working on.</p>
+    <div class="links" id="linkgrid"></div>
+  </div>
+</section>
+
+<section class="s" id="packing">
+  <div class="wrap">
+    <span class="eyebrow">Packing</span>
+    <h2>What goes in the suitcase.</h2>
+    <p class="sub">The team list says who brings each item. Your own list ticks off on this device only.</p>
+    <div class="grid2">
+      <div class="card rv"><div class="label" style="margin-bottom:6px">Team materials</div><div class="tablewrap"><table class="mat" id="mat"></table></div></div>
+      <div class="card rv"><div class="label">My bag</div><div class="meter"><i id="meter"></i></div><ul class="bag" id="bag"></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="paris">
+  <div class="wrap">
+    <span class="eyebrow">Paris</span>
+    <h2>The biggest Jamboree yet.</h2>
+    <p class="sub">iGEM expects its largest crowd ever in 2026. Here's the place, and how to get there.</p>
+    <div class="stats rv">
+      <div class="stat"><b>400+</b><span>teams</span></div>
+      <div class="stat"><b>5,000</b><span>expected attendees</span></div>
+      <div class="stat"><b>430+</b><span>judges</span></div>
+      <div class="stat"><b>15</b><span>villages</span></div>
+      <div class="stat"><b>9</b><span>stages</span></div>
+      <div class="stat"><b>50+</b><span>countries &amp; regions</span></div>
+    </div>
+    <div class="grid3">
+      <div class="card info rv">
+        <div class="label">Venue</div>
+        <h3>Paris Convention Centre</h3>
+        <p><b>Pavilion 7, 3rd floor</b><br>1 Place de la Porte de Versailles, 75015 Paris</p>
+        <p>Walk in at the main street entrance on the corner of boulevard Victor and boulevard Lefebvre. Pavilion 7 is about 450 m further on, roughly 8 minutes, slightly uphill, with moving walkways.</p>
+        <div class="btns">
+          <a class="btn" href="https://maps.google.com/?q=Paris+Convention+Centre,+1+Place+de+la+Porte+de+Versailles,+75015+Paris" target="_blank" rel="noopener">Google Maps</a>
+          <a class="btn ghost" href="https://maps.apple.com/?q=Paris+Convention+Centre&amp;address=1+Place+de+la+Porte+de+Versailles,+75015+Paris" target="_blank" rel="noopener">Apple Maps</a>
+        </div>
+      </div>
+      <div class="card info rv">
+        <div class="label">Getting around</div>
+        <h3>Metro, tram, Navigo</h3>
+        <p>The nearest stop is <b>Porte de Versailles – Parc des Expositions</b> on tram T3a.</p>
+        <ol class="steps">
+          <li>From CDG: RER B towards Saint-Rémy-lès-Chevreuse to Cité Universitaire, then T3a towards Pont du Garigliano.</li>
+          <li>From Orly: metro line 14 to Maison Blanche, walk 6 minutes to Porte d'Italie, then T3a.</li>
+        </ol>
+        <p style="margin-top:10px">A <b>Navigo Easy</b> card costs €2 at any airport or station; load single tickets (€2.55) or a pack of ten (€25.50). The weekly <b>Navigo Semaine</b> (€32.40) runs Monday to Sunday.</p>
+      </div>
+      <div class="card info rv">
+        <div class="label">Good to know</div>
+        <h3>Life in Paris</h3>
+        <p><b>Time:</b> Paris is 7 hours behind Taipei in November. Message home before 16:00 Paris time if you want them awake.</p>
+        <p><b>Weather:</b> November runs about 5–12 °C, often grey and drizzly, with sunset around 17:10. Bring a warm jacket and an umbrella.</p>
+        <p><b>Plugs:</b> type C/E at 230 V. <b>Money:</b> euro, cards widely taken. <b>Emergency:</b> 112.</p>
+        <p><b>App:</b> the official My iGEM App holds your ticket and the live schedule. It goes live shortly before the event.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <img src="img/logo.png" alt="GEMS Taiwan ReLEAF">
+  <div>GEMS Taiwan · ReLEAF · iGEM 2026</div>
+  <div>Times on the Jamboree board are Paris time. Questions about the plan go to the team leads.</div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var TW='Asia/Taipei', PA='Europe/Paris';
+var q=new URLSearchParams(location.search).get('now');
+var offset=q&&!isNaN(new Date(q))?new Date(q).getTime()-Date.now():0;
+function now(){return new Date(Date.now()+offset)}
+// Paris times in November are UTC+1; Taipei is UTC+8
+function P(m,d,h,mi){return new Date(Date.UTC(2026,m-1,d,h-1,mi||0))}
+function T(m,d,h,mi){return new Date(Date.UTC(2026,m-1,d,h-8,mi||0))}
+function key(dt,tz){return new Intl.DateTimeFormat('en-CA',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit'}).format(dt)}
+function hm(dt,tz){return new Intl.DateTimeFormat('en-GB',{timeZone:tz,hour:'2-digit',minute:'2-digit',hour12:false}).format(dt)}
+function inParis(dt){return dt>=T(11,10,18)&&dt<T(11,18,23,59)}
+function homeTZ(){return inParis(now())?PA:TW}
+function kd(k){var a=k.split('-');return new Date(Date.UTC(+a[0],a[1]-1,+a[2]))}
+function dayDiff(a,b){return Math.round((kd(b)-kd(a))/864e5)}
+function fmtKey(k,opt){return new Intl.DateTimeFormat('en-GB',Object.assign({timeZone:'UTC'},opt)).format(kd(k))}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function $(id){return document.getElementById(id)}
+
+/* ---------- calendar data (from the team calendar) ---------- */
+var MOCK=['Judging Mock','mock'], SLIDES=['Judging Slides','deliv'], LST=['Live Stage Talk ×2','stage'], MERCH=['Merch Prep','stage'];
+var CAL={
+  '2026-10-20':[['Content Freeze','deliv']],
+  '2026-10-21':[['Wiki Freeze','deliv',1]],
+  '2026-10-24':[MOCK],
+  '2026-10-25':[MOCK,['Presentation Video D3','deliv']],
+  '2026-10-27':[['Video Upload','deliv']],
+  '2026-10-28':[['Video Freeze','deliv',1]],
+  '2026-10-31':[MOCK,SLIDES,LST,MERCH],
+  '2026-11-01':[MOCK,SLIDES,LST,MERCH],
+  '2026-11-07':[MOCK,SLIDES,LST,MERCH,['Finalist Slides Prep','final'],['Paris Prep','paris']],
+  '2026-11-10':[['Fly to Paris','travel',1]],
+  '2026-11-13':[['Jamboree Day 1','jam'],['Judging 12:00','deliv',1]],
+  '2026-11-14':[['Jamboree Day 2 · Booth','jam']],
+  '2026-11-15':[['Jamboree Day 3','jam'],['Live Stage Talk 14:40','stage',1]],
+  '2026-11-16':[['Final Day','jam'],['Finalist Presentation','final',1]],
+  '2026-11-18':[['Fly home','travel',1]]
+};
+
+/* ---------- moments with exact times ---------- */
+var MOMENTS=[
+  {k:'2026-10-28',t:'Video Freeze',at:T(10,28,23,59),dateOnly:1},
+  {k:'2026-11-10',t:'Fly to Paris',at:T(11,10,0,0),dateOnly:1},
+  {k:'2026-11-13',t:'Judging session',at:P(11,13,12,0)},
+  {k:'2026-11-15',t:'Live Stage Talk',at:P(11,15,14,40)},
+  {k:'2026-11-16',t:'Final Day show',at:P(11,16,14,0)},
+  {k:'2026-11-18',t:'Fly home',at:T(11,18,0,0),dateOnly:1}
+];
+
+/* ---------- Jamboree board (2026 Paris itinerary sheet) ---------- */
+var H0=7,H1=23;
+var DAYS=[
+ {k:'2026-11-13',d:'Fri 13',t:'Booth + judging',b:[
+  {s:7,e:8,t:'Breakfast',c:'meal'},
+  {s:9,e:10,t:'Opening show',c:'grad'},
+  {s:12,e:12+25/60,t:'Judging session',sub:'12:00–12:25',c:'judge'},
+  {s:14,e:15,g:1},{s:15,e:16,g:2},{s:16,e:17,g:3},{s:17,e:18,g:4},
+  {s:18,e:19,t:'Dinner around the hotel',c:'meal'},
+  {s:19,e:22,t:'Prep',c:'prep'}]},
+ {k:'2026-11-14',d:'Sat 14',t:'Booth all day',b:[
+  {s:9,e:10,g:1},{s:10,e:11,g:2},{s:11,e:12,g:3},{s:12,e:13,g:4},
+  {s:13,e:14,g:1},{s:14,e:15,g:2},{s:15,e:16,g:3},{s:16,e:17,g:4},{s:17,e:18,g:1},
+  {s:18,e:19,t:'Dinner around the hotel',c:'meal'},
+  {s:19,e:22,t:'Prep',c:'prep'}]},
+ {k:'2026-11-15',d:'Sun 15',t:'Stage talk',b:[
+  {s:7,e:8,t:'Breakfast',c:'meal'},
+  {s:8,e:12,t:'Prep',c:'prep'},
+  {s:14+40/60,e:14+50/60,t:'Live Stage Talk',sub:'14:40–14:50',c:'stage'}]},
+ {k:'2026-11-16',d:'Mon 16',t:'Final day',b:[
+  {s:7,e:8,t:'Breakfast',c:'meal'},
+  {s:8,e:13,t:'City tour',c:'tour',half:'l'},
+  {s:8,e:13,t:'Finalist prep',sub:'if we make the final',c:'finalp',half:'r'},
+  {s:14,e:18,t:'Final Day show',c:'grad'},
+  {s:19,e:22,t:'iGEM after party',c:'party'}]}
+];
+var CLS={meal:'meal',prep:'prep',tour:'tour',grad:'grad solid',judge:'solid',stage:'solid',finalp:'',party:'grad solid'};
+var CVAR={judge:'var(--red)',stage:'var(--green)',finalp:'var(--violet)'};
+
+/* ---------- roster (Booth Roster sheet) ---------- */
+var ROLES=[
+ ['HP',[['Olivia Du'],['Mia'],['Sophia Lin'],['Renee']]],
+ ['Bioreactor / Dry lab',[['Noah','Audrey Chu'],['Anton','Sara Chen'],['Felix','Eva'],['Joshua','Jacquelyn']]],
+ ['Plant model',[['Abby Tsai'],['Abigail'],['Abby Kao'],['Alex Li']]],
+ ['Math model',[['Anna'],['Phoebe'],['Ethan Liu'],['Anna']]],
+ ['Wet lab',[['Sophia Yeh','Sophie Liu','Sarah Chou'],['Sophie Chen','Ethan Chang','Olivia Lin'],['Chloe Wu','Ryan Wei','Ryan Yuan'],['Naomi','Audrey Hsieh','Sophie Huang']]]
+];
+var GCOL=['var(--g1)','var(--g2)','var(--g3)','var(--g4)'];
+
+/* ---------- material list ---------- */
+var MAT=[
+ ['Pens','1 box','Mia',''],['Sticky notes','1 pack','Mia',''],['Folders','4 packs','Mia','Arriving'],
+ ['Bioreactor','','Noah',''],['Hardware','','Noah',''],['Team banner','','Olivia','To be printed'],
+ ['Backup UNO Q','','Abby K',''],['Scissors','','Olivia',''],['Double-sided tape','','Olivia',''],['Tape','','Olivia',''],
+ ['Backup luer valves','','Abby K',''],['Photometer','','Felix',''],['Hardware demos','','Felix',''],['Lab notebook','','Abby K',''],
+ ['Mini plant pots','100','Mia','Arriving'],['Slime materials','','—','Buy in Paris'],['Name cards','35','Audrey H','To be printed'],
+ ['Invitation cards','200','Audrey H','To be printed'],['Seeds','','Olivia','Arriving'],['Soft PET film','1 long strand','Audrey H',''],
+ ['Epoxy glue','','Olivia',''],['Stickers for the pots','','Mia','To be purchased']
+];
+var OWNER={'Mia':'Mia','Noah':'Noah','Felix':'Felix','Abby K':'Abby Kao','Audrey H':'Audrey Hsieh'};
+var PILL={'Arriving':'p-arr','To be printed':'p-print','To be purchased':'p-buy','Buy in Paris':'p-paris'};
+
+var BAG=[
+ ['Passport','Check it is valid well past 18 November'],
+ ['Flight details saved offline','Screenshot them in case there is no signal'],
+ ['Phone, charger, power bank','Power banks go in your carry-on, never checked'],
+ ['Plug adapter','Type C/E, 230 V'],
+ ['Warm jacket and umbrella','About 5–12 °C and often raining'],
+ ['Comfortable shoes','Two long booth days on your feet'],
+ ['My iGEM App','Install it when it goes live'],
+ ['Navigo Easy card','€2 at the airport'],
+ ['Some euros and a card that works abroad',''],
+ ['Your booth answers','Read your role in Booth QA Prep before the flight']
+];
+
+/* ---------- links (10_25 Important Links) ---------- */
+var IC={
+ video:'<path d="M15 10l5-3v10l-5-3z"/><rect x="3" y="6" width="12" height="12" rx="2"/>',
+ judge:'<path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/>',
+ mic:'<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>',
+ booth:'<path d="M3 9l1.5-5h15L21 9M4 9v11h16V9M3 9h18M9 20v-6h6v6"/>',
+ plane:'<path d="M10 14l-7-3 1-2 9 1 5-5a2 2 0 0 1 3 3l-5 5 1 9-2 1-3-7-3 3v3l-2 1-1-4-4-1 1-2h3z"/>',
+ globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>'
+};
+var LINKS=[
+ {h:'Presentation Video',i:'video',l:[
+  ['Director','https://timmy97-tw.github.io/releaf-video-gaps/director.html','site'],
+  ['Materials','https://timmy97-tw.github.io/releaf-video-gaps/evidence.html','site'],
+  ['Presentation Video Master Doc','https://docs.google.com/document/d/1O1BYH_G9LGMNEDVLE_dQSqnsPTB7pIMSjkndEKtOJ4E/edit?tab=t.w7y70ezdtsj0','doc']]},
+ {h:'Judging',i:'judge',l:[
+  ['Slide Prep (5 min)','https://canva.link/4un52gnl73sugqm','canva'],
+  ['5-min Ideas','https://timmy97-tw.github.io/releaf-opening-five/index.html','site'],
+  ['2026 QA prep','https://docs.google.com/spreadsheets/d/1_35O9ugtBM8QZ_fXBo7MaY0TEIIgdYkDs_kvEkT5soo/edit?gid=1264413978#gid=1264413978','sheet'],
+  ['Judging Training Site','https://timmy97-tw.github.io/releaf-judging-qa/index.html','site'],
+  ['Plant Training Site','https://timmy97-tw.github.io/releaf-plant-judging/','site'],
+  ['Real Judging Mocks','https://drive.google.com/drive/folders/1M_4D5hizf7bLNxvn6v1UTtYmuM28_LXl?usp=drive_link','drive']]},
+ {h:'Live Stage Talk',i:'mic',l:[
+  ['Stage Talk Prep','https://docs.google.com/document/d/1qlpVG-qzSOn_pK33xnhV74iUdd-cKgQ50VMGt9vtl7g/edit?usp=sharing','doc'],
+  ['Slides','https://www.canva.com/design/DAHY4Rb8ADw/wdH48SGTnHNbMaRrJjx9ww/edit','canva'],
+  ['Talk ideas','https://timmy97-tw.github.io/releaf-stage-talk/','site']]},
+ {h:'Booth Prep',i:'booth',l:[
+  ['Booth QA Prep','https://docs.google.com/document/d/1WWpt-QrhzUImdeOrxQaNPh0MMDN9oBoRBNehrWUy6Q0/edit?tab=t.0','doc'],
+  ['Booth roster','https://docs.google.com/spreadsheets/d/1Z5J_fJkjLCHTkgVc_hY-OrHwoP6_rsD2It4Mn_P6RT8/edit?gid=0#gid=0','sheet'],
+  ['Promotion Activity','https://docs.google.com/document/d/1rIxDi1PKDxf6Jo1m9gd9GCSyQjGFxaahD676QdyCEvI/edit?usp=sharing','doc'],
+  ['Promotion Poster','https://www.canva.com/design/DAHY5mBWnKo/phSq8PpSBCCWyqAiuY5x8Q/edit?ui=e30','canva'],
+  ['Banner Design','https://canva.link/4z5lpb922dgz8kk','canva'],
+  ['Materials to bring','https://docs.google.com/document/d/14rMX7ayF6gBxn-k27UF4gVkV9TuztLe7UpjvqsucVx4/edit?tab=t.0','doc']]},
+ {h:'Paris Prep',i:'plane',l:[
+  ['2026 Paris itinerary','https://docs.google.com/spreadsheets/d/1UFZi7xXcWRDTlqIfJfHEA4ZFo4yweLVvqGHmFE9q9iQ/edit?usp=sharing','sheet'],
+  ['Shifts and Roomies','https://docs.google.com/document/d/1h6CjlTRBBMTqecasaQd02sijgG1yzgMr1PYtCc0ARmk/edit?usp=sharing','doc'],
+  ['2025 Paris itinerary','https://docs.google.com/spreadsheets/d/1o0_6p53kkWX1i_lLwlFWtAILzlZpyChfa1IfZkAQs_o/edit?gid=0#gid=0','sheet']]},
+ {h:'iGEM Jamboree',i:'globe',official:1,l:[
+  ['Jamboree 2026','https://jamboree.igem.org/2026/home','igem'],
+  ['Official schedule','https://jamboree.igem.org/2026/schedule','igem'],
+  ['Venue and travel info','https://jamboree.igem.org/2026/info','igem'],
+  ['Competition program','https://jamboree.igem.org/2026/program/competition','igem']]}
+];
+var KIND={doc:'Doc',sheet:'Sheet',canva:'Canva',site:'Site',drive:'Drive',igem:'iGEM'};
+
+/* ================= render ================= */
+function rel(n){return n===0?'today':n===1?'tomorrow':n===-1?'yesterday':n>0?'in '+n+' days':-n+' days ago'}
+function span(ms){
+  var s=Math.max(0,Math.floor(ms/1000)),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),x=s%60;
+  return d>0?d+'d '+h+'h '+m+'m':h>0?h+'h '+m+'m '+x+'s':m+'m '+x+'s';
+}
+
+function hero(){
+  var n=now(),tk=key(n,homeTZ()),big=$('big'),kick=$('kick');
+  var fly=dayDiff(tk,'2026-11-10');
+  if(fly>0){
+    big.innerHTML='<span class="n tw">'+fly+'</span><span class="u">'+(fly===1?'day':'days')+' until we fly<small>Tuesday 10 November, Taipei → Paris</small></span>';
+    kick.textContent='GEMS Taiwan · ReLEAF · '+(dayDiff(tk,'2026-11-13'))+' days to judging';
+  }else if(fly===0){
+    big.innerHTML='<span class="n">Today</span><span class="u">we fly<small>Bon voyage, ReLEAF</small></span>';
+  }else if(tk<'2026-11-13'){
+    $('h1').innerHTML='Bonjour,<br><span class="gt">Paris.</span>';
+    var j=dayDiff(tk,'2026-11-13');
+    big.innerHTML='<span class="n tw">'+j+'</span><span class="u">'+(j===1?'day':'days')+' to judging<small>We are in Paris</small></span>';
+    kick.textContent='Bonjour from Paris';
+  }else if(tk<='2026-11-16'){
+    $('h1').innerHTML='We\'re in<br><span class="gt">Paris.</span>';
+    var cur=current(n);
+    big.innerHTML='<span class="n">Live</span><span class="u">'+(cur?esc(cur.t):'Jamboree day '+(dayDiff('2026-11-13',tk)+1))+'<small>'+(cur?esc(cur.w):'Paris '+hm(n,PA))+'</small></span>';
+    kick.textContent='Jamboree is on · Paris '+hm(n,PA);
+  }else{
+    big.innerHTML='<span class="n">Merci</span><span class="u">ReLEAF<small>What a season. Safe trip home.</small></span>';
+    kick.textContent='GEMS Taiwan · ReLEAF';
+  }
+  // chips
+  var html='';
+  MOMENTS.slice(0,5).forEach(function(m){
+    if(m.k==='2026-11-10')return;
+    var diff=m.at-n,done=diff<=0,v;
+    if(done)v='Done ✓';
+    else if(m.dateOnly)v=rel(dayDiff(tk,m.k)).replace(/^in /,'');
+    else v=span(diff);
+    var when=m.dateOnly?fmtKey(m.k,{weekday:'short',day:'numeric',month:'short'}):fmtKey(m.k,{weekday:'short',day:'numeric',month:'short'})+' · '+hm(m.at,PA)+' Paris · '+hm(m.at,TW)+' Taipei';
+    html+='<div class="chip'+(done?' done':'')+'"><div class="l">'+esc(m.t)+'</div><div class="v tw">'+v+'</div><div class="s">'+when+'</div></div>';
+  });
+  $('chips').innerHTML=html;
+  $('clk-tw').textContent=hm(n,TW);
+  $('clk-pa').textContent=hm(n,PA);
+}
+
+function journey(){
+  var stops=[['2026-10-21','Wiki freeze','21 Oct'],['2026-10-28','Video freeze','28 Oct'],['2026-11-10','Fly','10 Nov'],['2026-11-13','Judging','13 Nov'],['2026-11-16','Final day','16 Nov'],['2026-11-18','Home','18 Nov']];
+  var a=kd('2026-10-21'),b=kd('2026-11-18'),tk=key(now(),homeTZ());
+  var pos=function(k){return Math.min(100,Math.max(0,(kd(k)-a)/(b-a)*100))};
+  var p=pos(tk);
+  var h='<div class="jfill" style="width:'+p+'%"></div>';
+  stops.forEach(function(s,i){
+    h+='<div class="jstop'+(s[0]<=tk?' past':'')+(i%2?' up':'')+(i===0?' first':i===stops.length-1?' last':'')+'" style="left:'+pos(s[0])+'%"><i></i><span><b>'+s[1]+'</b>'+s[2]+'</span></div>';
+  });
+  h+='<div class="jplane" style="left:'+p+'%" title="We are here"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" transform="rotate(90 12 12)"/></svg></div>';
+  $('jbar').innerHTML=h;
+}
+
+function evHTML(e,past){
+  return '<span class="ev c-'+e[1]+(e[2]?' key':'')+'">'+(past?'<span class="ck">✓</span>':'')+esc(e[0])+'</span>';
+}
+function calendar(){
+  var tk=key(now(),homeTZ()),start=kd('2026-10-19'),grid='<div class="cal-h">',ag='';
+  ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].forEach(function(d){grid+='<div>'+d+'</div>'});
+  grid+='</div>';
+  for(var w=0;w<5;w++){
+    grid+='<div class="cal-w">';
+    var rows='',wkStart=null;
+    for(var d=0;d<7;d++){
+      var dt=new Date(start.getTime()+(w*7+d)*864e5),k=dt.toISOString().slice(0,10);
+      if(!wkStart)wkStart=k;
+      var ev=CAL[k]||[],past=k<tk,jam=k>='2026-11-13'&&k<='2026-11-16',cls='day'+(past?' past':'')+(k===tk?' is-today':'')+(jam?' jam':'');
+      var dn=dt.getUTCDate(),mon=(dn===1||(w===0&&d===0))?'<span class="m">'+fmtKey(k,{month:'short'})+'</span>':'';
+      grid+='<div class="'+cls+'"><div class="d"><span class="num">'+dn+'</span>'+mon+(k===tk?'<span class="m" style="color:var(--blue)">Today</span>':'')+'</div>';
+      ev.forEach(function(e){grid+=evHTML(e,past)});
+      grid+='</div>';
+      if(ev.length||k===tk){
+        rows+='<div class="row'+(past?' past':'')+(k===tk?' is-today':'')+(jam?' jam':'')+'"><div class="dd">'+fmtKey(k,{weekday:'short'})+'<b>'+dn+'</b>'+fmtKey(k,{month:'short'})+'</div><div>';
+        if(!ev.length)rows+='<span class="empty" style="font-size:14px">Today · nothing scheduled</span>';
+        ev.forEach(function(e){rows+=evHTML(e,past)});
+        rows+='</div></div>';
+      }
+    }
+    grid+='</div>';
+    var wkEnd=new Date(kd(wkStart).getTime()+6*864e5).toISOString().slice(0,10);
+    if(rows&&wkEnd>=tk)ag+='<div class="wk"><div class="wkh">Week of '+fmtKey(wkStart,{day:'numeric',month:'short'})+'</div>'+rows+'</div>';
+  }
+  $('cal').innerHTML=grid;
+  $('agenda').innerHTML=ag;
+}
+
+function current(n){
+  var k=key(n,PA),day=DAYS.filter(function(d){return d.k===k})[0];if(!day)return null;
+  var hh=+hm(n,PA).slice(0,2)+(+hm(n,PA).slice(3))/60,hit=null;
+  day.b.forEach(function(b){if(hh>=b.s&&hh<b.e&&!hit)hit=b});
+  if(!hit)return null;
+  return {t:hit.g?'Booth · Group '+hit.g+' on duty':hit.t,w:fmtH(hit.s)+'–'+fmtH(hit.e)+' Paris'};
+}
+function fmtH(x){var h=Math.floor(x),m=Math.round((x-h)*60);return(h<10?'0':'')+h+':'+(m<10?'0':'')+m}
+function twH(x){return fmtH((x+7)%24)}
+
+function today(){
+  var n=now(),tz=homeTZ(),tk=key(n,tz),ev=CAL[tk]||[];
+  $('today-h').textContent=fmtKey(tk,{weekday:'long',day:'numeric',month:'long'});
+  var fly=dayDiff(tk,'2026-11-10');
+  $('today-sub').textContent=fly>0?(fly+(fly===1?' day':' days')+' until the flight. '+(ev.length?'Here is what is on today.':'Nothing on the team calendar today, a good day to rehearse your booth answers.'))
+    :tk<='2026-11-16'?'Paris time '+hm(n,PA)+' · Taipei '+hm(n,TW)+'.':'The Jamboree is done. Thank you, everyone.';
+  var day=DAYS.filter(function(d){return d.k===key(n,PA)})[0],li='';
+  if(day&&inParis(n)){
+    $('today-label').textContent='Today in Paris';
+    $('today-title').textContent=day.d+' · '+day.t;
+    var hh=+hm(n,PA).slice(0,2)+(+hm(n,PA).slice(3))/60;
+    day.b.forEach(function(b){
+      var nowB=hh>=b.s&&hh<b.e,pastB=hh>=b.e;
+      li+='<li style="'+(pastB?'opacity:.45':'')+'"><span class="bul" style="background:'+(b.g?GCOL[b.g-1]:CVAR[b.c]||'#00A3C4')+'"></span>'+(nowB?'<b>Now · </b>':'')+esc(b.g?'Booth · Group '+b.g:b.t)+'<span class="when tw">'+fmtH(b.s)+'</span></li>';
+    });
+  }else{
+    $('today-title').textContent=ev.length?ev.map(function(e){return e[0]}).join(' · '):'A free day';
+    ev.forEach(function(e){li+='<li class="c-'+e[1]+'"><span class="bul"></span>'+esc(e[0])+'<span class="when">All day</span></li>'});
+    if(!ev.length)li='<li><p class="empty">No team event. Open the Judging Training Site and run ten questions.</p></li>';
+  }
+  $('today-list').innerHTML=li;
+  // next up
+  var up=[],keys=Object.keys(CAL).sort();
+  keys.forEach(function(k){if(k>tk)CAL[k].forEach(function(e){up.push([k,e])})});
+  var nx='';
+  up.slice(0,6).forEach(function(u){
+    nx+='<li class="c-'+u[1][1]+'"><span class="bul"></span>'+esc(u[1][0])+'<span class="when">'+fmtKey(u[0],{weekday:'short',day:'numeric',month:'short'})+' · '+rel(dayDiff(tk,u[0]))+'</span></li>';
+  });
+  $('next-list').innerHTML=nx||'<li><p class="empty">Nothing left. Home sweet home.</p></li>';
+}
+
+var activeDay=0;
+function schedule(){
+  var n=now(),pk=key(n,PA),HH=window.innerWidth<760?42:46,hrs='',cols='';
+  DAYS.forEach(function(d,i){if(d.k===pk)activeDay=i});
+  for(var h=H0;h<=H1-1;h++)hrs+='<div style="top:'+(62+(h-H0)*HH)+'px">'+fmtH(h)+'</div>';
+  var me=sel?groupsOf(sel):[];
+  DAYS.forEach(function(d,i){
+    var body='';
+    for(var h=H0;h<H1;h++)body+='<div class="hl" style="top:'+(h-H0)*HH+'px"></div>';
+    var hh=+hm(n,PA).slice(0,2)+(+hm(n,PA).slice(3))/60;
+    d.b.forEach(function(b){
+      var top=(b.s-H0)*HH+1,ht=Math.max(44,(b.e-b.s)*HH-3);
+      var cls='blk',style='top:'+top+'px;height:'+ht+'px;',title,sub;
+      if(b.g){cls+=' booth g'+b.g+(me.indexOf(b.g)>-1?' mine':'');title='Booth · Group '+b.g;sub=fmtH(b.s)+'–'+fmtH(b.e)}
+      else{cls+=' '+(CLS[b.c]||'');if(CVAR[b.c])style+='--c:'+CVAR[b.c]+';';title=b.t;sub=b.sub||(fmtH(b.s)+'–'+fmtH(b.e));
+        if(b.c==='judge'||b.c==='stage'||b.t==='Final Day show'||b.t==='Opening show')sub+=' · Taipei '+twH(b.s);}
+      if(b.half)cls+=' half-'+b.half;
+      if(d.k===pk&&hh>=b.s&&hh<b.e)cls+=' nowblk';
+      body+='<div class="'+cls+'" style="'+style+'"><b>'+esc(title)+'</b><small>'+esc(sub)+'</small></div>';
+    });
+    if(d.k===pk){var nh=hh;if(nh>=H0&&nh<H1)body+='<div class="nowline" style="top:'+(nh-H0)*HH+'px"></div>'}
+    cols+='<div class="col'+(i===activeDay?' show':'')+'"><div class="col-h'+(d.k===pk?' now':'')+'"><b>'+d.d+' Nov</b><span>'+d.t+'</span></div><div class="col-body" style="height:'+(H1-H0)*HH+'px">'+body+'</div></div>';
+  });
+  $('sched').innerHTML='<div class="hours">'+hrs+'</div>'+cols;
+  var sg='';DAYS.forEach(function(d,i){sg+='<button role="tab" class="'+(i===activeDay?'on':'')+'" data-i="'+i+'">'+d.d+'</button>'});
+  $('seg').innerHTML=sg;
+}
+$('seg').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;activeDay=+b.dataset.i;
+  [].forEach.call($('seg').children,function(x,i){x.classList.toggle('on',i===activeDay)});
+  [].forEach.call(document.querySelectorAll('.col'),function(x,i){x.classList.toggle('show',i===activeDay)});});
+
+function moments(){
+  var M=[
+    ['a','Fri 13 Nov','Opening show',P(11,13,9)],
+    ['b','Fri 13 Nov','Judging session',P(11,13,12),'12:00–12:25'],
+    ['c','Sun 15 Nov','Live Stage Talk',P(11,15,14,40),'14:40–14:50'],
+    ['d','Mon 16 Nov','Final Day show',P(11,16,14)]
+  ],h='';
+  M.forEach(function(m){h+='<div class="mo '+m[0]+' rv"><div class="t">'+m[1]+'</div><h3>'+m[2]+'</h3><div class="time tw">'+(m[4]||hm(m[3],PA))+'</div><div class="tw2">Paris · '+hm(m[3],TW)+' in Taipei</div></div>'});
+  $('moments').innerHTML=h;
+}
+
+/* ---------- shifts ---------- */
+var SHIFTS={1:[['Fri 13',14],['Sat 14',9],['Sat 14',13],['Sat 14',17]],2:[['Fri 13',15],['Sat 14',10],['Sat 14',14]],3:[['Fri 13',16],['Sat 14',11],['Sat 14',15]],4:[['Fri 13',17],['Sat 14',12],['Sat 14',16]]};
+var PEOPLE={};
+ROLES.forEach(function(r){r[1].forEach(function(names,gi){names.forEach(function(n){
+  PEOPLE[n]=PEOPLE[n]||{roles:[],groups:[]};
+  if(PEOPLE[n].roles.indexOf(r[0])<0)PEOPLE[n].roles.push(r[0]);
+  if(PEOPLE[n].groups.indexOf(gi+1)<0)PEOPLE[n].groups.push(gi+1);
+})})});
+function groupsOf(n){return PEOPLE[n]?PEOPLE[n].groups:[]}
+var sel=null;try{sel=localStorage.getItem('releaf-me')}catch(e){}
+if(sel&&!PEOPLE[sel])sel=null;
+
+function names(){
+  var h='';Object.keys(PEOPLE).sort().forEach(function(n){
+    h+='<button data-n="'+esc(n)+'" class="'+(n===sel?'on':'')+'"><i style="background:'+GCOL[PEOPLE[n].groups[0]-1]+'"></i>'+esc(n)+'</button>'});
+  $('names').innerHTML=h;
+}
+$('names').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+  sel=b.dataset.n===sel?null:b.dataset.n;try{sel?localStorage.setItem('releaf-me',sel):localStorage.removeItem('releaf-me')}catch(err){}
+  names();meCard();roster();schedule();});
+function meCard(){
+  var el=$('me');document.body.classList.toggle('me',!!sel);
+  if(!sel){el.className='me-card idle';el.innerHTML='<div class="label" style="margin-top:0">Your Jamboree</div><h3>Pick your name.</h3><p>Your booth hours, your role and the things you\'re bringing show up here, and your hours light up on the Jamboree board.</p>';return}
+  var p=PEOPLE[sel],h='<button class="clear" id="clr">Clear</button><div class="label" style="margin-top:0">Your Jamboree</div><h3>'+esc(sel)+'</h3><div class="role">'+p.roles.map(esc).join(' · ')+' · ';
+  h+=p.groups.map(function(g){return '<span class="gpill" style="--c:'+GCOL[g-1]+'">Group '+g+'</span>'}).join('')+'</div>';
+  var sh=[];p.groups.forEach(function(g){SHIFTS[g].forEach(function(s){sh.push([s[0],s[1],g])})});
+  sh.sort(function(a,b){return a[0]===b[0]?a[1]-b[1]:a[0]<b[0]?-1:1});
+  h+='<div class="label">Booth hours · '+sh.length+' in total</div><ul>';
+  sh.forEach(function(s){h+='<li><span class="gpill" style="--c:'+GCOL[s[2]-1]+'">G'+s[2]+'</span>'+s[0]+' Nov<span class="hrs tw">'+fmtH(s[1])+'–'+fmtH(s[1]+1)+'</span></li>'});
+  h+='</ul>';
+  var items=MAT.filter(function(m){return OWNER[m[2]]===sel});
+  if(/^Olivia/.test(sel)){h+='<div class="label">Bringing</div><ul><li>The material list says “Olivia” for seven items, including the team banner. Check with the leads whether that\'s you.</li></ul>'}
+  else if(items.length){h+='<div class="label">Bringing</div><ul>';items.forEach(function(m){h+='<li>'+esc(m[0])+(m[1]?' · '+esc(m[1]):'')+(m[3]?'<span class="hrs">'+esc(m[3])+'</span>':'')+'</li>'});h+='</ul>'}
+  h+='<div class="label">Team moments</div><ul><li>Judging · Fri 12:00</li><li>Live Stage Talk · Sun 14:40</li><li>Final Day show · Mon 14:00</li></ul>';
+  el.className='me-card';el.innerHTML=h;
+  $('clr').onclick=function(){sel=null;try{localStorage.removeItem('releaf-me')}catch(e){}names();meCard();roster();schedule()};
+}
+function roster(){
+  var h='<thead><tr><th></th>';for(var g=1;g<=4;g++)h+='<th><i style="background:'+GCOL[g-1]+'"></i>Group '+g+'</th>';h+='</tr></thead><tbody>';
+  ROLES.forEach(function(r){h+='<tr><th>'+r[0]+'</th>';r[1].forEach(function(ns){h+='<td>'+ns.map(function(n){return '<span class="'+(n===sel?'hit':'')+'">'+esc(n)+'</span>'}).join('')+'</td>'});h+='</tr>'});
+  $('roster').innerHTML=h+'</tbody>';
+  var m='';for(var g=1;g<=4;g++){m+='<div class="rg" style="--c:'+GCOL[g-1]+'"><b>Group '+g+'</b>';
+    ROLES.forEach(function(r){m+='<div><span>'+r[0]+'</span><p>'+r[1][g-1].map(function(n){return '<em class="'+(n===sel?'hit':'')+'">'+esc(n)+'</em>'}).join(', ')+'</p></div>'});m+='</div>'}
+  $('roster-m').innerHTML=m;
+}
+function shiftgrid(){
+  var hrs=[9,10,11,12,13,14,15,16,17],h='<div class="shiftgrid"><div class="hd"></div>';
+  hrs.forEach(function(x){h+='<div class="hd">'+x+'</div>'});
+  [['Fri',0],['Sat',1]].forEach(function(r){
+    h+='<div class="rl">'+r[0]+'</div>';
+    hrs.forEach(function(x){
+      var g=null;DAYS[r[1]].b.forEach(function(b){if(b.g&&b.s===x)g=b.g});
+      h+=g?'<div class="gx" style="background:'+GCOL[g-1]+'">G'+g+'</div>':'<div class="nx">'+(r[1]===0&&x===12?'J':'')+'</div>';
+    });
+  });
+  $('shiftgrid').innerHTML=h+'</div><p class="note" style="margin:10px 0 0">Hours are Paris time; each slot runs one hour. J marks our judging session.</p>';
+}
+
+/* ---------- links / packing ---------- */
+function links(){
+  var h='';LINKS.forEach(function(c){
+    h+='<div class="card lk rv'+(c.official?' official':'')+'"><h3><span class="ic"><svg viewBox="0 0 24 24">'+IC[c.i]+'</svg></span>'+c.h+'</h3>';
+    c.l.forEach(function(l){h+='<a href="'+l[1]+'" target="_blank" rel="noopener">'+esc(l[0])+'<span class="k '+l[2]+'">'+KIND[l[2]]+'</span><span class="arr">↗</span></a>'});
+    h+='</div>';
+  });
+  $('linkgrid').innerHTML=h;
+}
+function packing(){
+  var h='<thead><tr><th>Item</th><th>Who</th><th>Status</th></tr></thead><tbody>';
+  MAT.forEach(function(m){h+='<tr><td>'+esc(m[0])+(m[1]?'<small class="q">'+esc(m[1])+'</small>':'')+'</td><td class="who">'+esc(OWNER[m[2]]||m[2])+'</td><td>'+(m[3]?'<span class="pill '+PILL[m[3]]+'">'+esc(m[3])+'</span>':'')+'</td></tr>'});
+  $('mat').innerHTML=h+'</tbody>';
+  var st={};try{st=JSON.parse(localStorage.getItem('releaf-bag')||'{}')}catch(e){}
+  var b='';BAG.forEach(function(x,i){b+='<li><label><input type="checkbox" data-i="'+i+'"'+(st[i]?' checked':'')+'><span>'+esc(x[0])+(x[1]?'<small>'+esc(x[1])+'</small>':'')+'</span></label></li>'});
+  $('bag').innerHTML=b;
+  function meter(){var c=document.querySelectorAll('#bag input:checked').length;$('meter').style.width=(c/BAG.length*100)+'%'}
+  meter();
+  $('bag').addEventListener('change',function(e){var i=e.target.dataset.i;st[i]=e.target.checked;try{localStorage.setItem('releaf-bag',JSON.stringify(st))}catch(err){}meter()});
+}
+
+/* ---------- boot ---------- */
+hero();journey();today();calendar();names();meCard();roster();schedule();moments();shiftgrid();links();packing();
+setInterval(hero,1000);
+setInterval(function(){today();journey();if(inParis(now()))schedule()},60000);
+var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(schedule,150)});
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+}else document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
+})();
+</script>
+</body>
+</html>
