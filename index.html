@@ -104,9 +104,15 @@ h1,h2,h3{margin:0;letter-spacing:-.025em;line-height:1.08}
 
 /* before we fly */
 .goals{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.goal{position:relative;background:var(--card);border-radius:var(--r);padding:24px 24px 26px;min-height:170px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.goal{position:relative;background:var(--card);border-radius:var(--r);padding:24px 24px 26px;min-height:170px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,.04);overflow:hidden}
+.goal .pic{position:relative;margin:-24px -24px 20px;aspect-ratio:16/10;background:#ECECF0;overflow:hidden}
+.goal .pic img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.goal:hover .pic img{transform:scale(1.04)}
+.goal .pic.fit img{object-fit:contain;padding:10px 0;background:linear-gradient(160deg,#F4F5F8,#E6E8EE)}
+.goal .pic figcaption{position:absolute;left:10px;bottom:10px;font-size:11.5px;font-weight:500;color:#fff;background:rgba(0,6,28,.58);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:3px 9px;border-radius:999px}
+.goal .pic .no{position:absolute;left:12px;top:10px;font-size:13px;font-weight:700;color:#fff;-webkit-text-fill-color:#fff;background:var(--navy);padding:3px 9px;border-radius:999px}
 .goal .no{font-size:15px;font-weight:700;letter-spacing:.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.goal h3{font-size:22px;font-weight:600;line-height:1.22;margin:10px 0 auto}
+.goal h3{font-size:21px;font-weight:600;line-height:1.24;margin:0 0 auto}
 .goal .tag{align-self:flex-start;margin-top:18px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:#EEF4FE;color:#1A5FD0}
 .goal .tag.t-plant{background:#E6F7EE;color:#11804F} .goal .tag.t-lpa{background:#F1EBFF;color:#6440D8} .goal .tag.t-hw{background:#FFF4E0;color:#B26A00}
 .goal.lead{background:var(--navy);color:#fff;overflow:hidden}
@@ -363,6 +369,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   .s .sub{font-size:17px;margin-bottom:24px}
   .today,.grid2,.who,.links,.grid3,.goals{grid-template-columns:1fr}
   .goal{min-height:0;padding:20px}
+  .goal .pic{margin:-20px -20px 16px}
   .goal h3{font-size:19px;margin-bottom:0}
   .goal .tag{margin-top:12px}
   .goal.lead .n{font-size:56px}
@@ -771,11 +778,11 @@ function LK(name){var u='#';LINKS.forEach(function(c){c.l.forEach(function(l){if
 
 /* ---------- to achieve before we fly ---------- */
 var GOALS=[
- ['Integrate green-light control into the bioreactor system','Bioreactor',''],
- ['Assemble the acrylic box','Hardware','t-hw'],
- ['Upgrade the LPA red light bulb to 660 nm','LPA','t-lpa'],
- ['Improve the LPA assays to show a clearer difference between green-light and red-light secretion','LPA','t-lpa'],
- ['Run replicates of the hydroponics plant assay','Plants','t-plant']
+ ['Integrate green-light control into the bioreactor system','Bioreactor','','1-bioreactor','The rig running, 20 Jul','center 62%'],
+ ['Assemble the acrylic box','Hardware','t-hw','2-case','B2 case, design render','',1],
+ ['Upgrade the LPA red light bulb to 660 nm','LPA','t-lpa','3-lpa-bulbs','LPA bulbs lit, 11 Jul','center 30%'],
+ ['Improve the LPA assays to show a clearer difference between green-light and red-light secretion','LPA','t-lpa','4-lpa-assay','Light-control assay, 19 Sep','center 40%'],
+ ['Run replicates of the hydroponics plant assay','Plants','t-plant','5-hydroponics','Hydroponic boxes, 13 Jun','center']
 ];
 
 /* ---------- today's goals, by Taipei date ---------- */
@@ -1046,7 +1053,7 @@ function goals(){
   var lead='<div class="label">Time left in Taipei</div>'+(fly>0?'<div class="n tw">'+fly+'</div><div class="u">'+(fly===1?'day':'days')+' to finish all five</div>':'<div class="n">Go</div><div class="u">Wheels up, the lab work is done</div>');
   if($('goals').firstChild){$('goals').firstChild.innerHTML=lead;return}
   var h='<div class="goal lead rv">'+lead+'</div>';
-  GOALS.forEach(function(g,i){h+='<div class="goal rv"><span class="no">0'+(i+1)+'</span><h3>'+esc(g[0])+'</h3><span class="tag '+g[2]+'">'+esc(g[1])+'</span></div>'});
+  GOALS.forEach(function(g,i){h+='<div class="goal rv"><figure class="pic'+(g[6]?' fit':'')+'"><img src="img/goals/'+g[3]+'.webp" alt="'+esc(g[4])+'" loading="lazy"'+(g[5]?' style="object-position:'+g[5]+'"':'')+'><span class="no">0'+(i+1)+'</span><figcaption>'+esc(g[4])+'</figcaption></figure><h3>'+esc(g[0])+'</h3><span class="tag '+g[2]+'">'+esc(g[1])+'</span></div>'});
   $('goals').innerHTML=h;
 }
 function packing(){
