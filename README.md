@@ -7,7 +7,7 @@ booth shifts, every prep link, the packing lists and Paris travel notes.
 Live: https://timmy97-tw.github.io/releaf-jamboree/
 
 One file, `index.html`, no build step and no external requests. All data sits in the script block near the
-bottom (`CAL`, `DAYS`, `ROLES`, `MAT`, `LINKS`); edit those arrays and push.
+bottom (`CAL`, `DAYS`, `ROLES`, `MAT`, `LINKS`, `GOALS`, `TASKS`); edit those arrays and push.
 
 Sources: the team calendar, `2026 Paris itinerary.xlsx` (Itinerary, Material list, Booth Roster) and
 `10_25 Important Links.docx`. Venue and transport details are from jamboree.igem.org/2026/info.

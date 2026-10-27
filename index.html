@@ -75,13 +75,57 @@ h1,h2,h3{margin:0;letter-spacing:-.025em;line-height:1.08}
 .pass-row div{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
 .pass-row b{display:block;font-size:15px;letter-spacing:0;text-transform:none;color:#fff;font-weight:600;margin-top:3px}
 
-/* countdown chips */
-.chips{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:44px}
-.chip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:16px 18px}
-.chip .l{font-size:13px;color:rgba(255,255,255,.6)}
-.chip .v{font-size:22px;font-weight:600;margin-top:4px;letter-spacing:-.02em}
-.chip .s{font-size:12px;color:rgba(255,255,255,.45);margin-top:2px}
-.chip.done .v{color:var(--green2)}
+/* team photo, washed into the hero */
+.hero-photo{position:absolute;inset:0;z-index:0;background:url(img/team.webp) center 38%/cover no-repeat;opacity:.2;filter:grayscale(.3);mix-blend-mode:luminosity;
+  -webkit-mask-image:linear-gradient(90deg,transparent 22%,rgba(0,0,0,.55) 55%,#000 88%),linear-gradient(180deg,#000 40%,transparent 96%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 22%,rgba(0,0,0,.55) 55%,#000 88%),linear-gradient(180deg,#000 40%,transparent 96%);mask-composite:intersect}
+.hero:before,.hero:after{z-index:1}
+.hero .wrap{z-index:2}
+
+/* links button + sheet */
+.hero-acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.lbtn{display:inline-flex;align-items:center;gap:9px;font:inherit;font-size:16px;font-weight:600;border:0;border-radius:999px;padding:12px 20px;cursor:pointer;background:#fff;color:var(--navy);box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s}
+.lbtn:hover{transform:translateY(-1px);box-shadow:0 12px 30px rgba(0,0,0,.32)}
+.lbtn svg,.fab svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.lbtn .ct{font-size:12px;font-weight:600;background:var(--grad);color:#fff;border-radius:999px;padding:2px 8px}
+.lbtn.ghost{background:rgba(255,255,255,.1);color:#fff;box-shadow:none;border:1px solid rgba(255,255,255,.18)}
+.navlk{font:inherit;font-size:13px;font-weight:600;border:0;cursor:pointer;color:var(--navy);background:#fff;border-radius:999px;padding:4px 12px;white-space:nowrap}
+.fab{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:60;display:flex;align-items:center;gap:8px;font:inherit;font-size:15px;font-weight:600;border:0;border-radius:999px;padding:13px 18px;cursor:pointer;background:var(--navy);color:#fff;box-shadow:0 10px 30px rgba(0,6,28,.35);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s}
+.fab.on{opacity:1;transform:none;pointer-events:auto}
+.lsheet{width:min(1080px,calc(100vw - 32px));max-height:calc(100dvh - 48px);margin:auto;padding:0;border:0;border-radius:28px;background:var(--bg);color:var(--ink);box-shadow:0 30px 80px rgba(0,6,28,.4);overflow:auto;overscroll-behavior:contain}
+.lsheet::backdrop{background:rgba(0,6,28,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.lsheet[open]{animation:sheet .32s cubic-bezier(.2,.8,.2,1)}
+@keyframes sheet{from{opacity:0;transform:translateY(24px) scale(.98)}}
+.lsheet-head{position:sticky;top:0;z-index:2;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:26px 28px 18px;background:linear-gradient(var(--bg) 78%,rgba(245,245,247,0))}
+.lsheet-head h2{font-size:clamp(26px,3.4vw,36px);font-weight:700;margin-top:4px}
+.lsheet .x{flex:none;width:38px;height:38px;border-radius:50%;border:0;background:#E3E3E8;color:var(--ink);font-size:22px;line-height:1;cursor:pointer}
+.lsheet .x:hover{background:#D6D6DC}
+.lsheet .links{padding:0 28px 28px}
+
+/* before we fly */
+.goals{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.goal{position:relative;background:var(--card);border-radius:var(--r);padding:24px 24px 26px;min-height:170px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.goal .no{font-size:15px;font-weight:700;letter-spacing:.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.goal h3{font-size:22px;font-weight:600;line-height:1.22;margin:10px 0 auto}
+.goal .tag{align-self:flex-start;margin-top:18px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:#EEF4FE;color:#1A5FD0}
+.goal .tag.t-plant{background:#E6F7EE;color:#11804F} .goal .tag.t-lpa{background:#F1EBFF;color:#6440D8} .goal .tag.t-hw{background:#FFF4E0;color:#B26A00}
+.goal.lead{background:var(--navy);color:#fff;overflow:hidden}
+.goal.lead:after{content:"";position:absolute;right:-110px;bottom:-130px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(1,103,239,.55),transparent 65%)}
+.goal.lead>*{position:relative;z-index:1}
+.goal.lead .n{font-size:72px;font-weight:700;letter-spacing:-.05em;line-height:.95;margin-top:6px}
+.goal.lead .u{font-size:17px;color:rgba(255,255,255,.72);margin-top:auto}
+.goal.lead .label{color:rgba(255,255,255,.55)}
+
+/* today's goals */
+.tlist li.task{align-items:flex-start;padding:14px 0}
+.task .tn{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;color:#fff;background:var(--c,var(--blue));margin-top:1px}
+.task b{display:block;font-weight:600}
+.task small{display:block;font-size:14px;color:var(--ink2);margin-top:2px}
+.task .tl{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.task .tl a{font-size:13px;font-weight:500;padding:4px 11px;border-radius:999px;background:#EEF4FE;color:var(--blue)}
+.task .tl a:hover{text-decoration:none;background:#E1ECFD}
+.task.hot .tn{background:var(--red)}
+.task .now{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red);margin-left:6px;vertical-align:1px}
 
 /* clocks + journey */
 .journey{margin-top:40px}
@@ -298,7 +342,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
 
 /* responsive */
 @media (max-width:980px){
-  .chips{grid-template-columns:repeat(2,1fr)}
+  .goals{grid-template-columns:1fr 1fr}
   .moments{grid-template-columns:repeat(2,1fr)}
   .links{grid-template-columns:1fr 1fr}
   .stats{grid-template-columns:repeat(3,1fr)}
@@ -317,7 +361,18 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   .jstop.hide-s span{display:none}
   section.s{padding:60px 0 6px}
   .s .sub{font-size:17px;margin-bottom:24px}
-  .today,.grid2,.who,.links,.grid3{grid-template-columns:1fr}
+  .today,.grid2,.who,.links,.grid3,.goals{grid-template-columns:1fr}
+  .goal{min-height:0;padding:20px}
+  .goal h3{font-size:19px;margin-bottom:0}
+  .goal .tag{margin-top:12px}
+  .goal.lead .n{font-size:56px}
+  .goal.lead .u{margin-top:6px}
+  .hero-photo{opacity:.18;background-position:62% 30%;
+    -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 45%,transparent 80%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 45%,transparent 80%)}
+  .lsheet{width:100vw;max-width:100vw;max-height:92dvh;margin:auto 0 0;border-radius:24px 24px 0 0}
+  .lsheet-head{padding:20px 16px 14px}
+  .lsheet .links{padding:0 16px 24px}
+  .fab{padding:12px 16px}
   .cal{display:none}
   .agenda{display:block}
   .seg{display:flex}
@@ -359,24 +414,30 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   <div class="wrap">
     <a class="brand" href="#top"><img src="img/logo.png" alt=""><span>ReLEAF · Paris 2026</span></a>
     <ul>
+      <li><a href="#achieve">Goals</a></li>
       <li><a href="#today">Today</a></li>
       <li><a href="#calendar">Calendar</a></li>
       <li><a href="#jamboree">Jamboree</a></li>
       <li><a href="#shifts">Shifts</a></li>
-      <li><a href="#links">Links</a></li>
       <li><a href="#packing">Packing</a></li>
       <li><a href="#paris">Paris</a></li>
+      <li><button class="navlk" type="button" data-links>Links</button></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero" id="top">
+  <div class="hero-photo" role="img" aria-label="The GEMS Taiwan ReLEAF team in their green team hoodies"></div>
   <div class="wrap">
     <div class="hero-top">
       <div>
         <div class="kicker"><span class="dot"></span><span id="kick">GEMS Taiwan · ReLEAF</span></div>
         <h1 id="h1">Next stop,<br><span class="gt">Paris.</span></h1>
         <p class="lede">The iGEM Grand Jamboree, 13–16 November 2026 at the Paris Convention Centre. Everything between today and the final day is on this page.</p>
+        <div class="hero-acts">
+          <button class="lbtn" type="button" data-links><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>Important links<span class="ct" id="lcount"></span></button>
+          <a class="lbtn ghost" href="#achieve">Before we fly</a>
+        </div>
         <div class="big" id="big"></div>
       </div>
       <div class="pass" aria-label="Trip summary">
@@ -399,8 +460,6 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       </div>
     </div>
 
-    <div class="chips" id="chips"></div>
-
     <div class="journey">
       <div class="clocks"><span>Taipei<b class="tw" id="clk-tw">--:--</b></span><span>Paris<b class="tw" id="clk-pa">--:--</b></span><span>Taipei is 7 hours ahead of Paris</span></div>
       <div class="jbar" id="jbar"></div>
@@ -409,6 +468,15 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
 </header>
 
 <main>
+<section class="s" id="achieve">
+  <div class="wrap">
+    <span class="eyebrow">To achieve</span>
+    <h2>Before we fly.</h2>
+    <p class="sub">Five lab and hardware goals to finish in Taipei, before the flight on Tuesday 10 November.</p>
+    <div class="goals" id="goals"></div>
+  </div>
+</section>
+
 <section class="s" id="today">
   <div class="wrap">
     <span class="eyebrow">Today</span>
@@ -463,15 +531,6 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
     <div class="card rv" style="margin-top:18px"><div class="label" style="margin-bottom:8px">Roster</div><div class="tablewrap rdesk"><table class="roster" id="roster"></table></div><div class="rmob" id="roster-m"></div></div>
     <div class="card rv" style="margin-top:18px"><div class="label" style="margin-bottom:8px">Who's at the booth, hour by hour</div><div id="shiftgrid"></div>
         <p class="note" style="margin:16px 0 0">Group 1 covers four hours, groups 2–4 cover three. Anna is on math model for groups 1 and 4. Roommates are in the <a href="https://docs.google.com/document/d/1h6CjlTRBBMTqecasaQd02sijgG1yzgMr1PYtCc0ARmk/edit?usp=sharing" target="_blank" rel="noopener">Shifts and Roomies</a> doc.</p></div>
-  </div>
-</section>
-
-<section class="s" id="links">
-  <div class="wrap">
-    <span class="eyebrow">Links</span>
-    <h2>Every doc, one tap away.</h2>
-    <p class="sub">Slides, scripts, prep sheets and training sites, grouped by what you're working on.</p>
-    <div class="links" id="linkgrid"></div>
   </div>
 </section>
 
@@ -540,6 +599,16 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   <div>Times on the Jamboree board are Paris time. Questions about the plan go to the team leads.</div>
 </footer>
 
+<button class="fab" id="fab" type="button" data-links aria-label="Important links"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>Links</button>
+
+<dialog class="lsheet" id="lsheet" aria-labelledby="lsheet-h">
+  <div class="lsheet-head">
+    <div><span class="eyebrow">Important links</span><h2 id="lsheet-h">Every doc, one tap away.</h2></div>
+    <button class="x" type="button" id="lclose" aria-label="Close">×</button>
+  </div>
+  <div class="links" id="linkgrid"></div>
+</dialog>
+
 <script>
 (function(){
 "use strict";
@@ -567,7 +636,7 @@ var CAL={
   '2026-10-21':[['Wiki Freeze','deliv',1]],
   '2026-10-24':[MOCK],
   '2026-10-25':[MOCK,['Presentation Video D3','deliv']],
-  '2026-10-27':[['Video Upload','deliv']],
+  '2026-10-27':[['Final video + upload again','deliv',1]],
   '2026-10-28':[['Video Freeze','deliv',1]],
   '2026-10-31':[MOCK,SLIDES,LST,MERCH],
   '2026-11-01':[MOCK,SLIDES,LST,MERCH],
@@ -698,6 +767,28 @@ var LINKS=[
   ['Competition program','https://jamboree.igem.org/2026/program/competition','igem']]}
 ];
 var KIND={doc:'Doc',sheet:'Sheet',canva:'Canva',site:'Site',drive:'Drive',igem:'iGEM'};
+function LK(name){var u='#';LINKS.forEach(function(c){c.l.forEach(function(l){if(l[0]===name)u=l[1]})});return [name,u]}
+
+/* ---------- to achieve before we fly ---------- */
+var GOALS=[
+ ['Integrate green-light control into the bioreactor system','Bioreactor',''],
+ ['Assemble the acrylic box','Hardware','t-hw'],
+ ['Upgrade the LPA red light bulb to 660 nm','LPA','t-lpa'],
+ ['Improve the LPA assays to show a clearer difference between green-light and red-light secretion','LPA','t-lpa'],
+ ['Run replicates of the hydroponics plant assay','Plants','t-plant']
+];
+
+/* ---------- today's goals, by Taipei date ---------- */
+var JUDGEPREP={t:'Judging session prep',w:'Five-minute slides and the Q&A sheet, ahead of Saturday\'s mock',l:[LK('Slide Prep (5 min)'),LK('2026 QA prep'),LK('Judging Training Site'),LK('Plant Training Site')]};
+var STAGEPREP={t:'Live stage talk prep',w:'Two run-throughs on Saturday 31 October',l:[LK('Stage Talk Prep'),LK('Slides')]};
+var LABGOALS={t:'Before-we-fly lab goals',w:'Five to finish before 10 November',l:[['See the five','#achieve']]};
+var TASKS={
+ '2026-10-27':{h:'Video night',l:[
+  {t:'Finalize the presentation video',w:'Video freeze is tomorrow, 28 October',hot:1,l:[LK('Presentation Video Master Doc'),LK('Director'),LK('Materials')]},
+  {t:'Upload the final video to iGEM again',w:'As soon as the final cut is exported',hot:1,l:[]},
+  JUDGEPREP,STAGEPREP,LABGOALS]}
+};
+var STANDING={h:'Today\'s goals',l:[JUDGEPREP,STAGEPREP,LABGOALS]};
 
 /* ================= render ================= */
 function rel(n){return n===0?'today':n===1?'tomorrow':n===-1?'yesterday':n>0?'in '+n+' days':-n+' days ago'}
@@ -728,18 +819,6 @@ function hero(){
     big.innerHTML='<span class="n">Merci</span><span class="u">ReLEAF<small>What a season. Safe trip home.</small></span>';
     kick.textContent='GEMS Taiwan · ReLEAF';
   }
-  // chips
-  var html='';
-  MOMENTS.slice(0,5).forEach(function(m){
-    if(m.k==='2026-11-10')return;
-    var diff=m.at-n,done=diff<=0,v;
-    if(done)v='Done ✓';
-    else if(m.dateOnly)v=rel(dayDiff(tk,m.k)).replace(/^in /,'');
-    else v=span(diff);
-    var when=m.dateOnly?fmtKey(m.k,{weekday:'short',day:'numeric',month:'short'}):fmtKey(m.k,{weekday:'short',day:'numeric',month:'short'})+' · '+hm(m.at,PA)+' Paris · '+hm(m.at,TW)+' Taipei';
-    html+='<div class="chip'+(done?' done':'')+'"><div class="l">'+esc(m.t)+'</div><div class="v tw">'+v+'</div><div class="s">'+when+'</div></div>';
-  });
-  $('chips').innerHTML=html;
   $('clk-tw').textContent=hm(n,TW);
   $('clk-pa').textContent=hm(n,PA);
 }
@@ -804,7 +883,7 @@ function today(){
   var n=now(),tz=homeTZ(),tk=key(n,tz),ev=CAL[tk]||[];
   $('today-h').textContent=fmtKey(tk,{weekday:'long',day:'numeric',month:'long'});
   var fly=dayDiff(tk,'2026-11-10');
-  $('today-sub').textContent=fly>0?(fly+(fly===1?' day':' days')+' until the flight. '+(ev.length?'Here is what is on today.':'Nothing on the team calendar today, a good day to rehearse your booth answers.'))
+  $('today-sub').textContent=fly>0?(fly+(fly===1?' day':' days')+' until the flight. '+(TASKS[tk]?'Here is what has to get done today.':'Here is what to keep working on today.'))
     :tk<='2026-11-16'?'Paris time '+hm(n,PA)+' · Taipei '+hm(n,TW)+'.':'The Jamboree is done. Thank you, everyone.';
   var day=DAYS.filter(function(d){return d.k===key(n,PA)})[0],li='';
   if(day&&inParis(n)){
@@ -816,9 +895,20 @@ function today(){
       li+='<li style="'+(pastB?'opacity:.45':'')+'"><span class="bul" style="background:'+(b.g?GCOL[b.g-1]:CVAR[b.c]||'#00A3C4')+'"></span>'+(nowB?'<b>Now · </b>':'')+esc(b.g?'Booth · Group '+b.g:b.t)+'<span class="when tw">'+fmtH(b.s)+'</span></li>';
     });
   }else{
-    $('today-title').textContent=ev.length?ev.map(function(e){return e[0]}).join(' · '):'A free day';
-    ev.forEach(function(e){li+='<li class="c-'+e[1]+'"><span class="bul"></span>'+esc(e[0])+'<span class="when">All day</span></li>'});
-    if(!ev.length)li='<li><p class="empty">No team event. Open the Judging Training Site and run ten questions.</p></li>';
+    var tasks=TASKS[tk]||(fly>0?STANDING:null);
+    if(tasks){
+      $('today-label').textContent=ev.length?'Today\'s goals · '+ev.map(function(e){return e[0]}).join(' · '):'Today\'s goals';
+      $('today-title').textContent=tasks.h;
+      tasks.l.forEach(function(t,i){
+        li+='<li class="task'+(t.hot?' hot':'')+'"><span class="tn">'+(i+1)+'</span><div><b>'+esc(t.t)+(t.hot?'<span class="now">Tonight</span>':'')+'</b><small>'+esc(t.w)+'</small>';
+        if(t.l.length){li+='<div class="tl">';t.l.forEach(function(l){var ext=l[1].charAt(0)!=='#';li+='<a href="'+l[1]+'"'+(ext?' target="_blank" rel="noopener"':'')+'>'+esc(l[0])+(ext?' ↗':'')+'</a>'});li+='</div>'}
+        li+='</div></li>';
+      });
+    }else{
+      $('today-title').textContent=ev.length?ev.map(function(e){return e[0]}).join(' · '):'A free day';
+      ev.forEach(function(e){li+='<li class="c-'+e[1]+'"><span class="bul"></span>'+esc(e[0])+'<span class="when">All day</span></li>'});
+      if(!ev.length)li='<li><p class="empty">No team event. Open the Judging Training Site and run ten questions.</p></li>';
+    }
   }
   $('today-list').innerHTML=li;
   // next up
@@ -934,11 +1024,30 @@ function shiftgrid(){
 /* ---------- links / packing ---------- */
 function links(){
   var h='';LINKS.forEach(function(c){
-    h+='<div class="card lk rv'+(c.official?' official':'')+'"><h3><span class="ic"><svg viewBox="0 0 24 24">'+IC[c.i]+'</svg></span>'+c.h+'</h3>';
+    h+='<div class="card lk'+(c.official?' official':'')+'"><h3><span class="ic"><svg viewBox="0 0 24 24">'+IC[c.i]+'</svg></span>'+c.h+'</h3>';
     c.l.forEach(function(l){h+='<a href="'+l[1]+'" target="_blank" rel="noopener">'+esc(l[0])+'<span class="k '+l[2]+'">'+KIND[l[2]]+'</span><span class="arr">↗</span></a>'});
     h+='</div>';
   });
   $('linkgrid').innerHTML=h;
+  var n=0;LINKS.forEach(function(c){n+=c.l.length});$('lcount').textContent=n;
+}
+var sheet=$('lsheet');
+function openLinks(){if(sheet.showModal){if(!sheet.open)sheet.showModal()}else sheet.setAttribute('open','')}
+function closeLinks(){if(sheet.close)sheet.close();else sheet.removeAttribute('open')}
+document.addEventListener('click',function(e){if(e.target.closest('[data-links]')){e.preventDefault();openLinks()}});
+$('lclose').addEventListener('click',closeLinks);
+sheet.addEventListener('click',function(e){if(e.target===sheet)closeLinks()});
+if(location.hash==='#links')openLinks();
+var heroEl=$('top');
+function fab(){$('fab').classList.toggle('on',heroEl.getBoundingClientRect().bottom<0)}
+window.addEventListener('scroll',fab,{passive:true});fab();
+function goals(){
+  var tk=key(now(),homeTZ()),fly=dayDiff(tk,'2026-11-10');
+  var lead='<div class="label">Time left in Taipei</div>'+(fly>0?'<div class="n tw">'+fly+'</div><div class="u">'+(fly===1?'day':'days')+' to finish all five</div>':'<div class="n">Go</div><div class="u">Wheels up, the lab work is done</div>');
+  if($('goals').firstChild){$('goals').firstChild.innerHTML=lead;return}
+  var h='<div class="goal lead rv">'+lead+'</div>';
+  GOALS.forEach(function(g,i){h+='<div class="goal rv"><span class="no">0'+(i+1)+'</span><h3>'+esc(g[0])+'</h3><span class="tag '+g[2]+'">'+esc(g[1])+'</span></div>'});
+  $('goals').innerHTML=h;
 }
 function packing(){
   var h='<thead><tr><th>Item</th><th>Who</th><th>Status</th></tr></thead><tbody>';
@@ -953,9 +1062,9 @@ function packing(){
 }
 
 /* ---------- boot ---------- */
-hero();journey();today();calendar();names();meCard();roster();schedule();moments();shiftgrid();links();packing();
+hero();journey();goals();today();calendar();names();meCard();roster();schedule();moments();shiftgrid();links();packing();
 setInterval(hero,1000);
-setInterval(function(){today();journey();if(inParis(now()))schedule()},60000);
+setInterval(function(){today();journey();goals();if(inParis(now()))schedule()},60000);
 var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(schedule,150)});
 if('IntersectionObserver' in window){
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -40px 0px'});
