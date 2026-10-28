@@ -389,63 +389,113 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .steps li{margin:4px 0}
 
 /* our booth */
-.booth{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--navy);color:#fff;border-radius:var(--r);padding:24px 28px;margin-bottom:18px;position:relative;overflow:hidden}
-.booth:after{content:"";position:absolute;right:-120px;top:-140px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,146,.35),transparent 65%);pointer-events:none}
+.boothcard{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--navy);color:#fff;border-radius:var(--r);padding:24px 28px;margin-bottom:18px;position:relative;overflow:hidden}
+.boothcard:after{content:"";position:absolute;right:-120px;top:-140px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,146,.35),transparent 65%);pointer-events:none}
 .bnum span,.bfacts span{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)}
 .bnum b{display:block;font-size:clamp(48px,6vw,72px);font-weight:700;letter-spacing:-.04em;line-height:1;background:linear-gradient(100deg,var(--sky),var(--green2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .bfacts{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,auto);gap:20px 34px;justify-content:start}
 .bfacts b{display:block;font-size:20px;font-weight:600;margin-top:4px}
 .bfacts small{display:block;font-size:12.5px;color:rgba(255,255,255,.6);margin-top:2px;max-width:200px}
 @media (max-width:980px){.bfacts{grid-template-columns:1fr 1fr}}
-@media (max-width:760px){.booth{grid-template-columns:1fr;gap:16px;padding:20px}.bfacts b{font-size:17px}}
+@media (max-width:760px){.boothcard{grid-template-columns:1fr;gap:16px;padding:20px}.bfacts b{font-size:17px}}
 
 /* nine-day trip */
 .trip{padding-top:84px}
-.trip-scroll{position:relative;height:250vh}
-.trip-pin{position:sticky;top:60px;height:calc(100vh - 60px);display:flex;flex-direction:column;justify-content:center;overflow:hidden}
-.trip-head{width:100%;margin-bottom:26px}
+.trip-head{margin-bottom:26px}
 .trip-head h2{font-size:clamp(34px,4.6vw,52px);font-weight:700;margin:6px 0 0}
-.nstrip{display:grid;grid-template-rows:auto 1fr;padding:0 12px;height:min(60vh,520px);--pp:0}
-.nband{grid-row:1;grid-column:4/8;margin:0 5px 8px;display:flex;align-items:baseline;gap:10px;white-space:nowrap;overflow:hidden;font-size:13px;font-weight:600;color:var(--ink2)}
-.nband b{font-size:13px;letter-spacing:.06em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.nband span{opacity:var(--pp)}
-.ncol{grid-row:2;min-width:0;overflow:hidden}
-.nd{height:100%;margin:0 5px;background:var(--card);border-radius:20px;padding:18px 16px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 10px 30px rgba(0,6,28,.05);position:relative;overflow:hidden;display:flex;flex-direction:column;min-width:150px}
+.nstrip{display:grid;grid-template-columns:1.2fr 1.2fr 1.2fr .95fr .95fr .95fr .95fr 1.2fr 1.2fr;grid-template-rows:auto auto;padding:0 12px}
+.nband{grid-row:1;grid-column:4/8;margin:0 5px 8px;display:flex;align-items:baseline;flex-wrap:wrap;gap:2px 10px;font-size:13px;font-weight:500;color:var(--ink2)}
+.nband b{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ncol{grid-row:2;min-width:0}
+.nd{height:100%;margin:0 5px;background:var(--card);border-radius:20px;padding:18px 16px 20px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 10px 30px rgba(0,6,28,.05);position:relative;overflow:hidden}
 .nd:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--c)}
-.nd.k-arrive{--c:var(--navy)} .nd.k-tour{--c:#D9578E} .nd.k-prep{--c:var(--violet)} .nd.k-home{--c:var(--navy)} .nd.k-jam{--c:var(--grad)}
-.nd.k-jam{background:linear-gradient(170deg,#F2F7FF,#EAFAF3);min-width:0}
+.nd.k-arrive{--c:var(--navy)} .nd.k-tour{--c:#D9578E} .nd.k-prep{--c:var(--violet)} .nd.k-home{--c:var(--navy)}
+.nd.k-jam{background:linear-gradient(170deg,#F2F7FF,#EAFAF3);padding:18px 13px 20px}
 .nd.k-jam:before{background:var(--grad)}
-.nd .dn{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c,var(--blue))}
+.nd .dn{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
 .nd.k-jam .dn{color:#0B7FB8}
-.nd .dt{display:flex;align-items:baseline;gap:8px;margin:6px 0 2px}
-.nd .dt b{font-size:44px;font-weight:700;letter-spacing:-.05em;line-height:1}
-.nd .dt span{font-size:13px;color:var(--ink2);white-space:nowrap}
-.nd h3{font-size:19px;letter-spacing:-.02em;margin:4px 0 12px;white-space:nowrap}
+.nd .dt{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 8px;margin:6px 0 2px}
+.nd .dt b{font-size:42px;font-weight:700;letter-spacing:-.05em;line-height:1}
+.nd .dt span{font-size:12.5px;color:var(--ink2);white-space:nowrap}
+.nd h3{font-size:18px;letter-spacing:-.02em;margin:6px 0 12px;line-height:1.2}
 .nd ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
-.nd li{font-size:14px;line-height:1.35;color:var(--ink2)}
+.nd li{font-size:13.5px;line-height:1.35;color:var(--ink2)}
 .nd li b{display:block;font-size:12px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
-.nd.k-jam li .lab{display:block;opacity:var(--pp);font-size:calc(14px + 4px*var(--pp));color:var(--ink)}
-.nd.k-jam li b{font-size:calc(12px + 3px*var(--pp))}
-.nd.k-jam ul{gap:calc(9px + 9px*var(--pp))}
-.nd.k-jam h3{font-size:calc(19px + 9px*var(--pp))}
-.nd.k-jam h3 .lab{opacity:var(--pp)}
+.nd.k-jam li{color:var(--ink);font-weight:500}
+.nd.k-jam li b{color:#0B7FB8}
 .nd.now{box-shadow:0 0 0 2px var(--blue),0 10px 30px rgba(1,103,239,.15)}
 .nd .nowtag{position:absolute;right:12px;top:14px;font-size:11px;font-weight:700;color:#fff;background:var(--blue);padding:2px 8px;border-radius:999px}
-@media (max-width:900px),(prefers-reduced-motion:reduce){
-  .trip-scroll{height:auto}
-  .trip-pin{position:static;height:auto;display:block;overflow:visible}
-  .nstrip{height:auto;grid-template-columns:1fr 1fr!important;grid-template-rows:none;gap:10px 0;padding:0 16px;--pp:1}
-  .nband{grid-row:auto;grid-column:1/-1;margin:8px 5px 0;white-space:normal;flex-wrap:wrap}
-  .ncol{grid-row:auto;grid-column:1/-1!important;opacity:1!important}
+#sched{transform-origin:50% 0;will-change:transform}
+@media (max-width:1100px){.nstrip{grid-template-columns:1fr 1fr 1fr 1fr;gap:10px 0}.nband{grid-row:auto;grid-column:1/-1;margin-top:8px}.ncol{grid-row:auto;grid-column:auto!important}.ncol.wide{grid-column:span 2!important}}
+@media (max-width:760px){
+  .trip{padding-top:60px}
+  .nstrip{grid-template-columns:1fr 1fr;padding:0 16px}
+  .nband{white-space:normal;flex-wrap:wrap}
+  .ncol{grid-column:1/-1!important}
   .ncol.jam{grid-column:auto!important}
-  .nd{min-width:0;padding:16px}
   .nd .dt b{font-size:34px}
-  .nd h3,.nd.k-jam h3{font-size:19px;white-space:normal}
-  .nd.k-jam li .lab{font-size:14px}
-  .nd.k-jam li b{font-size:12px}
-  .nd.k-jam ul{gap:9px}
 }
-@media (max-width:760px){.trip{padding-top:60px}}
+
+/* emergency */
+.eyebrow.red{background:linear-gradient(100deg,#E5484D,#F08C00);-webkit-background-clip:text;background-clip:text}
+.nlinks a.nsos{color:#FF8A8D}
+.nlinks a.nsos.on{color:#fff;background:rgba(229,72,77,.35)}
+.sos-top{display:grid;grid-template-columns:1.25fr 1fr;gap:18px;margin-bottom:18px}
+.s112{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:220px;border-radius:var(--r);padding:26px 28px;color:#fff;background:linear-gradient(150deg,#F2555A,#C8262C);box-shadow:0 20px 50px rgba(200,38,44,.25)}
+.s112:hover{text-decoration:none;filter:brightness(1.04)}
+.s112:after{content:"";position:absolute;right:-90px;bottom:-120px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.22),transparent 65%)}
+.s112 span{font-size:15px;font-weight:600;opacity:.9;max-width:22em}
+.s112 b{font-size:clamp(96px,12vw,150px);font-weight:700;letter-spacing:-.05em;line-height:.9}
+.s112 em{font-style:normal;font-size:14px;font-weight:600;opacity:.85}
+.s3{display:grid;grid-template-rows:repeat(3,1fr);gap:10px}
+.s3 a{display:flex;align-items:center;gap:18px;background:var(--card);border-radius:18px;padding:14px 22px;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.04);transition:transform .2s,box-shadow .2s}
+.s3 a:hover{text-decoration:none;transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,.06)}
+.s3 b{font-size:40px;font-weight:700;letter-spacing:-.04em;color:var(--red);min-width:56px}
+.s3 span{font-size:16px;font-weight:600}
+.sos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
+.sos-grid.two{grid-template-columns:1.15fr 1fr}
+.scard h3{font-size:20px;letter-spacing:-.02em;margin:4px 0 12px;line-height:1.25}
+.scard .row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 0;border-top:1px solid var(--line)}
+.scard .row span{font-size:14px;color:var(--ink2)}
+.tel{font-size:17px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tel:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:8px;vertical-align:2px}
+.people{list-style:none;margin:0;padding:0}
+.people li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.people li:first-child{border-top:0}
+.people b{font-size:17px}
+.people span{font-size:13px;color:var(--ink3);text-align:right}
+.scard.hotel{background:var(--navy);color:#fff}
+.scard.hotel .label{color:rgba(255,255,255,.55)}
+.scard.hotel .addr{margin:0 0 6px;color:rgba(255,255,255,.75);font-size:15px}
+.scard.hotel .row{border-color:rgba(255,255,255,.12)}
+.scard.hotel .row span{color:rgba(255,255,255,.6)}
+.scard.hotel .tel{color:#fff}
+.taxi{margin:10px 0 14px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.08);font-size:14px;line-height:1.45}
+.taxi span{display:block;font-size:12px;font-weight:600;letter-spacing:.04em;color:rgba(255,255,255,.55);margin-bottom:3px}
+.scard.hotel .btn.ghost{background:rgba(255,255,255,.12);color:#fff}
+.steps2{margin:0;padding:0;list-style:none;counter-reset:st}
+.steps2 li{counter-increment:st;position:relative;padding:11px 0 11px 40px;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink2)}
+.steps2 li:first-child{border-top:0}
+.steps2 li:before{content:counter(st);position:absolute;left:0;top:10px;width:26px;height:26px;border-radius:50%;background:var(--red);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center}
+.steps2 b{color:var(--ink)}
+.meet{display:grid;gap:12px;margin-top:10px}
+.meet>div{display:flex;gap:14px;align-items:flex-start}
+.meet i{font-style:normal;flex:none;width:30px;height:30px;border-radius:10px;background:var(--grad);color:#fff;font-weight:700;display:grid;place-items:center;font-size:14px}
+.meet b{display:block;font-size:16px}
+.meet span{font-size:14.5px;color:var(--ink2)}
+.lost{list-style:none;margin:8px 0 0;padding:0}
+.lost li{padding:8px 0;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink2)}
+.lost li:first-child{border-top:0}
+.lost b{color:var(--ink)}
+@media (max-width:980px){.sos-grid{grid-template-columns:1fr 1fr}.sos-grid .hotel{grid-column:1/-1}}
+@media (max-width:760px){
+  .sos-top,.sos-grid,.sos-grid.two{grid-template-columns:1fr}
+  .s112{min-height:180px;padding:22px}
+  .s3{grid-template-rows:none;grid-template-columns:repeat(3,1fr)}
+  .s3 a{flex-direction:column;align-items:flex-start;gap:2px;padding:14px}
+  .s3 b{font-size:34px;min-width:0}
+  .s3 span{font-size:13.5px}
+}
 
 /* finalist */
 .finale{background:#000;color:#fff;margin-top:84px}
@@ -719,7 +769,8 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <li><a href="#packing"><i>09</i><span data-zh="行李">Packing</span></a></li>
       <li><a href="#paris"><i>10</i><span data-zh="巴黎">Paris</span></a></li>
       <li><a href="#map"><i>11</i><span data-zh="住宿">Stay</span></a></li>
-      <li><a href="#app"><i>12</i><span>App</span></a></li>
+      <li><a href="#sos" class="nsos"><i>12</i><span data-zh="緊急">Emergency</span></a></li>
+      <li><a href="#app"><i>13</i><span>App</span></a></li>
       <li class="nl-links"><button type="button" data-links><span data-zh="重要連結">Important links</span></button></li>
     </ul>
     <div class="nact">
@@ -845,15 +896,11 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
 </section>
 
 <section class="trip" id="trip" aria-labelledby="trip-h">
-  <div class="trip-scroll" id="tripScroll">
-    <div class="trip-pin">
-      <div class="wrap trip-head">
-        <span class="eyebrow" data-zh="完整行程 · 巴黎時間">The whole trip · Paris time</span>
-        <h2 id="trip-h" data-zh="巴黎九天。">Nine days in Paris.</h2>
-      </div>
-      <div class="nstrip" id="nstrip"></div>
-    </div>
+  <div class="wrap trip-head">
+    <span class="eyebrow" data-zh="完整行程 · 巴黎時間">The whole trip · Paris time</span>
+    <h2 id="trip-h" data-zh="巴黎九天。">Nine days in Paris.</h2>
   </div>
+  <div class="nstrip" id="nstrip"></div>
 </section>
 
 <section class="s" id="jamboree">
@@ -862,7 +909,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
     <h2 data-zh="7 號館的四天。">Four days in Pavilion 7.</h2>
     <p class="sub" data-zh="巴黎時間，台北時間請加 7 小時。">Paris time. Add 7 hours for Taipei.</p>
     <div class="seg" id="seg" role="tablist"></div>
-    <div class="sched rv" id="sched"></div>
+    <div class="zwrap" id="zwrap"><div class="sched" id="sched"></div></div>
     <div class="moments" id="moments"></div>
   </div>
 </section>
@@ -878,7 +925,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   <div class="wrap">
     <span class="eyebrow" data-zh="攤位排班">Booth shifts</span>
     <h2 data-zh="找到你的時段。">Find your hours.</h2>
-    <div class="booth rv">
+    <div class="boothcard rv">
       <div class="bnum"><span data-zh="攤位">Booth</span><b>H-17</b></div>
       <div class="bfacts">
         <div><span data-zh="主題村">Village</span><b data-zh="生物製造村">Biomanufacturing</b></div>
@@ -1003,6 +1050,83 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <p class="note" style="margin:14px 0 0" data-zh="OpenStreetMap，2026 年 10 月。藍線：iGEM 建議的路線，經主要入口進場。">OpenStreetMap, October 2026. Blue line: iGEM's route through the main entrance.</p>
     </div>
 
+  </div>
+</section>
+
+<section class="s sos" id="sos" aria-labelledby="sos-h">
+  <div class="wrap">
+    <span class="eyebrow red" data-zh="緊急狀況">In an emergency</span>
+    <h2 id="sos-h" data-zh="注意安全，團體行動。">Stay safe, stay together.</h2>
+
+    <div class="sos-top rv">
+      <a class="s112" href="tel:112"><span data-zh="歐洲緊急電話 · 任何手機皆可免費撥打">European emergency number · free from any phone</span><b>112</b><em data-zh="點一下撥打">Tap to call</em></a>
+      <div class="s3">
+        <a href="tel:15"><b>15</b><span data-zh="醫療急救（SAMU）">Medical (SAMU)</span></a>
+        <a href="tel:17"><b>17</b><span data-zh="警察">Police</span></a>
+        <a href="tel:18"><b>18</b><span data-zh="消防">Fire</span></a>
+      </div>
+    </div>
+
+    <div class="sos-grid">
+      <div class="card scard rv">
+        <div class="label" data-zh="我們的指導老師">Our instructors</div>
+        <h3 data-zh="先打給我們">Call us first</h3>
+        <ul class="people">
+          <li><b>Jason</b><span data-zh="eSIM 開通後更新">Number coming with our eSIMs</span></li>
+          <li><b>Timmy</b><span data-zh="eSIM 開通後更新">Number coming with our eSIMs</span></li>
+          <li><b>Chars</b><span data-zh="eSIM 開通後更新">Number coming with our eSIMs</span></li>
+          <li><b>Gabriel</b><span data-zh="eSIM 開通後更新">Number coming with our eSIMs</span></li>
+        </ul>
+        <p class="note" style="margin:12px 0 0" data-zh="四支號碼會在下週拿到 eSIM 後更新。">The four numbers go up next week, once our eSIMs are active.</p>
+      </div>
+      <div class="card scard rv">
+        <div class="label" data-zh="台灣的協助">Help from Taiwan</div>
+        <h3 data-zh="駐法國台北代表處">Taipei Representative Office in France</h3>
+        <div class="row"><span data-zh="急難救助專線（僅限緊急狀況）">Emergencies only</span><a class="tel" href="tel:+33680074994">+33 6 80 07 49 94</a></div>
+        <h3 style="margin-top:18px" data-zh="外交部旅外國人急難救助">Emergency line for R.O.C. nationals abroad</h3>
+        <div class="row"><span data-zh="全球免付費">Free worldwide</span><a class="tel" href="tel:0080008850885">00 800 0885 0885</a></div>
+      </div>
+      <div class="card scard hotel rv">
+        <div class="label" data-zh="我們的飯店">Our hotel</div>
+        <h3>Courtyard by Marriott Paris Porte de Versailles</h3>
+        <p class="addr">5 Rue Ernest Renan<br>92130 Issy-les-Moulineaux, France</p>
+        <div class="row"><span data-zh="櫃台">Front desk</span><a class="tel" href="tel:+33185746454">+33 1 85 74 64 54</a></div>
+        <div class="taxi"><span data-zh="給計程車司機看：">Show a taxi driver:</span>« Hôtel Courtyard by Marriott, 5 rue Ernest Renan, Issy-les-Moulineaux »</div>
+        <div class="btns">
+          <a class="btn" href="https://maps.google.com/?q=Courtyard+by+Marriott+Paris+Porte+de+Versailles,+5+Rue+Ernest+Renan,+92130+Issy-les-Moulineaux" target="_blank" rel="noopener" data-zh="Google 地圖">Google Maps</a>
+          <a class="btn ghost" href="https://maps.apple.com/?q=Courtyard+Paris+Porte+de+Versailles&amp;address=5+Rue+Ernest+Renan,+92130+Issy-les-Moulineaux" target="_blank" rel="noopener" data-zh="Apple 地圖">Apple Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sos-grid two">
+      <div class="card scard rv">
+        <div class="label" data-zh="走散時">If you get separated</div>
+        <h3 data-zh="停下來，打電話，回集合點。">Stop, call, go to the meeting point.</h3>
+        <ol class="steps2">
+          <li data-zh="<b>停下來。</b>留在原地，選人多、明亮的公共場所，不要自己到處找隊伍。"><b>Stop.</b> Stay where you are, somewhere public and well lit. Don't wander off looking for the group.</li>
+          <li data-zh="<b>打給指導老師，</b>再到團隊群組說你在哪裡。"><b>Call an instructor,</b> then post in the team chat where you are.</li>
+          <li data-zh="<b>15 分鐘沒聯絡上？</b>到集合點：大會期間是我們的攤位，其他時間是飯店大廳。"><b>No answer in 15 minutes?</b> Go to the meeting point: our booth during the Jamboree, the hotel lobby any other time.</li>
+          <li data-zh="<b>手機沒電或遺失？</b>向商店、飯店櫃台或警察求助，給他們看飯店地址。"><b>Phone dead or lost?</b> Ask a shop, a hotel desk or a police officer for help, and show them the hotel address.</li>
+          <li data-zh="<b>真的有危險：</b>先打 112，再打給指導老師。"><b>Real danger:</b> call 112 first, then an instructor.</li>
+        </ol>
+      </div>
+      <div class="card scard rv">
+        <div class="label" data-zh="集合點">Meeting points</div>
+        <div class="meet">
+          <div><i>1</i><div><b data-zh="大會期間">During the Jamboree</b><span data-zh="攤位 H-17 · 7 號館 3 樓，生物製造村">Booth H-17 · Pavilion 7, 3rd floor, Biomanufacturing Village</span></div></div>
+          <div><i>2</i><div><b data-zh="其他時間">Any other time</b><span data-zh="飯店大廳 · 5 Rue Ernest Renan">The hotel lobby · 5 Rue Ernest Renan</span></div></div>
+          <div><i>3</i><div><b data-zh="市區觀光時">On a city tour</b><span data-zh="分組前指導老師指定的地點">The spot your instructor names before the group splits up</span></div></div>
+        </div>
+        <div class="label" style="margin-top:22px" data-zh="遺失或被偷">Lost or stolen</div>
+        <ul class="lost">
+          <li data-zh="<b>護照：</b>立刻告訴指導老師，我們會聯絡駐法國台北代表處。"><b>Passport:</b> tell an instructor straight away. We contact the Taipei Representative Office.</li>
+          <li data-zh="<b>信用卡：</b>出發前先存好發卡銀行的掛失電話。"><b>Bank card:</b> save your bank's lost-card number before you fly.</li>
+          <li data-zh="<b>手機：</b>現在撥 *#06# 記下 IMEI 碼，報案時會用到。"><b>Phone:</b> dial *#06# now and write down your IMEI. A police report needs it.</li>
+          <li data-zh="<b>報案：</b>法國內政部的 <a href='https://www.masecurite.interieur.gouv.fr/' target='_blank' rel='noopener'>Ma Sécurité</a> 可以找最近的警察局。"><b>Report it:</b> the French government's <a href="https://www.masecurite.interieur.gouv.fr/" target="_blank" rel="noopener">Ma Sécurité</a> finds the nearest police station.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1422,7 +1546,7 @@ function schedule(){
       body+='<div class="'+cls+'" style="'+style+'"><b>'+esc(title)+'</b><small>'+esc(sub)+'</small></div>';
     });
     if(d.k===pk){var nh=hh;if(nh>=H0&&nh<H1)body+='<div class="nowline" style="top:'+(nh-H0)*HH+'px"></div>'}
-    cols+='<div class="col'+(i===activeDay?' show':'')+'"><div class="col-h'+(d.k===pk?' now':'')+'"><b>'+tx(d.d+' Nov')+'</b><span>'+tx(d.t)+'</span></div><div class="col-body" style="height:'+(H1-H0)*HH+'px">'+body+'</div></div>';
+    cols+='<div class="col'+(i===activeDay?' show':'')+'"><div class="col-h'+(d.k===pk?' now':'')+'"><b>'+tx(d.d+' Nov')+'</b><span>'+L('Day '+(i+4),'第 '+(i+4)+' 天')+' · '+tx(d.t)+'</span></div><div class="col-body" style="height:'+(H1-H0)*HH+'px">'+body+'</div></div>';
   });
   $('sched').innerHTML='<div class="hours">'+hrs+'</div>'+cols;
   var sg='';DAYS.forEach(function(d,i){sg+='<button role="tab" class="'+(i===activeDay?'on':'')+'" data-i="'+i+'">'+tx(d.d)+'</button>'});
@@ -1691,28 +1815,29 @@ function trip(){
   TRIP.forEach(function(x,i){
     var jam=x.k==='jam',on=x.d===tk;
     if(i===3)h+=band;
-    h+='<div class="ncol'+(jam?' jam':'')+'" style="grid-column:'+(i+1)+'"><div class="nd k-'+x.k+(on?' now':'')+'">'+(on?'<span class="nowtag">'+L('Today','今天')+'</span>':'');
+    h+='<div class="ncol'+(jam?' jam':' wide')+'" style="grid-column:'+(i+1)+'"><div class="nd k-'+x.k+(on?' now':'')+'">'+(on?'<span class="nowtag">'+L('Today','今天')+'</span>':'');
     h+='<div class="dn">'+L('Day '+(i+1),'第 '+(i+1)+' 天')+'</div><div class="dt"><b class="tw">'+(+x.d.slice(8))+'</b><span>'+fmtKey(x.d,{weekday:'short'})+' · '+fmtKey(x.d,{month:'short'})+'</span></div>';
-    h+='<h3>'+(jam?'<span class="lab">'+esc(L(x.t[0],x.t[1]))+'</span>':esc(L(x.t[0],x.t[1])))+'</h3><ul>';
-    x.i.forEach(function(it){h+='<li>'+(it[0]?'<b>'+esc(it[0])+'</b>':'')+(jam?'<span class="lab">'+esc(L(it[1],it[2]))+'</span>':esc(L(it[1],it[2])))+'</li>'});
+    h+='<h3>'+esc(L(x.t[0],x.t[1]))+'</h3><ul>';
+    x.i.forEach(function(it){h+='<li>'+(it[0]?'<b>'+esc(it[0])+'</b>':'')+esc(L(it[1],it[2]))+'</li>'});
     h+='</ul></div></div>';
   });
   $('nstrip').innerHTML=h;
-  tripScroll();
+  jamZoom();
 }
-var TRIPSTATIC=window.matchMedia?matchMedia('(max-width:900px),(prefers-reduced-motion:reduce)'):null;
-function tripScroll(){
-  var st=$('nstrip'),cols=st.querySelectorAll('.ncol');
-  if(TRIPSTATIC&&TRIPSTATIC.matches){st.style.gridTemplateColumns='';[].forEach.call(cols,function(c){c.style.opacity=''});st.style.setProperty('--pp',1);return}
-  var r=$('tripScroll').getBoundingClientRect(),run=Math.max(1,r.height-(innerHeight-60));
-  var p=Math.min(1,Math.max(0,(-r.top+60)/run));
-  var e=Math.min(1,Math.max(0,(p-0.18)/0.62));e=e<.5?2*e*e:1-Math.pow(-2*e+2,2)/2;
-  var tpl=[];TRIP.forEach(function(x){tpl.push(x.k==='jam'?(0.55+0.45*e).toFixed(4)+'fr':(1.3*(1-e)).toFixed(4)+'fr')});
-  st.style.gridTemplateColumns=tpl.join(' ');
-  [].forEach.call(cols,function(c){if(!c.classList.contains('jam'))c.style.opacity=Math.max(0,1-e*1.8).toFixed(3)});
-  st.style.setProperty('--pp',Math.max(0,(e-0.55)/0.45).toFixed(3));
+/* the four Jamboree columns zoom out into the hour board below */
+var ZSTATIC=window.matchMedia?matchMedia('(max-width:1100px),(prefers-reduced-motion:reduce)'):null;
+function jamZoom(){
+  var b=$('sched'),cols=document.querySelectorAll('#nstrip .ncol.jam');
+  if(!cols.length)return;
+  if(ZSTATIC&&ZSTATIC.matches){b.style.transform='';b.style.opacity='';return}
+  var g0=cols[0].getBoundingClientRect(),g1=cols[cols.length-1].getBoundingClientRect(),z=$('zwrap').getBoundingClientRect();
+  var bl=z.left,bw=z.width,top=z.top;
+  var s0=Math.min(1,Math.max(.3,(g1.right-g0.left)/bw)),dx0=(g0.left+g1.right)/2-(bl+bw/2);
+  var p=Math.min(1,Math.max(0,(innerHeight-top)/(innerHeight*.8))),e=1-Math.pow(1-p,3);
+  b.style.transform='translateX('+(dx0*(1-e)).toFixed(1)+'px) scale('+(s0+(1-s0)*e).toFixed(4)+')';
+  b.style.opacity=(.25+.75*e).toFixed(3);
 }
-window.addEventListener('scroll',tripScroll,{passive:true});window.addEventListener('resize',tripScroll);
+window.addEventListener('scroll',jamZoom,{passive:true});window.addEventListener('resize',jamZoom);
 
 /* ---------- language switch ---------- */
 var ZEL=[].slice.call(document.querySelectorAll('[data-zh]')),ZPH=[].slice.call(document.querySelectorAll('[data-zh-ph]'));
