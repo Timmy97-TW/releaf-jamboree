@@ -424,6 +424,11 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .nd.k-jam li{color:var(--ink);font-weight:500}
 .nd.k-jam li b{color:#0B7FB8}
 .nd.now{box-shadow:0 0 0 2px var(--blue),0 10px 30px rgba(1,103,239,.15)}
+.nd .safe{display:inline-flex;align-items:center;gap:5px;margin:-4px 0 12px;padding:4px 10px 4px 7px;border-radius:999px;background:#FFEDE0;color:#C2410C;font-size:12px;font-weight:700;line-height:1.2;white-space:nowrap}
+.safe svg,.nsafe svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.nsafe{display:flex;gap:12px;align-items:flex-start;margin:14px 17px 0;padding:16px 20px;border-radius:18px;background:#FFF4EB;box-shadow:inset 0 0 0 1px #FBD9C1;color:#5C2A0E;font-size:14.5px;line-height:1.5}
+.nsafe svg{width:22px;height:22px;color:#C2410C;margin-top:1px}
+.nsafe b{color:#C2410C}
 .nd .nowtag{position:absolute;right:12px;top:14px;font-size:11px;font-weight:700;color:#fff;background:var(--blue);padding:2px 8px;border-radius:999px}
 @media (max-width:1100px){.nstrip{grid-template-columns:1fr 1fr 1fr 1fr;gap:10px 0}.nband{grid-row:auto;grid-column:1/-1;margin-top:8px}.ncol{grid-row:auto;grid-column:auto!important}.ncol.wide{grid-column:span 2!important}}
 @media (max-width:760px){
@@ -433,6 +438,7 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
   .ncol{grid-column:1/-1!important}
   .ncol.jam{grid-column:auto!important}
   .nd .dt b{font-size:34px}
+  .nsafe{margin:14px 21px 0;padding:14px 16px;font-size:14px}
 }
 
 /* emergency */
@@ -896,6 +902,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
     <h2 id="trip-h" data-zh="巴黎九天。">Nine days in Paris.</h2>
   </div>
   <div class="nstrip" id="nstrip"></div>
+  <p class="nsafe"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9L1.8 18.5A2 2 0 0 0 3.5 21.5h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17.6v.1"/></svg><span data-zh="<b>市區觀光的安全安排仍在討論中。</b>指導老師與家長正在討論市區觀光的安全疑慮與措施。原則上學生不會自行在市區自由活動，除非家長明確同意，並經指導老師確認。"><b>City tour safety is still being discussed.</b> Instructors and parents are working through the safety concerns and measures for the city tour days. Students probably won't explore the city on their own, unless a parent gives firm consent and agrees it with the instructors.</span></p>
 </section>
 
 <section class="s" id="jamboree">
@@ -1796,15 +1803,16 @@ function hoodPick(i,fromList){
 /* ---------- nine days in Paris: the four Jamboree days open up as you scroll ---------- */
 var TRIP=[
  {d:'2026-11-10',k:'arrive',t:['Arrival','抵達'],i:[['≈ 08:00','Land at CDG on BR87','BR87 抵達戴高樂機場'],['','Shuttle bus to the hotel','接駁車到飯店'],['12:00','Check in','入住飯店'],['','Walk the neighbourhood, Carrefour City run','熟悉飯店周邊，到 Carrefour City 採買'],['PM','Half-day city tour','半日市區觀光']]},
- {d:'2026-11-11',k:'tour',t:['City tour','市區觀光'],i:[['','A full day in the city','整天市區觀光'],['21:00','Team prep: run-throughs and booth prep','團隊準備：簡報演練與攤位準備']]},
+ {d:'2026-11-11',k:'tour',safe:1,t:['City tour','市區觀光'],i:[['','A full day in the city','整天市區觀光'],['21:00','Team prep: run-throughs and booth prep','團隊準備：簡報演練與攤位準備']]},
  {d:'2026-11-12',k:'prep',t:['Prep day','準備日'],i:[['AM','At the hotel: judging and booth prep','留在飯店：評審與攤位準備'],['13:00','Badge pickup at the venue','到會場領取識別證'],['','Back to the hotel to rest','回飯店休息'],['','Meals near the hotel, no city trips','在飯店附近用餐，不進市區']]},
  {d:'2026-11-13',k:'jam',t:['Opening + judging','開幕 + 評審'],i:[['09:00','Opening show','開幕典禮'],['12:00','Judging session','評審場次'],['14:00','Booth H-17 shifts begin','H-17 攤位排班開始']]},
  {d:'2026-11-14',k:'jam',t:['Booth day','攤位日'],i:[['09:00','Booth H-17 all day','H-17 攤位整天排班'],['17:00','Full team at the booth','全隊在攤位']]},
  {d:'2026-11-15',k:'jam',t:['Stage talk','舞台演講'],i:[['AM','Prep','準備'],['14:40','Live Stage Talk','舞台演講']]},
  {d:'2026-11-16',k:'jam',t:['Final day','決賽日'],i:[['14:00','Final Day show','決賽日典禮'],['19:00','iGEM after party','iGEM 閉幕派對']]},
- {d:'2026-11-17',k:'tour',t:['City tour','市區觀光'],i:[['','A full day in the city, everything done','活動結束，整天市區觀光'],['','Safety first: stay with your group','安全第一：與團隊同行']]},
+ {d:'2026-11-17',k:'tour',safe:1,t:['City tour','市區觀光'],i:[['','A full day in the city, everything done','活動結束，整天市區觀光'],['','Safety first: stay with your group','安全第一：與團隊同行']]},
  {d:'2026-11-18',k:'home',t:['Home','返程'],i:[['','Early wake-up','一早起床'],['07:00','Shuttle bus to the airport','接駁車前往機場'],['','Fly home','搭機返台']]}
 ];
+var SAFEI='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9L1.8 18.5A2 2 0 0 0 3.5 21.5h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17.6v.1"/></svg>';
 function trip(){
   var tk=key(now(),PA),h='',band='<div class="nband"><b>'+L('Grand Jamboree · Days 4–7','Grand Jamboree · 第 4–7 天')+'</b><span>'+L('Around the Convention Centre, with the odd dinner in the city','在會議中心周邊，偶爾進市區吃晚餐')+'</span></div>';
   TRIP.forEach(function(x,i){
@@ -1812,7 +1820,7 @@ function trip(){
     if(i===3)h+=band;
     h+='<div class="ncol'+(jam?' jam':' wide')+'" style="grid-column:'+(i+1)+'"><div class="nd k-'+x.k+(on?' now':'')+'">'+(on?'<span class="nowtag">'+L('Today','今天')+'</span>':'');
     h+='<div class="dn">'+L('Day '+(i+1),'第 '+(i+1)+' 天')+'</div><div class="dt"><b class="tw">'+(+x.d.slice(8))+'</b><span>'+fmtKey(x.d,{weekday:'short'})+' · '+fmtKey(x.d,{month:'short'})+'</span></div>';
-    h+='<h3>'+esc(L(x.t[0],x.t[1]))+'</h3><ul>';
+    h+='<h3>'+esc(L(x.t[0],x.t[1]))+'</h3>'+(x.safe?'<span class="safe">'+SAFEI+L('Safety concerns','安全疑慮')+'</span>':'')+'<ul>';
     x.i.forEach(function(it){h+='<li>'+(it[0]?'<b>'+esc(it[0])+'</b>':'')+esc(L(it[1],it[2]))+'</li>'});
     h+='</ul></div></div>';
   });
