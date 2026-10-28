@@ -222,7 +222,7 @@ section.s{padding:84px 0 12px}
 
 /* categories */
 .c-mock{--c:var(--blue)} .c-deliv{--c:var(--red)} .c-stage{--c:var(--green)} .c-final{--c:var(--violet)}
-.c-paris{--c:var(--amber)} .c-travel{--c:var(--navy)} .c-jam{--c:#00A3C4} .c-tour{--c:#D9578E}
+.c-paris{--c:var(--amber)} .c-travel{--c:var(--navy)} .c-jam{--c:#00A3C4}
 .bul{background:var(--c)}
 .legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 18px;font-size:14px;color:var(--ink2)}
 .legend span{display:inline-flex;align-items:center;gap:7px}
@@ -270,7 +270,7 @@ section.s{padding:84px 0 12px}
 .blk.grad{background:var(--grad);color:#fff;border-left:0}
 .blk.half-l{right:calc(50% + 2px)} .blk.half-r{left:calc(50% + 2px)}
 .blk.g1{--c:var(--g1)} .blk.g2{--c:var(--g2)} .blk.g3{--c:var(--g3)} .blk.g4{--c:var(--g4)}
-.blk.meal{--c:#8E8E93} .blk.prep{--c:var(--green)} .blk.tour{--c:#D9578E}
+.blk.meal{--c:#8E8E93} .blk.prep{--c:var(--green)}
 .blk.nowblk{outline:2px solid var(--ink);outline-offset:1px}
 .nowline{position:absolute;left:0;right:0;height:2px;background:var(--red);z-index:3}
 .nowline:before{content:"";position:absolute;left:-5px;top:-4px;width:10px;height:10px;border-radius:50%;background:var(--red)}
@@ -409,7 +409,7 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .ncol{grid-row:2;min-width:0}
 .nd{height:100%;margin:0 5px;background:var(--card);border-radius:20px;padding:18px 16px 20px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 10px 30px rgba(0,6,28,.05);position:relative;overflow:hidden}
 .nd:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--c)}
-.nd.k-arrive{--c:var(--navy)} .nd.k-tour{--c:#D9578E} .nd.k-prep{--c:var(--violet)} .nd.k-home{--c:var(--navy)}
+.nd.k-depart{--c:var(--navy)} .nd.k-arrive{--c:var(--navy)} .nd.k-prep{--c:var(--violet)} .nd.k-home{--c:var(--navy)}
 .nd.k-jam{background:linear-gradient(170deg,#F2F7FF,#EAFAF3);padding:18px 13px 20px}
 .nd.k-jam:before{background:var(--grad)}
 .nd .dn{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
@@ -424,11 +424,6 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .nd.k-jam li{color:var(--ink);font-weight:500}
 .nd.k-jam li b{color:#0B7FB8}
 .nd.now{box-shadow:0 0 0 2px var(--blue),0 10px 30px rgba(1,103,239,.15)}
-.nd .safe{display:inline-flex;align-items:center;gap:5px;margin:-4px 0 12px;padding:4px 10px 4px 7px;border-radius:999px;background:#FFEDE0;color:#C2410C;font-size:12px;font-weight:700;line-height:1.2;white-space:nowrap}
-.safe svg,.nsafe svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.nsafe{display:flex;gap:12px;align-items:flex-start;margin:14px 17px 0;padding:16px 20px;border-radius:18px;background:#FFF4EB;box-shadow:inset 0 0 0 1px #FBD9C1;color:#5C2A0E;font-size:14.5px;line-height:1.5}
-.nsafe svg{width:22px;height:22px;color:#C2410C;margin-top:1px}
-.nsafe b{color:#C2410C}
 .nd .nowtag{position:absolute;right:12px;top:14px;font-size:11px;font-weight:700;color:#fff;background:var(--blue);padding:2px 8px;border-radius:999px}
 @media (max-width:1100px){.nstrip{grid-template-columns:1fr 1fr 1fr 1fr;gap:10px 0}.nband{grid-row:auto;grid-column:1/-1;margin-top:8px}.ncol{grid-row:auto;grid-column:auto!important}.ncol.wide{grid-column:span 2!important}}
 @media (max-width:760px){
@@ -438,7 +433,6 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
   .ncol{grid-column:1/-1!important}
   .ncol.jam{grid-column:auto!important}
   .nd .dt b{font-size:34px}
-  .nsafe{margin:14px 21px 0;padding:14px 16px;font-size:14px}
 }
 
 /* emergency */
@@ -799,14 +793,14 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <div class="pass" aria-label="Trip summary">
         <div class="pass-head"><span data-zh="登機證 · ReLEAF 團隊">Boarding pass · Team ReLEAF</span><img src="img/logo.png" alt=""></div>
         <div class="leg">
-          <div class="code">TPE<small data-zh="台北 · 11/9（一）BR87">Taipei · Mon 9 Nov · BR87</small></div>
+          <div class="code">TPE<small data-zh="台北 · 11/10（二）BR087">Taipei · Tue 10 Nov · BR087</small></div>
           <div class="path"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" transform="rotate(90 12 12)"/></svg></div>
-          <div class="code" style="text-align:right">PAR<small data-zh="巴黎 · 11/10（二）">Paris · Tue 10 Nov</small></div>
+          <div class="code" style="text-align:right">PAR<small data-zh="巴黎 · 11/11（三）">Paris · Wed 11 Nov</small></div>
         </div>
         <div class="leg">
-          <div class="code">PAR<small data-zh="巴黎 · 11/18（三）">Paris · Wed 18 Nov</small></div>
+          <div class="code">PAR<small data-zh="巴黎 · 11/17（二）BR088">Paris · Tue 17 Nov · BR088</small></div>
           <div class="path"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" transform="rotate(90 12 12)"/></svg></div>
-          <div class="code" style="text-align:right">TPE<small data-zh="回家">Home</small></div>
+          <div class="code" style="text-align:right">TPE<small data-zh="台北 · 11/18（三）">Taipei · Wed 18 Nov</small></div>
         </div>
         <div class="pass-row">
           <div><span data-zh="入口">Gate</span><b data-zh="7 號館 3 樓">Pavilion 7, 3F</b></div>
@@ -886,7 +880,6 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <span class="c-stage"><i class="bul"></i><em data-zh="舞台演講與攤位">Stage talk &amp; booth</em></span>
       <span class="c-final"><i class="bul"></i><em data-zh="決賽">Finalist</em></span>
       <span class="c-paris"><i class="bul"></i><em data-zh="巴黎準備">Paris prep</em></span>
-      <span class="c-tour"><i class="bul"></i><em data-zh="市區觀光">City tour</em></span>
       <span class="c-travel"><i class="bul"></i><em data-zh="交通">Travel</em></span>
     </div>
     <div class="calrow">
@@ -898,11 +891,10 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
 
 <section class="trip" id="trip" aria-labelledby="trip-h">
   <div class="wrap trip-head">
-    <span class="eyebrow" data-zh="完整行程 · 巴黎時間">The whole trip · Paris time</span>
-    <h2 id="trip-h" data-zh="巴黎九天。">Nine days in Paris.</h2>
+    <span class="eyebrow" data-zh="完整行程 · 當地時間">The whole trip · local times</span>
+    <h2 id="trip-h" data-zh="九天，從台北出發，回到台北。">Nine days, Taipei to Taipei.</h2>
   </div>
   <div class="nstrip" id="nstrip"></div>
-  <p class="nsafe"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9L1.8 18.5A2 2 0 0 0 3.5 21.5h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17.6v.1"/></svg><span data-zh="<b>市區觀光的安全安排仍在討論中。</b>指導老師與家長正在討論市區觀光的安全疑慮與措施。原則上學生不會自行在市區自由活動，除非家長明確同意，並經指導老師確認。"><b>City tour safety is still being discussed.</b> Instructors and parents are working through the safety concerns and measures for the city tour days. Students probably won't explore the city on their own, unless a parent gives firm consent and agrees it with the instructors.</span></p>
 </section>
 
 <section class="s" id="jamboree">
@@ -1118,7 +1110,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
         <div class="meet">
           <div><i>1</i><div><b data-zh="大會期間">During the Jamboree</b><span data-zh="攤位 H-17 · 7 號館 3 樓，生物製造村">Booth H-17 · Pavilion 7, 3rd floor, Biomanufacturing Village</span></div></div>
           <div><i>2</i><div><b data-zh="其他時間">Any other time</b><span data-zh="飯店大廳 · 5 Rue Ernest Renan">The hotel lobby · 5 Rue Ernest Renan</span></div></div>
-          <div><i>3</i><div><b data-zh="市區觀光時">On a city tour</b><span data-zh="分組前指導老師指定的地點">The spot your instructor names before the group splits up</span></div></div>
+          <div><i>3</i><div><b data-zh="團體外出時">Out with the group</b><span data-zh="出發前指導老師指定的地點">The spot your instructor names before you set off</span></div></div>
         </div>
         <div class="label" style="margin-top:22px" data-zh="遺失或被偷">Lost or stolen</div>
         <ul class="lost">
@@ -1184,7 +1176,7 @@ function P(m,d,h,mi){return new Date(Date.UTC(2026,m-1,d,h-1,mi||0))}
 function T(m,d,h,mi){return new Date(Date.UTC(2026,m-1,d,h-8,mi||0))}
 function key(dt,tz){return new Intl.DateTimeFormat('en-CA',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit'}).format(dt)}
 function hm(dt,tz){return new Intl.DateTimeFormat('en-GB',{timeZone:tz,hour:'2-digit',minute:'2-digit',hour12:false}).format(dt)}
-function inParis(dt){return dt>=P(11,10,8)&&dt<P(11,18,12)}
+function inParis(dt){return dt>=P(11,11,7,45)&&dt<P(11,17,11,20)}
 function homeTZ(){return inParis(now())?PA:TW}
 function kd(k){var a=k.split('-');return new Date(Date.UTC(+a[0],a[1]-1,+a[2]))}
 function dayDiff(a,b){return Math.round((kd(b)-kd(a))/864e5)}
@@ -1199,9 +1191,9 @@ function loc(){return LANG==='zh'?'zh-TW':'en-GB'}
 var ZH={
  // calendar
  'Content Freeze':'內容凍結','Wiki Freeze':'Wiki 凍結','Judging Mock':'模擬評審','Presentation Video D3':'簡報影片 D3','Final video + upload again':'影片定稿並重新上傳',
- 'Video Freeze':'影片凍結','Fly to Paris · BR87 23:30':'飛往巴黎 · BR87 23:30','Land in Paris':'抵達巴黎','Settle in · Carrefour run':'安頓 · Carrefour 採買',
- 'Half-day city tour':'半日市區觀光','City tour':'市區觀光','Team prep 21:00':'團隊準備 21:00','Prep day at the hotel':'飯店準備日','Badge pickup 13:00':'領取識別證 13:00',
- 'City tour day':'市區觀光日','Shuttle to CDG 07:00':'接駁車到機場 07:00','Plant meeting with Kyle':'與 Kyle 的植物會議','Judging Slides':'評審簡報','Live Stage Talk ×2':'舞台演講 ×2','Merch Prep':'周邊準備',
+ 'Video Freeze':'影片凍結','Fly to Paris · BR087 23:30':'飛往巴黎 · BR087 23:30','Land in Paris 07:45':'抵達巴黎 07:45','Shuttle to CDG, early':'一早搭接駁車到機場','Fly home · BR088 11:20':'搭 BR088 返台 11:20','Land in Taipei 07:20':'抵達台北 07:20','Settle in · Carrefour run':'安頓 · Carrefour 採買',
+ 'Team prep 21:00':'團隊準備 21:00','Prep day at the hotel':'飯店準備日','Badge pickup 13:00':'領取識別證 13:00',
+ 'Plant meeting with Kyle':'與 Kyle 的植物會議','Judging Slides':'評審簡報','Live Stage Talk ×2':'舞台演講 ×2','Merch Prep':'周邊準備',
  'Finalist Slides Prep':'決賽簡報準備','Paris Prep':'巴黎行前準備','Fly to Paris':'飛往巴黎','Jamboree Day 1':'大會第 1 天','Judging 12:00':'評審 12:00',
  'Jamboree Day 2 · Booth':'大會第 2 天 · 攤位','Jamboree Day 3':'大會第 3 天','Live Stage Talk 14:40':'舞台演講 14:40','Final Day':'決賽日','Finalist Presentation':'決賽簡報','Fly home':'返程',
  // board
@@ -1209,7 +1201,7 @@ var ZH={
  'Fri 13 Nov':'11 月 13 日（五）','Sat 14 Nov':'11 月 14 日（六）','Sun 15 Nov':'11 月 15 日（日）','Mon 16 Nov':'11 月 16 日（一）',
  'Booth + judging':'攤位 + 評審','Booth all day':'整天攤位','Stage talk':'舞台演講','Final day':'決賽日',
  'Breakfast':'早餐','Opening show':'開幕典禮','Judging session':'評審場次','Dinner around the hotel':'飯店附近晚餐','Prep':'準備','Live Stage Talk':'舞台演講',
- 'City tour':'城市導覽','Finalist prep':'決賽準備','if we make the final':'若進入決賽','Final Day show':'決賽日典禮','iGEM after party':'iGEM 閉幕派對',
+ 'Finalist prep':'決賽準備','if we make the final':'若進入決賽','Final Day show':'決賽日典禮','iGEM after party':'iGEM 閉幕派對',
  // roster
  'HP':'人文實踐','Bioreactor / Dry lab':'生物反應器 / 乾實驗','Plant model':'植物模型','Math model':'數學模型','Wet lab':'濕實驗',
  // materials
@@ -1232,7 +1224,7 @@ var ZH={
  // tasks
  'Judging session prep':'評審場次準備','Five-minute slides and the Q&A sheet, ahead of Saturday\'s mock':'週六模擬評審前，準備五分鐘簡報與問答表',
  'Live stage talk prep':'舞台演講準備','Two run-throughs on Saturday 31 October':'10 月 31 日（六）兩次彩排','Before-we-fly lab goals':'出發前的實驗目標',
- 'Five to finish before 9 November':'11 月 9 日前完成五項','See the five':'查看五項目標','Practise the two-minute pitch':'練習兩分鐘介紹',
+ 'Five to finish before 10 November':'11 月 10 日前完成五項','See the five':'查看五項目標','Practise the two-minute pitch':'練習兩分鐘介紹',
  'Watch last year\'s booth, then pitch ReLEAF out loud':'看去年的攤位影片，然後大聲介紹 ReLEAF','Pitch it':'開始練習',
  'Meeting with Kyle, plant postdoc':'與植物博士後 Kyle 開會','Go through the plant Q&As and learn how to present the plant data':'逐題討論植物問答，學習如何呈現植物數據',
  'Important':'重要','Tonight':'今晚','Today\'s goals':'今日目標',
@@ -1261,26 +1253,25 @@ var CAL={
   '2026-10-31':[MOCK,SLIDES,LST,MERCH],
   '2026-11-01':[MOCK,SLIDES,LST,MERCH],
   '2026-11-07':[MOCK,SLIDES,LST,MERCH,['Finalist Slides Prep','final'],['Paris Prep','paris']],
-  '2026-11-09':[['Fly to Paris · BR87 23:30','travel',1]],
-  '2026-11-10':[['Land in Paris','travel',1],['Settle in · Carrefour run','paris'],['Half-day city tour','tour']],
-  '2026-11-11':[['City tour','tour'],['Team prep 21:00','stage']],
+  '2026-11-10':[['Fly to Paris · BR087 23:30','travel',1]],
+  '2026-11-11':[['Land in Paris 07:45','travel',1],['Settle in · Carrefour run','paris'],['Team prep 21:00','stage']],
   '2026-11-12':[['Prep day at the hotel','stage'],['Badge pickup 13:00','deliv',1]],
   '2026-11-13':[['Jamboree Day 1','jam'],['Judging 12:00','deliv',1]],
   '2026-11-14':[['Jamboree Day 2 · Booth','jam']],
   '2026-11-15':[['Jamboree Day 3','jam'],['Live Stage Talk 14:40','stage',1]],
   '2026-11-16':[['Final Day','jam'],['Finalist Presentation','final',1]],
-  '2026-11-17':[['City tour day','tour']],
-  '2026-11-18':[['Shuttle to CDG 07:00','travel'],['Fly home','travel',1]]
+  '2026-11-17':[['Shuttle to CDG, early','travel'],['Fly home · BR088 11:20','travel',1]],
+  '2026-11-18':[['Land in Taipei 07:20','travel',1]]
 };
 
 /* ---------- moments with exact times ---------- */
 var MOMENTS=[
   {k:'2026-10-28',t:'Video Freeze',at:T(10,28,23,59),dateOnly:1},
-  {k:'2026-11-09',t:'Fly to Paris',at:T(11,9,23,30)},
+  {k:'2026-11-10',t:'Fly to Paris',at:T(11,10,23,30)},
   {k:'2026-11-13',t:'Judging session',at:P(11,13,12,0)},
   {k:'2026-11-15',t:'Live Stage Talk',at:P(11,15,14,40)},
   {k:'2026-11-16',t:'Final Day show',at:P(11,16,14,0)},
-  {k:'2026-11-18',t:'Fly home',at:T(11,18,0,0),dateOnly:1}
+  {k:'2026-11-17',t:'Fly home',at:P(11,17,11,20)}
 ];
 
 /* ---------- Jamboree board (2026 Paris itinerary sheet) ---------- */
@@ -1304,12 +1295,11 @@ var DAYS=[
   {s:14+40/60,e:14+50/60,t:'Live Stage Talk',sub:'14:40–14:50',c:'stage'}]},
  {k:'2026-11-16',d:'Mon 16',t:'Final day',b:[
   {s:7,e:8,t:'Breakfast',c:'meal'},
-  {s:8,e:13,t:'City tour',c:'tour',half:'l'},
-  {s:8,e:13,t:'Finalist prep',sub:'if we make the final',c:'finalp',half:'r'},
+  {s:8,e:13,t:'Finalist prep',sub:'if we make the final',c:'finalp'},
   {s:14,e:18,t:'Final Day show',c:'grad'},
   {s:19,e:22,t:'iGEM after party',c:'party'}]}
 ];
-var CLS={meal:'meal',prep:'prep',tour:'tour',grad:'grad solid',judge:'solid',stage:'solid',finalp:'',party:'grad solid'};
+var CLS={meal:'meal',prep:'prep',grad:'grad solid',judge:'solid',stage:'solid',finalp:'',party:'grad solid'};
 var CVAR={judge:'var(--red)',stage:'var(--green)',finalp:'var(--violet)'};
 
 /* ---------- roster (Booth Roster sheet) ---------- */
@@ -1385,7 +1375,7 @@ var GOALS=[
 /* ---------- today's goals, by Taipei date ---------- */
 var JUDGEPREP={t:'Judging session prep',w:'Five-minute slides and the Q&A sheet, ahead of Saturday\'s mock',l:[LK('Judging Training Site'),LK('5-min slides and script'),LK('2026 QA prep'),LK('Plant Training Site')]};
 var STAGEPREP={t:'Live stage talk prep',w:'Two run-throughs on Saturday 31 October',l:[LK('Stage Talk Prep'),LK('Talk ideas')]};
-var LABGOALS={t:'Before-we-fly lab goals',w:'Five to finish before 9 November',l:[['See the five','#achieve']]};
+var LABGOALS={t:'Before-we-fly lab goals',w:'Five to finish before 10 November',l:[['See the five','#achieve']]};
 var PITCH={t:'Practise the two-minute pitch',w:'Watch last year\'s booth, then pitch ReLEAF out loud',l:[['Pitch it','#pitch']]};
 var TASKS={
  '2026-10-28':{h:'Plant meeting with Kyle',l:[
@@ -1403,11 +1393,11 @@ function span(ms){
 
 function hero(){
   var n=now(),tk=key(n,homeTZ()),big=$('big'),kick=$('kick');
-  var fly=dayDiff(tk,'2026-11-09');
+  var fly=dayDiff(tk,'2026-11-10');
   $('h1').innerHTML=L('Next stop,<br><span class="gt">Paris.</span>','下一站，<br><span class="gt">巴黎。</span>');
   if(fly>0){
     var jd=dayDiff(tk,'2026-11-13');
-    big.innerHTML='<span class="n tw">'+fly+'</span><span class="u">'+L((fly===1?'day':'days')+' until we fly<small>Monday 9 November, 23:30 · BR87 to Paris</small>','天後出發<small>11 月 9 日（一）23:30 · BR87 飛往巴黎</small>')+'</span>';
+    big.innerHTML='<span class="n tw">'+fly+'</span><span class="u">'+L((fly===1?'day':'days')+' until we fly<small>Tuesday 10 November, 23:30 · BR087 to Paris</small>','天後出發<small>11 月 10 日（二）23:30 · BR087 飛往巴黎</small>')+'</span>';
     kick.textContent='GEMS Taiwan · ReLEAF · '+L(jd+' days to judging','距評審 '+jd+' 天');
   }else if(fly===0){
     big.innerHTML='<span class="n">'+L('Today','今天')+'</span><span class="u">'+L('we fly<small>Bon voyage, ReLEAF</small>','出發<small>一路順風，ReLEAF</small>')+'</span>';
@@ -1430,7 +1420,7 @@ function hero(){
 }
 
 function journey(){
-  var stops=[['2026-10-21',L('Wiki freeze','Wiki 凍結')],['2026-10-28',L('Video freeze','影片凍結')],['2026-11-09',L('Fly','出發')],['2026-11-13',L('Judging','評審')],['2026-11-16',L('Final day','決賽日')],['2026-11-18',L('Home','回家')]];
+  var stops=[['2026-10-21',L('Wiki freeze','Wiki 凍結')],['2026-10-28',L('Video freeze','影片凍結')],['2026-11-10',L('Fly','出發')],['2026-11-13',L('Judging','評審')],['2026-11-16',L('Final day','決賽日')],['2026-11-18',L('Home','回家')]];
   stops.forEach(function(x){x[2]=LANG==='zh'?(+x[0].slice(5,7))+'/'+(+x[0].slice(8)):fmtKey(x[0],{day:'numeric',month:'short'})});
   var a=kd('2026-10-21'),b=kd('2026-11-18'),tk=key(now(),homeTZ());
   var pos=function(k){return Math.min(100,Math.max(0,(kd(k)-a)/(b-a)*100))};
@@ -1489,7 +1479,7 @@ function twH(x){return fmtH((x+7)%24)}
 function today(){
   var n=now(),tz=homeTZ(),tk=key(n,tz),ev=CAL[tk]||[];
   $('today-h').textContent=fmtKey(tk,{weekday:'long',day:'numeric',month:'long'});
-  var fly=dayDiff(tk,'2026-11-09');
+  var fly=dayDiff(tk,'2026-11-10');
   var day=DAYS.filter(function(d){return d.k===key(n,PA)})[0],li='';
   if(day&&inParis(n)){
     $('today-label').textContent=L('Today in Paris','今天在巴黎');
@@ -1653,7 +1643,7 @@ var heroEl=$('top');
 function fab(){$('fab').classList.toggle('on',heroEl.getBoundingClientRect().bottom<0)}
 window.addEventListener('scroll',fab,{passive:true});fab();
 function goals(force){
-  var tk=key(now(),homeTZ()),fly=dayDiff(tk,'2026-11-09'),el=$('achieve');
+  var tk=key(now(),homeTZ()),fly=dayDiff(tk,'2026-11-10'),el=$('achieve');
   var lead='<div class="label">'+L('Before we fly','出發前')+'</div>'+(fly>0?'<div class="n tw">'+fly+'</div><div class="u">'+L((fly===1?'day':'days')+' to finish all five','天內完成五項目標')+'</div>':'<div class="n">'+L('Go','出發')+'</div><div class="u">'+L('Wheels up','起飛')+'</div>');
   if(el.firstChild&&!force){el.firstChild.innerHTML=lead;return}
   var h='<div class="glead rv">'+lead+'</div>';
@@ -1800,19 +1790,18 @@ function hoodPick(i,fromList){
 }
 
 
-/* ---------- nine days in Paris: the four Jamboree days open up as you scroll ---------- */
+/* ---------- the whole trip, Taipei to Taipei ---------- */
 var TRIP=[
- {d:'2026-11-10',k:'arrive',t:['Arrival','抵達'],i:[['≈ 08:00','Land at CDG on BR87','BR87 抵達戴高樂機場'],['','Shuttle bus to the hotel','接駁車到飯店'],['12:00','Check in','入住飯店'],['','Walk the neighbourhood, Carrefour City run','熟悉飯店周邊，到 Carrefour City 採買'],['PM','Half-day city tour','半日市區觀光']]},
- {d:'2026-11-11',k:'tour',safe:1,t:['City tour','市區觀光'],i:[['','A full day in the city','整天市區觀光'],['21:00','Team prep: run-throughs and booth prep','團隊準備：簡報演練與攤位準備']]},
+ {d:'2026-11-10',k:'depart',t:['Depart','出發'],i:[['23:30','BR087 leaves Taipei','BR087 從台北出發'],['','Overnight flight to Paris','夜間航班飛往巴黎']]},
+ {d:'2026-11-11',k:'arrive',t:['Arrival','抵達'],i:[['07:45','Land at CDG','抵達戴高樂機場'],['','Shuttle bus to the hotel','接駁車到飯店'],['12:00','Check in','入住飯店'],['','Walk the neighbourhood, Carrefour City run','熟悉飯店周邊，到 Carrefour City 採買'],['21:00','Team prep: run-throughs and booth prep','團隊準備：簡報演練與攤位準備']]},
  {d:'2026-11-12',k:'prep',t:['Prep day','準備日'],i:[['AM','At the hotel: judging and booth prep','留在飯店：評審與攤位準備'],['13:00','Badge pickup at the venue','到會場領取識別證'],['','Back to the hotel to rest','回飯店休息'],['','Meals near the hotel, no city trips','在飯店附近用餐，不進市區']]},
  {d:'2026-11-13',k:'jam',t:['Opening + judging','開幕 + 評審'],i:[['09:00','Opening show','開幕典禮'],['12:00','Judging session','評審場次'],['14:00','Booth H-17 shifts begin','H-17 攤位排班開始']]},
  {d:'2026-11-14',k:'jam',t:['Booth day','攤位日'],i:[['09:00','Booth H-17 all day','H-17 攤位整天排班'],['17:00','Full team at the booth','全隊在攤位']]},
  {d:'2026-11-15',k:'jam',t:['Stage talk','舞台演講'],i:[['AM','Prep','準備'],['14:40','Live Stage Talk','舞台演講']]},
  {d:'2026-11-16',k:'jam',t:['Final day','決賽日'],i:[['14:00','Final Day show','決賽日典禮'],['19:00','iGEM after party','iGEM 閉幕派對']]},
- {d:'2026-11-17',k:'tour',safe:1,t:['City tour','市區觀光'],i:[['','A full day in the city, everything done','活動結束，整天市區觀光'],['','Safety first: stay with your group','安全第一：與團隊同行']]},
- {d:'2026-11-18',k:'home',t:['Home','返程'],i:[['','Early wake-up','一早起床'],['07:00','Shuttle bus to the airport','接駁車前往機場'],['','Fly home','搭機返台']]}
+ {d:'2026-11-17',k:'home',t:['Fly home','返程'],i:[['','Early start: shuttle bus to CDG','一大早搭接駁車到戴高樂機場'],['11:20','BR088 leaves Paris','BR088 從巴黎起飛']]},
+ {d:'2026-11-18',k:'home',t:['Home','回家'],i:[['07:20','Land in Taipei','抵達台北']]}
 ];
-var SAFEI='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9L1.8 18.5A2 2 0 0 0 3.5 21.5h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17.6v.1"/></svg>';
 function trip(){
   var tk=key(now(),PA),h='',band='<div class="nband"><b>'+L('Grand Jamboree · Days 4–7','Grand Jamboree · 第 4–7 天')+'</b><span>'+L('Around the Convention Centre, with the odd dinner in the city','在會議中心周邊，偶爾進市區吃晚餐')+'</span></div>';
   TRIP.forEach(function(x,i){
@@ -1820,7 +1809,7 @@ function trip(){
     if(i===3)h+=band;
     h+='<div class="ncol'+(jam?' jam':' wide')+'" style="grid-column:'+(i+1)+'"><div class="nd k-'+x.k+(on?' now':'')+'">'+(on?'<span class="nowtag">'+L('Today','今天')+'</span>':'');
     h+='<div class="dn">'+L('Day '+(i+1),'第 '+(i+1)+' 天')+'</div><div class="dt"><b class="tw">'+(+x.d.slice(8))+'</b><span>'+fmtKey(x.d,{weekday:'short'})+' · '+fmtKey(x.d,{month:'short'})+'</span></div>';
-    h+='<h3>'+esc(L(x.t[0],x.t[1]))+'</h3>'+(x.safe?'<span class="safe">'+SAFEI+L('Safety concerns','安全疑慮')+'</span>':'')+'<ul>';
+    h+='<h3>'+esc(L(x.t[0],x.t[1]))+'</h3><ul>';
     x.i.forEach(function(it){h+='<li>'+(it[0]?'<b>'+esc(it[0])+'</b>':'')+esc(L(it[1],it[2]))+'</li>'});
     h+='</ul></div></div>';
   });
