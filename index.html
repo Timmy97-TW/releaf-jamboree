@@ -1803,7 +1803,7 @@ var TRIP=[
  {d:'2026-11-18',k:'home',t:['Home','回家'],i:[['07:20','Land in Taipei','抵達台北']]}
 ];
 function trip(){
-  var tk=key(now(),PA),h='',band='<div class="nband"><b>'+L('Grand Jamboree · Days 4–7','Grand Jamboree · 第 4–7 天')+'</b><span>'+L('Around the Convention Centre, with the odd dinner in the city','在會議中心周邊，偶爾進市區吃晚餐')+'</span></div>';
+  var tk=key(now(),PA),h='',band='<div class="nband"><b>'+L('Grand Jamboree · Days 4–7','Grand Jamboree · 第 4–7 天')+'</b><span>'+L('Around the Convention Centre','在會議中心周邊')+'</span></div>';
   TRIP.forEach(function(x,i){
     var jam=x.k==='jam',on=x.d===tk;
     if(i===3)h+=band;
