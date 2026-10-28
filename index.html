@@ -425,7 +425,6 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .nd.k-jam li b{color:#0B7FB8}
 .nd.now{box-shadow:0 0 0 2px var(--blue),0 10px 30px rgba(1,103,239,.15)}
 .nd .nowtag{position:absolute;right:12px;top:14px;font-size:11px;font-weight:700;color:#fff;background:var(--blue);padding:2px 8px;border-radius:999px}
-#sched{transform-origin:50% 0;will-change:transform}
 @media (max-width:1100px){.nstrip{grid-template-columns:1fr 1fr 1fr 1fr;gap:10px 0}.nband{grid-row:auto;grid-column:1/-1;margin-top:8px}.ncol{grid-row:auto;grid-column:auto!important}.ncol.wide{grid-column:span 2!important}}
 @media (max-width:760px){
   .trip{padding-top:60px}
@@ -442,14 +441,11 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .nlinks a.nsos.on{color:#fff;background:rgba(229,72,77,.35)}
 .sos-top{display:grid;grid-template-columns:1.25fr 1fr;gap:18px;margin-bottom:18px}
 .s112{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:220px;border-radius:var(--r);padding:26px 28px;color:#fff;background:linear-gradient(150deg,#F2555A,#C8262C);box-shadow:0 20px 50px rgba(200,38,44,.25)}
-.s112:hover{text-decoration:none;filter:brightness(1.04)}
 .s112:after{content:"";position:absolute;right:-90px;bottom:-120px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.22),transparent 65%)}
 .s112 span{font-size:15px;font-weight:600;opacity:.9;max-width:22em}
 .s112 b{font-size:clamp(96px,12vw,150px);font-weight:700;letter-spacing:-.05em;line-height:.9}
-.s112 em{font-style:normal;font-size:14px;font-weight:600;opacity:.85}
 .s3{display:grid;grid-template-rows:repeat(3,1fr);gap:10px}
-.s3 a{display:flex;align-items:center;gap:18px;background:var(--card);border-radius:18px;padding:14px 22px;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.04);transition:transform .2s,box-shadow .2s}
-.s3 a:hover{text-decoration:none;transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,.06)}
+.s3>div{display:flex;align-items:center;gap:18px;background:var(--card);border-radius:18px;padding:14px 22px;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.04);transition:transform .2s,box-shadow .2s}
 .s3 b{font-size:40px;font-weight:700;letter-spacing:-.04em;color:var(--red);min-width:56px}
 .s3 span{font-size:16px;font-weight:600}
 .sos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
@@ -458,7 +454,6 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .scard .row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 0;border-top:1px solid var(--line)}
 .scard .row span{font-size:14px;color:var(--ink2)}
 .tel{font-size:17px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
-.tel:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:8px;vertical-align:2px}
 .people{list-style:none;margin:0;padding:0}
 .people li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
 .people li:first-child{border-top:0}
@@ -492,7 +487,7 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
   .sos-top,.sos-grid,.sos-grid.two{grid-template-columns:1fr}
   .s112{min-height:180px;padding:22px}
   .s3{grid-template-rows:none;grid-template-columns:repeat(3,1fr)}
-  .s3 a{flex-direction:column;align-items:flex-start;gap:2px;padding:14px}
+  .s3>div{flex-direction:column;align-items:flex-start;gap:2px;padding:14px}
   .s3 b{font-size:34px;min-width:0}
   .s3 span{font-size:13.5px}
 }
@@ -909,7 +904,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
     <h2 data-zh="7 號館的四天。">Four days in Pavilion 7.</h2>
     <p class="sub" data-zh="巴黎時間，台北時間請加 7 小時。">Paris time. Add 7 hours for Taipei.</p>
     <div class="seg" id="seg" role="tablist"></div>
-    <div class="zwrap" id="zwrap"><div class="sched" id="sched"></div></div>
+    <div class="sched rv" id="sched"></div>
     <div class="moments" id="moments"></div>
   </div>
 </section>
@@ -1059,11 +1054,11 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
     <h2 id="sos-h" data-zh="注意安全，團體行動。">Stay safe, stay together.</h2>
 
     <div class="sos-top rv">
-      <a class="s112" href="tel:112"><span data-zh="歐洲緊急電話 · 任何手機皆可免費撥打">European emergency number · free from any phone</span><b>112</b><em data-zh="點一下撥打">Tap to call</em></a>
+      <div class="s112"><span data-zh="歐洲緊急電話 · 任何手機皆可免費撥打">European emergency number · free from any phone</span><b>112</b></div>
       <div class="s3">
-        <a href="tel:15"><b>15</b><span data-zh="醫療急救（SAMU）">Medical (SAMU)</span></a>
-        <a href="tel:17"><b>17</b><span data-zh="警察">Police</span></a>
-        <a href="tel:18"><b>18</b><span data-zh="消防">Fire</span></a>
+        <div><b>15</b><span data-zh="醫療急救（SAMU）">Medical (SAMU)</span></div>
+        <div><b>17</b><span data-zh="警察">Police</span></div>
+        <div><b>18</b><span data-zh="消防">Fire</span></div>
       </div>
     </div>
 
@@ -1082,15 +1077,15 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <div class="card scard rv">
         <div class="label" data-zh="台灣的協助">Help from Taiwan</div>
         <h3 data-zh="駐法國台北代表處">Taipei Representative Office in France</h3>
-        <div class="row"><span data-zh="急難救助專線（僅限緊急狀況）">Emergencies only</span><a class="tel" href="tel:+33680074994">+33 6 80 07 49 94</a></div>
+        <div class="row"><span data-zh="急難救助專線（僅限緊急狀況）">Emergencies only</span><span class="tel">+33 6 80 07 49 94</span></div>
         <h3 style="margin-top:18px" data-zh="外交部旅外國人急難救助">Emergency line for R.O.C. nationals abroad</h3>
-        <div class="row"><span data-zh="全球免付費">Free worldwide</span><a class="tel" href="tel:0080008850885">00 800 0885 0885</a></div>
+        <div class="row"><span data-zh="全球免付費">Free worldwide</span><span class="tel">00 800 0885 0885</span></div>
       </div>
       <div class="card scard hotel rv">
         <div class="label" data-zh="我們的飯店">Our hotel</div>
         <h3>Courtyard by Marriott Paris Porte de Versailles</h3>
         <p class="addr">5 Rue Ernest Renan<br>92130 Issy-les-Moulineaux, France</p>
-        <div class="row"><span data-zh="櫃台">Front desk</span><a class="tel" href="tel:+33185746454">+33 1 85 74 64 54</a></div>
+        <div class="row"><span data-zh="櫃台">Front desk</span><span class="tel">+33 1 85 74 64 54</span></div>
         <div class="taxi"><span data-zh="給計程車司機看：">Show a taxi driver:</span>« Hôtel Courtyard by Marriott, 5 rue Ernest Renan, Issy-les-Moulineaux »</div>
         <div class="btns">
           <a class="btn" href="https://maps.google.com/?q=Courtyard+by+Marriott+Paris+Porte+de+Versailles,+5+Rue+Ernest+Renan,+92130+Issy-les-Moulineaux" target="_blank" rel="noopener" data-zh="Google 地圖">Google Maps</a>
@@ -1822,23 +1817,7 @@ function trip(){
     h+='</ul></div></div>';
   });
   $('nstrip').innerHTML=h;
-  jamZoom();
 }
-/* the four Jamboree columns zoom out into the hour board below */
-var ZSTATIC=window.matchMedia?matchMedia('(max-width:1100px),(prefers-reduced-motion:reduce)'):null;
-function jamZoom(){
-  var b=$('sched'),cols=document.querySelectorAll('#nstrip .ncol.jam');
-  if(!cols.length)return;
-  if(ZSTATIC&&ZSTATIC.matches){b.style.transform='';b.style.opacity='';return}
-  var g0=cols[0].getBoundingClientRect(),g1=cols[cols.length-1].getBoundingClientRect(),z=$('zwrap').getBoundingClientRect();
-  var bl=z.left,bw=z.width,top=z.top;
-  var s0=Math.min(1,Math.max(.3,(g1.right-g0.left)/bw)),dx0=(g0.left+g1.right)/2-(bl+bw/2);
-  var p=Math.min(1,Math.max(0,(innerHeight-top)/(innerHeight*.8))),e=1-Math.pow(1-p,3);
-  b.style.transform='translateX('+(dx0*(1-e)).toFixed(1)+'px) scale('+(s0+(1-s0)*e).toFixed(4)+')';
-  b.style.opacity=(.25+.75*e).toFixed(3);
-}
-window.addEventListener('scroll',jamZoom,{passive:true});window.addEventListener('resize',jamZoom);
-
 /* ---------- language switch ---------- */
 var ZEL=[].slice.call(document.querySelectorAll('[data-zh]')),ZPH=[].slice.call(document.querySelectorAll('[data-zh-ph]'));
 ZEL.forEach(function(el){el._en=el.innerHTML});
