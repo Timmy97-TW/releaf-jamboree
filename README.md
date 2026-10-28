@@ -9,6 +9,10 @@ Live: https://timmy97-tw.github.io/releaf-jamboree/
 One page, `index.html`, no build step and no external requests. All data sits in the script block near the
 bottom (`CAL`, `DAYS`, `ROLES`, `MAT`, `LINKS`, `GOALS`, `TASKS`, `ROOMS`); edit those arrays and push.
 
+English and Traditional Chinese: fixed text carries its Chinese in a `data-zh` attribute; text the script builds
+goes through `L(en, zh)` or the `ZH` dictionary (`tx()`). The choice is remembered per browser and defaults to
+Chinese when the browser language is Chinese.
+
 The two maps are pre-drawn SVGs in `img/` (`paris-map.svg`, `hood-map.svg`) with their pins and route in the
 `CITY` and `HOOD` objects. Streets, shops and restaurants come from OpenStreetMap (October 2026); the red dots are
 the precisely placed reports in the 19 October snapshot of franceriot.xyz (15–19 October unrest). The booth clip
