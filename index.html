@@ -646,21 +646,18 @@ svg.i-sun,svg.i-part{stroke:var(--amber)} svg.i-rain,svg.i-drizzle,svg.i-storm{s
 .wx .note{margin:14px 0 0}
 
 /* what to bring */
-.bring-l{margin:2px 0 12px}
-.must{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-bottom:34px}
-.more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:34px}
-.item{background:var(--card);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-.item figure{margin:0;aspect-ratio:5/4;background:linear-gradient(160deg,#EEF4FE,#E6FAF2);display:grid;place-items:center;padding:22px}
-.must .item figure{aspect-ratio:1/1}
-.item img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 16px 18px rgba(0,6,28,.2)) drop-shadow(0 2px 3px rgba(0,6,28,.12))}
-.item .txt{padding:18px 20px 22px}
-.item h3{font-size:21px;margin:0 0 7px}
-.item p{margin:0;font-size:15px;color:var(--ink2)}
+.bring-l{margin:0 0 10px}
+.kit{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;margin-bottom:22px}
+.item{background:var(--card);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.item figure{margin:0;aspect-ratio:1/1;background:linear-gradient(160deg,#EEF4FE,#E6FAF2);display:grid;place-items:center;padding:14px}
+.item img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 10px 12px rgba(0,6,28,.2)) drop-shadow(0 2px 3px rgba(0,6,28,.12))}
+.item .txt{padding:11px 12px 13px}
+.item h3{font-size:15.5px;letter-spacing:-.01em;line-height:1.2;margin:0 0 4px}
+.item p{margin:0;font-size:12.5px;line-height:1.38;color:var(--ink2)}
 .item p b{color:var(--ink)}
-.forget{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
-.forget li{display:flex;align-items:center;gap:9px;background:var(--card);border-radius:999px;padding:9px 16px 9px 11px;font-size:15px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-.forget li:before{content:"";width:16px;height:16px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1.6px var(--green)}
-.credit{margin:22px 0 0;font-size:12.5px;color:var(--ink3)}
+.forget{margin:0;font-size:14.5px;color:var(--ink2)}
+.forget b{color:var(--ink)}
+.credit{margin:10px 0 0;font-size:12px;color:var(--ink3)}
 
 /* app */
 .appband{background:var(--navy);color:#fff;margin-top:84px;padding:84px 0 90px;position:relative;overflow:hidden}
@@ -703,7 +700,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   .stats{grid-template-columns:repeat(3,1fr)}
   .grid3{grid-template-columns:1fr 1fr}
   .feats{grid-template-columns:1fr 1fr}
-  .must{grid-template-columns:1fr 1fr}
+  .kit{grid-template-columns:repeat(4,minmax(0,1fr))}
   .ytgrid{grid-template-columns:200px 1fr}
   .ytgrid>div:last-child{grid-column:1/-1}
   .cityrow,.hoodrow{grid-template-columns:1fr}
@@ -767,12 +764,16 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   .chips::-webkit-scrollbar{display:none}
   .chips button{flex:none}
   .feats{grid-template-columns:1fr 1fr;gap:10px}
-  .must,.more{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:26px}
-  .item figure{padding:14px}
-  .item .txt{padding:13px 14px 16px}
-  .item h3{font-size:17px;margin-bottom:5px}
-  .item p{font-size:13.5px}
-  .forget li{font-size:14px}
+  .kit{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:18px}
+  .item{border-radius:14px}
+  .item figure{aspect-ratio:5/4;padding:9px}
+  .item .txt{padding:8px 9px 10px}
+  .item h3{font-size:13.5px;margin-bottom:3px}
+  .item p{font-size:11.5px;line-height:1.35}
+  .kit .item:last-child:nth-child(3n+1){grid-column:1/-1;flex-direction:row;align-items:center}
+  .kit .item:last-child:nth-child(3n+1) figure{width:calc((100% - 16px)/3);flex:none}
+  .kit .item:last-child:nth-child(3n+1) .txt{padding:10px 14px}
+  .forget{font-size:13.5px}
   .wx-head{flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:14px}
   .wx-days{gap:4px}
   .wd{padding:9px 1px 10px;border-radius:12px}
@@ -1197,30 +1198,26 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
     <span class="eyebrow" data-zh="攜帶物品">What to bring</span>
     <h2 data-zh="先把這些放進包包。">Pack these first.</h2>
     <div class="label bring-l" data-zh="一定要帶">Essentials</div>
-    <div class="must">
-      <article class="item rv"><figure><img src="img/bring/passport.webp" alt="A green Republic of China (Taiwan) passport" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="護照">Passport</h3><p data-zh="效期至少要到 <b>2027 年 2 月 17 日</b>，也就是回程後再三個月。只放隨身行李，手機裡也存一張資料頁的照片。">Valid until at least <b>17 February 2027</b>, three months past our flight home. Carry-on only, and keep a photo of the info page on your phone.</p></div></article>
-      <article class="item rv"><figure><img src="img/bring/adapter.webp" alt="A travel adapter that takes flat Taiwanese pins and has round European pins" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="轉接頭（C／E 型）">Plug adapter, type C/E</h3><p data-zh="法國插座是圓腳，電壓 230 V。標示 <b>100–240 V</b> 的充電器只要這個轉接頭就能用。只支援 110 V 的吹風機、離子夾需要變壓器，建議不要帶。">French sockets take round pins at 230 V. Chargers marked <b>100–240 V</b> work with just this adapter. Hair dryers and straighteners made for 110 V need a voltage converter, so leave them at home.</p></div></article>
-      <article class="item rv"><figure><img src="img/bring/phone.webp" alt="A smartphone" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="手機">Phone</h3><p data-zh="起飛前開好漫遊或 eSIM，裝好 My iGEM App，存好飯店地址。">Roaming or an eSIM working before take-off, the My iGEM App installed and the hotel address saved.</p></div></article>
-      <article class="item rv"><figure><img src="img/bring/euros.webp" alt="A fan of euro banknotes from 5 to 200" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="信用卡和一些歐元">Card and some euros</h3><p data-zh="一張能在國外使用的卡，出發前先通知銀行。再帶一點歐元現金，在小店用。">A card that works abroad; tell your bank you are travelling. A little euro cash for small shops.</p></div></article>
+    <div class="kit">
+      <article class="item rv"><figure><img src="img/bring/passport.webp" alt="A green Republic of China (Taiwan) passport" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="護照">Passport</h3><p data-zh="效期到 <b>2027/2/17</b> 以後。放隨身行李。">Valid to <b>17 Feb 2027</b> or later. Carry-on.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/adapter.webp" alt="A travel adapter that takes flat Taiwanese pins and has round European pins" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="轉接頭">Plug adapter</h3><p data-zh="圓腳 C／E 型，230 V。110 V 吹風機、離子夾別帶。">Round C/E pins, 230 V. Leave 110 V hair tools home.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/charger.webp" alt="A small white Apple USB charger with flat pins" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="充電器">Charger</h3><p data-zh="標示 100–240 V，接轉接頭就能用。">Says 100–240 V? The adapter is enough.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/phone.webp" alt="A smartphone" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="手機">Phone</h3><p data-zh="裝好 My iGEM App，存好飯店地址。">My iGEM App in, hotel address saved.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/sim.webp" alt="A SIM card" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="漫遊上網">Roaming data</h3><p data-zh="出發前買好漫遊上網方案，在台灣先試用。">Buy a data pack before we fly. Test it at home.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/euros.webp" alt="A fan of euro banknotes from 5 to 200" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="信用卡和歐元">Card and euros</h3><p data-zh="能在國外刷的卡，加一點歐元現金。">A card that works abroad, plus some cash.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/powerbank.webp" alt="A black power bank" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="行動電源">Power bank</h3><p data-zh="隨身行李，最多兩顆，機上不能用。">Carry-on, two at most. No use in flight.</p></div></article>
     </div>
-    <div class="label bring-l" data-zh="也要放進行李">Also in the bag</div>
-    <div class="more">
-      <article class="item rv"><figure><img src="img/bring/charger.webp" alt="A white phone charger with flat pins and a 100–240 V label" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="充電器和線">Charger and cable</h3><p data-zh="看標籤：寫 100–240 V 的，搭配轉接頭就能在法國用。">Check the label. 100–240 V means it works in France with the adapter.</p></div></article>
-      <article class="item rv"><figure><img src="img/bring/powerbank.webp" alt="A black power bank" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="行動電源">Power bank</h3><p data-zh="只能放隨身行李。長榮每人最多兩顆，飛行中禁止使用或充電。">Carry-on only. EVA Air allows two per person and bans using or charging them in flight.</p></div></article>
-      <article class="item rv"><figure><img src="img/bring/coat.webp" alt="A red padded winter jacket" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="保暖外套">Warm coat</h3><p data-zh="白天約 10 °C，晚上接近 0 °C。走去 7 號館是在戶外。">Days around 10 °C, nights close to freezing. The walk to Pavilion 7 is outdoors.</p></div></article>
-      <article class="item rv"><figure><img src="img/bring/umbrella.webp" alt="A folded red umbrella" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="折疊傘">Folding umbrella</h3><p data-zh="巴黎 11 月常陰天、下毛毛雨。小折傘放得進隨身包。">November in Paris is grey and drizzly. A small one fits in your day bag.</p></div></article>
-      <article class="item rv"><figure><img src="img/bring/shoes.webp" alt="A pair of white sneakers" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="好走的鞋">Walking shoes</h3><p data-zh="攤位班要站一整天，從飯店走到 7 號館也要 12 分鐘。">Booth shifts keep you on your feet all day, and Pavilion 7 is a 12-minute walk from the hotel.</p></div></article>
-      <article class="item rv"><figure><img src="img/bring/pills.webp" alt="A weekly pill box" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="個人藥品">Your medicine</h3><p data-zh="保留原包裝，放隨身行李。處方藥請附英文診斷書或處方箋。">In its original box, in your carry-on. Prescription medicine needs a doctor's note in English.</p></div></article>
+    <div class="label bring-l" data-zh="穿的和其他">Wear and carry</div>
+    <div class="kit">
+      <article class="item rv"><figure><img src="img/bring/shirt.webp" alt="A cream T-shirt" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="團隊 T 恤">Team T-shirt</h3><p data-zh="米白色、印著小芽的那件。">The cream one with the seedling.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/hoodie.webp" alt="A dark green zip-up hoodie" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="團隊帽 T">Team hoodie</h3><p data-zh="綠色拉鍊款，也能保暖。">The green zip-up. Warm, too.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/pants.webp" alt="A pair of black trousers" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="黑色長褲">Black pants</h3><p data-zh="上台簡報時穿。">For the stage presentations.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/coat.webp" alt="A red padded winter jacket" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="保暖外套">Warm coat</h3><p data-zh="白天約 10 °C，晚上接近 0 °C。">Days ~10 °C, nights near 0 °C.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/shoes.webp" alt="A pair of white sneakers" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="好走的鞋">Walking shoes</h3><p data-zh="攤位班要站一整天。">Booth shifts mean standing all day.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/umbrella.webp" alt="A folded red umbrella" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="折疊傘">Umbrella</h3><p data-zh="巴黎 11 月常下毛毛雨。">November in Paris drizzles a lot.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/pills.webp" alt="A weekly pill box" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="個人藥品">Medicine</h3><p data-zh="保留原包裝，處方藥附英文證明。">Original box. English note if prescribed.</p></div></article>
     </div>
-    <div class="label bring-l" data-zh="別忘了">Don't forget</div>
-    <ul class="forget rv">
-      <li data-zh="團隊帽 T">Team hoodie</li>
-      <li data-zh="牙刷和盥洗用品">Toothbrush and toiletries</li>
-      <li data-zh="隨身液體每瓶 100 mL 以下，裝透明袋">Liquids under 100 mL in a clear bag</li>
-      <li data-zh="空水壺（過安檢後再裝）">Empty water bottle</li>
-      <li data-zh="旅遊保險資料">Travel insurance details</li>
-      <li data-zh="護照照片備份">Photo of your passport</li>
-    </ul>
+    <p class="forget" data-zh="<b>別忘了：</b>牙刷和盥洗用品 · 隨身液體每瓶 100 mL 以下、裝透明袋 · 空水壺 · 旅遊保險資料 · 護照照片備份"><b>Don't forget:</b> toothbrush and toiletries · liquids under 100 mL in a clear bag · an empty water bottle · travel insurance details · a photo of your passport</p>
     <p class="credit" data-zh="照片：Wikimedia Commons，<a href='https://github.com/Timmy97-TW/releaf-jamboree/blob/main/img/bring/CREDITS.md' target='_blank' rel='noopener'>作者與授權</a>。">Photos: Wikimedia Commons, <a href="https://github.com/Timmy97-TW/releaf-jamboree/blob/main/img/bring/CREDITS.md" target="_blank" rel="noopener">authors and licences</a>.</p>
   </div>
 </section>
