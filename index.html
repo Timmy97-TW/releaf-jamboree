@@ -506,7 +506,7 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 }
 
 .pbanner{margin:0 0 18px;border-radius:var(--r);overflow:hidden}
-.pbanner img{display:block;width:100%;height:clamp(200px,32vw,380px);object-fit:cover;object-position:50% 35%}
+.pbanner img{display:block;width:100%;height:clamp(300px,52vw,600px);object-fit:cover;object-position:50% 40%}
 
 /* maps */
 .floor{margin:40px 0 0;background:#0A1A5C}
@@ -620,6 +620,48 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .room .tag.ins{background:var(--navy);color:#fff}
 .rooms.t3{--c:var(--amber)} .rooms.t2{--c:var(--blue)} .rooms.tp{--c:var(--green)}
 
+/* weather */
+.wx{margin-bottom:18px}
+.wx-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
+.wx-head h3{font-size:21px;margin-top:4px}
+.wx-now{display:flex;align-items:center;gap:10px;font-size:13.5px;line-height:1.3;color:var(--ink2);text-align:left}
+.wx-now b{font-size:34px;font-weight:700;color:var(--ink);letter-spacing:-.03em;line-height:1}
+.wx-now svg{width:30px;height:30px}
+.wx-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.wd{border-radius:16px;padding:12px 6px 14px;text-align:center;background:var(--bg)}
+.wd.jam{background:linear-gradient(160deg,#EEF4FE,#E6FAF2)}
+.wd.on{box-shadow:inset 0 0 0 2px var(--blue)}
+.wd .dn{font-size:12.5px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.05em}
+.wd .dd{font-size:15px;font-weight:600}
+.wd .jt{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#00A3C4;min-height:1.4em;margin-top:2px}
+.wd svg,.wx-now svg{fill:none;stroke:var(--ink2);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.wd svg{width:30px;height:30px;display:block;margin:8px auto 6px}
+svg.i-sun,svg.i-part{stroke:var(--amber)} svg.i-rain,svg.i-drizzle,svg.i-storm{stroke:var(--blue)}
+.wd .hi{font-size:22px;font-weight:700;letter-spacing:-.02em}
+.wd .lo{font-size:15px;color:var(--ink3);margin-left:5px}
+.wd .ds{font-size:12.5px;color:var(--ink2);line-height:1.3;min-height:2.6em;margin-top:2px}
+.wd .rp{font-size:12.5px;font-weight:600;color:var(--blue)}
+.wd.typ .hi,.wd.typ .lo,.wd.typ svg{opacity:.45}
+.wd.typ .ds{color:var(--ink3)}
+.wx .note{margin:14px 0 0}
+
+/* what to bring */
+.bring-l{margin:2px 0 12px}
+.must{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-bottom:34px}
+.more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:34px}
+.item{background:var(--card);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.item figure{margin:0;aspect-ratio:5/4;background:linear-gradient(160deg,#EEF4FE,#E6FAF2);display:grid;place-items:center;padding:22px}
+.must .item figure{aspect-ratio:1/1}
+.item img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 16px 18px rgba(0,6,28,.2)) drop-shadow(0 2px 3px rgba(0,6,28,.12))}
+.item .txt{padding:18px 20px 22px}
+.item h3{font-size:21px;margin:0 0 7px}
+.item p{margin:0;font-size:15px;color:var(--ink2)}
+.item p b{color:var(--ink)}
+.forget{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.forget li{display:flex;align-items:center;gap:9px;background:var(--card);border-radius:999px;padding:9px 16px 9px 11px;font-size:15px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.forget li:before{content:"";width:16px;height:16px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1.6px var(--green)}
+.credit{margin:22px 0 0;font-size:12.5px;color:var(--ink3)}
+
 /* app */
 .appband{background:var(--navy);color:#fff;margin-top:84px;padding:84px 0 90px;position:relative;overflow:hidden}
 .appband:before{content:"";position:absolute;width:700px;height:700px;right:-260px;top:-300px;border-radius:50%;background:radial-gradient(circle,rgba(1,103,239,.45),transparent 65%);pointer-events:none}
@@ -661,6 +703,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   .stats{grid-template-columns:repeat(3,1fr)}
   .grid3{grid-template-columns:1fr 1fr}
   .feats{grid-template-columns:1fr 1fr}
+  .must{grid-template-columns:1fr 1fr}
   .ytgrid{grid-template-columns:200px 1fr}
   .ytgrid>div:last-child{grid-column:1/-1}
   .cityrow,.hoodrow{grid-template-columns:1fr}
@@ -724,6 +767,22 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   .chips::-webkit-scrollbar{display:none}
   .chips button{flex:none}
   .feats{grid-template-columns:1fr 1fr;gap:10px}
+  .must,.more{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:26px}
+  .item figure{padding:14px}
+  .item .txt{padding:13px 14px 16px}
+  .item h3{font-size:17px;margin-bottom:5px}
+  .item p{font-size:13.5px}
+  .forget li{font-size:14px}
+  .wx-head{flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:14px}
+  .wx-days{gap:4px}
+  .wd{padding:9px 1px 10px;border-radius:12px}
+  .wd .dn{font-size:10.5px;letter-spacing:0}
+  .wd .dd{font-size:12px}
+  .wd .jt,.wd .ds{display:none}
+  .wd svg{width:22px;height:22px;margin:6px auto 4px}
+  .wd .hi{font-size:16px;display:block}
+  .wd .lo{font-size:12.5px;margin:0}
+  .wd .rp{font-size:10.5px}
   .feat{padding:16px}
   .feat h3{font-size:17px}
   .feat p{font-size:14px}
@@ -765,7 +824,8 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <li><a href="#paris"><i>10</i><span data-zh="巴黎">Paris</span></a></li>
       <li><a href="#map"><i>11</i><span data-zh="住宿">Stay</span></a></li>
       <li><a href="#sos" class="nsos"><i>12</i><span data-zh="緊急">Emergency</span></a></li>
-      <li><a href="#app"><i>13</i><span>App</span></a></li>
+      <li><a href="#bring"><i>13</i><span data-zh="攜帶">Bring</span></a></li>
+      <li><a href="#app"><i>14</i><span>App</span></a></li>
       <li class="nl-links"><button type="button" data-links><span data-zh="重要連結">Important links</span></button></li>
     </ul>
     <div class="nact">
@@ -970,6 +1030,14 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <div class="stat"><b>9</b><span data-zh="座舞台">stages</span></div>
       <div class="stat"><b>50+</b><span data-zh="個國家與地區">countries &amp; regions</span></div>
     </div>
+    <div class="card wx rv" id="wx">
+      <div class="wx-head">
+        <div><div class="label" data-zh="天氣">Weather</div><h3 data-zh="我們在巴黎的七天">Our seven days in Paris</h3></div>
+        <div class="wx-now" id="wx-now"></div>
+      </div>
+      <div class="wx-days" id="wx-days"></div>
+      <p class="note" id="wx-src"></p>
+    </div>
     <div class="grid3">
       <div class="card info rv">
         <div class="label" data-zh="場地">Venue</div>
@@ -1121,6 +1189,39 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="s" id="bring">
+  <div class="wrap">
+    <span class="eyebrow" data-zh="攜帶物品">What to bring</span>
+    <h2 data-zh="先把這些放進包包。">Pack these first.</h2>
+    <div class="label bring-l" data-zh="一定要帶">Essentials</div>
+    <div class="must">
+      <article class="item rv"><figure><img src="img/bring/passport.webp" alt="A green Republic of China (Taiwan) passport" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="護照">Passport</h3><p data-zh="效期至少要到 <b>2027 年 2 月 17 日</b>，也就是回程後再三個月。只放隨身行李，手機裡也存一張資料頁的照片。">Valid until at least <b>17 February 2027</b>, three months past our flight home. Carry-on only, and keep a photo of the info page on your phone.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/adapter.webp" alt="A travel adapter that takes flat Taiwanese pins and has round European pins" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="轉接頭（C／E 型）">Plug adapter, type C/E</h3><p data-zh="法國插座是圓腳，電壓 230 V。標示 <b>100–240 V</b> 的充電器只要這個轉接頭就能用。只支援 110 V 的吹風機、離子夾需要變壓器，建議不要帶。">French sockets take round pins at 230 V. Chargers marked <b>100–240 V</b> work with just this adapter. Hair dryers and straighteners made for 110 V need a voltage converter, so leave them at home.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/phone.webp" alt="A smartphone" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="手機">Phone</h3><p data-zh="起飛前開好漫遊或 eSIM，裝好 My iGEM App，存好飯店地址。">Roaming or an eSIM working before take-off, the My iGEM App installed and the hotel address saved.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/euros.webp" alt="A fan of euro banknotes from 5 to 200" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="信用卡和一些歐元">Card and some euros</h3><p data-zh="一張能在國外使用的卡，出發前先通知銀行。再帶一點歐元現金，在小店用。">A card that works abroad; tell your bank you are travelling. A little euro cash for small shops.</p></div></article>
+    </div>
+    <div class="label bring-l" data-zh="也要放進行李">Also in the bag</div>
+    <div class="more">
+      <article class="item rv"><figure><img src="img/bring/charger.webp" alt="A white phone charger with flat pins and a 100–240 V label" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="充電器和線">Charger and cable</h3><p data-zh="看標籤：寫 100–240 V 的，搭配轉接頭就能在法國用。">Check the label. 100–240 V means it works in France with the adapter.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/powerbank.webp" alt="A black power bank" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="行動電源">Power bank</h3><p data-zh="只能放隨身行李。長榮每人最多兩顆，飛行中禁止使用或充電。">Carry-on only. EVA Air allows two per person and bans using or charging them in flight.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/coat.webp" alt="A red padded winter jacket" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="保暖外套">Warm coat</h3><p data-zh="白天約 10 °C，晚上接近 0 °C。走去 7 號館是在戶外。">Days around 10 °C, nights close to freezing. The walk to Pavilion 7 is outdoors.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/umbrella.webp" alt="A folded red umbrella" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="折疊傘">Folding umbrella</h3><p data-zh="巴黎 11 月常陰天、下毛毛雨。小折傘放得進隨身包。">November in Paris is grey and drizzly. A small one fits in your day bag.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/shoes.webp" alt="A pair of white sneakers" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="好走的鞋">Walking shoes</h3><p data-zh="攤位班要站一整天，從飯店走到 7 號館也要 12 分鐘。">Booth shifts keep you on your feet all day, and Pavilion 7 is a 12-minute walk from the hotel.</p></div></article>
+      <article class="item rv"><figure><img src="img/bring/pills.webp" alt="A weekly pill box" width="640" height="640" loading="lazy" decoding="async"></figure><div class="txt"><h3 data-zh="個人藥品">Your medicine</h3><p data-zh="保留原包裝，放隨身行李。處方藥請附英文診斷書或處方箋。">In its original box, in your carry-on. Prescription medicine needs a doctor's note in English.</p></div></article>
+    </div>
+    <div class="label bring-l" data-zh="別忘了">Don't forget</div>
+    <ul class="forget rv">
+      <li data-zh="團隊帽 T">Team hoodie</li>
+      <li data-zh="牙刷和盥洗用品">Toothbrush and toiletries</li>
+      <li data-zh="隨身液體每瓶 100 mL 以下，裝透明袋">Liquids under 100 mL in a clear bag</li>
+      <li data-zh="空水壺（過安檢後再裝）">Empty water bottle</li>
+      <li data-zh="旅遊保險資料">Travel insurance details</li>
+      <li data-zh="護照照片備份">Photo of your passport</li>
+    </ul>
+    <p class="credit" data-zh="照片：Wikimedia Commons，<a href='https://github.com/Timmy97-TW/releaf-jamboree/blob/main/img/bring/CREDITS.md' target='_blank' rel='noopener'>作者與授權</a>。">Photos: Wikimedia Commons, <a href="https://github.com/Timmy97-TW/releaf-jamboree/blob/main/img/bring/CREDITS.md" target="_blank" rel="noopener">authors and licences</a>.</p>
   </div>
 </section>
 
@@ -1815,6 +1916,50 @@ function trip(){
   });
   $('nstrip').innerHTML=h;
 }
+/* ---------- Paris weather (Open-Meteo, at the hotel) ---------- */
+var WX=null,WXDAYS=['2026-11-11','2026-11-12','2026-11-13','2026-11-14','2026-11-15','2026-11-16','2026-11-17'];
+var WXURL='https://api.open-meteo.com/v1/forecast?latitude=48.8297&longitude=2.2839&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&current=temperature_2m,weather_code&timezone=Europe%2FParis&forecast_days=16';
+// WMO weather codes, upper bound of each band
+var WXC=[[0,'sun','Clear','晴'],[2,'part','Partly cloudy','晴時多雲'],[3,'cloud','Cloudy','陰天'],[48,'fog','Fog','霧'],[57,'drizzle','Drizzle','毛毛雨'],
+ [67,'rain','Rain','雨'],[77,'snow','Snow','雪'],[82,'rain','Showers','陣雨'],[86,'snow','Snow showers','陣雪'],[99,'storm','Thunderstorm','雷雨']];
+var CLOUD='<path d="M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2"/>';
+var WXI={sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+ part:'<path d="M12 2v2M4.9 4.9l1.4 1.4M20 12h2M19.1 4.9l-1.4 1.4M15.9 12.7a4 4 0 0 0-5.9-4.1"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6z"/>',
+ cloud:'<path d="M17.5 19H9a7 7 0 1 1 6.7-9h1.8a4.5 4.5 0 1 1 0 9z"/>',
+ fog:CLOUD+'<path d="M16 17H7M17 21H9"/>',
+ drizzle:CLOUD+'<path d="M8 19v1M8 14v1M16 19v1M16 14v1M12 21v1M12 16v1"/>',
+ rain:CLOUD+'<path d="M16 14v6M8 14v6M12 16v6"/>',
+ snow:CLOUD+'<path d="M8 15h.01M8 19h.01M12 17h.01M12 21h.01M16 15h.01M16 19h.01"/>',
+ storm:'<path d="M6 16.3A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 .5 9"/><path d="M13 12l-3 5h4l-3 5"/>'};
+function wxc(c){for(var i=0;i<WXC.length;i++)if(c<=WXC[i][0])return WXC[i];return WXC[2]}
+function wxIco(k){return '<svg class="i-'+k+'" viewBox="0 0 24 24" aria-hidden="true">'+WXI[k]+'</svg>'}
+function weather(){
+  var d=WX&&WX.daily,cur=WX&&WX.current,tk=key(now(),PA);
+  $('wx-days').innerHTML=WXDAYS.map(function(k){
+    var i=d?d.time.indexOf(k):-1,live=i>=0&&d.temperature_2m_max[i]!=null,c=live?wxc(d.weather_code[i]):null,
+        pr=live?d.precipitation_probability_max[i]:null,jam=k>='2026-11-13'&&k<='2026-11-16';
+    return '<div class="wd'+(live?'':' typ')+(jam?' jam':'')+(k===tk?' on':'')+'">'
+      +'<div class="dn">'+fmtKey(k,{weekday:'short'})+'</div><div class="dd">'+fmtKey(k,{day:'numeric',month:'short'})+'</div>'
+      +'<div class="jt">'+(jam?L('Jamboree','大會'):'')+'</div>'
+      +wxIco(live?c[1]:'cloud')
+      +'<div><span class="hi">'+(live?Math.round(d.temperature_2m_max[i]):12)+'°</span><span class="lo">'+(live?Math.round(d.temperature_2m_min[i]):6)+'°</span></div>'
+      +'<div class="ds">'+(live?L(c[2],c[3]):L('November average','11 月平均'))+'</div>'
+      +'<div class="rp">'+(pr!=null?'☂ '+pr+'%':'&nbsp;')+'</div></div>';
+  }).join('');
+  if(cur&&cur.temperature_2m!=null){var cc=wxc(cur.weather_code);
+    $('wx-now').innerHTML=wxIco(cc[1])+'<b>'+Math.round(cur.temperature_2m)+'°</b><span>'+L('Now at the hotel','飯店現在')+'<br>'+L(cc[2],cc[3])+'</span>';
+  }else $('wx-now').innerHTML='';
+  $('wx-src').innerHTML=L('Forecast from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>, updated hourly. Faded days show the November average until the forecast reaches them.',
+    '預報來自 <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>，每小時更新。顏色較淡的日子是 11 月平均，預報涵蓋後會自動換成預報。');
+}
+function wxLoad(){
+  try{var c=JSON.parse(localStorage.getItem('releaf-wx')||'null');if(c&&Date.now()-c.at<36e5){WX=c.d;weather();return}}catch(e){}
+  if(!window.fetch)return;
+  fetch(WXURL).then(function(r){if(!r.ok)throw r.status;return r.json()}).then(function(j){
+    WX=j;try{localStorage.setItem('releaf-wx',JSON.stringify({at:Date.now(),d:j}))}catch(e){}weather();
+  }).catch(function(){});
+}
+
 /* ---------- language switch ---------- */
 var ZEL=[].slice.call(document.querySelectorAll('[data-zh]')),ZPH=[].slice.call(document.querySelectorAll('[data-zh-ph]'));
 ZEL.forEach(function(el){el._en=el.innerHTML});
@@ -1833,7 +1978,7 @@ function langThumb(){var b=$('lang').querySelector('button.on'),t=$('lang').quer
 window.addEventListener('resize',langThumb);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(langThumb);
 function setLang(l){
   if(l===LANG)return;LANG=l;try{localStorage.setItem('releaf-lang',l)}catch(e){}
-  statics();hero();journey();goals(1);today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();rooms();cityMap();hoodMap();PITCHLAB();
+  statics();hero();journey();goals(1);today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();rooms();cityMap();hoodMap();weather();PITCHLAB();
   document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
 }
 $('lang').onclick=function(e){var b=e.target.closest('button');if(b)setLang(b.dataset.l)};
@@ -1856,8 +2001,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')menu(false)}
 document.addEventListener('click',function(e){if(nav.classList.contains('open')&&!nav.contains(e.target))menu(false)});
 
 /* ---------- boot ---------- */
-statics();hero();journey();goals();today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();pitch();rooms();cityMap();hoodMap();navSpy();
-setInterval(hero,1000);
+statics();hero();journey();goals();today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();pitch();rooms();cityMap();hoodMap();weather();wxLoad();navSpy();
+setInterval(hero,1000);setInterval(wxLoad,36e5);
 setInterval(function(){today();journey();goals();if(inParis(now()))schedule()},60000);
 var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(schedule,150)});
 if('IntersectionObserver' in window){
