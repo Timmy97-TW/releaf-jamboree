@@ -338,7 +338,11 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .shiftgrid .nx{background:#F0F0F3}
 
 /* links */
-.links{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.links{columns:3;column-gap:18px}
+.links>.card{break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;
+  margin:0 0 18px}
+.lk h3 em{margin-left:auto;font-style:normal;font-size:12.5px;font-weight:600;color:var(--ink3);
+  background:#F0F0F3;border-radius:999px;padding:3px 9px}
 .lk h3{font-size:21px;display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .lk h3 .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--grad);flex:none}
 .lk h3 .ic svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -351,7 +355,7 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .lk a .arr{color:var(--ink3);font-size:15px}
 .lk a.star{background:linear-gradient(100deg,#EEF4FE,#E6FAF2);font-weight:600}
 .lk a .st{color:var(--amber);font-size:15px;margin-right:-2px}
-.pins{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 28px 18px}
+.pins{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:14px;padding:0 28px 18px}
 .pin{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:20px;background:var(--grad);color:#fff;font-size:20px;font-weight:700;letter-spacing:-.02em;box-shadow:0 10px 28px rgba(1,103,239,.25);transition:transform .2s,box-shadow .2s}
 .pin:hover{text-decoration:none;transform:translateY(-2px);box-shadow:0 14px 34px rgba(1,103,239,.32)}
 .pin small{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
@@ -696,7 +700,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   .goals{position:static;display:grid;grid-template-columns:1fr 1fr}
   .glead{grid-column:1/-1}
   .moments{grid-template-columns:repeat(2,1fr)}
-  .links{grid-template-columns:1fr 1fr}
+  .links{columns:2}
   .stats{grid-template-columns:repeat(3,1fr)}
   .grid3{grid-template-columns:1fr 1fr}
   .feats{grid-template-columns:1fr 1fr}
@@ -718,7 +722,8 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   .jstop.hide-s span{display:none}
   section.s{padding:60px 0 6px}
   .s .sub{font-size:17px;margin-bottom:24px}
-  .today,.grid2,.who,.links,.grid3,.goals{grid-template-columns:1fr}
+  .today,.grid2,.who,.grid3,.goals{grid-template-columns:1fr}
+  .links{columns:1}
   .hero-photo{opacity:.18;background-position:62% 30%;
     -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 45%,transparent 80%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 45%,transparent 80%)}
   .lsheet{width:100vw;max-width:100vw;max-height:92dvh;margin:auto 0 0;border-radius:24px 24px 0 0}
@@ -1312,7 +1317,7 @@ var ZH={
  'Judging':'評審','Booth Prep':'攤位準備','iGEM Jamboree':'iGEM 大會','Slide Prep (5 min)':'簡報準備（5 分鐘）','5-min slides and script':'5 分鐘簡報與講稿',
  '2026 QA prep':'2026 問答準備','Judging Training Site':'評審訓練網站','Plant Training Site':'植物訓練網站','Real Judging Mocks':'模擬評審紀錄','Stage Talk Prep':'舞台演講準備',
  'Talk ideas':'演講構想','Stage talk slides':'舞台演講簡報','Project connections map':'專案連結地圖','Booth QA Prep':'攤位問答準備','Booth roster':'攤位排班表','Promotion Activity':'宣傳活動','Promotion Poster':'宣傳海報','Banner Design':'布條設計',
- 'Materials to bring':'攜帶物品','2026 Paris itinerary':'2026 巴黎行程','Shifts and Roomies':'排班與室友','Official schedule':'官方議程','Venue and travel info':'場地與交通資訊',
+ 'Materials to bring':'攜帶物品','2026 Paris itinerary':'2026 巴黎行程','iGEM Bioreactor Landscape':'iGEM 生物反應器全景','Official schedule':'官方議程','Venue and travel info':'場地與交通資訊',
  'Competition program':'競賽議程','Doc':'文件','Sheet':'試算表','Site':'網站','Drive':'雲端',
  // goals
  'Integrate green-light control into the bioreactor system':'將綠光控制整合進生物反應器系統','Assemble the acrylic box':'組裝壓克力外殼',
@@ -1437,13 +1442,10 @@ var LINKS=[
   ['5-min slides and script','https://timmy97-tw.github.io/releaf-5min/','site'],
   ['2026 QA prep','https://docs.google.com/spreadsheets/d/1_35O9ugtBM8QZ_fXBo7MaY0TEIIgdYkDs_kvEkT5soo/edit?gid=1264413978#gid=1264413978','sheet'],
   ['Judging Training Site','https://timmy97-tw.github.io/releaf-judging-qa/index.html','site',1],
+  ['iGEM Bioreactor Landscape','https://timmy97-tw.github.io/igem-bioreactor-landscape/','site',1],
   ['Project connections map','https://timmy97-tw.github.io/releaf-judging-qa/map.html','site'],
   ['Plant Training Site','https://timmy97-tw.github.io/releaf-plant-judging/','site'],
   ['Real Judging Mocks','https://drive.google.com/drive/folders/1M_4D5hizf7bLNxvn6v1UTtYmuM28_LXl?usp=drive_link','drive']]},
- {h:'Live Stage Talk',i:'mic',l:[
-  ['Stage talk slides','https://www.canva.com/design/DAHY4Rb8ADw/wdH48SGTnHNbMaRrJjx9ww/edit','canva'],
-  ['Stage Talk Prep','https://docs.google.com/document/d/1qlpVG-qzSOn_pK33xnhV74iUdd-cKgQ50VMGt9vtl7g/edit?usp=sharing','doc'],
-  ['Talk ideas','https://timmy97-tw.github.io/releaf-stage-talk/','site']]},
  {h:'Booth Prep',i:'booth',l:[
   ['Booth QA Prep','https://docs.google.com/document/d/1WWpt-QrhzUImdeOrxQaNPh0MMDN9oBoRBNehrWUy6Q0/edit?tab=t.0','doc'],
   ['Booth roster','https://docs.google.com/spreadsheets/d/1Z5J_fJkjLCHTkgVc_hY-OrHwoP6_rsD2It4Mn_P6RT8/edit?gid=0#gid=0','sheet'],
@@ -1451,14 +1453,17 @@ var LINKS=[
   ['Promotion Poster','https://www.canva.com/design/DAHY5mBWnKo/phSq8PpSBCCWyqAiuY5x8Q/edit?ui=e30','canva'],
   ['Banner Design','https://canva.link/4z5lpb922dgz8kk','canva'],
   ['Materials to bring','https://docs.google.com/document/d/14rMX7ayF6gBxn-k27UF4gVkV9TuztLe7UpjvqsucVx4/edit?tab=t.0','doc']]},
- {h:'Paris Prep',i:'plane',l:[
-  ['2026 Paris itinerary','https://docs.google.com/spreadsheets/d/1UFZi7xXcWRDTlqIfJfHEA4ZFo4yweLVvqGHmFE9q9iQ/edit?usp=sharing','sheet',1],
-  ['Shifts and Roomies','https://docs.google.com/document/d/1h6CjlTRBBMTqecasaQd02sijgG1yzgMr1PYtCc0ARmk/edit?usp=sharing','doc']]},
+ {h:'Live Stage Talk',i:'mic',l:[
+  ['Stage talk slides','https://www.canva.com/design/DAHY4Rb8ADw/wdH48SGTnHNbMaRrJjx9ww/edit','canva'],
+  ['Stage Talk Prep','https://docs.google.com/document/d/1qlpVG-qzSOn_pK33xnhV74iUdd-cKgQ50VMGt9vtl7g/edit?usp=sharing','doc'],
+  ['Talk ideas','https://timmy97-tw.github.io/releaf-stage-talk/','site']]},
  {h:'iGEM Jamboree',i:'globe',official:1,l:[
   ['Jamboree 2026','https://jamboree.igem.org/2026/home','igem'],
   ['Official schedule','https://jamboree.igem.org/2026/schedule','igem'],
   ['Venue and travel info','https://jamboree.igem.org/2026/info','igem'],
-  ['Competition program','https://jamboree.igem.org/2026/program/competition','igem']]}
+  ['Competition program','https://jamboree.igem.org/2026/program/competition','igem']]},
+ {h:'Paris Prep',i:'plane',l:[
+  ['2026 Paris itinerary','https://docs.google.com/spreadsheets/d/1UFZi7xXcWRDTlqIfJfHEA4ZFo4yweLVvqGHmFE9q9iQ/edit?usp=sharing','sheet']]}
 ];
 var KIND={doc:'Doc',sheet:'Sheet',canva:'Canva',site:'Site',drive:'Drive',igem:'iGEM'};
 function LK(name){var u='#';LINKS.forEach(function(c){c.l.forEach(function(l){if(l[0]===name)u=l[1]})});return [name,u]}
@@ -1721,7 +1726,7 @@ function shiftgrid(){
 /* ---------- links / packing ---------- */
 function links(){
   var h='',top='';LINKS.forEach(function(c){
-    h+='<div class="card lk'+(c.official?' official':'')+'"><h3><span class="ic"><svg viewBox="0 0 24 24">'+IC[c.i]+'</svg></span>'+tx(c.h)+'</h3>';
+    h+='<div class="card lk'+(c.official?' official':'')+'"><h3><span class="ic"><svg viewBox="0 0 24 24">'+IC[c.i]+'</svg></span>'+tx(c.h)+'<em>'+c.l.length+'</em></h3>';
     c.l.forEach(function(l){
       h+='<a'+(l[3]?' class="star"':'')+' href="'+l[1]+'" target="_blank" rel="noopener">'+(l[3]?'<span class="st">★</span>':'')+esc(tx(l[0]))+'<span class="k '+l[2]+'">'+tx(KIND[l[2]])+'</span><span class="arr">↗</span></a>';
       if(l[3])top+='<a class="pin" href="'+l[1]+'" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24">'+IC[c.i]+'</svg></span><span><small>'+esc(tx(c.h))+'</small>'+esc(tx(l[0]))+'</span><span class="arr">↗</span></a>';
