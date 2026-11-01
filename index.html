@@ -22,7 +22,7 @@
   --ink:#1D1D1F; --ink2:#6E6E73; --ink3:#86868B;
   --bg:#F5F5F7; --card:#FFFFFF; --line:rgba(0,0,0,.08);
   --red:#E5484D; --violet:#7C5CFF; --amber:#F59E0B; --pink:#E8A6C1;
-  --g1:#0167EF; --g2:#00A86B; --g3:#7C5CFF; --g4:#F08C00;
+  --g1:#0167EF; --g2:#00A86B; --g3:#7C5CFF;
   --grad:linear-gradient(100deg,var(--blue) 0%,#00A3C4 50%,var(--green) 100%);
   --r:22px;
   color-scheme:light;
@@ -269,7 +269,7 @@ section.s{padding:84px 0 12px}
 .blk.solid small{opacity:.85}
 .blk.grad{background:var(--grad);color:#fff;border-left:0}
 .blk.half-l{right:calc(50% + 2px)} .blk.half-r{left:calc(50% + 2px)}
-.blk.g1{--c:var(--g1)} .blk.g2{--c:var(--g2)} .blk.g3{--c:var(--g3)} .blk.g4{--c:var(--g4)}
+.blk.g1{--c:var(--g1)} .blk.g2{--c:var(--g2)} .blk.g3{--c:var(--g3)}
 .blk.meal{--c:#8E8E93} .blk.prep{--c:var(--green)}
 .blk.nowblk{outline:2px solid var(--ink);outline-offset:1px}
 .nowline{position:absolute;left:0;right:0;height:2px;background:var(--red);z-index:3}
@@ -327,6 +327,7 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .rg div{font-size:14px;padding:3px 0;display:grid;grid-template-columns:118px 1fr;gap:8px}
 .rg span{color:var(--ink3);font-size:13px;padding-top:1px}
 .rg p{margin:0}
+.rg div.nr{display:block}
 .rg em{font-style:normal}
 .rg em.hit{color:var(--blue);font-weight:600}
 .shiftgrid{display:grid;grid-template-columns:40px repeat(9,minmax(0,1fr));gap:5px;font-size:13px;margin-top:6px}
@@ -1384,12 +1385,12 @@ var DAYS=[
   {s:7,e:8,t:'Breakfast',c:'meal'},
   {s:9,e:10,t:'Opening show',c:'grad'},
   {s:12,e:12+25/60,t:'Judging session',sub:'12:00–12:25',c:'judge'},
-  {s:14,e:15,g:1},{s:15,e:16,g:2},{s:16,e:17,g:3},{s:17,e:18,g:4},
+  {s:14,e:15,g:1},{s:15,e:16,g:2},{s:16,e:17,g:3},{s:17,e:18,all:1},
   {s:18,e:19,t:'Dinner around the hotel',c:'meal'},
   {s:19,e:22,t:'Prep',c:'prep'}]},
  {k:'2026-11-14',d:'Sat 14',t:'Booth all day',b:[
-  {s:9,e:10,g:1},{s:10,e:11,g:2},{s:11,e:12,g:3},{s:12,e:13,g:4},
-  {s:13,e:14,g:1},{s:14,e:15,g:2},{s:15,e:16,g:3},{s:16,e:17,g:4},{s:17,e:18,all:1},
+  {s:9,e:10,g:1},{s:10,e:11,g:2},{s:11,e:12,g:3},{s:12,e:13,g:1},
+  {s:13,e:14,g:2},{s:14,e:15,g:3},{s:15,e:16,g:1},{s:16,e:17,g:2},{s:17,e:18,g:3},
   {s:18,e:19,t:'Dinner around the hotel',c:'meal'},
   {s:19,e:22,t:'Prep',c:'prep'}]},
  {k:'2026-11-15',d:'Sun 15',t:'Stage talk',b:[
@@ -1407,13 +1408,11 @@ var CVAR={judge:'var(--red)',stage:'var(--green)',finalp:'var(--violet)'};
 
 /* ---------- roster (Booth Roster sheet) ---------- */
 var ROLES=[
- ['HP',[['Olivia Du'],['Mia'],['Sophia Lin'],['Renee']]],
- ['Bioreactor / Dry lab',[['Noah','Audrey Chu'],['Anton','Sara Chen'],['Felix','Eva'],['Joshua','Jacquelyn']]],
- ['Plant model',[['Abigail'],['Abby Kao'],['Abby Tsai'],['Alex Li']]],
- ['Math model',[[],['Phoebe'],['Ethan Liu'],['Anna']]],
- ['Wet lab',[['Sophie Liu','Sarah Chou','Naomi'],['Sophie Chen','Ethan Chang','Olivia Lin'],['Chloe Wu','Audrey Hsieh','Ryan Yuan'],['Ryan Wei','Sophie Huang']]]
+ ['',[['Sara Chen','Ryan Wei','Olivia Du','Audrey Hsieh','Chloe Wu','Audrey Chu','Abby Tsai','Felix','Noah','Mia'],
+      ['Sophie Huang','Naomi','Olivia Lin','Alex Li','Sophie Chen','Ethan Liu','Abby Kao','Ryan Yuan','Joshua','Sophia Lin'],
+      ['Phoebe','Sarah Chou','Anna','Jacquelyn','Sophie Liu','Eva','Abigail','Ethan Chang','Anton','Renee']]]
 ];
-var GCOL=['var(--g1)','var(--g2)','var(--g3)','var(--g4)'];
+var GCOL=['var(--g1)','var(--g2)','var(--g3)'];
 
 /* ---------- material list ---------- */
 var MAT=[
@@ -1666,7 +1665,7 @@ function moments(){
 }
 
 /* ---------- shifts ---------- */
-var SHIFTS={1:[['Fri 13',14],['Sat 14',9],['Sat 14',13]],2:[['Fri 13',15],['Sat 14',10],['Sat 14',14]],3:[['Fri 13',16],['Sat 14',11],['Sat 14',15]],4:[['Fri 13',17],['Sat 14',12],['Sat 14',16]]};
+var SHIFTS={1:[['Fri 13',14],['Sat 14',9],['Sat 14',12],['Sat 14',15]],2:[['Fri 13',15],['Sat 14',10],['Sat 14',13],['Sat 14',16]],3:[['Fri 13',16],['Sat 14',11],['Sat 14',14],['Sat 14',17]]};
 var PEOPLE={};
 ROLES.forEach(function(r){r[1].forEach(function(names,gi){names.forEach(function(n){
   PEOPLE[n]=PEOPLE[n]||{roles:[],groups:[]};
@@ -1688,10 +1687,10 @@ $('names').addEventListener('click',function(e){var b=e.target.closest('button')
 function meCard(){
   var el=$('me');document.body.classList.toggle('me',!!sel);
   if(!sel){el.className='me-card idle';el.innerHTML='<div class="label" style="margin-top:0">'+L('Your Jamboree','你的大會')+'</div><h3>'+L('Pick your name.','選擇你的名字。')+'</h3><p>'+L('Your booth hours, your role and the things you\'re bringing show up here, and your hours light up on the Jamboree board.','你的攤位時段、角色和要帶的東西會顯示在這裡，你的時段也會在大會看板上亮起。')+'</p>';return}
-  var p=PEOPLE[sel],h='<button class="clear" id="clr">'+L('Clear','清除')+'</button><div class="label" style="margin-top:0">'+L('Your Jamboree','你的大會')+'</div><h3>'+esc(sel)+'</h3><div class="role">'+p.roles.map(function(r){return esc(tx(r))}).join(' · ')+' · ';
+  var p=PEOPLE[sel],h='<button class="clear" id="clr">'+L('Clear','清除')+'</button><div class="label" style="margin-top:0">'+L('Your Jamboree','你的大會')+'</div><h3>'+esc(sel)+'</h3><div class="role">'+p.roles.filter(Boolean).map(function(r){return esc(tx(r))+' · '}).join('');
   h+=p.groups.map(function(g){return '<span class="gpill" style="--c:'+GCOL[g-1]+'">'+L('Group '+g,'第 '+g+' 組')+'</span>'}).join('')+'</div>';
   var sh=[];p.groups.forEach(function(g){SHIFTS[g].forEach(function(s){sh.push([s[0],s[1],g])})});
-  sh.push(['Sat 14',17,0]);
+  sh.push(['Fri 13',17,0]);
   sh.sort(function(a,b){return a[0]===b[0]?a[1]-b[1]:a[0]<b[0]?-1:1});
   h+='<div class="label">'+L('Booth hours · '+sh.length+' in total','攤位時段 · 共 '+sh.length+' 小時')+'</div><ul>';
   sh.forEach(function(s){h+='<li><span class="gpill" style="--c:'+(s[2]?GCOL[s[2]-1]:'var(--green)')+'">'+(s[2]?'G'+s[2]:L('All','全隊'))+'</span>'+tx(s[0]+' Nov')+'<span class="hrs tw">'+fmtH(s[1])+'–'+fmtH(s[1]+1)+'</span></li>'});
@@ -1704,11 +1703,11 @@ function meCard(){
   $('clr').onclick=function(){sel=null;try{localStorage.removeItem('releaf-me')}catch(e){}names();meCard();roster();schedule()};
 }
 function roster(){
-  var h='<thead><tr><th></th>';for(var g=1;g<=4;g++)h+='<th><i style="background:'+GCOL[g-1]+'"></i>'+L('Group '+g,'第 '+g+' 組')+'</th>';h+='</tr></thead><tbody>';
-  ROLES.forEach(function(r){h+='<tr><th>'+tx(r[0])+'</th>';r[1].forEach(function(ns){h+='<td>'+(ns.length?'':'<span class="none">—</span>')+ns.map(function(n){return '<span class="'+(n===sel?'hit':'')+'">'+esc(n)+'</span>'}).join('')+'</td>'});h+='</tr>'});
+  var h='<thead><tr>';for(var g=1;g<=GCOL.length;g++)h+='<th><i style="background:'+GCOL[g-1]+'"></i>'+L('Group '+g,'第 '+g+' 組')+'</th>';h+='</tr></thead><tbody>';
+  ROLES.forEach(function(r){h+='<tr>'+(r[0]?'<th>'+tx(r[0])+'</th>':'');r[1].forEach(function(ns){h+='<td>'+(ns.length?'':'<span class="none">—</span>')+ns.map(function(n){return '<span class="'+(n===sel?'hit':'')+'">'+esc(n)+'</span>'}).join('')+'</td>'});h+='</tr>'});
   $('roster').innerHTML=h+'</tbody>';
-  var m='';for(var g=1;g<=4;g++){m+='<div class="rg" style="--c:'+GCOL[g-1]+'"><b>'+L('Group '+g,'第 '+g+' 組')+'</b>';
-    ROLES.forEach(function(r){if(!r[1][g-1].length)return;m+='<div><span>'+tx(r[0])+'</span><p>'+r[1][g-1].map(function(n){return '<em class="'+(n===sel?'hit':'')+'">'+esc(n)+'</em>'}).join(', ')+'</p></div>'});m+='</div>'}
+  var m='';for(var g=1;g<=GCOL.length;g++){m+='<div class="rg" style="--c:'+GCOL[g-1]+'"><b>'+L('Group '+g,'第 '+g+' 組')+'</b>';
+    ROLES.forEach(function(r){if(!r[1][g-1].length)return;m+='<div'+(r[0]?'':' class="nr"')+'>'+(r[0]?'<span>'+tx(r[0])+'</span>':'')+'<p>'+r[1][g-1].map(function(n){return '<em class="'+(n===sel?'hit':'')+'">'+esc(n)+'</em>'}).join(', ')+'</p></div>'});m+='</div>'}
   $('roster-m').innerHTML=m;
 }
 function shiftgrid(){
@@ -1721,7 +1720,7 @@ function shiftgrid(){
       h+=g==='all'?'<div class="gx" style="background:var(--grad)">'+L('All','全隊')+'</div>':g?'<div class="gx" style="background:'+GCOL[g-1]+'">G'+g+'</div>':'<div class="nx">'+(r[1]===0&&x===12?'J':'')+'</div>';
     });
   });
-  $('shiftgrid').innerHTML=h+'</div><p class="note" style="margin:10px 0 0">'+L('Paris time. J is our judging session. The last hour on Saturday is the whole team.','巴黎時間。J 是我們的評審場次。週六最後一小時全隊到攤位。')+'</p>';
+  $('shiftgrid').innerHTML=h+'</div><p class="note" style="margin:10px 0 0">'+L('Paris time. J is our judging session. The last hour on Friday is the whole team.','巴黎時間。J 是我們的評審場次。週五最後一小時全隊到攤位。')+'</p>';
 }
 
 /* ---------- links / packing ---------- */
@@ -1901,8 +1900,8 @@ var TRIP=[
  {d:'2026-11-10',k:'depart',t:['Depart','出發'],i:[['23:30','BR087 leaves Taipei','BR087 從台北出發'],['','Overnight flight to Paris','夜間航班飛往巴黎']]},
  {d:'2026-11-11',k:'arrive',t:['Arrival','抵達'],i:[['07:45','Land at CDG','抵達戴高樂機場'],['','Shuttle bus to the hotel','接駁車到飯店'],['12:00','Check in','入住飯店'],['','Walk the neighbourhood, Carrefour City run','熟悉飯店周邊，到 Carrefour City 採買'],['21:00','Team prep: run-throughs and booth prep','團隊準備：簡報演練與攤位準備']]},
  {d:'2026-11-12',k:'prep',t:['Prep day','準備日'],i:[['AM','At the hotel: judging and booth prep','留在飯店：評審與攤位準備'],['13:00','Badge pickup at the venue','到會場領取識別證'],['','Back to the hotel to rest','回飯店休息'],['','Meals near the hotel, no city trips','在飯店附近用餐，不進市區']]},
- {d:'2026-11-13',k:'jam',t:['Opening + judging','開幕 + 評審'],i:[['09:00','Opening show','開幕典禮'],['12:00','Judging session','評審場次'],['14:00','Booth H-17 shifts begin','H-17 攤位排班開始']]},
- {d:'2026-11-14',k:'jam',t:['Booth day','攤位日'],i:[['09:00','Booth H-17 all day','H-17 攤位整天排班'],['17:00','Full team at the booth','全隊在攤位']]},
+ {d:'2026-11-13',k:'jam',t:['Opening + judging','開幕 + 評審'],i:[['09:00','Opening show','開幕典禮'],['12:00','Judging session','評審場次'],['14:00','Booth H-17 shifts begin','H-17 攤位排班開始'],['17:00','Full team at the booth','全隊在攤位']]},
+ {d:'2026-11-14',k:'jam',t:['Booth day','攤位日'],i:[['09:00','Booth H-17 all day','H-17 攤位整天排班']]},
  {d:'2026-11-15',k:'jam',t:['Stage talk','舞台演講'],i:[['AM','Prep','準備'],['14:40','Live Stage Talk','舞台演講']]},
  {d:'2026-11-16',k:'jam',t:['Final day','決賽日'],i:[['14:00','Final Day show','決賽日典禮'],['19:00','iGEM after party','iGEM 閉幕派對']]},
  {d:'2026-11-17',k:'home',t:['Fly home','返程'],i:[['','Early start: shuttle bus to CDG','一大早搭接駁車到戴高樂機場'],['11:20','BR088 leaves Paris','BR088 從巴黎起飛']]},
