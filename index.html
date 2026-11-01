@@ -349,6 +349,8 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .lk h3 .ic svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .lk a{display:flex;align-items:center;gap:10px;padding:10px 12px;margin:0 -12px;border-radius:12px;color:var(--ink);transition:background .15s}
 .lk a:hover{background:#F2F4F8;text-decoration:none}
+.lk .todo{display:flex;align-items:center;gap:10px;padding:10px 12px;margin:0 -12px;color:var(--ink3)}
+.lk .todo .k{margin-left:auto;font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:999px;border:1px dashed var(--ink3);color:var(--ink3);white-space:nowrap}
 .lk a .k{margin-left:auto;font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:999px;background:#F0F0F3;color:var(--ink2);white-space:nowrap}
 .lk a .k.doc{background:#E7F0FE;color:#1A5FD0} .lk a .k.sheet{background:#E6F7EE;color:#11804F}
 .lk a .k.canva{background:#F1EBFF;color:#6440D8} .lk a .k.site{background:#E6FAF6;color:#008C6E}
@@ -1315,7 +1317,7 @@ var ZH={
  'Epoxy glue':'環氧樹脂膠','Stickers for the pots':'盆栽貼紙','1 box':'1 盒','1 pack':'1 包','4 packs':'4 包','1 long strand':'1 長條',
  'Arriving':'運送中','To be printed':'待印製','To be purchased':'待購買','Buy in Paris':'到巴黎再買',
  // links
- 'Judging':'評審','Booth Prep':'攤位準備','iGEM Jamboree':'iGEM 大會','Slide Prep (5 min)':'簡報準備（5 分鐘）','5-min slides and script':'5 分鐘簡報與講稿',
+ 'Judging':'評審','Booth Prep':'攤位準備','iGEM Jamboree':'iGEM 大會','Slides and Scripts':'簡報與講稿','5-min judging session slides':'5 分鐘評審簡報','10-min live stage talk slides':'10 分鐘舞台演講簡報','Finalist presentation':'決賽簡報','To be made':'待製作','Instructor questions':'老師出題（高品質）','5-min slides and script':'5 分鐘簡報與講稿',
  '2026 QA prep':'2026 問答準備','Judging Training Site':'評審訓練網站','Plant Training Site':'植物訓練網站','Real Judging Mocks':'模擬評審紀錄','Stage Talk Prep':'舞台演講準備',
  'Talk ideas':'演講構想','Stage talk slides':'舞台演講簡報','Project connections map':'專案連結地圖','Booth Pitch Prep':'攤位講稿準備','Booth QA Prep':'攤位問答準備','Booth roster':'攤位排班表','Promotion Activity':'宣傳活動','Promotion Poster':'宣傳海報','Banner Design':'布條設計',
  'Materials to bring':'攜帶物品','2026 Paris itinerary':'2026 巴黎行程','iGEM Bioreactor Landscape':'iGEM 生物反應器全景','Official schedule':'官方議程','Venue and travel info':'場地與交通資訊',
@@ -1433,39 +1435,38 @@ var IC={
  mic:'<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>',
  booth:'<path d="M3 9l1.5-5h15L21 9M4 9v11h16V9M3 9h18M9 20v-6h6v6"/>',
  plane:'<path d="M10 14l-7-3 1-2 9 1 5-5a2 2 0 0 1 3 3l-5 5 1 9-2 1-3-7-3 3v3l-2 1-1-4-4-1 1-2h3z"/>',
+ slides:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/>',
  globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>'
 };
 var LINKS=[
- {h:'Judging',i:'judge',l:[
-  ['Slide Prep (5 min)','https://canva.link/4un52gnl73sugqm','canva'],
+ {h:'Slides and Scripts',i:'slides',l:[
+  ['5-min judging session slides','https://canva.link/4un52gnl73sugqm','canva'],
   ['5-min slides and script','https://timmy97-tw.github.io/releaf-5min/','site'],
+  ['10-min live stage talk slides','https://www.canva.com/design/DAHY4Rb8ADw/wdH48SGTnHNbMaRrJjx9ww/edit','canva'],
+  ['Finalist presentation','','soon']]},
+ {h:'Judging',i:'judge',l:[
+  ['Instructor questions','https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=0#gid=0','sheet',1],
   ['2026 QA prep','https://docs.google.com/spreadsheets/d/1_35O9ugtBM8QZ_fXBo7MaY0TEIIgdYkDs_kvEkT5soo/edit?gid=1264413978#gid=1264413978','sheet'],
   ['Judging Training Site','https://timmy97-tw.github.io/releaf-judging-qa/index.html','site',1],
   ['iGEM Bioreactor Landscape','https://timmy97-tw.github.io/igem-bioreactor-landscape/','site',1],
-  ['Project connections map','https://timmy97-tw.github.io/releaf-judging-qa/map.html','site'],
   ['Plant Training Site','https://timmy97-tw.github.io/releaf-plant-judging/','site'],
   ['Real Judging Mocks','https://drive.google.com/drive/folders/1M_4D5hizf7bLNxvn6v1UTtYmuM28_LXl?usp=drive_link','drive']]},
  {h:'Booth Prep',i:'booth',l:[
   ['Booth Pitch Prep','https://timmy97-tw.github.io/releaf-booth-prep/','site',1],
   ['Booth QA Prep','https://docs.google.com/document/d/1WWpt-QrhzUImdeOrxQaNPh0MMDN9oBoRBNehrWUy6Q0/edit?tab=t.0','doc'],
-  ['Booth roster','https://docs.google.com/spreadsheets/d/1Z5J_fJkjLCHTkgVc_hY-OrHwoP6_rsD2It4Mn_P6RT8/edit?gid=0#gid=0','sheet'],
   ['Promotion Activity','https://docs.google.com/document/d/1rIxDi1PKDxf6Jo1m9gd9GCSyQjGFxaahD676QdyCEvI/edit?usp=sharing','doc'],
   ['Promotion Poster','https://www.canva.com/design/DAHY5mBWnKo/phSq8PpSBCCWyqAiuY5x8Q/edit?ui=e30','canva'],
   ['Banner Design','https://canva.link/4z5lpb922dgz8kk','canva'],
   ['Materials to bring','https://docs.google.com/document/d/14rMX7ayF6gBxn-k27UF4gVkV9TuztLe7UpjvqsucVx4/edit?tab=t.0','doc']]},
  {h:'Live Stage Talk',i:'mic',l:[
-  ['Stage talk slides','https://www.canva.com/design/DAHY4Rb8ADw/wdH48SGTnHNbMaRrJjx9ww/edit','canva'],
-  ['Stage Talk Prep','https://docs.google.com/document/d/1qlpVG-qzSOn_pK33xnhV74iUdd-cKgQ50VMGt9vtl7g/edit?usp=sharing','doc'],
-  ['Talk ideas','https://timmy97-tw.github.io/releaf-stage-talk/','site']]},
+  ['Stage Talk Prep','https://docs.google.com/document/d/1qlpVG-qzSOn_pK33xnhV74iUdd-cKgQ50VMGt9vtl7g/edit?usp=sharing','doc']]},
  {h:'iGEM Jamboree',i:'globe',official:1,l:[
   ['Jamboree 2026','https://jamboree.igem.org/2026/home','igem'],
   ['Official schedule','https://jamboree.igem.org/2026/schedule','igem'],
   ['Venue and travel info','https://jamboree.igem.org/2026/info','igem'],
-  ['Competition program','https://jamboree.igem.org/2026/program/competition','igem']]},
- {h:'Paris Prep',i:'plane',l:[
-  ['2026 Paris itinerary','https://docs.google.com/spreadsheets/d/1UFZi7xXcWRDTlqIfJfHEA4ZFo4yweLVvqGHmFE9q9iQ/edit?usp=sharing','sheet']]}
+  ['Competition program','https://jamboree.igem.org/2026/program/competition','igem']]}
 ];
-var KIND={doc:'Doc',sheet:'Sheet',canva:'Canva',site:'Site',drive:'Drive',igem:'iGEM'};
+var KIND={doc:'Doc',sheet:'Sheet',canva:'Canva',site:'Site',drive:'Drive',igem:'iGEM',soon:'To be made'};
 function LK(name){var u='#';LINKS.forEach(function(c){c.l.forEach(function(l){if(l[0]===name)u=l[1]})});return [name,u]}
 
 /* ---------- to achieve before we fly ---------- */
@@ -1479,7 +1480,7 @@ var GOALS=[
 
 /* ---------- today's goals, by Taipei date ---------- */
 var JUDGEPREP={t:'Judging session prep',w:'Five-minute slides and the Q&A sheet, ahead of Saturday\'s mock',l:[LK('Judging Training Site'),LK('5-min slides and script'),LK('2026 QA prep'),LK('Plant Training Site')]};
-var STAGEPREP={t:'Live stage talk prep',w:'Two run-throughs on Saturday 31 October',l:[LK('Stage Talk Prep'),LK('Talk ideas')]};
+var STAGEPREP={t:'Live stage talk prep',w:'Two run-throughs on Saturday 31 October',l:[LK('Stage Talk Prep'),LK('10-min live stage talk slides')]};
 var LABGOALS={t:'Before-we-fly lab goals',w:'Five to finish before 10 November',l:[['See the five','#achieve']]};
 var PITCH={t:'Practise the two-minute pitch',w:'Watch last year\'s booth, then pitch ReLEAF out loud',l:[['Pitch it','#pitch']]};
 var TASKS={
@@ -1728,6 +1729,7 @@ function links(){
   var h='',top='';LINKS.forEach(function(c){
     h+='<div class="card lk'+(c.official?' official':'')+'"><h3><span class="ic"><svg viewBox="0 0 24 24">'+IC[c.i]+'</svg></span>'+tx(c.h)+'<em>'+c.l.length+'</em></h3>';
     c.l.forEach(function(l){
+      if(!l[1]){h+='<span class="todo">'+esc(tx(l[0]))+'<span class="k '+l[2]+'">'+tx(KIND[l[2]])+'</span></span>';return}
       h+='<a'+(l[3]?' class="star"':'')+' href="'+l[1]+'" target="_blank" rel="noopener">'+(l[3]?'<span class="st">★</span>':'')+esc(tx(l[0]))+'<span class="k '+l[2]+'">'+tx(KIND[l[2]])+'</span><span class="arr">↗</span></a>';
       if(l[3])top+='<a class="pin" href="'+l[1]+'" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24">'+IC[c.i]+'</svg></span><span><small>'+esc(tx(c.h))+'</small>'+esc(tx(l[0]))+'</span><span class="arr">↗</span></a>';
     });
