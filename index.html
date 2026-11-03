@@ -57,8 +57,8 @@ html:lang(zh-Hant) .label,html:lang(zh-Hant) .eyebrow{letter-spacing:.04em}
 .bw{display:flex;flex-direction:column;line-height:1.05}
 .bw b{font-size:15.5px;font-weight:700;letter-spacing:-.01em}
 .bw small{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:3px}
-.nlinks{display:flex;align-items:center;gap:2px;list-style:none;margin:0 auto;padding:0}
-.nlinks a{display:block;position:relative;color:rgba(255,255,255,.66);font-size:13px;font-weight:500;padding:7px 10px;border-radius:999px;white-space:nowrap;transition:color .2s,background .2s}
+.nlinks{display:flex;align-items:center;gap:1px;list-style:none;margin:0 auto;padding:0}
+.nlinks a{display:block;position:relative;color:rgba(255,255,255,.66);font-size:12.5px;font-weight:500;padding:7px 7px;border-radius:999px;white-space:nowrap;transition:color .2s,background .2s}
 .nlinks a:hover{color:#fff;text-decoration:none;background:rgba(255,255,255,.06)}
 .nlinks a.on{color:#fff;background:rgba(255,255,255,.12)}
 .nlinks a i{display:none}
@@ -76,7 +76,7 @@ html:lang(zh-Hant) .label,html:lang(zh-Hant) .eyebrow{letter-spacing:.04em}
 .menu span:first-child{top:15px} .menu span:last-child{top:21px}
 .nav.open .menu span:first-child{top:18px;transform:rotate(45deg)} .nav.open .menu span:last-child{top:18px;transform:rotate(-45deg)}
 .nprog{position:absolute;left:0;bottom:-1px;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--blue2),var(--green2))}
-@media (max-width:1100px){
+@media (max-width:1220px){
   .menu{display:block}
   .nlinks{position:absolute;top:100%;left:0;right:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:14px 16px 20px;background:#020A24;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(255,255,255,.07),0 24px 40px rgba(0,0,0,.35);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s,transform .25s,visibility 0s .25s}
   .nav.open .nlinks{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .25s}
@@ -251,6 +251,34 @@ section.s{padding:84px 0 12px}
 .qtab .n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .qtab tfoot th,.qtab tfoot td{border-top:2px solid var(--line);font-weight:700}
 .qtab td.n.zero{color:var(--ink3)}
+
+/* slide titles, before and after */
+.hwpins.one{grid-template-columns:minmax(0,560px)}
+.tfix{display:grid;gap:18px}
+.tcase{background:var(--card);border-radius:var(--r);padding:22px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.trule{display:flex;align-items:center;gap:11px;margin-bottom:16px}
+.trule i{font-style:normal;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--grad);color:#fff;font-size:12px;font-weight:700;flex:none;font-variant-numeric:tabular-nums}
+.trule b{font-size:17px;font-weight:700;letter-spacing:-.02em}
+.tpair{display:grid;grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr);gap:8px;align-items:stretch}
+.tslide{border-radius:16px;padding:16px 18px 18px;display:flex;flex-direction:column;min-height:152px}
+.tslide .ttag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.tslide .tt{font-size:19px;font-weight:700;letter-spacing:-.02em;line-height:1.26;margin-top:9px}
+.tslide .tt i{font-style:italic}
+.tslide.was{background:#F0F0F3}
+.tslide.was .ttag{color:var(--ink3)}
+.tslide.was .tt{color:var(--ink2)}
+.tslide.now{background:var(--navy)}
+.tslide.now .ttag{color:var(--green2)}
+.tslide.now .tt{color:#fff}
+.tghost{margin-top:auto;padding-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.tghost span{height:24px;border-radius:6px;background:rgba(0,0,0,.07)}
+.tslide.now .tghost span{background:rgba(255,255,255,.13)}
+.tarrow{display:grid;place-items:center;color:var(--ink3)}
+.tarrow svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.twhy{font-size:15.5px;color:var(--ink2);line-height:1.5;margin:16px 0 0}
+.twhy b{color:var(--ink);font-weight:600}
+.tnote{display:flex;gap:12px;align-items:flex-start;margin-top:18px;padding:16px 18px;border-radius:16px;background:var(--mint);font-size:16px;line-height:1.45}
+.tnote svg{width:20px;height:20px;flex:none;fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
 
 /* categories */
 .c-mock{--c:var(--blue)} .c-deliv{--c:var(--red)} .c-stage{--c:var(--green)} .c-final{--c:var(--violet)}
@@ -761,6 +789,9 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   .s .sub{font-size:17px;margin-bottom:24px}
   .today,.grid2,.who,.grid3,.goals{grid-template-columns:1fr}
   .hwpins{grid-template-columns:1fr}
+  .tpair{grid-template-columns:1fr}
+  .tarrow{transform:rotate(90deg);height:26px}
+  .tslide{min-height:0}
   .hwstats{grid-template-columns:1fr 1fr}
   .links{columns:1}
   .hero-photo{opacity:.18;background-position:62% 30%;
@@ -858,20 +889,21 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
     <a class="brand" href="#top" aria-label="ReLEAF, back to top"><img src="img/logo.png" alt=""><span class="bw"><b>ReLEAF</b><small data-zh="巴黎 2026">Paris 2026</small></span></a>
     <ul class="nlinks" id="nlinks">
       <li><a href="#homework"><i>01</i><span data-zh="重要問題">Questions</span></a></li>
-      <li><a href="#today"><i>02</i><span data-zh="今日">Today</span></a></li>
-      <li><a href="#pitch"><i>03</i><span data-zh="介紹">Pitch</span></a></li>
-      <li><a href="#calendar"><i>04</i><span data-zh="行事曆">Calendar</span></a></li>
-      <li><a href="#trip"><i>05</i><span data-zh="行程">Trip</span></a></li>
-      <li><a href="#jamboree"><i>06</i><span data-zh="大會">Jamboree</span></a></li>
-      <li><a href="#final"><i>07</i><span data-zh="決賽">Final</span></a></li>
-      <li><a href="#shifts"><i>08</i><span data-zh="排班">Shifts</span></a></li>
-      <li><a href="#rooms"><i>09</i><span data-zh="房間">Rooms</span></a></li>
-      <li><a href="#packing"><i>10</i><span data-zh="行李">Packing</span></a></li>
-      <li><a href="#paris"><i>11</i><span data-zh="巴黎">Paris</span></a></li>
-      <li><a href="#map"><i>12</i><span data-zh="住宿">Stay</span></a></li>
-      <li><a href="#sos" class="nsos"><i>13</i><span data-zh="緊急">Emergency</span></a></li>
-      <li><a href="#bring"><i>14</i><span data-zh="攜帶">Bring</span></a></li>
-      <li><a href="#app"><i>15</i><span>App</span></a></li>
+      <li><a href="#titles"><i>02</i><span data-zh="標題">Titles</span></a></li>
+      <li><a href="#today"><i>03</i><span data-zh="今日">Today</span></a></li>
+      <li><a href="#pitch"><i>04</i><span data-zh="介紹">Pitch</span></a></li>
+      <li><a href="#calendar"><i>05</i><span data-zh="行事曆">Calendar</span></a></li>
+      <li><a href="#trip"><i>06</i><span data-zh="行程">Trip</span></a></li>
+      <li><a href="#jamboree"><i>07</i><span data-zh="大會">Jamboree</span></a></li>
+      <li><a href="#final"><i>08</i><span data-zh="決賽">Final</span></a></li>
+      <li><a href="#shifts"><i>09</i><span data-zh="排班">Shifts</span></a></li>
+      <li><a href="#rooms"><i>10</i><span data-zh="房間">Rooms</span></a></li>
+      <li><a href="#packing"><i>11</i><span data-zh="行李">Packing</span></a></li>
+      <li><a href="#paris"><i>12</i><span data-zh="巴黎">Paris</span></a></li>
+      <li><a href="#map"><i>13</i><span data-zh="住宿">Stay</span></a></li>
+      <li><a href="#sos" class="nsos"><i>14</i><span data-zh="緊急">Emergency</span></a></li>
+      <li><a href="#bring"><i>15</i><span data-zh="攜帶">Bring</span></a></li>
+      <li><a href="#app"><i>16</i><span>App</span></a></li>
       <li class="nl-links"><button type="button" data-links><span data-zh="重要連結">Important links</span></button></li>
     </ul>
     <div class="nact">
@@ -977,6 +1009,45 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
         </table>
       </div>
       <p class="note" data-zh="題數是 11 月 3 日統計，兩份清單都還在加題。沒標 Crucial 的題也要有人答，只是先從關鍵題開始。">Counts taken on 3 November; both lists are still growing. The unmarked questions still need answers — the Crucial ones are just where to start.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="titles">
+  <div class="wrap">
+    <span class="eyebrow" data-zh="投影片標題 · 週六要交的簡報">Slide titles · for Saturday's slides</span>
+    <h2 data-zh="標題就是這張投影片要證明的那句話。">The title is the sentence the slide proves.</h2>
+    <p class="sub" data-zh="標籤只說明這張投影片出自哪個資料夾；標題說的是我們發現了什麼。下面兩張，都是我們自己十分鐘舞台簡報裡真實的投影片。">A label tells the room which folder the slide came from. A title tells them what we found. Both of the slides below are real ones from our own ten-minute stage talk.</p>
+
+    <div class="hwpins one">
+      <a class="pin" href="https://timmy97-tw.github.io/say-it-in-the-title/principles.html" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 7V5h16v2M12 5v14M9 19h6"/></svg></span><span data-zh="<small>怎麼寫投影片標題</small>Say It In The Title"><small>How to write a slide title</small>Say It In The Title</span><span class="arr">↗</span></a>
+    </div>
+
+    <div class="tfix">
+      <article class="tcase rv">
+        <div class="trule"><i>01</i><b data-zh="評審項目的名字不是結果。">A criterion is not a finding.</b></div>
+        <div class="tpair">
+          <div class="tslide was"><span class="ttag" data-zh="原本 · 一個標籤">Was · a label</span><div class="tt">Biosafety</div><div class="tghost"><span></span><span></span><span></span></div></div>
+          <div class="tarrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          <div class="tslide now"><span class="ttag" data-zh="現在 · 一個主張">Now · a claim</span><div class="tt">No <i>B. subtilis</i> grew on the outer side of the membrane</div><div class="tghost"><span></span><span></span><span></span></div></div>
+        </div>
+        <p class="twhy" data-zh="<b>一個單字，而且是我們被評分的那個項目的名字。</b>評審給我們生物安全的分數，是因為那張沒有長菌的培養皿，不是因為這個詞。改成九個字，下面兩張培養皿就不再是謎題，而是證據——證明一個觀眾心裡已經有的主張。"><b>One word, and it is the name of a box we get scored in.</b> A judge gives us the biosafety mark for the plate that showed no growth, not for the word. Nine words, and the two plates underneath stop being a puzzle and become evidence for a claim the room already has in mind.</p>
+      </article>
+
+      <article class="tcase rv">
+        <div class="trule"><i>02</i><b data-zh="把數字寫進標題。">Put the number in the title.</b></div>
+        <div class="tpair">
+          <div class="tslide was"><span class="ttag" data-zh="原本 · 一個問句">Was · a question</span><div class="tt">How do we precisely predict the stress?</div><div class="tghost"><span></span><span></span><span></span></div></div>
+          <div class="tarrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          <div class="tslide now"><span class="ttag" data-zh="現在 · 一個主張">Now · a claim</span><div class="tt">Adding weather data cut our rice yield error from 419 to 365 kg/ha</div><div class="tghost"><span></span><span></span><span></span></div></div>
+        </div>
+        <p class="twhy" data-zh="<b>問句可以用，但前提是答案就是觀眾接著看到的東西，而且字要夠大。</b>這張投影片的答案只是角落裡一小塊面板：標題丟出了問題，又把答案藏起來。數字就是答案，所以數字要寫進標題——順便也防止我們口頭講出另一個數字。"><b>A question is allowed, but only if the answer is the next thing the room sees, in big type.</b> On this slide the answer sat in a small panel in the bottom corner: the title created a problem and then hid the solution. The number is the answer, so the number goes in the title — and it stops us saying a different one out loud.</p>
+      </article>
+    </div>
+
+    <div class="tnote rv">
+      <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+      <span data-zh="標題沒有動詞，那就是標籤，不是標題。寫完就大聲念一遍：如果沒有任何觀察可以推翻它，它就只是裝飾。">If the title has no verb, it is a label, not a title. Read it out loud when you have written it: if no observation could contradict it, it is decoration.</span>
     </div>
   </div>
 </section>
@@ -1415,7 +1486,7 @@ var ZH={
  'Talk ideas':'演講構想','Stage talk slides':'舞台演講簡報','Project connections map':'專案連結地圖','Booth Pitch Prep':'攤位講稿準備','Booth QA Prep':'攤位問答準備','Booth roster':'攤位排班表','Promotion Activity':'宣傳活動','Promotion Poster':'宣傳海報','Banner Design':'布條設計',
  'Materials to bring':'攜帶物品','2026 Paris itinerary':'2026 巴黎行程','iGEM Bioreactor Landscape':'iGEM 生物反應器全景','Official schedule':'官方議程','Venue and travel info':'場地與交通資訊',
  'Competition program':'競賽議程','Doc':'文件','Sheet':'試算表','Site':'網站','Drive':'雲端',
- 'Slides':'簡報','Important Questions':'重要問題','Important Questions deck':'重要問題投影片','Instructor question sheet':'老師出題（模擬評審）','The homework, explained':'作業說明',
+ 'Slides':'簡報','Say It In The Title':'標題寫作原則','Important Questions':'重要問題','Important Questions deck':'重要問題投影片','Instructor question sheet':'老師出題（模擬評審）','The homework, explained':'作業說明',
  'Answer the important questions':'回答重要問題','Pick the ones you can answer, bring a figure and the numbers, then sign slide 1':'挑你答得出來的題目，附上圖與數據，並在第 1 頁簽名','Open the homework':'查看作業','Due Saturday':'週六截止',
  // goals
  'Integrate green-light control into the bioreactor system':'將綠光控制整合進生物反應器系統','Assemble the acrylic box':'組裝壓克力外殼',
@@ -1536,6 +1607,7 @@ var IC={
 };
 var LINKS=[
  {h:'Slides and Scripts',i:'slides',l:[
+  ['Say It In The Title','https://timmy97-tw.github.io/say-it-in-the-title/principles.html','site',1],
   ['5-min judging session slides','https://canva.link/4un52gnl73sugqm','canva'],
   ['5-min slides and script','https://timmy97-tw.github.io/releaf-5min/','site'],
   ['10-min live stage talk slides','https://www.canva.com/design/DAHY4Rb8ADw/wdH48SGTnHNbMaRrJjx9ww/edit','canva'],
@@ -1577,7 +1649,7 @@ var GOALS=[
 ];
 
 /* ---------- today's goals, by Taipei date ---------- */
-var JUDGEPREP={t:'Judging session prep',w:'Five-minute slides and the Q&A sheet, ahead of Saturday\'s mock',l:[LK('Judging Training Site'),LK('5-min slides and script'),LK('2026 QA prep'),LK('Plant Training Site')]};
+var JUDGEPREP={t:'Judging session prep',w:'Five-minute slides and the Q&A sheet, ahead of Saturday\'s mock',l:[LK('Say It In The Title'),LK('Judging Training Site'),LK('5-min slides and script'),LK('2026 QA prep'),LK('Plant Training Site')]};
 var STAGEPREP={t:'Live stage talk prep',w:'Two run-throughs on Saturday 31 October',l:[LK('Stage Talk Prep'),LK('10-min live stage talk slides')]};
 var LABGOALS={t:'Before-we-fly lab goals',w:'Five to finish before 10 November',l:[['See the five','#achieve']]};
 var PITCH={t:'Practise the two-minute pitch',w:'Watch last year\'s booth, then pitch ReLEAF out loud',l:[['Pitch it','#pitch']]};
