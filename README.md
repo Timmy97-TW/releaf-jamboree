@@ -1,8 +1,9 @@
 # ReLEAF to Paris
 
-GEMS Taiwan · ReLEAF dashboard for the last stretch of iGEM 2026: the calendar from wiki freeze to the
-Grand Jamboree final day (13–16 November 2026, Paris Convention Centre), the hour-by-hour Jamboree plan,
-booth shifts, every prep link, the packing lists and Paris travel notes.
+GEMS Taiwan · ReLEAF dashboard for the last stretch of iGEM 2026: the Important Questions homework due before
+Saturday's judging mock, the calendar from wiki freeze to the Grand Jamboree final day (13–16 November 2026,
+Paris Convention Centre), the hour-by-hour Jamboree plan, booth shifts, every prep link, the packing lists and
+Paris travel notes.
 
 Live: https://timmy97-tw.github.io/releaf-jamboree/
 

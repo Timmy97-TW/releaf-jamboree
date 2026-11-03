@@ -220,6 +220,38 @@ section.s{padding:84px 0 12px}
 .bul{width:10px;height:10px;border-radius:50%;flex:none}
 .empty{color:var(--ink2);margin:0}
 
+/* important questions homework */
+.hwpins{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 18px}
+.hwpins .pin.alt{background:var(--navy);box-shadow:0 10px 28px rgba(0,6,28,.28)}
+.hwpins .pin.alt:hover{box-shadow:0 14px 34px rgba(0,6,28,.36)}
+.hwgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;align-items:start}
+.hwask{counter-reset:hw;list-style:none;margin:14px 0 0;padding:0}
+.hwask li{counter-increment:hw;position:relative;padding:13px 0 13px 26px;border-top:1px solid var(--line);font-size:15.5px;line-height:1.45}
+.hwask li:first-child{border-top:0;padding-top:0}
+.hwask li:before{content:counter(hw);position:absolute;left:0;top:16px;font-size:12.5px;font-weight:700;color:var(--blue);font-variant-numeric:tabular-nums}
+.hwask li:first-child:before{top:3px}
+.hwask b{font-weight:600}
+.hwsign{display:flex;gap:11px;align-items:flex-start;margin-top:18px;padding:14px 16px;border-radius:14px;background:var(--mint);font-size:15px;line-height:1.45}
+.hwsign svg{width:19px;height:19px;flex:none;fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.hwdue{background:var(--navy);color:#fff;border-radius:var(--r);padding:22px 24px;position:relative;overflow:hidden}
+.hwdue:after{content:"";position:absolute;right:-80px;bottom:-110px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(1,103,239,.55),transparent 65%)}
+.hwdue>*{position:relative;z-index:1}
+.hwdue .label{color:rgba(255,255,255,.55)}
+.hwdue .n{font-size:52px;font-weight:700;letter-spacing:-.05em;line-height:1;margin-top:6px}
+.hwdue .u{font-size:15px;color:rgba(255,255,255,.72);margin-top:5px;line-height:1.35}
+.hwstats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.hwstats div{background:var(--card);border-radius:16px;padding:14px 14px 15px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.hwstats b{display:block;font-size:30px;font-weight:700;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.hwstats b.cru{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hwstats span{display:block;font-size:12.5px;color:var(--ink2);margin-top:6px;line-height:1.3}
+.qtab{width:100%;border-collapse:collapse;font-size:15px}
+.qtab th,.qtab td{padding:11px 8px;border-top:1px solid var(--line);text-align:left}
+.qtab thead th{border-top:0;font-size:12.5px;color:var(--ink3);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.qtab tbody th{font-weight:600}
+.qtab .n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.qtab tfoot th,.qtab tfoot td{border-top:2px solid var(--line);font-weight:700}
+.qtab td.n.zero{color:var(--ink3)}
+
 /* categories */
 .c-mock{--c:var(--blue)} .c-deliv{--c:var(--red)} .c-stage{--c:var(--green)} .c-final{--c:var(--violet)}
 .c-paris{--c:var(--amber)} .c-travel{--c:var(--navy)} .c-jam{--c:#00A3C4}
@@ -355,6 +387,7 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .lk a .k.doc{background:#E7F0FE;color:#1A5FD0} .lk a .k.sheet{background:#E6F7EE;color:#11804F}
 .lk a .k.canva{background:#F1EBFF;color:#6440D8} .lk a .k.site{background:#E6FAF6;color:#008C6E}
 .lk a .k.drive{background:#FFF4E0;color:#B26A00} .lk a .k.igem{background:var(--navy);color:#fff}
+.lk a .k.slides{background:#FFF0E6;color:#C2410C}
 .lk a .arr{color:var(--ink3);font-size:15px}
 .lk a.star{background:linear-gradient(100deg,#EEF4FE,#E6FAF2);font-weight:600}
 .lk a .st{color:var(--amber);font-size:15px;margin-right:-2px}
@@ -708,6 +741,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   .grid3{grid-template-columns:1fr 1fr}
   .feats{grid-template-columns:1fr 1fr}
   .kit{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .hwgrid{grid-template-columns:1fr}
   .ytgrid{grid-template-columns:200px 1fr}
   .ytgrid>div:last-child{grid-column:1/-1}
   .cityrow,.hoodrow{grid-template-columns:1fr}
@@ -726,6 +760,8 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   section.s{padding:60px 0 6px}
   .s .sub{font-size:17px;margin-bottom:24px}
   .today,.grid2,.who,.grid3,.goals{grid-template-columns:1fr}
+  .hwpins{grid-template-columns:1fr}
+  .hwstats{grid-template-columns:1fr 1fr}
   .links{columns:1}
   .hero-photo{opacity:.18;background-position:62% 30%;
     -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 45%,transparent 80%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 45%,transparent 80%)}
@@ -821,20 +857,21 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   <div class="nav-in">
     <a class="brand" href="#top" aria-label="ReLEAF, back to top"><img src="img/logo.png" alt=""><span class="bw"><b>ReLEAF</b><small data-zh="巴黎 2026">Paris 2026</small></span></a>
     <ul class="nlinks" id="nlinks">
-      <li><a href="#today"><i>01</i><span data-zh="今日">Today</span></a></li>
-      <li><a href="#pitch"><i>02</i><span data-zh="介紹">Pitch</span></a></li>
-      <li><a href="#calendar"><i>03</i><span data-zh="行事曆">Calendar</span></a></li>
-      <li><a href="#trip"><i>04</i><span data-zh="行程">Trip</span></a></li>
-      <li><a href="#jamboree"><i>05</i><span data-zh="大會">Jamboree</span></a></li>
-      <li><a href="#final"><i>06</i><span data-zh="決賽">Final</span></a></li>
-      <li><a href="#shifts"><i>07</i><span data-zh="排班">Shifts</span></a></li>
-      <li><a href="#rooms"><i>08</i><span data-zh="房間">Rooms</span></a></li>
-      <li><a href="#packing"><i>09</i><span data-zh="行李">Packing</span></a></li>
-      <li><a href="#paris"><i>10</i><span data-zh="巴黎">Paris</span></a></li>
-      <li><a href="#map"><i>11</i><span data-zh="住宿">Stay</span></a></li>
-      <li><a href="#sos" class="nsos"><i>12</i><span data-zh="緊急">Emergency</span></a></li>
-      <li><a href="#bring"><i>13</i><span data-zh="攜帶">Bring</span></a></li>
-      <li><a href="#app"><i>14</i><span>App</span></a></li>
+      <li><a href="#homework"><i>01</i><span data-zh="重要問題">Questions</span></a></li>
+      <li><a href="#today"><i>02</i><span data-zh="今日">Today</span></a></li>
+      <li><a href="#pitch"><i>03</i><span data-zh="介紹">Pitch</span></a></li>
+      <li><a href="#calendar"><i>04</i><span data-zh="行事曆">Calendar</span></a></li>
+      <li><a href="#trip"><i>05</i><span data-zh="行程">Trip</span></a></li>
+      <li><a href="#jamboree"><i>06</i><span data-zh="大會">Jamboree</span></a></li>
+      <li><a href="#final"><i>07</i><span data-zh="決賽">Final</span></a></li>
+      <li><a href="#shifts"><i>08</i><span data-zh="排班">Shifts</span></a></li>
+      <li><a href="#rooms"><i>09</i><span data-zh="房間">Rooms</span></a></li>
+      <li><a href="#packing"><i>10</i><span data-zh="行李">Packing</span></a></li>
+      <li><a href="#paris"><i>11</i><span data-zh="巴黎">Paris</span></a></li>
+      <li><a href="#map"><i>12</i><span data-zh="住宿">Stay</span></a></li>
+      <li><a href="#sos" class="nsos"><i>13</i><span data-zh="緊急">Emergency</span></a></li>
+      <li><a href="#bring"><i>14</i><span data-zh="攜帶">Bring</span></a></li>
+      <li><a href="#app"><i>15</i><span>App</span></a></li>
       <li class="nl-links"><button type="button" data-links><span data-zh="重要連結">Important links</span></button></li>
     </ul>
     <div class="nact">
@@ -888,6 +925,62 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
 </header>
 
 <main>
+<section class="s" id="homework">
+  <div class="wrap">
+    <span class="eyebrow" data-zh="全隊作業 · 週六模擬評審前">Team homework · before Saturday's mock</span>
+    <h2 data-zh="每一題都要有人回答，並簽上名字。">Every question gets an answer, and a name.</h2>
+    <p class="sub" data-zh="兩份清單，同樣六個主題。投影片是我們作答的地方；試算表是老師出的題，更精準也更尖銳。挑你答得出來的題目，附上一張關鍵圖和實際數據，然後在第 1 頁簽上你的名字。">Two lists, the same six topics. The deck is where we write the answers; the sheet is the instructors' version of the same questions, sharper and better aimed. Take the ones you can answer, bring one key figure and the real numbers, then sign your name on slide 1.</p>
+
+    <div class="hwpins">
+      <a class="pin" href="https://docs.google.com/presentation/d/1O95af9Q3xPGV_ucqMZ8s1sKE2wsrWGPISFywieWuuV0/edit" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/></svg></span><span data-zh="<small>在這裡作答</small>重要問題投影片"><small>Answer here</small>Important Questions deck</span><span class="arr">↗</span></a>
+      <a class="pin alt" href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=0#gid=0" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9.5h18M3 14.5h18M9 4v16M15 4v16"/></svg></span><span data-zh="<small>老師出的題</small>模擬評審題庫"><small>Instructors' questions</small>Mock judging question sheet</span><span class="arr">↗</span></a>
+    </div>
+
+    <div class="hwgrid">
+      <div class="card rv">
+        <div class="label" data-zh="每一題都要有的四樣東西">What every answer needs</div>
+        <ol class="hwask">
+          <li data-zh="<b>一張關鍵圖。</b>回答時可以直接指的那張圖。從我們的 wiki、結果頁或論文裡找，並註明來源。"><b>One key figure.</b> The picture you point at while you answer. Pull it from our wiki, our results or a paper, and say where it came from.</li>
+          <li data-zh="<b>實際數據。</b>數值、單位、重複數，以及數據出自哪一次實驗或哪張圖。"><b>The numbers.</b> Value, units, how many replicates, and which run or figure they come from.</li>
+          <li data-zh="<b>答題關鍵字。</b>三到四個不能漏掉的詞，這樣就算講得匆忙，答案還是站得住。"><b>Answer keywords.</b> Three or four words you cannot leave out, so the answer still holds when you are rushed.</li>
+          <li data-zh="<b>完整答案。</b>簡短、精準、完整——一分鐘內講得完的那個版本。"><b>The answer itself.</b> Short, precise and complete — the version you would say out loud in under a minute.</li>
+        </ol>
+        <div class="hwsign">
+          <svg viewBox="0 0 24 24"><path d="M3 17.5c3-1 4-6 6.5-6s1.5 4 4 4 3.5-3.5 7.5-3.5"/><path d="M15 7l2-2 2 2-2 2z"/></svg>
+          <span data-zh="完成一題，就在第 1 頁的題號旁打上你的名字。這樣大家才看得出哪些題有人認領、哪些還空著。">Finished one? Put your name next to that question number on slide 1. That is how we see what is taken and what is still open.</span>
+        </div>
+      </div>
+      <div>
+        <div class="hwdue rv" id="hwdue"></div>
+        <div class="hwstats rv">
+          <div><b>83</b><span data-zh="投影片題數">questions in the deck</span></div>
+          <div><b>95</b><span data-zh="題庫題數">in the instructors' sheet</span></div>
+          <div><b class="cru">20</b><span data-zh="標為 Crucial">marked Crucial</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card rv" style="margin-top:18px">
+      <div class="label" style="margin-bottom:4px" data-zh="六個主題，點主題名稱開啟該分頁">Six topics · topic names open that tab of the sheet</div>
+      <div class="tablewrap">
+        <table class="qtab">
+          <thead><tr><th data-zh="主題">Topic</th><th class="n" data-zh="投影片">Deck</th><th class="n" data-zh="題庫">Sheet</th><th class="n" data-zh="關鍵題">Crucial</th></tr></thead>
+          <tbody>
+      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=0#gid=0" target="_blank" rel="noopener" data-zh="一般">General</a></th><td class="n">16</td><td class="n">16</td><td class="n">7</td></tr>
+      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=790320425#gid=790320425" target="_blank" rel="noopener" data-zh="硬體">Hardware</a></th><td class="n">33</td><td class="n">33</td><td class="n">5</td></tr>
+      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=15714428#gid=15714428" target="_blank" rel="noopener" data-zh="商業與法規">Business &amp; Legal</a></th><td class="n">11</td><td class="n">13</td><td class="n">5</td></tr>
+      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=1628754936#gid=1628754936" target="_blank" rel="noopener" data-zh="推廣與人文實踐">Outreach &amp; iHP</a></th><td class="n">2</td><td class="n">2</td><td class="n">1</td></tr>
+      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=847492033#gid=847492033" target="_blank" rel="noopener" data-zh="植物">Plant</a></th><td class="n">11</td><td class="n">13</td><td class="n">1</td></tr>
+      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=1499663032#gid=1499663032" target="_blank" rel="noopener" data-zh="選殖">Cloning</a></th><td class="n">10</td><td class="n">18</td><td class="n">1</td></tr>
+          </tbody>
+          <tfoot><tr><th data-zh="合計">Total</th><td class="n">83</td><td class="n">95</td><td class="n">20</td></tr></tfoot>
+        </table>
+      </div>
+      <p class="note" data-zh="題數是 11 月 3 日統計，兩份清單都還在加題。沒標 Crucial 的題也要有人答，只是先從關鍵題開始。">Counts taken on 3 November; both lists are still growing. The unmarked questions still need answers — the Crucial ones are just where to start.</p>
+    </div>
+  </div>
+</section>
+
 <section class="s" id="today">
   <div class="wrap">
     <span class="eyebrow" data-zh="今日">Today</span>
@@ -1322,6 +1415,8 @@ var ZH={
  'Talk ideas':'演講構想','Stage talk slides':'舞台演講簡報','Project connections map':'專案連結地圖','Booth Pitch Prep':'攤位講稿準備','Booth QA Prep':'攤位問答準備','Booth roster':'攤位排班表','Promotion Activity':'宣傳活動','Promotion Poster':'宣傳海報','Banner Design':'布條設計',
  'Materials to bring':'攜帶物品','2026 Paris itinerary':'2026 巴黎行程','iGEM Bioreactor Landscape':'iGEM 生物反應器全景','Official schedule':'官方議程','Venue and travel info':'場地與交通資訊',
  'Competition program':'競賽議程','Doc':'文件','Sheet':'試算表','Site':'網站','Drive':'雲端',
+ 'Slides':'簡報','Important Questions':'重要問題','Important Questions deck':'重要問題投影片','Instructor question sheet':'老師出題（模擬評審）','The homework, explained':'作業說明',
+ 'Answer the important questions':'回答重要問題','Pick the ones you can answer, bring a figure and the numbers, then sign slide 1':'挑你答得出來的題目，附上圖與數據，並在第 1 頁簽名','Open the homework':'查看作業','Due Saturday':'週六截止',
  // goals
  'Integrate green-light control into the bioreactor system':'將綠光控制整合進生物反應器系統','Assemble the acrylic box':'組裝壓克力外殼',
  'Upgrade the LPA red light bulb to 660 nm':'將 LPA 紅光燈泡升級為 660 nm',
@@ -1436,6 +1531,7 @@ var IC={
  booth:'<path d="M3 9l1.5-5h15L21 9M4 9v11h16V9M3 9h18M9 20v-6h6v6"/>',
  plane:'<path d="M10 14l-7-3 1-2 9 1 5-5a2 2 0 0 1 3 3l-5 5 1 9-2 1-3-7-3 3v3l-2 1-1-4-4-1 1-2h3z"/>',
  slides:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/>',
+ sheet:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9.5h18M3 14.5h18M9 4v16M15 4v16"/>',
  globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>'
 };
 var LINKS=[
@@ -1444,8 +1540,10 @@ var LINKS=[
   ['5-min slides and script','https://timmy97-tw.github.io/releaf-5min/','site'],
   ['10-min live stage talk slides','https://www.canva.com/design/DAHY4Rb8ADw/wdH48SGTnHNbMaRrJjx9ww/edit','canva'],
   ['Finalist presentation','','soon']]},
+ {h:'Important Questions',i:'sheet',l:[
+  ['Important Questions deck','https://docs.google.com/presentation/d/1O95af9Q3xPGV_ucqMZ8s1sKE2wsrWGPISFywieWuuV0/edit','slides',1],
+  ['Instructor question sheet','https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=0#gid=0','sheet',1]]},
  {h:'Judging',i:'judge',l:[
-  ['Instructor questions','https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=0#gid=0','sheet',1],
   ['2026 QA prep','https://docs.google.com/spreadsheets/d/1_35O9ugtBM8QZ_fXBo7MaY0TEIIgdYkDs_kvEkT5soo/edit?gid=1264413978#gid=1264413978','sheet'],
   ['Judging Training Site','https://timmy97-tw.github.io/releaf-judging-qa/index.html','site',1],
   ['iGEM Bioreactor Landscape','https://timmy97-tw.github.io/igem-bioreactor-landscape/','site',1],
@@ -1466,7 +1564,7 @@ var LINKS=[
   ['Venue and travel info','https://jamboree.igem.org/2026/info','igem'],
   ['Competition program','https://jamboree.igem.org/2026/program/competition','igem']]}
 ];
-var KIND={doc:'Doc',sheet:'Sheet',canva:'Canva',site:'Site',drive:'Drive',igem:'iGEM',soon:'To be made'};
+var KIND={doc:'Doc',sheet:'Sheet',slides:'Slides',canva:'Canva',site:'Site',drive:'Drive',igem:'iGEM',soon:'To be made'};
 function LK(name){var u='#';LINKS.forEach(function(c){c.l.forEach(function(l){if(l[0]===name)u=l[1]})});return [name,u]}
 
 /* ---------- to achieve before we fly ---------- */
@@ -1488,7 +1586,8 @@ var TASKS={
   {t:'Meeting with Kyle, plant postdoc',w:'Go through the plant Q&As and learn how to present the plant data',hot:1,tag:'Important',l:[LK('Plant Training Site'),LK('2026 QA prep')]},
   JUDGEPREP,PITCH,STAGEPREP,LABGOALS]}
 };
-var STANDING={h:'Today\'s goals',l:[JUDGEPREP,PITCH,STAGEPREP,LABGOALS]};
+var QHOME={t:'Answer the important questions',w:'Pick the ones you can answer, bring a figure and the numbers, then sign slide 1',hot:1,tag:'Due Saturday',l:[LK('Important Questions deck'),LK('Instructor question sheet'),['Open the homework','#homework']]};
+var STANDING={h:'Today\'s goals',l:[QHOME,JUDGEPREP,PITCH,STAGEPREP,LABGOALS]};
 
 /* ================= render ================= */
 function rel(n){return LANG==='zh'?(n===0?'今天':n===1?'明天':n===-1?'昨天':n>0?n+' 天後':-n+' 天前'):(n===0?'today':n===1?'tomorrow':n===-1?'yesterday':n>0?'in '+n+' days':-n+' days ago')}
@@ -1749,6 +1848,14 @@ if(location.hash==='#links')openLinks();
 var heroEl=$('top');
 function fab(){$('fab').classList.toggle('on',heroEl.getBoundingClientRect().bottom<0)}
 window.addEventListener('scroll',fab,{passive:true});fab();
+function homework(){
+  var tk=key(now(),homeTZ()),d=dayDiff(tk,'2026-11-07'),lab='<div class="label">'+L('Due','截止')+'</div>',h;
+  if(d>1)h=lab+'<div class="n tw">'+d+'</div><div class="u">'+L('days until Saturday 7 November','天後就是 11 月 7 日（六）')+'</div>';
+  else if(d===1)h=lab+'<div class="n tw">1</div><div class="u">'+L('day left · Saturday 7 November','天 · 11 月 7 日（六）')+'</div>';
+  else if(d===0)h=lab+'<div class="n">'+L('Today','今天')+'</div><div class="u">'+L('Saturday 7 November, the judging mock','11 月 7 日（六），模擬評審')+'</div>';
+  else h=lab+'<div class="n">'+L('Open','持續')+'</div><div class="u">'+L('Saturday has passed. The questions without names still need them.','週六已過。還沒人簽名的題目仍等人回答。')+'</div>';
+  $('hwdue').innerHTML=h;
+}
 function goals(force){
   var tk=key(now(),homeTZ()),fly=dayDiff(tk,'2026-11-10'),el=$('achieve');
   var lead='<div class="label">'+L('Before we fly','出發前')+'</div>'+(fly>0?'<div class="n tw">'+fly+'</div><div class="u">'+L((fly===1?'day':'days')+' to finish all five','天內完成五項目標')+'</div>':'<div class="n">'+L('Go','出發')+'</div><div class="u">'+L('Wheels up','起飛')+'</div>');
@@ -1984,7 +2091,7 @@ function langThumb(){var b=$('lang').querySelector('button.on'),t=$('lang').quer
 window.addEventListener('resize',langThumb);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(langThumb);
 function setLang(l){
   if(l===LANG)return;LANG=l;try{localStorage.setItem('releaf-lang',l)}catch(e){}
-  statics();hero();journey();goals(1);today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();rooms();cityMap();hoodMap();weather();PITCHLAB();
+  statics();hero();journey();homework();goals(1);today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();rooms();cityMap();hoodMap();weather();PITCHLAB();
   document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
 }
 $('lang').onclick=function(e){var b=e.target.closest('button');if(b)setLang(b.dataset.l)};
@@ -2007,9 +2114,9 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')menu(false)}
 document.addEventListener('click',function(e){if(nav.classList.contains('open')&&!nav.contains(e.target))menu(false)});
 
 /* ---------- boot ---------- */
-statics();hero();journey();goals();today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();pitch();rooms();cityMap();hoodMap();weather();wxLoad();navSpy();
+statics();hero();journey();homework();goals();today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();pitch();rooms();cityMap();hoodMap();weather();wxLoad();navSpy();
 setInterval(hero,1000);setInterval(wxLoad,36e5);
-setInterval(function(){today();journey();goals();if(inParis(now()))schedule()},60000);
+setInterval(function(){today();journey();homework();goals();if(inParis(now()))schedule()},60000);
 var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(schedule,150)});
 if('IntersectionObserver' in window){
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -40px 0px'});
