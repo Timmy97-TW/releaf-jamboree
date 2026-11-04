@@ -295,30 +295,41 @@ section.s{padding:84px 0 12px}
 .qtab .n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .qtab tfoot th,.qtab tfoot td{border-top:2px solid var(--line);font-weight:700}
 .qtab td.n.zero{color:var(--ink3)}
+.owns{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-top:14px}
+.own{background:var(--bg);border-radius:16px;padding:15px 16px 16px}
+.own .oh{display:flex;align-items:baseline;gap:9px;margin-bottom:7px}
+.own .oh b{font-size:16px;font-weight:700;letter-spacing:-.01em}
+.own .oh i{font-style:normal;margin-left:auto;font-size:22px;font-weight:700;color:var(--blue);letter-spacing:-.03em}
+.own.open .oh i{color:var(--amber)}
+.own p{font-size:14px;color:var(--ink2);line-height:1.45;margin:0}
+.thanks{display:flex;gap:11px;align-items:flex-start;margin-top:16px;padding:14px 16px;border-radius:14px;background:var(--mint);font-size:15px;line-height:1.45}
+.thanks svg{width:19px;height:19px;flex:none;fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.pprog{display:grid;grid-template-columns:1fr auto;gap:10px 28px;align-items:start}
+.pprog h3{font-size:22px;letter-spacing:-.02em;margin:5px 0 7px}
+.pprog p{font-size:15px;color:var(--ink2);line-height:1.5;margin:0}
+.pprog .pn{display:flex;gap:18px;grid-row:2;justify-content:flex-end}
+.pprog .pn div{display:flex;flex-direction:column;gap:3px;text-align:right}
+.pprog .pn b{font-size:30px;font-weight:700;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.pprog .pn span{font-size:12px;color:var(--ink3);line-height:1.25}
+.pprog .plinks{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.pprog .plinks a{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:12px;font-size:14px;font-weight:600;background:rgba(1,103,239,.08);color:var(--blue)}
+.pprog .plinks a.ghost{background:transparent;border:1px solid var(--line);color:var(--ink2)}
+@media (max-width:760px){.pprog{grid-template-columns:1fr}.pprog .pn{grid-row:auto;justify-content:flex-start}.pprog .pn div{text-align:left}}
 
-/* slide titles, before and after */
+/* plant judging with Kyle: what not to say, what to say */
 .hwpins.one{grid-template-columns:minmax(0,560px)}
 .tfix{display:grid;gap:18px}
 .tcase{background:var(--card);border-radius:var(--r);padding:22px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
 .trule{display:flex;align-items:center;gap:11px;margin-bottom:16px}
 .trule i{font-style:normal;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--grad);color:#fff;font-size:12px;font-weight:700;flex:none;font-variant-numeric:tabular-nums}
 .trule b{font-size:17px;font-weight:700;letter-spacing:-.02em}
-.tpair{display:grid;grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr);gap:8px;align-items:stretch}
-.tslide{border-radius:16px;padding:16px 18px 18px;display:flex;flex-direction:column;min-height:152px}
-.tslide .ttag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.tslide .tt{font-size:19px;font-weight:700;letter-spacing:-.02em;line-height:1.26;margin-top:9px}
-.tslide .tt i{font-style:italic}
-.tslide.was{background:#F0F0F3}
-.tslide.was .ttag{color:var(--ink3)}
-.tslide.was .tt{color:var(--ink2)}
-.tslide.now{background:var(--navy)}
-.tslide.now .ttag{color:var(--green2)}
-.tslide.now .tt{color:#fff}
-.tghost{margin-top:auto;padding-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.tghost span{height:24px;border-radius:6px;background:rgba(0,0,0,.07)}
-.tslide.now .tghost span{background:rgba(255,255,255,.13)}
-.tarrow{display:grid;place-items:center;color:var(--ink3)}
-.tarrow svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.kgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ksay{border-radius:16px;padding:15px 17px 16px;font-size:15.5px;line-height:1.45}
+.ksay .lb{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px}
+.ksay.no{background:#FDF0F0;color:var(--ink2)}
+.ksay.no .lb{color:var(--red)}
+.ksay.yes{background:var(--mint)}
+.ksay.yes .lb{color:var(--green)}
 .twhy{font-size:15.5px;color:var(--ink2);line-height:1.5;margin:16px 0 0}
 .twhy b{color:var(--ink);font-weight:600}
 .tnote{display:flex;gap:12px;align-items:flex-start;margin-top:18px;padding:16px 18px;border-radius:16px;background:var(--mint);font-size:16px;line-height:1.45}
@@ -833,9 +844,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   .s .sub{font-size:17px;margin-bottom:24px}
   .today,.grid2,.who,.grid3,.goals{grid-template-columns:1fr}
   .hwpins{grid-template-columns:1fr}
-  .tpair{grid-template-columns:1fr}
-  .tarrow{transform:rotate(90deg);height:26px}
-  .tslide{min-height:0}
+  .kgrid{grid-template-columns:1fr}
   .hwstats{grid-template-columns:1fr 1fr}
   .links{columns:1}
   .hero-photo{opacity:.18;background-position:62% 30%;
@@ -935,7 +944,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <li><a href="#tasks"><i>01</i><span data-zh="作業">Tasks</span></a></li>
       <li><a href="#today"><i>02</i><span data-zh="今日">Today</span></a></li>
       <li><a href="#homework"><i>03</i><span data-zh="重要問題">Questions</span></a></li>
-      <li><a href="#titles"><i>04</i><span data-zh="標題">Titles</span></a></li>
+      <li><a href="#kyle"><i>04</i><span data-zh="植物">Plant</span></a></li>
       <li><a href="#pitch"><i>05</i><span data-zh="介紹">Pitch</span></a></li>
       <li><a href="#calendar"><i>06</i><span data-zh="行事曆">Calendar</span></a></li>
       <li><a href="#trip"><i>07</i><span data-zh="行程">Trip</span></a></li>
@@ -1006,18 +1015,18 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   <div class="wrap">
     <span class="eyebrow" data-zh="本週三件事">This week, three things</span>
     <h2 data-zh="三份作業，週六之前。">Three tasks, before Saturday.</h2>
-    <p class="sub" data-zh="答出你的題目、把投影片標題改成一句主張，並把評審票上那三十題練到能說出口。每一欄下面都有完整版。">Answer your questions, turn your slide titles into claims, and drill the thirty questions on the ballot. The full version of each sits further down or one click away.</p>
+    <p class="sub" data-zh="答出你的題目、把 Kyle 退回來的三個植物答案改掉，並把評審票上那三十題練到能說出口。每一欄下面都有完整版。">Answer your questions, change the three plant answers Kyle sent back, and drill the thirty questions on the ballot. The full version of each sits further down or one click away.</p>
 
     <div class="tgrid">
 
       <article class="tcard rv" style="--tc:#0167EF;--tw:rgba(1,103,239,.08)">
         <div class="tno"><b>01</b><span data-zh="全隊作業 · 週六模擬評審前">Team homework · before Saturday's mock</span></div>
         <h3 data-zh="每一題都要有人回答，並簽上名字。">Every question gets an answer, and a name.</h3>
-        <p class="td" data-zh="兩份清單，同樣六個主題。投影片是我們作答的地方；試算表是老師出的題。挑你答得出來的，附一張關鍵圖和實際數據，然後在第 1 頁簽名。">Two lists, the same six topics. The deck is where we write the answers; the sheet is the instructors' version. Take the ones you can answer, bring one key figure and the real numbers, then sign slide 1.</p>
+        <p class="td" data-zh="五個人認領了 21 題，寫完 19 題。植物和商業與法規還是一片空白。挑你答得出來的，附一張關鍵圖和實際數據，然後在第 1 頁簽名。">Five people have taken 21 questions and written 19 answers. Plant and Business &amp; Legal are still blank. Take the ones you can answer, bring one key figure and the real numbers, then sign slide 1.</p>
         <div class="tnums">
-          <div><b>83</b><span data-zh="投影片題數">in the deck</span></div>
-          <div><b>95</b><span data-zh="題庫題數">in the sheet</span></div>
-          <div><b style="color:var(--red)">20</b><span data-zh="標為 Crucial">Crucial</span></div>
+          <div><b>88</b><span data-zh="投影片題數">in the deck</span></div>
+          <div><b>21</b><span data-zh="已簽名">with a name</span></div>
+          <div><b style="color:var(--red)">67</b><span data-zh="還沒人認領">still open</span></div>
         </div>
         <div class="tkgo">
           <a href="https://docs.google.com/presentation/d/1O95af9Q3xPGV_ucqMZ8s1sKE2wsrWGPISFywieWuuV0/edit" target="_blank" rel="noopener"><span class="lb" data-zh="<small>在這裡作答</small>重要問題投影片"><small>Answer here</small>Important Questions deck</span><span class="arr">&#8599;</span></a>
@@ -1026,16 +1035,16 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       </article>
 
       <article class="tcard rv" style="--tc:#7C5CFF;--tw:rgba(124,92,255,.09)">
-        <div class="tno"><b>02</b><span data-zh="投影片標題 · 週六要交的簡報">Slide titles · for Saturday's slides</span></div>
-        <h3 data-zh="標題就是這張投影片要證明的那句話。">The title is the sentence the slide proves.</h3>
-        <p class="td" data-zh="標籤只說明這張投影片出自哪個資料夾；標題說的是我們發現了什麼。標題沒有動詞，那就是標籤。">A label tells the room which folder the slide came from. A title tells them what we found. If the title has no verb, it is a label.</p>
+        <div class="tno"><b>02</b><span data-zh="植物評審 · 11 月 4 日與 Kyle">Plant judging · 4 November with Kyle</span></div>
+        <h3 data-zh="鮮重不等於存活。">Fresh weight is not survival.</h3>
+        <p class="td" data-zh="Kyle 把我們的植物答案逐題拆過一遍：二十五題，每題都有我們的回答、關鍵字，以及他的修正。其中三題，改變了我們站在評審面前該怎麼說。">Kyle went through our plant answers one at a time: twenty-five questions, each with our answer, the keywords and his correction. Three of them change what we say in front of a judge.</p>
         <div class="tex">
-          <i data-zh="生物安全">Biosafety</i>
-          <b data-zh="膜的外側沒有長出任何<i>B. subtilis</i>">No <i>B. subtilis</i> grew on the outer side of the membrane</b>
+          <i data-zh="鮮重變高了，所以保護劑有效">Fresh weight went up, so the protectant worked</i>
+          <b data-zh="致死逆境下先看存活；非致死逆境下才看生長量">Under lethal stress we score survival first, growth second</b>
         </div>
         <div class="tkgo">
-          <a href="https://timmy97-tw.github.io/say-it-in-the-title/principles.html" target="_blank" rel="noopener"><span class="lb" data-zh="<small>怎麼寫投影片標題</small>Say It In The Title"><small>How to write a slide title</small>Say It In The Title</span><span class="arr">&#8599;</span></a>
-          <a class="ghost" href="#titles" data-zh="兩個真實的修改例子">Both worked examples<span class="arr">&#8595;</span></a>
+          <a href="https://docs.google.com/document/d/1-AdkqqCcaOysAedZgN8VaVZL71wCyEz06orGKLaCbxU/edit?tab=t.0#heading=h.j2wr3na42ax3" target="_blank" rel="noopener"><span class="lb" data-zh="<small>完整筆記</small>11/4 植物評審筆記"><small>The full notes</small>11/4 Plant Judging Notes</span><span class="arr">&#8599;</span></a>
+          <a class="ghost" href="#kyle" data-zh="三個要改的答案">The three answers to change<span class="arr">&#8595;</span></a>
         </div>
       </article>
 
@@ -1097,69 +1106,105 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <div>
         <div class="hwdue rv" id="hwdue"></div>
         <div class="hwstats rv">
-          <div><b>83</b><span data-zh="投影片題數">questions in the deck</span></div>
-          <div><b>95</b><span data-zh="題庫題數">in the instructors' sheet</span></div>
-          <div><b class="cru">20</b><span data-zh="標為 Crucial">marked Crucial</span></div>
+          <div><b>88</b><span data-zh="投影片題數">questions in the deck</span></div>
+          <div><b>21</b><span data-zh="已經有人簽名">have a name on them</span></div>
+          <div><b class="cru">20</b><span data-zh="已經寫上答案">have an answer</span></div>
         </div>
       </div>
     </div>
 
     <div class="card rv" style="margin-top:18px">
+      <div class="label" style="margin-bottom:2px" data-zh="誰認領了什麼 · 11 月 4 日 23:00 的投影片">Who has taken what · the deck at 23:00 on 4 November</div>
+      <div class="owns">
+        <article class="own">
+          <div class="oh"><b>Joshua Hong</b><i class="tw">14</i></div>
+          <p data-zh="硬體清單的前十題，H1 到 H10：光度計、雙光束、LPA、夾管閥、膜阻塞、BPT 管。再加上一般題的四題，包含農場電力和培養基更換。全部都寫完了。">The first ten questions on the hardware list, H1 to H10: the photometer, the dual beam, the LPA, the pinch valve, fouling, the BPT tubing. Plus four on the general list, including power on a farm and how the medium gets refilled. All written.</p>
+        </article>
+        <article class="own">
+          <div class="oh"><b>Sophie Chen</b><i class="tw">3</i></div>
+          <p data-zh="為什麼用光而不用化學誘導、ACC deaminase 的實際分子量（35–42 kDa，推測是同源二聚體），以及密碼子最佳化的目的。目前唯一附上圖的答案是她的。">Why light and not a chemical inducer, the actual size of ACC deaminase (35&ndash;42 kDa, with a homodimer as the hypothesis), and what codon optimisation was for. Hers is the only answer so far with a figure in it.</p>
+        </article>
+        <article class="own">
+          <div class="oh"><b>Olivia Lin</b><i class="tw">2</i></div>
+          <p data-zh="Csn 與 SamyQ 的分泌效率，已經寫了。「為什麼選這三個保護劑」簽了名，還空著。">Csn against SamyQ for secretion, written. &ldquo;Why these three protectants&rdquo; is signed and still blank.</p>
+        </article>
+        <article class="own">
+          <div class="oh"><b>Jacquelyn Inocencio</b><i class="tw">1</i></div>
+          <p data-zh="為什麼用光當誘導訊號：化學誘導劑要一直加、一直花錢，而光不用打開系統。">Why light is the inducer: a chemical inducer has to be added and paid for again and again, and light does not mean opening the system.</p>
+        </article>
+        <article class="own open">
+          <div class="oh"><b>Olivia Du</b><i class="tw">1</i></div>
+          <p data-zh="小農買不買得起這台反應器——商業與法規那一組目前唯一被認領的題目。簽了名，還沒寫。">Whether a smallholder can afford the reactor &mdash; the only question anyone has taken in Business &amp; Legal. Signed, not yet written.</p>
+        </article>
+      </div>
+      <div class="thanks">
+        <svg viewBox="0 0 24 24"><path d="M20.8 6.6a5 5 0 0 0-7.1 0L12 8.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 22l8.8-8.3a5 5 0 0 0 0-7.1z"/></svg>
+        <span data-zh="謝謝這五位。21 題被認領，19 題已經寫完，硬體那一欄現在站得住。還有一題（O2，CH Biotech 和農民意見）寫好了但沒有名字——是誰寫的，請去第 1 頁簽上去。">Thank you, all five. Twenty-one questions taken, nineteen answers written, and the hardware column now stands up. One more answer &mdash; O2, the CH Biotech and farmer feedback &mdash; is written with nobody&rsquo;s name on it. Whoever wrote it, put your name on slide 1.</span>
+      </div>
+    </div>
+    <div class="card rv" style="margin-top:18px">
       <div class="label" style="margin-bottom:4px" data-zh="六個主題，點主題名稱開啟該分頁">Six topics · topic names open that tab of the sheet</div>
       <div class="tablewrap">
         <table class="qtab">
-          <thead><tr><th data-zh="主題">Topic</th><th class="n" data-zh="投影片">Deck</th><th class="n" data-zh="題庫">Sheet</th><th class="n" data-zh="關鍵題">Crucial</th></tr></thead>
+          <thead><tr><th data-zh="主題">Topic</th><th class="n" data-zh="投影片">Deck</th><th class="n" data-zh="題庫">Sheet</th><th class="n" data-zh="關鍵題">Crucial</th><th class="n" data-zh="已簽名">Named</th><th class="n" data-zh="已作答">Answered</th></tr></thead>
           <tbody>
-      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=0#gid=0" target="_blank" rel="noopener" data-zh="一般">General</a></th><td class="n">16</td><td class="n">16</td><td class="n">7</td></tr>
-      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=790320425#gid=790320425" target="_blank" rel="noopener" data-zh="硬體">Hardware</a></th><td class="n">33</td><td class="n">33</td><td class="n">5</td></tr>
-      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=15714428#gid=15714428" target="_blank" rel="noopener" data-zh="商業與法規">Business &amp; Legal</a></th><td class="n">11</td><td class="n">13</td><td class="n">5</td></tr>
-      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=1628754936#gid=1628754936" target="_blank" rel="noopener" data-zh="推廣與人文實踐">Outreach &amp; iHP</a></th><td class="n">2</td><td class="n">2</td><td class="n">1</td></tr>
-      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=847492033#gid=847492033" target="_blank" rel="noopener" data-zh="植物">Plant</a></th><td class="n">11</td><td class="n">13</td><td class="n">1</td></tr>
-      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=1499663032#gid=1499663032" target="_blank" rel="noopener" data-zh="選殖">Cloning</a></th><td class="n">10</td><td class="n">18</td><td class="n">1</td></tr>
+      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=0#gid=0" target="_blank" rel="noopener" data-zh="一般">General</a></th><td class="n">16</td><td class="n">16</td><td class="n">7</td><td class="n">8</td><td class="n">7</td></tr>
+      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=790320425#gid=790320425" target="_blank" rel="noopener" data-zh="硬體">Hardware</a></th><td class="n">33</td><td class="n">33</td><td class="n">5</td><td class="n">10</td><td class="n">10</td></tr>
+      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=15714428#gid=15714428" target="_blank" rel="noopener" data-zh="商業與法規">Business &amp; Legal</a></th><td class="n">11</td><td class="n">13</td><td class="n">5</td><td class="n">1</td><td class="n zero">0</td></tr>
+      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=1628754936#gid=1628754936" target="_blank" rel="noopener" data-zh="推廣與人文實踐">Outreach &amp; iHP</a></th><td class="n">2</td><td class="n">2</td><td class="n">1</td><td class="n zero">0</td><td class="n">1</td></tr>
+      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=847492033#gid=847492033" target="_blank" rel="noopener" data-zh="植物">Plant</a></th><td class="n">11</td><td class="n">13</td><td class="n">1</td><td class="n zero">0</td><td class="n zero">0</td></tr>
+      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=1499663032#gid=1499663032" target="_blank" rel="noopener" data-zh="選殖">Cloning</a></th><td class="n">15</td><td class="n">18</td><td class="n">1</td><td class="n">2</td><td class="n">2</td></tr>
           </tbody>
-          <tfoot><tr><th data-zh="合計">Total</th><td class="n">83</td><td class="n">95</td><td class="n">20</td></tr></tfoot>
+          <tfoot><tr><th data-zh="合計">Total</th><td class="n">88</td><td class="n">95</td><td class="n">20</td><td class="n">21</td><td class="n">20</td></tr></tfoot>
         </table>
       </div>
-      <p class="note" data-zh="題數是 11 月 3 日統計，兩份清單都還在加題。沒標 Crucial 的題也要有人答，只是先從關鍵題開始。">Counts taken on 3 November; both lists are still growing. The unmarked questions still need answers — the Crucial ones are just where to start.</p>
+      <p class="note" data-zh="投影片、已簽名、已作答是 11 月 4 日 23:00 的版本（選殖從 10 題加到 15 題）；題庫欄是 11 月 3 日。植物、商業與法規還沒有任何答案，而目前只有一題附上了圖。">Deck, Named and Answered are from the deck at 23:00 on 4 November (Cloning grew from 10 to 15); the Sheet column is from 3 November. Plant and Business &amp; Legal have no answers at all yet, and only one answer so far has a figure in it.</p>
     </div>
   </div>
 </section>
 
-<section class="s" id="titles">
+<section class="s" id="kyle">
   <div class="wrap">
-    <span class="eyebrow" data-zh="投影片標題 · 週六要交的簡報">Slide titles · for Saturday's slides</span>
-    <h2 data-zh="標題就是這張投影片要證明的那句話。">The title is the sentence the slide proves.</h2>
-    <p class="sub" data-zh="標籤只說明這張投影片出自哪個資料夾；標題說的是我們發現了什麼。下面兩張，都是我們自己十分鐘舞台簡報裡真實的投影片。">A label tells the room which folder the slide came from. A title tells them what we found. Both of the slides below are real ones from our own ten-minute stage talk.</p>
+    <span class="eyebrow" data-zh="植物評審 · 11 月 4 日與 Kyle">Plant judging · 4 November with Kyle</span>
+    <h2 data-zh="Kyle 退回來的三個答案。">Three answers Kyle sent back.</h2>
+    <p class="sub" data-zh="完整筆記有二十五題、七個段落，每題都有我們的回答、關鍵字，以及他的修正。下面這三個，是會在評審面前出事的三個。">The full notes run to twenty-five questions in seven sections, each with our answer, the keywords, and his correction. These three are the ones that will cost us in front of a judge.</p>
 
     <div class="hwpins one">
-      <a class="pin" href="https://timmy97-tw.github.io/say-it-in-the-title/principles.html" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 7V5h16v2M12 5v14M9 19h6"/></svg></span><span data-zh="<small>怎麼寫投影片標題</small>Say It In The Title"><small>How to write a slide title</small>Say It In The Title</span><span class="arr">↗</span></a>
+      <a class="pin" href="https://docs.google.com/document/d/1-AdkqqCcaOysAedZgN8VaVZL71wCyEz06orGKLaCbxU/edit?tab=t.0#heading=h.j2wr3na42ax3" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h4M9 13h6M9 17h6"/></svg></span><span data-zh="<small>二十五題，七個段落</small>11/4 植物評審筆記"><small>Twenty-five questions, seven sections</small>11/4 Plant Judging Notes</span><span class="arr">↗</span></a>
     </div>
 
     <div class="tfix">
       <article class="tcase rv">
-        <div class="trule"><i>01</i><b data-zh="評審項目的名字不是結果。">A criterion is not a finding.</b></div>
-        <div class="tpair">
-          <div class="tslide was"><span class="ttag" data-zh="原本 · 一個標籤">Was · a label</span><div class="tt">Biosafety</div><div class="tghost"><span></span><span></span><span></span></div></div>
-          <div class="tarrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="tslide now"><span class="ttag" data-zh="現在 · 一個主張">Now · a claim</span><div class="tt">No <i>B. subtilis</i> grew on the outer side of the membrane</div><div class="tghost"><span></span><span></span><span></span></div></div>
+        <div class="trule"><i>01</i><b data-zh="鮮重不等於存活。">Fresh weight is not survival.</b></div>
+        <div class="kgrid">
+          <div class="ksay no"><span class="lb" data-zh="不要這樣說">Do not say</span><span data-zh="保護劑組的鮮重比較高，所以保護劑有效。">The treated plants weighed more, so the protectant works.</span></div>
+          <div class="ksay yes"><span class="lb" data-zh="改成這樣說">Say instead</span><span data-zh="鮮重反映的是生長與含水量。逆境可能致死時，我們先看存活率；逆境不致死時，生長量才是重點。哪一個算數，取決於逆境的強度和農民要的東西。">Fresh weight reflects growth and water content. Where the stress can kill, we score survival first; where it cannot, growth matters more. Which one counts depends on the stress and on what the farmer needs.</span></div>
         </div>
-        <p class="twhy" data-zh="<b>一個單字，而且是我們被評分的那個項目的名字。</b>評審給我們生物安全的分數，是因為那張沒有長菌的培養皿，不是因為這個詞。改成九個字，下面兩張培養皿就不再是謎題，而是證據——證明一個觀眾心裡已經有的主張。"><b>One word, and it is the name of a box we get scored in.</b> A judge gives us the biosafety mark for the plate that showed no growth, not for the word. Nine words, and the two plates underneath stop being a puzzle and become evidence for a claim the room already has in mind.</p>
+        <p class="twhy" data-zh="<b>一株長得比較小但活下來的植物，可能比一株長得大、最後死掉的更耐逆境。</b>有些試驗四十株全活，存活率分不出處理組的差別，所以我們看了生長和生理狀態——但不要把「四十株全活」套到每一次試驗，有些試驗真的有植株死亡。"><b>A plant that stays smaller but survives severe stress may be more tolerant than a larger one that eventually dies.</b> In some trials all forty plants lived, so survival could not separate the treatments and we looked at growth and condition instead — but do not carry 40/40 across to every trial. In some of them plants did die.</p>
       </article>
 
       <article class="tcase rv">
-        <div class="trule"><i>02</i><b data-zh="把數字寫進標題。">Put the number in the title.</b></div>
-        <div class="tpair">
-          <div class="tslide was"><span class="ttag" data-zh="原本 · 一個問句">Was · a question</span><div class="tt">How do we precisely predict the stress?</div><div class="tghost"><span></span><span></span><span></span></div></div>
-          <div class="tarrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="tslide now"><span class="ttag" data-zh="現在 · 一個主張">Now · a claim</span><div class="tt">Adding weather data cut our rice yield error from 419 to 365 kg/ha</div><div class="tghost"><span></span><span></span><span></span></div></div>
+        <div class="trule"><i>02</i><b data-zh="密碼子最佳化與截短，是為了產量，不是為了保護力。">Codon optimisation and truncation were for yield, not for protection.</b></div>
+        <div class="kgrid">
+          <div class="ksay no"><span class="lb" data-zh="不要這樣說">Do not say</span><span data-zh="我們把蛋白截短、做密碼子最佳化，讓保護效果更好。">We truncated and codon-optimised the protectants to make them protect better.</span></div>
+          <div class="ksay yes"><span class="lb" data-zh="改成這樣說">Say instead</span><span data-zh="那些修改針對的是蛋白產量與分泌。保護力有沒有因此改變，要靠跟野生型直接比較才知道，而那個比較我們沒有做。">Those changes targeted protein production and secretion. Whether they change protective strength is what a side-by-side comparison with the wild type would test, and we did not run it.</span></div>
         </div>
-        <p class="twhy" data-zh="<b>問句可以用，但前提是答案就是觀眾接著看到的東西，而且字要夠大。</b>這張投影片的答案只是角落裡一小塊面板：標題丟出了問題，又把答案藏起來。數字就是答案，所以數字要寫進標題——順便也防止我們口頭講出另一個數字。"><b>A question is allowed, but only if the answer is the next thing the room sees, in big type.</b> On this slide the answer sat in a small panel in the bottom corner: the title created a problem and then hid the solution. The number is the answer, so the number goes in the title — and it stops us saying a different one out loud.</p>
+        <p class="twhy" data-zh="<b>Kyle 說「為什麼不跟野生型比」幾乎一定會被問到。</b>所以每個人都要說得出來：ACCD v2t1 和 BoPep4 v2t1 改的是生產端，LEA14 用的是野生型。植物試驗問的是「做出來的保護劑有沒有效」，不是「改造版比野生型強多少」——那個比較仍然值得做，我們只是還沒做。"><b>He named &ldquo;why did you not compare with the wild type&rdquo; as a question judges will ask.</b> So everyone needs the answer ready: the changes to ACCD v2t1 and BoPep4 v2t1 are production-side, and LEA14 is wild type. Our plant trials asked whether the protectant we made does anything, not whether the modified version beats the original. That comparison is still worth running; we just have not run it.</p>
+      </article>
+
+      <article class="tcase rv">
+        <div class="trule"><i>03</i><b data-zh="一種標準化方式，而且在看到圖之前就決定。">One normalisation, chosen before you see the graph.</b></div>
+        <div class="kgrid">
+          <div class="ksay no"><span class="lb" data-zh="不要這樣說">Do not say</span><span data-zh="這張圖比較符合我們看到的表型，所以我們用這一張。">We show the chlorophyll graph that matches what the plants looked like.</span></div>
+          <div class="ksay yes"><span class="lb" data-zh="改成這樣說">Say instead</span><span data-zh="葉綠素是以幼苗數計算，不是除以鮮重，因為逆境下鮮重會隨含水量大幅變動，當分母會讓比較失真。">Chlorophyll is reported per seedling, not divided by fresh weight, because fresh weight moves with water content under stress and would distort the comparison.</span></div>
+        </div>
+        <p class="twhy" data-zh="<b>這是他花最多時間的一段。</b>在標準化與未標準化之間挑一張比較好看的圖，評審會讀成選擇性報告。順帶一提，他也更正了我們的用詞：我們的數據不是「未標準化」，只是用幼苗數標準化，而不是鮮重。說方法，說為什麼選這個指標，然後從頭到尾用同一個。"><b>This is where he spent the most time.</b> Switching between a normalised and a non-normalised graph because one looks better reads to a judge as selective reporting. He also corrected our wording: our data is not &ldquo;unnormalised&rdquo; — it is normalised by seedling number rather than by fresh weight. Say the method, say why that metric, then keep it the same throughout.</p>
       </article>
     </div>
 
     <div class="tnote rv">
       <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-      <span data-zh="標題沒有動詞，那就是標籤，不是標題。寫完就大聲念一遍：如果沒有任何觀察可以推翻它，它就只是裝飾。">If the title has no verb, it is a label, not a title. Read it out loud when you have written it: if no observation could contradict it, it is decoration.</span>
+      <span data-zh="先說限制，別等評審找出來：ACCD 做了兩次重複，其他多數試驗只有一次；每次試驗從 9 株增加到 40 株，但那是同一次試驗裡的株數，不是獨立重複。還有，看起來差一倍到兩倍，統計上仍然可能不顯著。">Say the limits before a judge finds them: two replicates on ACCD, one run for most other trials; the sample size went from 9 plants to 40, but that is plants within one trial, not independent repeats. And a difference that looks one- or two-fold can still be statistically non-significant.</span>
     </div>
   </div>
 </section>
@@ -1169,6 +1214,22 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
     <span class="eyebrow" data-zh="攤位介紹">Booth pitch</span>
     <h2 data-zh="兩分鐘介紹 ReLEAF。">Pitch ReLEAF in two minutes.</h2>
     <div class="pitch">
+      <div class="card pprog rv">
+        <div>
+          <div class="label" data-zh="簡報文件 · 11 月 4 日晚上的更新">The pitch doc · the night update of 4 November</div>
+          <h3 data-zh="二十五份草稿。九個人還沒寫。">Twenty-five drafts. Nine names with nothing yet.</h3>
+          <p data-zh="自 11 月 1 日以來多了五份：Audrey Hsieh、Ryan Wei 和 Sara Chen 寫了自己的；另外兩份沒有署名——一份五段的濕實驗版本，開頭寫「My name is Sophie」，還有一份只有一句話。那是你的就簽上名字。每一份都已經逐段加上旁註，放在攤位簡報練習網站上。">Five new since 1 November: Audrey Hsieh, Ryan Wei and Sara Chen wrote theirs. Two are unsigned &mdash; a five-paragraph wetlab pitch that opens &ldquo;My name is Sophie&rdquo;, and a one-line draft. If one of them is yours, put your name on it. All of them now have notes in the margin on the booth pitch site.</p>
+        </div>
+        <div class="pn">
+          <div><b class="tw">25</b><span data-zh="份草稿">drafts</span></div>
+          <div><b class="tw">22</b><span data-zh="位學生已署名">students signed</span></div>
+          <div><b class="tw" style="color:var(--amber)">9</b><span data-zh="位還沒寫">still to write</span></div>
+        </div>
+        <div class="plinks">
+          <a href="https://timmy97-tw.github.io/releaf-booth-prep/" target="_blank" rel="noopener" data-zh="攤位簡報練習：每一份都有旁註">Booth Pitch Prep · every pitch with notes<span class="arr" style="margin-left:4px">↗</span></a>
+          <a class="ghost" href="https://docs.google.com/document/d/1DX1fNK8tTVr0ZvPVkddWckGXLdTQNUaYQbmf-ut_m78/edit?tab=t.1bizq2cu3t6h" target="_blank" rel="noopener" data-zh="在文件裡寫你的版本">Write yours in the doc<span class="arr" style="margin-left:4px">↗</span></a>
+        </div>
+      </div>
       <figure class="vid rv">
         <video controls playsinline preload="metadata" poster="media/booth-2025.webp"><source src="media/booth-2025.mp4" type="video/mp4"></video>
         <figcaption data-zh="我們的攤位，2025 Grand Jamboree">Our booth, Grand Jamboree 2025</figcaption>
