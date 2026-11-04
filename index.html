@@ -202,6 +202,50 @@ html:lang(zh-Hant) .label,html:lang(zh-Hant) .eyebrow{letter-spacing:.04em}
 
 /* sections */
 section.s{padding:84px 0 12px}
+/* one-screen sections: the three tasks, and today */
+.onescreen{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding:86px 0 34px}
+.onescreen>.wrap{width:100%}
+.onescreen .eyebrow{font-size:14px}
+.onescreen h2{font-size:clamp(28px,3.4vw,40px);margin:4px 0 6px}
+.onescreen .sub{font-size:17px;margin:0 0 22px}
+
+/* three task columns */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+.tcard{display:flex;flex-direction:column;background:var(--card);border-radius:var(--r);padding:22px 22px 20px;
+  box-shadow:0 1px 2px rgba(0,0,0,.05),0 12px 30px rgba(0,6,28,.06);border-top:3px solid var(--tc,var(--blue))}
+.tcard .tno{display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.tcard .tno b{width:26px;height:26px;border-radius:8px;background:var(--tc,var(--blue));color:#fff;
+  font-size:12px;font-weight:700;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.tcard .tno span{font-size:12.5px;font-weight:600;color:var(--tc,var(--blue));letter-spacing:.01em}
+.tcard h3{font-size:21px;line-height:1.2;margin-bottom:8px}
+.tcard .td{font-size:14.5px;color:var(--ink2);line-height:1.5;margin:0 0 14px}
+.tcard .tnums{display:flex;gap:16px;margin:0 0 14px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tcard .tnums div{display:flex;flex-direction:column;gap:2px}
+.tcard .tnums b{font-size:21px;font-weight:700;letter-spacing:-.02em;color:var(--tc,var(--blue));font-variant-numeric:tabular-nums}
+.tcard .tnums span{font-size:11.5px;color:var(--ink3);line-height:1.25}
+.tcard .tex{margin:0 0 14px;padding:12px 14px;border-radius:14px;background:var(--bg);font-size:13.5px;line-height:1.45}
+.tcard .tex>i{display:block;font-style:normal;color:var(--ink3);text-decoration:line-through;margin-bottom:5px}
+.tcard .tex b i{display:inline;font-style:italic;color:inherit;text-decoration:none;margin:0}
+.tcard .tex b{display:block;font-weight:600;color:var(--ink)}
+.tcard .tkgo{margin-top:auto;display:flex;flex-direction:column;gap:7px}
+.tcard .tkgo a{display:flex;align-items:center;gap:9px;padding:10px 13px;border-radius:12px;font-size:14px;font-weight:600;
+  background:var(--tw,rgba(1,103,239,.08));color:var(--tc,var(--blue));transition:background .2s,transform .2s}
+.tcard .tkgo a:hover{text-decoration:none;transform:translateY(-1px)}
+.tcard .tkgo a.ghost{background:transparent;border:1px solid var(--line);color:var(--ink2)}
+.tcard .tkgo a .arr{margin-left:auto;opacity:.6;font-size:12px}
+.tcard .tkgo a small{display:block;font-size:11.5px;font-weight:500;opacity:.75;margin-bottom:1px}
+.tcard .tkgo a .lb{display:flex;flex-direction:column;line-height:1.2}
+
+/* today, compressed */
+#today .today{gap:16px}
+#today .card{max-height:min(56dvh,520px);overflow:auto;overscroll-behavior:contain}
+#today .card h3{font-size:21px;margin:4px 0 12px}
+
+@media (max-width:900px){
+  .tgrid{grid-template-columns:1fr}
+  .onescreen{min-height:0;padding:60px 0 6px}
+  #today .card{max-height:none}
+}
 .eyebrow{font-size:15px;font-weight:600;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
 .s h2{font-size:clamp(34px,4.6vw,52px);font-weight:700;margin:6px 0 10px}
 .s .sub{font-size:19px;color:var(--ink2);max-width:40em;margin:0 0 34px}
@@ -888,22 +932,23 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   <div class="nav-in">
     <a class="brand" href="#top" aria-label="ReLEAF, back to top"><img src="img/logo.png" alt=""><span class="bw"><b>ReLEAF</b><small data-zh="巴黎 2026">Paris 2026</small></span></a>
     <ul class="nlinks" id="nlinks">
-      <li><a href="#homework"><i>01</i><span data-zh="重要問題">Questions</span></a></li>
-      <li><a href="#titles"><i>02</i><span data-zh="標題">Titles</span></a></li>
-      <li><a href="#today"><i>03</i><span data-zh="今日">Today</span></a></li>
-      <li><a href="#pitch"><i>04</i><span data-zh="介紹">Pitch</span></a></li>
-      <li><a href="#calendar"><i>05</i><span data-zh="行事曆">Calendar</span></a></li>
-      <li><a href="#trip"><i>06</i><span data-zh="行程">Trip</span></a></li>
-      <li><a href="#jamboree"><i>07</i><span data-zh="大會">Jamboree</span></a></li>
-      <li><a href="#final"><i>08</i><span data-zh="決賽">Final</span></a></li>
-      <li><a href="#shifts"><i>09</i><span data-zh="排班">Shifts</span></a></li>
-      <li><a href="#rooms"><i>10</i><span data-zh="房間">Rooms</span></a></li>
-      <li><a href="#packing"><i>11</i><span data-zh="行李">Packing</span></a></li>
-      <li><a href="#paris"><i>12</i><span data-zh="巴黎">Paris</span></a></li>
-      <li><a href="#map"><i>13</i><span data-zh="住宿">Stay</span></a></li>
-      <li><a href="#sos" class="nsos"><i>14</i><span data-zh="緊急">Emergency</span></a></li>
-      <li><a href="#bring"><i>15</i><span data-zh="攜帶">Bring</span></a></li>
-      <li><a href="#app"><i>16</i><span>App</span></a></li>
+      <li><a href="#tasks"><i>01</i><span data-zh="作業">Tasks</span></a></li>
+      <li><a href="#today"><i>02</i><span data-zh="今日">Today</span></a></li>
+      <li><a href="#homework"><i>03</i><span data-zh="重要問題">Questions</span></a></li>
+      <li><a href="#titles"><i>04</i><span data-zh="標題">Titles</span></a></li>
+      <li><a href="#pitch"><i>05</i><span data-zh="介紹">Pitch</span></a></li>
+      <li><a href="#calendar"><i>06</i><span data-zh="行事曆">Calendar</span></a></li>
+      <li><a href="#trip"><i>07</i><span data-zh="行程">Trip</span></a></li>
+      <li><a href="#jamboree"><i>08</i><span data-zh="大會">Jamboree</span></a></li>
+      <li><a href="#final"><i>09</i><span data-zh="決賽">Final</span></a></li>
+      <li><a href="#shifts"><i>10</i><span data-zh="排班">Shifts</span></a></li>
+      <li><a href="#rooms"><i>11</i><span data-zh="房間">Rooms</span></a></li>
+      <li><a href="#packing"><i>12</i><span data-zh="行李">Packing</span></a></li>
+      <li><a href="#paris"><i>13</i><span data-zh="巴黎">Paris</span></a></li>
+      <li><a href="#map"><i>14</i><span data-zh="住宿">Stay</span></a></li>
+      <li><a href="#sos" class="nsos"><i>15</i><span data-zh="緊急">Emergency</span></a></li>
+      <li><a href="#bring"><i>16</i><span data-zh="攜帶">Bring</span></a></li>
+      <li><a href="#app"><i>17</i><span>App</span></a></li>
       <li class="nl-links"><button type="button" data-links><span data-zh="重要連結">Important links</span></button></li>
     </ul>
     <div class="nact">
@@ -957,6 +1002,73 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
 </header>
 
 <main>
+<section class="s onescreen" id="tasks">
+  <div class="wrap">
+    <span class="eyebrow" data-zh="本週三件事">This week, three things</span>
+    <h2 data-zh="三份作業，週六之前。">Three tasks, before Saturday.</h2>
+    <p class="sub" data-zh="答出你的題目、把投影片標題改成一句主張，並把評審票上那三十題練到能說出口。每一欄下面都有完整版。">Answer your questions, turn your slide titles into claims, and drill the thirty questions on the ballot. The full version of each sits further down or one click away.</p>
+
+    <div class="tgrid">
+
+      <article class="tcard rv" style="--tc:#0167EF;--tw:rgba(1,103,239,.08)">
+        <div class="tno"><b>01</b><span data-zh="全隊作業 · 週六模擬評審前">Team homework · before Saturday's mock</span></div>
+        <h3 data-zh="每一題都要有人回答，並簽上名字。">Every question gets an answer, and a name.</h3>
+        <p class="td" data-zh="兩份清單，同樣六個主題。投影片是我們作答的地方；試算表是老師出的題。挑你答得出來的，附一張關鍵圖和實際數據，然後在第 1 頁簽名。">Two lists, the same six topics. The deck is where we write the answers; the sheet is the instructors' version. Take the ones you can answer, bring one key figure and the real numbers, then sign slide 1.</p>
+        <div class="tnums">
+          <div><b>83</b><span data-zh="投影片題數">in the deck</span></div>
+          <div><b>95</b><span data-zh="題庫題數">in the sheet</span></div>
+          <div><b style="color:var(--red)">20</b><span data-zh="標為 Crucial">Crucial</span></div>
+        </div>
+        <div class="tkgo">
+          <a href="https://docs.google.com/presentation/d/1O95af9Q3xPGV_ucqMZ8s1sKE2wsrWGPISFywieWuuV0/edit" target="_blank" rel="noopener"><span class="lb" data-zh="<small>在這裡作答</small>重要問題投影片"><small>Answer here</small>Important Questions deck</span><span class="arr">&#8599;</span></a>
+          <a class="ghost" href="#homework" data-zh="完整說明與六個主題">Full brief and the six topics<span class="arr">&#8595;</span></a>
+        </div>
+      </article>
+
+      <article class="tcard rv" style="--tc:#7C5CFF;--tw:rgba(124,92,255,.09)">
+        <div class="tno"><b>02</b><span data-zh="投影片標題 · 週六要交的簡報">Slide titles · for Saturday's slides</span></div>
+        <h3 data-zh="標題就是這張投影片要證明的那句話。">The title is the sentence the slide proves.</h3>
+        <p class="td" data-zh="標籤只說明這張投影片出自哪個資料夾；標題說的是我們發現了什麼。標題沒有動詞，那就是標籤。">A label tells the room which folder the slide came from. A title tells them what we found. If the title has no verb, it is a label.</p>
+        <div class="tex">
+          <i data-zh="生物安全">Biosafety</i>
+          <b data-zh="膜的外側沒有長出任何<i>B. subtilis</i>">No <i>B. subtilis</i> grew on the outer side of the membrane</b>
+        </div>
+        <div class="tkgo">
+          <a href="https://timmy97-tw.github.io/say-it-in-the-title/principles.html" target="_blank" rel="noopener"><span class="lb" data-zh="<small>怎麼寫投影片標題</small>Say It In The Title"><small>How to write a slide title</small>Say It In The Title</span><span class="arr">&#8599;</span></a>
+          <a class="ghost" href="#titles" data-zh="兩個真實的修改例子">Both worked examples<span class="arr">&#8595;</span></a>
+        </div>
+      </article>
+
+      <article class="tcard rv" style="--tc:#00A86B;--tw:rgba(0,168,107,.09)">
+        <div class="tno"><b>03</b><span data-zh="獎項答題 · 評審票上的問題">Prize answers · the ballot questions</span></div>
+        <h3 data-zh="評審替我們打分數的那三十題。">The thirty questions the judges score us on.</h3>
+        <p class="td" data-zh="四個提名獎項的評分面向，加上決定入圍的九個 Project 問題。每題都有要背的關鍵字、可以指的圖，和一段說得出口的回答。中英文都有。">The aspects our four nominated awards are scored on, plus the nine Project questions that choose the finalists. Each one has the keywords to memorise, the figures to point at, and one answer to say out loud, in English and 中文.</p>
+        <div class="tnums">
+          <div><b>4</b><span data-zh="提名獎項">awards</span></div>
+          <div><b>30</b><span data-zh="題">questions</span></div>
+          <div><b>161</b><span data-zh="張圖">figures</span></div>
+        </div>
+        <div class="tkgo">
+          <a href="https://timmy97-tw.github.io/prize-answer/" target="_blank" rel="noopener"><span class="lb" data-zh="<small>完整網站</small>獎項答題"><small>The full site</small>Prize Answers</span><span class="arr">&#8599;</span></a>
+          <a class="ghost" href="https://timmy97-tw.github.io/releaf-judging-qa/prize.html" target="_blank" rel="noopener" data-zh="也在評審演練系統裡">Also inside the Judging Trainer<span class="arr">&#8599;</span></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="s onescreen" id="today">
+  <div class="wrap">
+    <span class="eyebrow" data-zh="今日">Today</span>
+    <h2 id="today-h">Today</h2>
+    <div class="today">
+      <div class="card rv"><div class="label" id="today-label">On the calendar</div><h3 id="today-title"></h3><ul class="tlist" id="today-list"></ul></div>
+      <div class="card rv"><div class="label" data-zh="即將到來">Coming up</div><h3 data-zh="接下來的行程">Next on the road</h3><ul class="tlist" id="next-list"></ul></div>
+    </div>
+  </div>
+</section>
+
 <section class="s" id="homework">
   <div class="wrap">
     <span class="eyebrow" data-zh="全隊作業 · 週六模擬評審前">Team homework · before Saturday's mock</span>
@@ -1048,17 +1160,6 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
     <div class="tnote rv">
       <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
       <span data-zh="標題沒有動詞，那就是標籤，不是標題。寫完就大聲念一遍：如果沒有任何觀察可以推翻它，它就只是裝飾。">If the title has no verb, it is a label, not a title. Read it out loud when you have written it: if no observation could contradict it, it is decoration.</span>
-    </div>
-  </div>
-</section>
-
-<section class="s" id="today">
-  <div class="wrap">
-    <span class="eyebrow" data-zh="今日">Today</span>
-    <h2 id="today-h">Today</h2>
-    <div class="today">
-      <div class="card rv"><div class="label" id="today-label">On the calendar</div><h3 id="today-title"></h3><ul class="tlist" id="today-list"></ul></div>
-      <div class="card rv"><div class="label" data-zh="即將到來">Coming up</div><h3 data-zh="接下來的行程">Next on the road</h3><ul class="tlist" id="next-list"></ul></div>
     </div>
   </div>
 </section>
@@ -1482,7 +1583,7 @@ var ZH={
  'Arriving':'運送中','To be printed':'待印製','To be purchased':'待購買','Buy in Paris':'到巴黎再買',
  // links
  'Judging':'評審','Booth Prep':'攤位準備','iGEM Jamboree':'iGEM 大會','Slides and Scripts':'簡報與講稿','5-min judging session slides':'5 分鐘評審簡報','10-min live stage talk slides':'10 分鐘舞台演講簡報','Finalist presentation':'決賽簡報','To be made':'待製作','Instructor questions':'老師出題（高品質）','5-min slides and script':'5 分鐘簡報與講稿',
- '2026 QA prep':'2026 問答準備','Judging Training Site':'評審訓練網站','Plant Training Site':'植物訓練網站','Real Judging Mocks':'模擬評審紀錄','Stage Talk Prep':'舞台演講準備',
+ '2026 QA prep':'2026 問答準備','Judging Training Site':'評審訓練網站','Prize Answers':'獎項答題','Plant Training Site':'植物訓練網站','Real Judging Mocks':'模擬評審紀錄','Stage Talk Prep':'舞台演講準備',
  'Talk ideas':'演講構想','Stage talk slides':'舞台演講簡報','Project connections map':'專案連結地圖','Booth Pitch Prep':'攤位講稿準備','Booth QA Prep':'攤位問答準備','Booth roster':'攤位排班表','Promotion Activity':'宣傳活動','Promotion Poster':'宣傳海報','Banner Design':'布條設計',
  'Materials to bring':'攜帶物品','2026 Paris itinerary':'2026 巴黎行程','iGEM Bioreactor Landscape':'iGEM 生物反應器全景','Official schedule':'官方議程','Venue and travel info':'場地與交通資訊',
  'Competition program':'競賽議程','Doc':'文件','Sheet':'試算表','Site':'網站','Drive':'雲端',
@@ -1618,6 +1719,7 @@ var LINKS=[
  {h:'Judging',i:'judge',l:[
   ['2026 QA prep','https://docs.google.com/spreadsheets/d/1_35O9ugtBM8QZ_fXBo7MaY0TEIIgdYkDs_kvEkT5soo/edit?gid=1264413978#gid=1264413978','sheet'],
   ['Judging Training Site','https://timmy97-tw.github.io/releaf-judging-qa/index.html','site',1],
+  ['Prize Answers','https://timmy97-tw.github.io/prize-answer/','site',1],
   ['iGEM Bioreactor Landscape','https://timmy97-tw.github.io/igem-bioreactor-landscape/','site',1],
   ['Plant Training Site','https://timmy97-tw.github.io/releaf-plant-judging/','site'],
   ['Real Judging Mocks','https://drive.google.com/drive/folders/1M_4D5hizf7bLNxvn6v1UTtYmuM28_LXl?usp=drive_link','drive']]},
@@ -1649,7 +1751,7 @@ var GOALS=[
 ];
 
 /* ---------- today's goals, by Taipei date ---------- */
-var JUDGEPREP={t:'Judging session prep',w:'Five-minute slides and the Q&A sheet, ahead of Saturday\'s mock',l:[LK('Say It In The Title'),LK('Judging Training Site'),LK('5-min slides and script'),LK('2026 QA prep'),LK('Plant Training Site')]};
+var JUDGEPREP={t:'Judging session prep',w:'Five-minute slides and the Q&A sheet, ahead of Saturday\'s mock',l:[LK('Say It In The Title'),LK('Judging Training Site'),LK('Prize Answers'),LK('5-min slides and script'),LK('2026 QA prep'),LK('Plant Training Site')]};
 var STAGEPREP={t:'Live stage talk prep',w:'Two run-throughs on Saturday 31 October',l:[LK('Stage Talk Prep'),LK('10-min live stage talk slides')]};
 var LABGOALS={t:'Before-we-fly lab goals',w:'Five to finish before 10 November',l:[['See the five','#achieve']]};
 var PITCH={t:'Practise the two-minute pitch',w:'Watch last year\'s booth, then pitch ReLEAF out loud',l:[['Pitch it','#pitch']]};
