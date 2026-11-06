@@ -1383,9 +1383,9 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <div class="pleft">
       <div class="card pprog rv">
         <div>
-          <div class="label" data-zh="簡報文件 · 11 月 4 日晚上的更新">The pitch doc · the night update of 4 November</div>
+          <div class="label" data-zh="簡報文件 · 11 月 6 日的版本">The pitch doc · the export of 6 November</div>
           <h3 data-zh="二十五份草稿。九個人還沒寫。">Twenty-five drafts. Nine names with nothing yet.</h3>
-          <p data-zh="自 11 月 1 日以來多了五份：Audrey Hsieh、Ryan Wei 和 Sara Chen 寫了自己的；另外兩份沒有署名——一份五段的濕實驗版本，開頭寫「My name is Sophie」，還有一份只有一句話。那是你的就簽上名字。每一份都已經逐段加上旁註，放在攤位簡報練習網站上。">Five new since 1 November: Audrey Hsieh, Ryan Wei and Sara Chen wrote theirs. Two are unsigned &mdash; a five-paragraph wetlab pitch that opens &ldquo;My name is Sophie&rdquo;, and a one-line draft. If one of them is yours, put your name on it. All of them now have notes in the margin on the booth pitch site.</p>
+          <p data-zh="11 月 4 日到 6 日之間只有 Sara Chen 更新：她在兩天內把大綱寫成完整的講稿。還有九位同學的分頁是空的，兩份草稿仍然沒有署名——一份五段的濕實驗版本，開頭寫「My name is Sophie」，還有一份只有一句話。那是你的就簽上名字。不催大家，但攤位網站上的精簡版只有五句話，而我們 11 月 10 日就要出發。">Nothing new arrived between 4 and 6 November except Sara Chen, who turned her outline into a finished script in two days. Nine students still have an empty tab, and two drafts are still unsigned &mdash; a five-paragraph wetlab pitch that opens &ldquo;My name is Sophie&rdquo;, and a one-liner. If one of them is yours, put your name on it. No pressure on the other nine, but the short cut on the booth site is five sentences long, and the plane leaves on the 10th.</p>
         </div>
         <div class="pn">
           <div><b class="tw">25</b><span data-zh="份草稿">drafts</span></div>
@@ -1840,8 +1840,9 @@ var ZH={
  // tasks
  'Judging session prep':'評審場次準備','Five-minute slides and the Q&A sheet, ahead of Saturday\'s mock':'週六模擬評審前，準備五分鐘簡報與問答表',
  'Live stage talk prep':'舞台演講準備','Two run-throughs on Saturday 31 October':'10 月 31 日（六）兩次彩排','Before-we-fly lab goals':'出發前的實驗目標',
- 'Three to finish before 10 November':'11 月 10 日前完成三項','See the three':'查看三項目標','Practise the two-minute pitch':'練習兩分鐘介紹',
- 'Watch last year\'s booth, then pitch ReLEAF out loud':'看去年的攤位影片，然後大聲介紹 ReLEAF','Pitch it':'開始練習',
+ 'Three to finish before 10 November':'11 月 10 日前完成三項','See the three':'查看三項目標','Write your pitch, then say it out loud':'寫下你的講稿，然後大聲練習',
+ 'Nine students still have an empty tab in the pitch doc, and the plane leaves on the 10th':'還有九位同學的分頁是空白的，而我們 11 月 10 日就要出發','9 still to write':'九人未寫',
+ 'Write yours in the doc':'在文件裡寫你的版本','Pitch it':'開始練習',
  'Meeting with Kyle, plant postdoc':'與植物博士後 Kyle 開會','Go through the plant Q&As and learn how to present the plant data':'逐題討論植物問答，學習如何呈現植物數據',
  'Important':'重要','Tonight':'今晚','Today\'s goals':'今日目標',
  // rooms
@@ -2002,7 +2003,7 @@ var GOALS=[
 var JUDGEPREP={t:'Judging session prep',w:'Five-minute slides and the Q&A sheet, ahead of Saturday\'s mock',l:[LK('Say It In The Title'),LK('Judging Training Site'),LK('Prize Answers'),LK('5-min slides and script'),LK('2026 QA prep'),LK('Plant Training Site')]};
 var STAGEPREP={t:'Live stage talk prep',w:'Two run-throughs on Saturday 31 October',l:[LK('Stage Talk Prep'),LK('10-min live stage talk slides')]};
 var LABGOALS={t:'Before-we-fly lab goals',w:'Three to finish before 10 November',l:[['See the three','#achieve']]};
-var PITCH={t:'Practise the two-minute pitch',w:'Watch last year\'s booth, then pitch ReLEAF out loud',l:[['Pitch it','#pitch']]};
+var PITCH={t:'Write your pitch, then say it out loud',w:'Nine students still have an empty tab in the pitch doc, and the plane leaves on the 10th',hot:1,tag:'9 still to write',l:[['Write yours in the doc','https://docs.google.com/document/d/1DX1fNK8tTVr0ZvPVkddWckGXLdTQNUaYQbmf-ut_m78/edit?tab=t.1bizq2cu3t6h'],LK('Booth Pitch Prep'),['Pitch it','#pitch']]};
 var TASKS={
  '2026-10-28':{h:'Plant meeting with Kyle',l:[
   {t:'Meeting with Kyle, plant postdoc',w:'Go through the plant Q&As and learn how to present the plant data',hot:1,tag:'Important',l:[LK('Plant Training Site'),LK('2026 QA prep')]},
