@@ -303,8 +303,6 @@ section.s{padding:84px 0 12px}
 .own .oh i{font-style:normal;margin-left:auto;font-size:22px;font-weight:700;color:var(--blue);letter-spacing:-.03em}
 .own.open .oh i{color:var(--amber)}
 .own p{font-size:14px;color:var(--ink2);line-height:1.45;margin:0}
-.thanks{display:flex;gap:11px;align-items:flex-start;margin-top:16px;padding:14px 16px;border-radius:14px;background:var(--mint);font-size:15px;line-height:1.45}
-.thanks svg{width:19px;height:19px;flex:none;fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
 .pprog{display:grid;grid-template-columns:1fr auto;gap:10px 28px;align-items:start}
 .pprog h3{font-size:22px;letter-spacing:-.02em;margin:5px 0 7px}
 .pprog p{font-size:15px;color:var(--ink2);line-height:1.5;margin:0}
@@ -353,7 +351,7 @@ section.s{padding:84px 0 12px}
 .cal-h,.cal-w{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
 .cal-h div{padding:12px 12px 8px;font-size:12px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
 .cal-w{border-top:1px solid var(--line)}
-.day{min-height:128px;padding:10px 10px 12px;border-left:1px solid var(--line);position:relative}
+.day{min-height:116px;padding:9px 10px 11px;border-left:1px solid var(--line);position:relative}
 .day:first-child{border-left:0}
 .day .d{font-size:14px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:6px}
 .day .d .m{font-size:11px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
@@ -517,18 +515,24 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .steps li{margin:4px 0}
 
 /* the booth itself */
-.bth{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:18px;align-items:stretch}
-.bstage{margin:0;position:relative;background:radial-gradient(130% 70% at 50% 100%,var(--mint) 0%,#fff 72%);border-radius:var(--r);padding:26px 22px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-.bfrm{position:relative;width:min(100%,360px)}
+.bth{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,.8fr) minmax(0,1.3fr);gap:16px;align-items:stretch}
+.bshot{margin:0;background:var(--navy);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.bshot img{display:block;width:100%;flex:1;min-height:0;object-fit:cover;object-position:50% 42%}
+.bshot figcaption{padding:11px 15px 13px;font-size:13px;line-height:1.45;color:rgba(255,255,255,.72)}
+.bstage{margin:0;position:relative;background:radial-gradient(130% 70% at 50% 100%,var(--mint) 0%,#fff 72%);border-radius:var(--r);padding:18px 16px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.bfrm{position:relative;width:min(100%,27vh,320px)}
 .bfrm img{display:block;width:100%;height:auto}
 .bpin,.bspec li>i{width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;font-size:12.5px;font-weight:700;font-style:normal;display:grid;place-items:center;font-variant-numeric:tabular-nums}
 .bpin{position:absolute;transform:translate(-50%,-50%);box-shadow:0 0 0 3px #fff,0 6px 14px rgba(0,6,28,.28)}
-.bstage figcaption{font-size:13px;color:var(--ink3);text-align:center;margin-top:12px;max-width:40ch;line-height:1.45}
+.bstage figcaption{font-size:12.5px;color:var(--ink3);text-align:center;margin-top:10px;max-width:40ch;line-height:1.45}
 .bspec{list-style:none;margin:0;padding:0}
-.bspec li{display:grid;grid-template-columns:26px 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
-.bspec li:first-child{border-top:0;padding-top:6px}
-.bspec li b{display:block;font-size:17px;font-weight:600;line-height:1.3}
-.bspec li span{display:block;font-size:14.5px;color:var(--ink2);line-height:1.45;margin-top:3px}
+.bspec li{display:grid;grid-template-columns:26px 1fr;gap:13px;padding:9px 0;border-top:1px solid var(--line)}
+#booth .sub{margin-bottom:16px}
+#booth .bth>.bcol>.card{padding:18px 20px}
+#booth .bwall{padding:20px 24px}
+.bspec li:first-child{border-top:0;padding-top:4px}
+.bspec li b{display:block;font-size:16.5px;font-weight:600;line-height:1.3}
+.bspec li span{display:block;font-size:14px;color:var(--ink2);line-height:1.45;margin-top:2px}
 .bspec .tw{font-variant-numeric:tabular-nums}
 .bcol{display:flex;flex-direction:column;gap:18px}
 .bcol>.card{flex:1}
@@ -538,20 +542,15 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .bwall h3{font-size:clamp(24px,2.8vw,32px);line-height:1.15;margin:6px 0 0;position:relative}
 .bwall p{margin:0;font-size:15.5px;line-height:1.5;color:rgba(255,255,255,.75);position:relative}
 .bwall p b{color:#fff}
-.bnext{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:18px;margin-top:18px;align-items:stretch}
-.bnext figure{margin:0;background:var(--navy);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
-.bnext figure img{display:block;width:100%;flex:1;min-height:260px;max-height:440px;object-fit:cover;object-position:50% 40%}
-.bnext figcaption{padding:12px 16px 14px;font-size:13.5px;line-height:1.45;color:rgba(255,255,255,.72)}
-.bdo{list-style:none;margin:10px 0 0;padding:0}
-.bdo li{padding:12px 0 12px 30px;border-top:1px solid var(--line);position:relative;font-size:15px;line-height:1.5;color:var(--ink2)}
-.bdo li:first-child{border-top:0}
-.bdo li:before{content:"";position:absolute;left:2px;top:17px;width:14px;height:14px;border-radius:5px;border:2px solid var(--c,var(--blue))}
-.bdo li b{color:var(--ink)}
+@media (max-width:1040px){
+  .bth{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr)}
+  .bshot{grid-column:1/-1}
+  .bshot img{flex:none;height:clamp(220px,32vh,320px)}
+}
 @media (max-width:900px){
-  .bth,.bnext{grid-template-columns:1fr}
+  .bth{grid-template-columns:1fr}
   .bwall{padding:22px 20px}
   .bfrm{width:min(100%,300px)}
-  .bnext figure img{max-height:360px}
 }
 
 /* our booth */
@@ -1109,13 +1108,18 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   </div>
 </section>
 
-<section class="s" id="booth">
+<section class="s onescreen" id="booth">
   <div class="wrap">
     <span class="eyebrow" data-zh="攤位 H-17 · 7 號館 3 樓">Booth H-17 · Pavilion 7, 3rd floor</span>
     <h2 data-zh="一面螢幕、一張桌子、三張椅子。">One screen, one table, three stools.</h2>
-    <p class="sub" data-zh="攤位是一座三角形的展架，每一面各是一個隊伍的攤位，所以左右兩邊都緊鄰別的隊。每一面配的東西都一樣，下面是我們那一面會有的，以及能做和不能做的事。">The booth structure is a triangle with one team booth on each side, so we have neighbours right next to us. Every side gets the same kit. This is what ours will have, and what we can and cannot do with it.</p>
+    <p class="sub" data-zh="攤位是一座三角形的展架，每一面各是一個隊伍的攤位，所以隔壁就是別的隊。每一面配的東西都一樣：反應器放桌上，牆上什麼都不能貼。">The booth is one side of a triangle, so another team is right next to us. Every side gets the same kit. The reactor goes on the table, and nothing goes on the wall.</p>
 
     <div class="bth">
+      <figure class="bshot rv">
+        <img src="img/booth/reactor-1106.webp" alt="The ReLEAF bioreactor on 6 November with its doors open and the green light on, a laptop running its dashboard on top" width="1000" height="1333" loading="lazy" decoding="async">
+        <figcaption data-zh="要放上桌的東西：反應器，11 月 6 日，綠光打開。上面那台筆電跑的是即時儀表板。">What goes on the table: the reactor on 6 November, green light on. The laptop on top is running its live dashboard.</figcaption>
+      </figure>
+
       <figure class="bstage rv">
         <div class="bfrm">
           <img src="img/booth/booth.webp" alt="The official iGEM 2026 booth render: a black triangular wall with a team sign on top, a wall-mounted screen, a high black table, three grey stools and a round green carpet" width="706" height="1100" loading="lazy" decoding="async">
@@ -1146,24 +1150,6 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
         </div>
         <p data-zh="海報、裝飾、標示、貼紙、布條，什麼都不能直接貼或掛在攤位牆上。<b>螢幕就是我們唯一的展示空間</b>，攤位時段裡可以自由發揮。">No posters, decorations, signs, stickers or banners attached to the booth wall. <b>The screen is our only display</b>, and during our booth hours we can use it however we like.</p>
       </div>
-      </div>
-    </div>
-
-    <div class="bnext">
-      <figure class="rv">
-        <img src="img/booth/reactor-1106.webp" alt="The ReLEAF bioreactor on 6 November with its doors open and the green light on, a laptop running its dashboard on top" width="1000" height="1333" loading="lazy" decoding="async">
-        <figcaption data-zh="要放上桌的東西：反應器，11 月 6 日，綠光打開。上面那台筆電跑的是即時儀表板。">What goes on the table: the reactor on 6 November, green light on. The laptop on top is running its live dashboard.</figcaption>
-      </figure>
-      <div class="card rv">
-        <div class="label" data-zh="這對我們代表什麼">What this changes for us</div>
-        <ul class="bdo">
-          <li style="--c:var(--red)" data-zh="<b>隊旗不能掛在牆上。</b>行李清單上的隊旗（Olivia，待印）要嘛能自己立著，要嘛改成螢幕上的一頁。送印前先決定。"><b>The team banner cannot hang on the wall.</b> The one on the packing list (Olivia, to be printed) either stands up on its own or becomes a slide on the screen. Decide before it goes to print.</li>
-          <li style="--c:var(--red)" data-zh="<b>膠帶和雙面膠不是拿來貼牆的。</b>清單上有這兩樣（Olivia），只能用在桌上或自己的東西上。"><b>The tape and double-sided tape are not for the wall.</b> Both are on the list (Olivia); use them on the table or on our own things only.</li>
-          <li style="--c:var(--amber)" data-zh="<b>螢幕沒有聲音。</b>要在上面播的影片都需要字幕，包括去年攤位的那段。"><b>The screen is silent.</b> Any video we play on it needs captions, last year&rsquo;s booth clip included.</li>
-          <li style="--c:var(--amber)" data-zh="<b>每個變壓器都要看標籤。</b>反應器（Noah）、光度計（Felix）和筆電的電源，標籤要寫 100–240 V 才能插。台灣的延長線不能接 230 V；不夠插就在巴黎買。"><b>Read the label on every power brick.</b> The reactor (Noah), the photometer (Felix) and the laptops can plug in only if the label says 100&ndash;240 V. A Taiwanese power strip is not rated for 230 V; if three outlets are not enough, buy one in Paris.</li>
-          <li style="--c:var(--blue)" data-zh="<b>量一下反應器。</b>桌面只有 75 × 60 公分，要把門打開的寬度也算進去，旁邊還要留位子給光度計和筆電。"><b>Measure the reactor.</b> The table top is 75 &times; 60 cm. Count the width with the doors open, and leave room for the photometer and a laptop.</li>
-          <li style="--c:var(--blue)" data-zh="<b>帶一台有 HDMI 或 USB-C 輸出的筆電。</b>螢幕上放什麼還沒決定；其中一個選項是把反應器的即時儀表板直接投上 55 吋。"><b>Bring a laptop with HDMI or USB-C out.</b> What runs on the screen is not decided yet; one option is putting the reactor&rsquo;s live dashboard straight onto the 55 inches.</li>
-        </ul>
       </div>
     </div>
   </div>
@@ -1238,10 +1224,6 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
           <div class="oh"><b>Jacquelyn Inocencio</b><i class="tw">1</i></div>
           <p data-zh="為什麼用光當誘導訊號：化學誘導劑要一直加、一直花錢，而光不用打開系統。">Why light is the inducer: a chemical inducer has to be added and paid for again and again, and light does not mean opening the system.</p>
         </article>
-      </div>
-      <div class="thanks">
-        <svg viewBox="0 0 24 24"><path d="M20.8 6.6a5 5 0 0 0-7.1 0L12 8.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 22l8.8-8.3a5 5 0 0 0 0-7.1z"/></svg>
-        <span data-zh="謝謝這四位。30 題被認領，30 題已經寫完，商業與法規整欄一週內從空白變成完成。還沒有人碰的是植物十一題和推廣兩題，硬體也還有二十三題。另外有一題（O2，CH Biotech 和農民意見）寫好了但沒有名字——是誰寫的，請去第 1 頁簽上去。">Thank you, all four. Thirty questions taken, thirty answers written, and Business &amp; Legal went from empty to finished in a week. Nobody has touched Plant&rsquo;s eleven or Outreach&rsquo;s two, and twenty-three hardware questions are still open. One answer &mdash; O2, the CH Biotech and farmer feedback &mdash; is written with nobody&rsquo;s name on it. Whoever wrote it, put your name on slide 1.</span>
       </div>
     </div>
     <div class="card rv" style="margin-top:18px">
@@ -1343,7 +1325,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
 <section class="s" id="calendar">
   <div class="wrap">
     <span class="eyebrow" data-zh="前往巴黎之路">The road to Paris</span>
-    <h2 data-zh="五週，一份行事曆。">Five weeks, one calendar.</h2>
+    <h2 data-zh="三週，一份行事曆。">Three weeks, one calendar.</h2>
     <div class="legend">
       <span class="c-mock"><i class="bul"></i><em data-zh="模擬評審">Judging mock</em></span>
       <span class="c-deliv"><i class="bul"></i><em data-zh="截止與交付">Deadlines &amp; deliverables</em></span>
@@ -1764,14 +1746,6 @@ function txs(s){return String(s).split(' · ').map(tx).join(' · ')}
 /* ---------- calendar data (from the team calendar) ---------- */
 var MOCK=['Judging Mock','mock'], SLIDES=['Judging Slides','deliv'], LST=['Live Stage Talk ×2','stage'], MERCH=['Merch Prep','stage'];
 var CAL={
-  '2026-10-20':[['Content Freeze','deliv']],
-  '2026-10-21':[['Wiki Freeze','deliv',1]],
-  '2026-10-24':[MOCK],
-  '2026-10-25':[MOCK,['Presentation Video D3','deliv']],
-  '2026-10-27':[['Final video + upload again','deliv',1]],
-  '2026-10-28':[['Video Freeze','deliv',1],['Plant meeting with Kyle','mock',1]],
-  '2026-10-31':[MOCK,SLIDES,LST,MERCH],
-  '2026-11-01':[MOCK,SLIDES,LST,MERCH],
   '2026-11-07':[MOCK,SLIDES,LST,MERCH,['Finalist Slides Prep','final'],['Paris Prep','paris']],
   '2026-11-10':[['Fly to Paris · BR087 23:30','travel',1]],
   '2026-11-11':[['Land in Paris 07:45','travel',1],['Settle in · Carrefour run','paris'],['Team prep 21:00','stage']],
@@ -1962,10 +1936,10 @@ function evHTML(e,past){
   return '<span class="ev c-'+e[1]+(e[2]?' key':'')+'">'+(past?'<span class="ck">✓</span>':'')+esc(tx(e[0]))+'</span>';
 }
 function calendar(){
-  var tk=key(now(),homeTZ()),start=kd('2026-10-19'),grid='<div class="cal-h">',ag='';
+  var tk=key(now(),homeTZ()),start=kd('2026-11-02'),grid='<div class="cal-h">',ag='';
   (LANG==='zh'?['一','二','三','四','五','六','日']:['Mon','Tue','Wed','Thu','Fri','Sat','Sun']).forEach(function(d){grid+='<div>'+d+'</div>'});
   grid+='</div>';
-  for(var w=0;w<5;w++){
+  for(var w=0;w<3;w++){
     grid+='<div class="cal-w">';
     var rows='',wkStart=null;
     for(var d=0;d<7;d++){
