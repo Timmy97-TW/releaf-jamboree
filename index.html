@@ -170,6 +170,7 @@ html:lang(zh-Hant) .label,html:lang(zh-Hant) .eyebrow{letter-spacing:.04em}
 .goal .gn i{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .goal h3{font-size:14.5px;font-weight:600;line-height:1.28;letter-spacing:-.01em;margin-top:3px}
 .goal .tag{font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:999px;background:#EEF4FE;color:#1A5FD0}
+.goal .tag.go{background:#F2F2F4;color:var(--ink3);font-weight:600}
 .goal .tag.t-plant{background:#E6F7EE;color:#11804F} .goal .tag.t-lpa{background:#F1EBFF;color:#6440D8} .goal .tag.t-hw{background:#FFF4E0;color:#B26A00}
 
 /* today's goals */
@@ -1620,7 +1621,7 @@ var ZH={
  // tasks
  'Judging session prep':'評審場次準備','Five-minute slides and the Q&A sheet, ahead of Saturday\'s mock':'週六模擬評審前，準備五分鐘簡報與問答表',
  'Live stage talk prep':'舞台演講準備','Two run-throughs on Saturday 31 October':'10 月 31 日（六）兩次彩排','Before-we-fly lab goals':'出發前的實驗目標',
- 'Five to finish before 10 November':'11 月 10 日前完成五項','See the five':'查看五項目標','Practise the two-minute pitch':'練習兩分鐘介紹',
+ 'Three to finish before 10 November':'11 月 10 日前完成三項','See the three':'查看三項目標','Practise the two-minute pitch':'練習兩分鐘介紹',
  'Watch last year\'s booth, then pitch ReLEAF out loud':'看去年的攤位影片，然後大聲介紹 ReLEAF','Pitch it':'開始練習',
  'Meeting with Kyle, plant postdoc':'與植物博士後 Kyle 開會','Go through the plant Q&As and learn how to present the plant data':'逐題討論植物問答，學習如何呈現植物數據',
  'Important':'重要','Tonight':'今晚','Today\'s goals':'今日目標',
@@ -1767,8 +1768,6 @@ function LK(name){var u='#';LINKS.forEach(function(c){c.l.forEach(function(l){if
 /* ---------- to achieve before we fly ---------- */
 var GOALS=[
  ['Integrate green-light control into the bioreactor system','Bioreactor','','1-bioreactor','The reactor on 5 November, shell on and rack mounted','center 50%'],
- ['Assemble the acrylic box','Hardware','t-hw','2-case','B2 case, design render','',1],
- ['Upgrade the LPA red light bulb to 660 nm','LPA','t-lpa','3-lpa-bulbs','LPA bulbs lit, 11 Jul','center 30%'],
  ['Improve the LPA assays to show a clearer difference between green-light and red-light secretion','LPA','t-lpa','4-lpa-assay','Light-control assay, 19 Sep','center 40%'],
  ['Run replicates of the hydroponics plant assay','Plants','t-plant','5-hydroponics','Hydroponic boxes, 13 Jun','center']
 ];
@@ -1776,7 +1775,7 @@ var GOALS=[
 /* ---------- today's goals, by Taipei date ---------- */
 var JUDGEPREP={t:'Judging session prep',w:'Five-minute slides and the Q&A sheet, ahead of Saturday\'s mock',l:[LK('Say It In The Title'),LK('Judging Training Site'),LK('Prize Answers'),LK('5-min slides and script'),LK('2026 QA prep'),LK('Plant Training Site')]};
 var STAGEPREP={t:'Live stage talk prep',w:'Two run-throughs on Saturday 31 October',l:[LK('Stage Talk Prep'),LK('10-min live stage talk slides')]};
-var LABGOALS={t:'Before-we-fly lab goals',w:'Five to finish before 10 November',l:[['See the five','#achieve']]};
+var LABGOALS={t:'Before-we-fly lab goals',w:'Three to finish before 10 November',l:[['See the three','#achieve']]};
 var PITCH={t:'Practise the two-minute pitch',w:'Watch last year\'s booth, then pitch ReLEAF out loud',l:[['Pitch it','#pitch']]};
 var TASKS={
  '2026-10-28':{h:'Plant meeting with Kyle',l:[
@@ -2056,10 +2055,10 @@ function homework(){
 }
 function goals(force){
   var tk=key(now(),homeTZ()),fly=dayDiff(tk,'2026-11-10'),el=$('achieve');
-  var lead='<div class="label">'+L('Before we fly','出發前')+'</div>'+(fly>0?'<div class="n tw">'+fly+'</div><div class="u">'+L((fly===1?'day':'days')+' to finish all five','天內完成五項目標')+'</div>':'<div class="n">'+L('Go','出發')+'</div><div class="u">'+L('Wheels up','起飛')+'</div>');
+  var lead='<div class="label">'+L('Before we fly','出發前')+'</div>'+(fly>0?'<div class="n tw">'+fly+'</div><div class="u">'+L((fly===1?'day':'days')+' to finish all three','天內完成三項目標')+'</div>':'<div class="n">'+L('Go','出發')+'</div><div class="u">'+L('Wheels up','起飛')+'</div>');
   if(el.firstChild&&!force){el.firstChild.innerHTML=lead;return}
   var h='<div class="glead rv">'+lead+'</div>';
-  GOALS.forEach(function(g,i){h+='<div class="goal rv"><img src="img/goals/'+g[3]+'.webp" alt="'+esc(g[4])+'" loading="lazy" decoding="async" class="'+(g[6]?'fit':'')+'"'+(g[5]?' style="object-position:'+g[5]+'"':'')+'><div><div class="gn"><i>0'+(i+1)+'</i><span class="tag '+g[2]+'">'+esc(tx(g[1]))+'</span></div><h3>'+esc(tx(g[0]))+'</h3></div></div>'});
+  GOALS.forEach(function(g,i){h+='<div class="goal rv"><img src="img/goals/'+g[3]+'.webp" alt="'+esc(g[4])+'" loading="lazy" decoding="async" class="'+(g[6]?'fit':'')+'"'+(g[5]?' style="object-position:'+g[5]+'"':'')+'><div><div class="gn"><i>0'+(i+1)+'</i><span class="tag '+g[2]+'">'+esc(tx(g[1]))+'</span><span class="tag go">'+L('Ongoing','進行中')+'</span></div><h3>'+esc(tx(g[0]))+'</h3></div></div>'});
   el.innerHTML=h;
 }
 function packing(){
