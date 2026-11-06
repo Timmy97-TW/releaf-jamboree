@@ -20,6 +20,9 @@ The two maps are pre-drawn SVGs in `img/` (`paris-map.svg`, `hood-map.svg`) with
 the precisely placed reports in the 19 October snapshot of franceriot.xyz (15–19 October unrest). The booth clip
 in `media/` is last year's booth at the 2025 Jamboree.
 
+The Booth section uses the official iGEM 2026 booth render (`img/booth/booth.webp`, placeholder sign text) and
+the reactor photo of 6 November (`img/booth/reactor-1106.webp`); the specs are iGEM's "Your Booth Space" notice.
+
 The What to bring pictures are Wikimedia Commons photos with the backgrounds cut out; authors and licences are in
 `img/bring/CREDITS.md`.
 

@@ -516,6 +516,44 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .steps{margin:0;padding-left:20px;color:var(--ink2);font-size:15.5px}
 .steps li{margin:4px 0}
 
+/* the booth itself */
+.bth{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:18px;align-items:stretch}
+.bstage{margin:0;position:relative;background:radial-gradient(130% 70% at 50% 100%,var(--mint) 0%,#fff 72%);border-radius:var(--r);padding:26px 22px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.bfrm{position:relative;width:min(100%,360px)}
+.bfrm img{display:block;width:100%;height:auto}
+.bpin,.bspec li>i{width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;font-size:12.5px;font-weight:700;font-style:normal;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.bpin{position:absolute;transform:translate(-50%,-50%);box-shadow:0 0 0 3px #fff,0 6px 14px rgba(0,6,28,.28)}
+.bstage figcaption{font-size:13px;color:var(--ink3);text-align:center;margin-top:12px;max-width:40ch;line-height:1.45}
+.bspec{list-style:none;margin:0;padding:0}
+.bspec li{display:grid;grid-template-columns:26px 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.bspec li:first-child{border-top:0;padding-top:6px}
+.bspec li b{display:block;font-size:17px;font-weight:600;line-height:1.3}
+.bspec li span{display:block;font-size:14.5px;color:var(--ink2);line-height:1.45;margin-top:3px}
+.bspec .tw{font-variant-numeric:tabular-nums}
+.bcol{display:flex;flex-direction:column;gap:18px}
+.bcol>.card{flex:1}
+.bwall{background:var(--navy);color:#fff;border-radius:var(--r);padding:26px 28px;display:grid;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden}
+.bwall:after{content:"";position:absolute;left:-140px;bottom:-180px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(229,72,77,.32),transparent 65%);pointer-events:none}
+.bwall .label{color:#FF8A8D;position:relative}
+.bwall h3{font-size:clamp(24px,2.8vw,32px);line-height:1.15;margin:6px 0 0;position:relative}
+.bwall p{margin:0;font-size:15.5px;line-height:1.5;color:rgba(255,255,255,.75);position:relative}
+.bwall p b{color:#fff}
+.bnext{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:18px;margin-top:18px;align-items:stretch}
+.bnext figure{margin:0;background:var(--navy);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.bnext figure img{display:block;width:100%;flex:1;min-height:260px;max-height:440px;object-fit:cover;object-position:50% 40%}
+.bnext figcaption{padding:12px 16px 14px;font-size:13.5px;line-height:1.45;color:rgba(255,255,255,.72)}
+.bdo{list-style:none;margin:10px 0 0;padding:0}
+.bdo li{padding:12px 0 12px 30px;border-top:1px solid var(--line);position:relative;font-size:15px;line-height:1.5;color:var(--ink2)}
+.bdo li:first-child{border-top:0}
+.bdo li:before{content:"";position:absolute;left:2px;top:17px;width:14px;height:14px;border-radius:5px;border:2px solid var(--c,var(--blue))}
+.bdo li b{color:var(--ink)}
+@media (max-width:900px){
+  .bth,.bnext{grid-template-columns:1fr}
+  .bwall{padding:22px 20px}
+  .bfrm{width:min(100%,300px)}
+  .bnext figure img{max-height:360px}
+}
+
 /* our booth */
 .boothcard{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--navy);color:#fff;border-radius:var(--r);padding:24px 28px;margin-bottom:18px;position:relative;overflow:hidden}
 .boothcard:after{content:"";position:absolute;right:-120px;top:-140px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,146,.35),transparent 65%);pointer-events:none}
@@ -950,21 +988,22 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
     <a class="brand" href="#top" aria-label="ReLEAF, back to top"><img src="img/logo.png" alt=""><span class="bw"><b>ReLEAF</b><small data-zh="巴黎 2026">Paris 2026</small></span></a>
     <ul class="nlinks" id="nlinks">
       <li><a href="#tasks"><i>01</i><span data-zh="作業">Tasks</span></a></li>
-      <li><a href="#today"><i>02</i><span data-zh="今日">Today</span></a></li>
-      <li><a href="#homework"><i>03</i><span data-zh="重要問題">Questions</span></a></li>
-      <li><a href="#pitch"><i>04</i><span data-zh="介紹">Pitch</span></a></li>
-      <li><a href="#calendar"><i>05</i><span data-zh="行事曆">Calendar</span></a></li>
-      <li><a href="#trip"><i>06</i><span data-zh="行程">Trip</span></a></li>
-      <li><a href="#jamboree"><i>07</i><span data-zh="大會">Jamboree</span></a></li>
-      <li><a href="#final"><i>08</i><span data-zh="決賽">Final</span></a></li>
-      <li><a href="#shifts"><i>09</i><span data-zh="排班">Shifts</span></a></li>
-      <li><a href="#rooms"><i>10</i><span data-zh="房間">Rooms</span></a></li>
-      <li><a href="#packing"><i>11</i><span data-zh="行李">Packing</span></a></li>
-      <li><a href="#paris"><i>12</i><span data-zh="巴黎">Paris</span></a></li>
-      <li><a href="#map"><i>13</i><span data-zh="住宿">Stay</span></a></li>
-      <li><a href="#sos" class="nsos"><i>14</i><span data-zh="緊急">Emergency</span></a></li>
-      <li><a href="#bring"><i>15</i><span data-zh="攜帶">Bring</span></a></li>
-      <li><a href="#app"><i>16</i><span>App</span></a></li>
+      <li><a href="#booth"><i>02</i><span data-zh="攤位">Booth</span></a></li>
+      <li><a href="#today"><i>03</i><span data-zh="今日">Today</span></a></li>
+      <li><a href="#homework"><i>04</i><span data-zh="重要問題">Questions</span></a></li>
+      <li><a href="#pitch"><i>05</i><span data-zh="介紹">Pitch</span></a></li>
+      <li><a href="#calendar"><i>06</i><span data-zh="行事曆">Calendar</span></a></li>
+      <li><a href="#trip"><i>07</i><span data-zh="行程">Trip</span></a></li>
+      <li><a href="#jamboree"><i>08</i><span data-zh="大會">Jamboree</span></a></li>
+      <li><a href="#final"><i>09</i><span data-zh="決賽">Final</span></a></li>
+      <li><a href="#shifts"><i>10</i><span data-zh="排班">Shifts</span></a></li>
+      <li><a href="#rooms"><i>11</i><span data-zh="房間">Rooms</span></a></li>
+      <li><a href="#packing"><i>12</i><span data-zh="行李">Packing</span></a></li>
+      <li><a href="#paris"><i>13</i><span data-zh="巴黎">Paris</span></a></li>
+      <li><a href="#map"><i>14</i><span data-zh="住宿">Stay</span></a></li>
+      <li><a href="#sos" class="nsos"><i>15</i><span data-zh="緊急">Emergency</span></a></li>
+      <li><a href="#bring"><i>16</i><span data-zh="攜帶">Bring</span></a></li>
+      <li><a href="#app"><i>17</i><span>App</span></a></li>
       <li class="nl-links"><button type="button" data-links><span data-zh="重要連結">Important links</span></button></li>
     </ul>
     <div class="nact">
@@ -1066,6 +1105,66 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
         </div>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<section class="s" id="booth">
+  <div class="wrap">
+    <span class="eyebrow" data-zh="攤位 H-17 · 7 號館 3 樓">Booth H-17 · Pavilion 7, 3rd floor</span>
+    <h2 data-zh="一面螢幕、一張桌子、三張椅子。">One screen, one table, three stools.</h2>
+    <p class="sub" data-zh="攤位是一座三角形的展架，每一面各是一個隊伍的攤位，所以左右兩邊都緊鄰別的隊。每一面配的東西都一樣，下面是我們那一面會有的，以及能做和不能做的事。">The booth structure is a triangle with one team booth on each side, so we have neighbours right next to us. Every side gets the same kit. This is what ours will have, and what we can and cannot do with it.</p>
+
+    <div class="bth">
+      <figure class="bstage rv">
+        <div class="bfrm">
+          <img src="img/booth/booth.webp" alt="The official iGEM 2026 booth render: a black triangular wall with a team sign on top, a wall-mounted screen, a high black table, three grey stools and a round green carpet" width="706" height="1100" loading="lazy" decoding="async">
+          <span class="bpin" style="left:17%;top:6.5%">1</span>
+          <span class="bpin" style="left:29.6%;top:17.7%">2</span>
+          <span class="bpin" style="left:51%;top:46.5%">3</span>
+          <span class="bpin" style="left:17.5%;top:54.7%">4</span>
+          <span class="bpin" style="left:88%;top:42.8%">5</span>
+        </div>
+        <figcaption data-zh="iGEM 官方的攤位示意圖。招牌上的「D 05」和「Conservation Village」只是範例，我們的會寫 H&#8209;17、生物製造村。">The official iGEM render. &ldquo;D 05&rdquo; and &ldquo;Conservation Village&rdquo; on the sign are placeholders; ours will read H&#8209;17, Biomanufacturing Village.</figcaption>
+      </figure>
+
+      <div class="bcol">
+      <div class="card rv">
+        <div class="label" style="margin-bottom:6px" data-zh="每個攤位都有">What every booth gets</div>
+        <ol class="bspec">
+          <li><i>1</i><div><b data-zh="一塊標準隊伍招牌">A standard team sign</b><span data-zh="寫著共用這一面的兩個隊伍名稱和所屬主題村。我們是 B 時段；A 時段的隊伍在其他時間用同一面攤位。">It names both teams sharing this side and their Village. We are on shift B; a team on shift A uses the same side at the other hours.</span></div></li>
+          <li><i>2</i><div><b data-zh="55 吋螢幕，掛在牆上">A 55-inch screen on the wall</b><span data-zh="只有畫面，<strong>沒有聲音</strong>。可接 HDMI 和 USB-C，線材由大會提供。">Picture only, <strong>no audio</strong>. HDMI and USB-C, cables provided.</span></div></li>
+          <li><i>3</i><div><b data-zh="一張高腳長方桌">One high-top table</b><span class="tw" data-zh="75 × 60 公分。">75 × 60 cm.</span></div></li>
+          <li><i>4</i><div><b data-zh="三張高腳椅">Three stools</b><span data-zh="攤位上同時坐得下三個人，其他人站著。">Three people can sit at a time; everyone else stands.</span></div></li>
+          <li><i>5</i><div><b data-zh="三個插座">Three power outlets</b><span class="tw" data-zh="C／E 型圓腳，230 V、50 Hz。台灣是 110 V、60 Hz。">Type C/E round pins, 230 V, 50 Hz. Taiwan is 110 V, 60 Hz.</span></div></li>
+        </ol>
+      </div>
+      <div class="bwall rv">
+        <div>
+          <div class="label" data-zh="一條規定">The one rule</div>
+          <h3 data-zh="牆上什麼都不能貼。">Nothing goes on the wall.</h3>
+        </div>
+        <p data-zh="海報、裝飾、標示、貼紙、布條，什麼都不能直接貼或掛在攤位牆上。<b>螢幕就是我們唯一的展示空間</b>，攤位時段裡可以自由發揮。">No posters, decorations, signs, stickers or banners attached to the booth wall. <b>The screen is our only display</b>, and during our booth hours we can use it however we like.</p>
+      </div>
+      </div>
+    </div>
+
+    <div class="bnext">
+      <figure class="rv">
+        <img src="img/booth/reactor-1106.webp" alt="The ReLEAF bioreactor on 6 November with its doors open and the green light on, a laptop running its dashboard on top" width="1000" height="1333" loading="lazy" decoding="async">
+        <figcaption data-zh="要放上桌的東西：反應器，11 月 6 日，綠光打開。上面那台筆電跑的是即時儀表板。">What goes on the table: the reactor on 6 November, green light on. The laptop on top is running its live dashboard.</figcaption>
+      </figure>
+      <div class="card rv">
+        <div class="label" data-zh="這對我們代表什麼">What this changes for us</div>
+        <ul class="bdo">
+          <li style="--c:var(--red)" data-zh="<b>隊旗不能掛在牆上。</b>行李清單上的隊旗（Olivia，待印）要嘛能自己立著，要嘛改成螢幕上的一頁。送印前先決定。"><b>The team banner cannot hang on the wall.</b> The one on the packing list (Olivia, to be printed) either stands up on its own or becomes a slide on the screen. Decide before it goes to print.</li>
+          <li style="--c:var(--red)" data-zh="<b>膠帶和雙面膠不是拿來貼牆的。</b>清單上有這兩樣（Olivia），只能用在桌上或自己的東西上。"><b>The tape and double-sided tape are not for the wall.</b> Both are on the list (Olivia); use them on the table or on our own things only.</li>
+          <li style="--c:var(--amber)" data-zh="<b>螢幕沒有聲音。</b>要在上面播的影片都需要字幕，包括去年攤位的那段。"><b>The screen is silent.</b> Any video we play on it needs captions, last year&rsquo;s booth clip included.</li>
+          <li style="--c:var(--amber)" data-zh="<b>每個變壓器都要看標籤。</b>反應器（Noah）、光度計（Felix）和筆電的電源，標籤要寫 100–240 V 才能插。台灣的延長線不能接 230 V；不夠插就在巴黎買。"><b>Read the label on every power brick.</b> The reactor (Noah), the photometer (Felix) and the laptops can plug in only if the label says 100&ndash;240 V. A Taiwanese power strip is not rated for 230 V; if three outlets are not enough, buy one in Paris.</li>
+          <li style="--c:var(--blue)" data-zh="<b>量一下反應器。</b>桌面只有 75 × 60 公分，要把門打開的寬度也算進去，旁邊還要留位子給光度計和筆電。"><b>Measure the reactor.</b> The table top is 75 &times; 60 cm. Count the width with the doors open, and leave room for the photometer and a laptop.</li>
+          <li style="--c:var(--blue)" data-zh="<b>帶一台有 HDMI 或 USB-C 輸出的筆電。</b>螢幕上放什麼還沒決定；其中一個選項是把反應器的即時儀表板直接投上 55 吋。"><b>Bring a laptop with HDMI or USB-C out.</b> What runs on the screen is not decided yet; one option is putting the reactor&rsquo;s live dashboard straight onto the 55 inches.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
