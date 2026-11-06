@@ -316,24 +316,17 @@ section.s{padding:84px 0 12px}
 .pprog .plinks a.ghost{background:transparent;border:1px solid var(--line);color:var(--ink2)}
 @media (max-width:760px){.pprog{grid-template-columns:1fr}.pprog .pn{grid-row:auto;justify-content:flex-start}.pprog .pn div{text-align:left}}
 
-/* plant judging with Kyle: what not to say, what to say */
-.hwpins.one{grid-template-columns:minmax(0,560px)}
-.tfix{display:grid;gap:18px}
-.tcase{background:var(--card);border-radius:var(--r);padding:22px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-.trule{display:flex;align-items:center;gap:11px;margin-bottom:16px}
-.trule i{font-style:normal;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--grad);color:#fff;font-size:12px;font-weight:700;flex:none;font-variant-numeric:tabular-nums}
-.trule b{font-size:17px;font-weight:700;letter-spacing:-.02em}
-.kgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.ksay{border-radius:16px;padding:15px 17px 16px;font-size:15.5px;line-height:1.45}
-.ksay .lb{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px}
-.ksay.no{background:#FDF0F0;color:var(--ink2)}
-.ksay.no .lb{color:var(--red)}
-.ksay.yes{background:var(--mint)}
-.ksay.yes .lb{color:var(--green)}
-.twhy{font-size:15.5px;color:var(--ink2);line-height:1.5;margin:16px 0 0}
-.twhy b{color:var(--ink);font-weight:600}
-.tnote{display:flex;gap:12px;align-items:flex-start;margin-top:18px;padding:16px 18px;border-radius:16px;background:var(--mint);font-size:16px;line-height:1.45}
-.tnote svg{width:20px;height:20px;flex:none;fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+/* the build, and quiet photo strips */
+.bfig{margin:22px 0 0;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:16px;align-items:center}
+.bfig img{display:block;width:100%;height:clamp(220px,26vw,320px);object-fit:cover;object-position:50% 45%;border-radius:16px;background:#ECECF0}
+.bfig figcaption{font-size:15.5px;color:var(--ink2);line-height:1.5;max-width:40ch}
+@media (max-width:760px){.bfig{grid-template-columns:1fr;gap:10px}}
+
+.pstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.pstrip img{display:block;width:100%;height:clamp(118px,13vw,168px);object-fit:cover;border-radius:14px;background:#ECECF0}
+.pstrip.lead img:first-child{object-position:50% 35%}
+.pcap{font-size:12.5px;color:var(--ink3);margin-top:8px;letter-spacing:.01em}
+@media (max-width:760px){.pstrip{grid-template-columns:1fr 1fr}.pstrip img:nth-child(3){display:none}}
 
 /* categories */
 .c-mock{--c:var(--blue)} .c-deliv{--c:var(--red)} .c-stage{--c:var(--green)} .c-final{--c:var(--violet)}
@@ -727,6 +720,9 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .heads{display:flex;gap:14px;align-items:flex-start;background:#FFF7E6;border:1px solid #F7D9A0;border-radius:18px;padding:16px 18px;margin-bottom:18px;color:#6B4A00;font-size:15.5px}
 .heads b{color:#4A3300}
 .heads .ic{flex:none;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;font-weight:800;display:grid;place-items:center;font-size:15px}
+.heads.ok{background:var(--mint);border-color:#B6E6CC;color:#14603F}
+.heads.ok b{color:#0C4A30}
+.heads.ok .ic{background:var(--green)}
 .rgrp{margin-top:26px}
 .rgrp-h{display:flex;align-items:baseline;gap:10px;margin:0 4px 12px}
 .rgrp-h h3{font-size:21px}
@@ -844,7 +840,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   .s .sub{font-size:17px;margin-bottom:24px}
   .today,.grid2,.who,.grid3,.goals{grid-template-columns:1fr}
   .hwpins{grid-template-columns:1fr}
-  .kgrid{grid-template-columns:1fr}
+  
   .hwstats{grid-template-columns:1fr 1fr}
   .links{columns:1}
   .hero-photo{opacity:.18;background-position:62% 30%;
@@ -944,20 +940,19 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <li><a href="#tasks"><i>01</i><span data-zh="作業">Tasks</span></a></li>
       <li><a href="#today"><i>02</i><span data-zh="今日">Today</span></a></li>
       <li><a href="#homework"><i>03</i><span data-zh="重要問題">Questions</span></a></li>
-      <li><a href="#kyle"><i>04</i><span data-zh="植物">Plant</span></a></li>
-      <li><a href="#pitch"><i>05</i><span data-zh="介紹">Pitch</span></a></li>
-      <li><a href="#calendar"><i>06</i><span data-zh="行事曆">Calendar</span></a></li>
-      <li><a href="#trip"><i>07</i><span data-zh="行程">Trip</span></a></li>
-      <li><a href="#jamboree"><i>08</i><span data-zh="大會">Jamboree</span></a></li>
-      <li><a href="#final"><i>09</i><span data-zh="決賽">Final</span></a></li>
-      <li><a href="#shifts"><i>10</i><span data-zh="排班">Shifts</span></a></li>
-      <li><a href="#rooms"><i>11</i><span data-zh="房間">Rooms</span></a></li>
-      <li><a href="#packing"><i>12</i><span data-zh="行李">Packing</span></a></li>
-      <li><a href="#paris"><i>13</i><span data-zh="巴黎">Paris</span></a></li>
-      <li><a href="#map"><i>14</i><span data-zh="住宿">Stay</span></a></li>
-      <li><a href="#sos" class="nsos"><i>15</i><span data-zh="緊急">Emergency</span></a></li>
-      <li><a href="#bring"><i>16</i><span data-zh="攜帶">Bring</span></a></li>
-      <li><a href="#app"><i>17</i><span>App</span></a></li>
+      <li><a href="#pitch"><i>04</i><span data-zh="介紹">Pitch</span></a></li>
+      <li><a href="#calendar"><i>05</i><span data-zh="行事曆">Calendar</span></a></li>
+      <li><a href="#trip"><i>06</i><span data-zh="行程">Trip</span></a></li>
+      <li><a href="#jamboree"><i>07</i><span data-zh="大會">Jamboree</span></a></li>
+      <li><a href="#final"><i>08</i><span data-zh="決賽">Final</span></a></li>
+      <li><a href="#shifts"><i>09</i><span data-zh="排班">Shifts</span></a></li>
+      <li><a href="#rooms"><i>10</i><span data-zh="房間">Rooms</span></a></li>
+      <li><a href="#packing"><i>11</i><span data-zh="行李">Packing</span></a></li>
+      <li><a href="#paris"><i>12</i><span data-zh="巴黎">Paris</span></a></li>
+      <li><a href="#map"><i>13</i><span data-zh="住宿">Stay</span></a></li>
+      <li><a href="#sos" class="nsos"><i>14</i><span data-zh="緊急">Emergency</span></a></li>
+      <li><a href="#bring"><i>15</i><span data-zh="攜帶">Bring</span></a></li>
+      <li><a href="#app"><i>16</i><span>App</span></a></li>
       <li class="nl-links"><button type="button" data-links><span data-zh="重要連結">Important links</span></button></li>
     </ul>
     <div class="nact">
@@ -1015,18 +1010,18 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   <div class="wrap">
     <span class="eyebrow" data-zh="本週三件事">This week, three things</span>
     <h2 data-zh="三份作業，週六之前。">Three tasks, before Saturday.</h2>
-    <p class="sub" data-zh="答出你的題目、把 Kyle 退回來的三個植物答案改掉，並把評審票上那三十題練到能說出口。每一欄下面都有完整版。">Answer your questions, change the three plant answers Kyle sent back, and drill the thirty questions on the ballot. The full version of each sits further down or one click away.</p>
+    <p class="sub" data-zh="答出你的題目、把評審票上那三十題練到能說出口，並在週六之前裝好 My iGEM App。每一欄下面都有完整版。">Answer your questions, drill the thirty questions on the ballot, and install the My iGEM App before Saturday. The full version of each sits further down or one click away.</p>
 
     <div class="tgrid">
 
       <article class="tcard rv" style="--tc:#0167EF;--tw:rgba(1,103,239,.08)">
         <div class="tno"><b>01</b><span data-zh="全隊作業 · 週六模擬評審前">Team homework · before Saturday's mock</span></div>
         <h3 data-zh="每一題都要有人回答，並簽上名字。">Every question gets an answer, and a name.</h3>
-        <p class="td" data-zh="五個人認領了 21 題，寫完 19 題。植物和商業與法規還是一片空白。挑你答得出來的，附一張關鍵圖和實際數據，然後在第 1 頁簽名。">Five people have taken 21 questions and written 19 answers. Plant and Business &amp; Legal are still blank. Take the ones you can answer, bring one key figure and the real numbers, then sign slide 1.</p>
+        <p class="td" data-zh="商業與法規十一題已經有十題寫完。植物十一題和推廣兩題仍然沒有人認領，硬體還有二十三題空著。挑你答得出來的，附一張關鍵圖和實際數據，然後在第 1 頁簽名。">Ten of the eleven Business &amp; Legal questions are now written. Plant&rsquo;s eleven and Outreach&rsquo;s two have nobody on them, and twenty-three hardware questions are still open. Take the ones you can answer, bring one key figure and the real numbers, then sign slide 1.</p>
         <div class="tnums">
           <div><b>88</b><span data-zh="投影片題數">in the deck</span></div>
-          <div><b>21</b><span data-zh="已簽名">with a name</span></div>
-          <div><b style="color:var(--red)">67</b><span data-zh="還沒人認領">still open</span></div>
+          <div><b>30</b><span data-zh="已簽名">with a name</span></div>
+          <div><b style="color:var(--red)">58</b><span data-zh="還沒人認領">still open</span></div>
         </div>
         <div class="tkgo">
           <a href="https://docs.google.com/presentation/d/1O95af9Q3xPGV_ucqMZ8s1sKE2wsrWGPISFywieWuuV0/edit" target="_blank" rel="noopener"><span class="lb" data-zh="<small>在這裡作答</small>重要問題投影片"><small>Answer here</small>Important Questions deck</span><span class="arr">&#8599;</span></a>
@@ -1034,22 +1029,8 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
         </div>
       </article>
 
-      <article class="tcard rv" style="--tc:#7C5CFF;--tw:rgba(124,92,255,.09)">
-        <div class="tno"><b>02</b><span data-zh="植物評審 · 11 月 4 日與 Kyle">Plant judging · 4 November with Kyle</span></div>
-        <h3 data-zh="鮮重不等於存活。">Fresh weight is not survival.</h3>
-        <p class="td" data-zh="Kyle 把我們的植物答案逐題拆過一遍：二十五題，每題都有我們的回答、關鍵字，以及他的修正。其中三題，改變了我們站在評審面前該怎麼說。">Kyle went through our plant answers one at a time: twenty-five questions, each with our answer, the keywords and his correction. Three of them change what we say in front of a judge.</p>
-        <div class="tex">
-          <i data-zh="鮮重變高了，所以保護劑有效">Fresh weight went up, so the protectant worked</i>
-          <b data-zh="致死逆境下先看存活；非致死逆境下才看生長量">Under lethal stress we score survival first, growth second</b>
-        </div>
-        <div class="tkgo">
-          <a href="https://docs.google.com/document/d/1-AdkqqCcaOysAedZgN8VaVZL71wCyEz06orGKLaCbxU/edit?tab=t.0#heading=h.j2wr3na42ax3" target="_blank" rel="noopener"><span class="lb" data-zh="<small>完整筆記</small>11/4 植物評審筆記"><small>The full notes</small>11/4 Plant Judging Notes</span><span class="arr">&#8599;</span></a>
-          <a class="ghost" href="#kyle" data-zh="三個要改的答案">The three answers to change<span class="arr">&#8595;</span></a>
-        </div>
-      </article>
-
       <article class="tcard rv" style="--tc:#00A86B;--tw:rgba(0,168,107,.09)">
-        <div class="tno"><b>03</b><span data-zh="獎項答題 · 評審票上的問題">Prize answers · the ballot questions</span></div>
+        <div class="tno"><b>02</b><span data-zh="獎項答題 · 評審票上的問題">Prize answers · the ballot questions</span></div>
         <h3 data-zh="評審替我們打分數的那三十題。">The thirty questions the judges score us on.</h3>
         <p class="td" data-zh="四個提名獎項的評分面向，加上決定入圍的九個 Project 問題。每題都有要背的關鍵字、可以指的圖，和一段說得出口的回答。中英文都有。">The aspects our four nominated awards are scored on, plus the nine Project questions that choose the finalists. Each one has the keywords to memorise, the figures to point at, and one answer to say out loud, in English and 中文.</p>
         <div class="tnums">
@@ -1060,6 +1041,16 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
         <div class="tkgo">
           <a href="https://timmy97-tw.github.io/prize-answer/" target="_blank" rel="noopener"><span class="lb" data-zh="<small>完整網站</small>獎項答題"><small>The full site</small>Prize Answers</span><span class="arr">&#8599;</span></a>
           <a class="ghost" href="https://timmy97-tw.github.io/releaf-judging-qa/prize.html" target="_blank" rel="noopener" data-zh="也在評審演練系統裡">Also inside the Judging Trainer<span class="arr">&#8599;</span></a>
+        </div>
+      </article>
+
+      <article class="tcard rv" style="--tc:#7C5CFF;--tw:rgba(124,92,255,.09)">
+        <div class="tno"><b>03</b><span data-zh="My iGEM App · 週六之前">My iGEM App · before Saturday</span></div>
+        <h3 data-zh="週六以前，每個人都要裝好 App。">Everyone installs the app before Saturday.</h3>
+        <p class="td" data-zh="票券、議程、地圖和大會通知都在 App 裡，報到時也是用它進場。用你報名 iGEM 的信箱登入，確認看得到自己的票和我們的評審場次。別等到巴黎才裝。">Your ticket, the schedule, the map and every announcement live in the app, and it is what gets you through the door at check-in. Sign in with the email you registered to iGEM with, and check that you can see your ticket and our judging session. Do not leave it until Paris.</p>
+        <div class="tkgo">
+          <a href="https://apps.apple.com/us/app/my-igem/id6747386789" target="_blank" rel="noopener"><span class="lb" data-zh="<small>iPhone</small>App Store"><small>iPhone</small>App Store</span><span class="arr">&#8599;</span></a>
+          <a class="ghost" href="#app" data-zh="App 裡有什麼">What the app does<span class="arr">&#8595;</span></a>
         </div>
       </article>
 
@@ -1107,22 +1098,26 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
         <div class="hwdue rv" id="hwdue"></div>
         <div class="hwstats rv">
           <div><b>88</b><span data-zh="投影片題數">questions in the deck</span></div>
-          <div><b>21</b><span data-zh="已經有人簽名">have a name on them</span></div>
-          <div><b class="cru">20</b><span data-zh="已經寫上答案">have an answer</span></div>
+          <div><b>30</b><span data-zh="已經有人簽名">have a name on them</span></div>
+          <div><b class="cru">30</b><span data-zh="已經寫上答案">have an answer</span></div>
         </div>
       </div>
     </div>
 
     <div class="card rv" style="margin-top:18px">
-      <div class="label" style="margin-bottom:2px" data-zh="誰認領了什麼 · 11 月 4 日 23:00 的投影片">Who has taken what · the deck at 23:00 on 4 November</div>
+      <div class="label" style="margin-bottom:2px" data-zh="誰認領了什麼 · 11 月 6 日下午的投影片">Who has taken what &middot; the deck on the afternoon of 6 November</div>
       <div class="owns">
         <article class="own">
           <div class="oh"><b>Joshua Hong</b><i class="tw">14</i></div>
           <p data-zh="硬體清單的前十題，H1 到 H10：光度計、雙光束、LPA、夾管閥、膜阻塞、BPT 管。再加上一般題的四題，包含農場電力和培養基更換。全部都寫完了。">The first ten questions on the hardware list, H1 to H10: the photometer, the dual beam, the LPA, the pinch valve, fouling, the BPT tubing. Plus four on the general list, including power on a farm and how the medium gets refilled. All written.</p>
         </article>
         <article class="own">
+          <div class="oh"><b>Sophie L</b><i class="tw">10</i></div>
+          <p data-zh="商業與法規整欄，十一題裡的十題：保護劑歸類為生物刺激素、誰是我們的客戶、買不起的小農怎麼辦、乾草培養基、反應器 2,280 美元、整套 5,300 美元、包裝與配送。全部寫完了，上週那一欄還是空的。">The whole Business &amp; Legal column, ten of its eleven: the protectant as a biostimulant, who the customer is, what happens to farmers who cannot buy one, the hay medium, the $2,280 reactor and the $5,300 package, packaging and delivery. All written, in a column that was empty last week.</p>
+        </article>
+        <article class="own">
           <div class="oh"><b>Sophie Chen</b><i class="tw">3</i></div>
-          <p data-zh="為什麼用光而不用化學誘導、ACC deaminase 的實際分子量（35–42 kDa，推測是同源二聚體），以及密碼子最佳化的目的。目前唯一附上圖的答案是她的。">Why light and not a chemical inducer, the actual size of ACC deaminase (35&ndash;42 kDa, with a homodimer as the hypothesis), and what codon optimisation was for. Hers is the only answer so far with a figure in it.</p>
+          <p data-zh="為什麼用光而不用化學誘導、ACC deaminase 的實際分子量（35–42 kDa，推測是同源二聚體），以及密碼子最佳化的目的。整份投影片到現在唯一附上圖的答案，還是她的。">Why light and not a chemical inducer, the actual size of ACC deaminase (35&ndash;42 kDa, with a homodimer as the hypothesis), and what codon optimisation was for. Hers is still the only answer in the deck with a figure in it.</p>
         </article>
         <article class="own">
           <div class="oh"><b>Olivia Lin</b><i class="tw">2</i></div>
@@ -1132,14 +1127,10 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
           <div class="oh"><b>Jacquelyn Inocencio</b><i class="tw">1</i></div>
           <p data-zh="為什麼用光當誘導訊號：化學誘導劑要一直加、一直花錢，而光不用打開系統。">Why light is the inducer: a chemical inducer has to be added and paid for again and again, and light does not mean opening the system.</p>
         </article>
-        <article class="own open">
-          <div class="oh"><b>Olivia Du</b><i class="tw">1</i></div>
-          <p data-zh="小農買不買得起這台反應器——商業與法規那一組目前唯一被認領的題目。簽了名，還沒寫。">Whether a smallholder can afford the reactor &mdash; the only question anyone has taken in Business &amp; Legal. Signed, not yet written.</p>
-        </article>
       </div>
       <div class="thanks">
         <svg viewBox="0 0 24 24"><path d="M20.8 6.6a5 5 0 0 0-7.1 0L12 8.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 22l8.8-8.3a5 5 0 0 0 0-7.1z"/></svg>
-        <span data-zh="謝謝這五位。21 題被認領，19 題已經寫完，硬體那一欄現在站得住。還有一題（O2，CH Biotech 和農民意見）寫好了但沒有名字——是誰寫的，請去第 1 頁簽上去。">Thank you, all five. Twenty-one questions taken, nineteen answers written, and the hardware column now stands up. One more answer &mdash; O2, the CH Biotech and farmer feedback &mdash; is written with nobody&rsquo;s name on it. Whoever wrote it, put your name on slide 1.</span>
+        <span data-zh="謝謝這四位。30 題被認領，30 題已經寫完，商業與法規整欄一週內從空白變成完成。還沒有人碰的是植物十一題和推廣兩題，硬體也還有二十三題。另外有一題（O2，CH Biotech 和農民意見）寫好了但沒有名字——是誰寫的，請去第 1 頁簽上去。">Thank you, all four. Thirty questions taken, thirty answers written, and Business &amp; Legal went from empty to finished in a week. Nobody has touched Plant&rsquo;s eleven or Outreach&rsquo;s two, and twenty-three hardware questions are still open. One answer &mdash; O2, the CH Biotech and farmer feedback &mdash; is written with nobody&rsquo;s name on it. Whoever wrote it, put your name on slide 1.</span>
       </div>
     </div>
     <div class="card rv" style="margin-top:18px">
@@ -1150,62 +1141,22 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
           <tbody>
       <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=0#gid=0" target="_blank" rel="noopener" data-zh="一般">General</a></th><td class="n">16</td><td class="n">16</td><td class="n">7</td><td class="n">8</td><td class="n">7</td></tr>
       <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=790320425#gid=790320425" target="_blank" rel="noopener" data-zh="硬體">Hardware</a></th><td class="n">33</td><td class="n">33</td><td class="n">5</td><td class="n">10</td><td class="n">10</td></tr>
-      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=15714428#gid=15714428" target="_blank" rel="noopener" data-zh="商業與法規">Business &amp; Legal</a></th><td class="n">11</td><td class="n">13</td><td class="n">5</td><td class="n">1</td><td class="n zero">0</td></tr>
+      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=15714428#gid=15714428" target="_blank" rel="noopener" data-zh="商業與法規">Business &amp; Legal</a></th><td class="n">11</td><td class="n">13</td><td class="n">5</td><td class="n">10</td><td class="n">10</td></tr>
       <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=1628754936#gid=1628754936" target="_blank" rel="noopener" data-zh="推廣與人文實踐">Outreach &amp; iHP</a></th><td class="n">2</td><td class="n">2</td><td class="n">1</td><td class="n zero">0</td><td class="n">1</td></tr>
       <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=847492033#gid=847492033" target="_blank" rel="noopener" data-zh="植物">Plant</a></th><td class="n">11</td><td class="n">13</td><td class="n">1</td><td class="n zero">0</td><td class="n zero">0</td></tr>
       <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=1499663032#gid=1499663032" target="_blank" rel="noopener" data-zh="選殖">Cloning</a></th><td class="n">15</td><td class="n">18</td><td class="n">1</td><td class="n">2</td><td class="n">2</td></tr>
           </tbody>
-          <tfoot><tr><th data-zh="合計">Total</th><td class="n">88</td><td class="n">95</td><td class="n">20</td><td class="n">21</td><td class="n">20</td></tr></tfoot>
+          <tfoot><tr><th data-zh="合計">Total</th><td class="n">88</td><td class="n">95</td><td class="n">20</td><td class="n">30</td><td class="n">30</td></tr></tfoot>
         </table>
       </div>
-      <p class="note" data-zh="投影片、已簽名、已作答是 11 月 4 日 23:00 的版本（選殖從 10 題加到 15 題）；題庫欄是 11 月 3 日。植物、商業與法規還沒有任何答案，而目前只有一題附上了圖。">Deck, Named and Answered are from the deck at 23:00 on 4 November (Cloning grew from 10 to 15); the Sheet column is from 3 November. Plant and Business &amp; Legal have no answers at all yet, and only one answer so far has a figure in it.</p>
+      <p class="note" data-zh="投影片、已簽名、已作答是 11 月 6 日下午的版本；題庫欄是 11 月 3 日。商業與法規從 0 題變成 10 題已作答；植物十一題仍然全部空白，而整份投影片到現在還是只有一題附上了圖。">Deck, Named and Answered are from the deck on the afternoon of 6 November; the Sheet column is from 3 November. Business &amp; Legal went from no answers to ten. Plant&rsquo;s eleven are still blank, and in the whole deck exactly one answer has a figure in it.</p>
     </div>
-  </div>
-</section>
-
-<section class="s" id="kyle">
-  <div class="wrap">
-    <span class="eyebrow" data-zh="植物評審 · 11 月 4 日與 Kyle">Plant judging · 4 November with Kyle</span>
-    <h2 data-zh="Kyle 退回來的三個答案。">Three answers Kyle sent back.</h2>
-    <p class="sub" data-zh="完整筆記有二十五題、七個段落，每題都有我們的回答、關鍵字，以及他的修正。下面這三個，是會在評審面前出事的三個。">The full notes run to twenty-five questions in seven sections, each with our answer, the keywords, and his correction. These three are the ones that will cost us in front of a judge.</p>
-
-    <div class="hwpins one">
-      <a class="pin" href="https://docs.google.com/document/d/1-AdkqqCcaOysAedZgN8VaVZL71wCyEz06orGKLaCbxU/edit?tab=t.0#heading=h.j2wr3na42ax3" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h4M9 13h6M9 17h6"/></svg></span><span data-zh="<small>二十五題，七個段落</small>11/4 植物評審筆記"><small>Twenty-five questions, seven sections</small>11/4 Plant Judging Notes</span><span class="arr">↗</span></a>
+    <div class="pstrip rv">
+      <img src="img/mock/1.webp" alt="The team sitting in a circle during a judging practice session, questions on the screen behind" loading="lazy" decoding="async" width="1000" height="750">
+      <img src="img/mock/2.webp" alt="A student standing to answer a question during judging practice" loading="lazy" decoding="async" width="1000" height="750">
+      <img src="img/mock/3.webp" alt="A student answering a judging question with the whiteboard list behind her" loading="lazy" decoding="async" width="1000" height="750">
     </div>
-
-    <div class="tfix">
-      <article class="tcase rv">
-        <div class="trule"><i>01</i><b data-zh="鮮重不等於存活。">Fresh weight is not survival.</b></div>
-        <div class="kgrid">
-          <div class="ksay no"><span class="lb" data-zh="不要這樣說">Do not say</span><span data-zh="保護劑組的鮮重比較高，所以保護劑有效。">The treated plants weighed more, so the protectant works.</span></div>
-          <div class="ksay yes"><span class="lb" data-zh="改成這樣說">Say instead</span><span data-zh="鮮重反映的是生長與含水量。逆境可能致死時，我們先看存活率；逆境不致死時，生長量才是重點。哪一個算數，取決於逆境的強度和農民要的東西。">Fresh weight reflects growth and water content. Where the stress can kill, we score survival first; where it cannot, growth matters more. Which one counts depends on the stress and on what the farmer needs.</span></div>
-        </div>
-        <p class="twhy" data-zh="<b>一株長得比較小但活下來的植物，可能比一株長得大、最後死掉的更耐逆境。</b>有些試驗四十株全活，存活率分不出處理組的差別，所以我們看了生長和生理狀態——但不要把「四十株全活」套到每一次試驗，有些試驗真的有植株死亡。"><b>A plant that stays smaller but survives severe stress may be more tolerant than a larger one that eventually dies.</b> In some trials all forty plants lived, so survival could not separate the treatments and we looked at growth and condition instead — but do not carry 40/40 across to every trial. In some of them plants did die.</p>
-      </article>
-
-      <article class="tcase rv">
-        <div class="trule"><i>02</i><b data-zh="密碼子最佳化與截短，是為了產量，不是為了保護力。">Codon optimisation and truncation were for yield, not for protection.</b></div>
-        <div class="kgrid">
-          <div class="ksay no"><span class="lb" data-zh="不要這樣說">Do not say</span><span data-zh="我們把蛋白截短、做密碼子最佳化，讓保護效果更好。">We truncated and codon-optimised the protectants to make them protect better.</span></div>
-          <div class="ksay yes"><span class="lb" data-zh="改成這樣說">Say instead</span><span data-zh="那些修改針對的是蛋白產量與分泌。保護力有沒有因此改變，要靠跟野生型直接比較才知道，而那個比較我們沒有做。">Those changes targeted protein production and secretion. Whether they change protective strength is what a side-by-side comparison with the wild type would test, and we did not run it.</span></div>
-        </div>
-        <p class="twhy" data-zh="<b>Kyle 說「為什麼不跟野生型比」幾乎一定會被問到。</b>所以每個人都要說得出來：ACCD v2t1 和 BoPep4 v2t1 改的是生產端，LEA14 用的是野生型。植物試驗問的是「做出來的保護劑有沒有效」，不是「改造版比野生型強多少」——那個比較仍然值得做，我們只是還沒做。"><b>He named &ldquo;why did you not compare with the wild type&rdquo; as a question judges will ask.</b> So everyone needs the answer ready: the changes to ACCD v2t1 and BoPep4 v2t1 are production-side, and LEA14 is wild type. Our plant trials asked whether the protectant we made does anything, not whether the modified version beats the original. That comparison is still worth running; we just have not run it.</p>
-      </article>
-
-      <article class="tcase rv">
-        <div class="trule"><i>03</i><b data-zh="一種標準化方式，而且在看到圖之前就決定。">One normalisation, chosen before you see the graph.</b></div>
-        <div class="kgrid">
-          <div class="ksay no"><span class="lb" data-zh="不要這樣說">Do not say</span><span data-zh="這張圖比較符合我們看到的表型，所以我們用這一張。">We show the chlorophyll graph that matches what the plants looked like.</span></div>
-          <div class="ksay yes"><span class="lb" data-zh="改成這樣說">Say instead</span><span data-zh="葉綠素是以幼苗數計算，不是除以鮮重，因為逆境下鮮重會隨含水量大幅變動，當分母會讓比較失真。">Chlorophyll is reported per seedling, not divided by fresh weight, because fresh weight moves with water content under stress and would distort the comparison.</span></div>
-        </div>
-        <p class="twhy" data-zh="<b>這是他花最多時間的一段。</b>在標準化與未標準化之間挑一張比較好看的圖，評審會讀成選擇性報告。順帶一提，他也更正了我們的用詞：我們的數據不是「未標準化」，只是用幼苗數標準化，而不是鮮重。說方法，說為什麼選這個指標，然後從頭到尾用同一個。"><b>This is where he spent the most time.</b> Switching between a normalised and a non-normalised graph because one looks better reads to a judge as selective reporting. He also corrected our wording: our data is not &ldquo;unnormalised&rdquo; — it is normalised by seedling number rather than by fresh weight. Say the method, say why that metric, then keep it the same throughout.</p>
-      </article>
-    </div>
-
-    <div class="tnote rv">
-      <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-      <span data-zh="先說限制，別等評審找出來：ACCD 做了兩次重複，其他多數試驗只有一次；每次試驗從 9 株增加到 40 株，但那是同一次試驗裡的株數，不是獨立重複。還有，看起來差一倍到兩倍，統計上仍然可能不顯著。">Say the limits before a judge finds them: two replicates on ACCD, one run for most other trials; the sample size went from 9 plants to 40, but that is plants within one trial, not independent repeats. And a difference that looks one- or two-fold can still be statistically non-significant.</span>
-    </div>
+    <p class="pcap" data-zh="評審問答練習，在教室裡">Judging practice, in the classroom</p>
   </div>
 </section>
 
@@ -1281,6 +1232,16 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <div><div class="cal rv" id="cal"></div><div class="agenda" id="agenda"></div></div>
       <aside class="goals" id="achieve" aria-label="To achieve before we fly"></aside>
     </div>
+    <figure class="bfig rv">
+      <img src="img/build-1105.webp" alt="The ReLEAF bioreactor on 5 November: black shell panels on, the mesh rack mounted, wiring and the green-light board in place" loading="lazy" decoding="async" width="1100" height="1467">
+      <figcaption data-zh="反應器，11 月 5 日。綠光模組裝上、外殼合起來、層架固定。">The reactor on 5 November. Green light in, shell closed up, rack mounted.</figcaption>
+    </figure>
+    <div class="pstrip rv">
+      <img src="img/work/build.webp" alt="Two team members drilling and wiring the bioreactor frame" loading="lazy" decoding="async" width="1000" height="1333">
+      <img src="img/work/lab.webp" alt="A student at the bench holding a rack of sample tubes" loading="lazy" decoding="async" width="1000" height="1333">
+      <img src="img/work/bench.webp" alt="Students and an instructor working along the lab bench" loading="lazy" decoding="async" width="1000" height="804">
+    </div>
+    <p class="pcap" data-zh="出發前的最後幾週">The last weeks before we fly</p>
   </div>
 </section>
 
@@ -1336,9 +1297,9 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   <div class="wrap">
     <span class="eyebrow" data-zh="房間">Rooms</span>
     <h2 data-zh="你的室友。">Who you're rooming with.</h2>
-    <div class="heads rv">
-      <span class="ic">!</span>
-      <div data-zh="<b>還有一件事未定。</b>我們仍在詢問飯店能否提供三間三人房。如果飯店無法安排，就全部改為雙人房，以下三間三人房會拆成雙人房。"><b>One thing is still open.</b> We are still asking the hotel for three triple rooms. If the hotel can't do it, we stick to double rooms only, and the three triples below get split into doubles.</div>
+    <div class="heads ok rv">
+      <span class="ic">&#10003;</span>
+      <div data-zh="<b>三人房確定了。</b>飯店已經確認三間三人房，下面的房間名單就是最後的版本。"><b>The triples are confirmed.</b> The hotel has the three triple rooms, so the list below is final.</div>
     </div>
     <div id="roomlist"></div>
   </div>
@@ -1560,9 +1521,9 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   <div class="wrap">
     <div class="app-top">
       <div>
-        <span class="eyebrow on-dark" data-zh="出發前先安裝">Install before you fly</span>
+        <span class="eyebrow on-dark" data-zh="週六之前安裝">Install it before Saturday</span>
         <h2>My iGEM App.</h2>
-        <p class="app-lede" data-zh="票券、議程、地圖與訊息。支援 iOS 與 Android。">Ticket, schedule, map and messages. iOS and Android.</p>
+        <p class="app-lede" data-zh="票券、議程、地圖與訊息。支援 iOS 與 Android。週六以前裝好並登入，確認看得到自己的票。">Ticket, schedule, map and messages. iOS and Android. Install it and sign in before Saturday, and check that your ticket is there.</p>
         <div class="stores"><a class="appstore" href="https://apps.apple.com/us/app/my-igem/id6747386789" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.53 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.24 2.73 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.41 1.2-2.47-.03-.01-2.3-.88-2.31-3.52zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.67-.92 2.66.97.07 1.96-.49 2.56-1.21z"/></svg><span><small>Download on the</small>App Store</span></a>
         <a class="appstore" href="https://play.google.com/store/apps/details?id=org.igem.main&amp;hl=en" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D7FE" d="M3.6 2.2c-.3.3-.5.8-.5 1.4v16.8c0 .6.2 1.1.5 1.4l.1.1 9.4-9.4v-.2L3.7 2.1z"/><path fill="#FFCE00" d="M16.2 15.6l-3.1-3.1v-.2l3.1-3.1.1.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.7 2.1z"/><path fill="#FF3A44" d="M16.3 15.5L13.1 12.3 3.6 21.8c.4.4.9.4 1.6.1l11.1-6.4"/><path fill="#00F076" d="M16.3 9.1L5.2 2.7c-.7-.4-1.2-.3-1.6.1l9.5 9.5z"/></svg><span><small>Get it on</small>Google Play</span></a></div>
       </div>
@@ -1648,6 +1609,7 @@ var ZH={
  'Talk ideas':'演講構想','Stage talk slides':'舞台演講簡報','Project connections map':'專案連結地圖','Booth Pitch Prep':'攤位講稿準備','Booth QA Prep':'攤位問答準備','Booth roster':'攤位排班表','Promotion Activity':'宣傳活動','Promotion Poster':'宣傳海報','Banner Design':'布條設計',
  'Materials to bring':'攜帶物品','2026 Paris itinerary':'2026 巴黎行程','iGEM Bioreactor Landscape':'iGEM 生物反應器全景','Official schedule':'官方議程','Venue and travel info':'場地與交通資訊',
  'Competition program':'競賽議程','Doc':'文件','Sheet':'試算表','Site':'網站','Drive':'雲端',
+ 'Install the My iGEM App':'安裝 My iGEM App','Sign in with your iGEM email and check your ticket is there, before Saturday':'用你的 iGEM 信箱登入，確認票券在裡面，週六之前完成','What the app does':'App 裡有什麼',
  'Slides':'簡報','Say It In The Title':'標題寫作原則','Important Questions':'重要問題','Important Questions deck':'重要問題投影片','Instructor question sheet':'老師出題（模擬評審）','The homework, explained':'作業說明',
  'Answer the important questions':'回答重要問題','Pick the ones you can answer, bring a figure and the numbers, then sign slide 1':'挑你答得出來的題目，附上圖與數據，並在第 1 頁簽名','Open the homework':'查看作業','Due Saturday':'週六截止',
  // goals
@@ -1663,7 +1625,7 @@ var ZH={
  'Meeting with Kyle, plant postdoc':'與植物博士後 Kyle 開會','Go through the plant Q&As and learn how to present the plant data':'逐題討論植物問答，學習如何呈現植物數據',
  'Important':'重要','Tonight':'今晚','Today\'s goals':'今日目標',
  // rooms
- 'Triple rooms':'三人房','Waiting on the hotel':'等待飯店確認','Double rooms':'雙人房','Two students':'兩位學生','Student and parent':'學生與家長',
+ 'Triple rooms':'三人房','Confirmed with the hotel':'飯店已確認','Double rooms':'雙人房','Two students':'兩位學生','Student and parent':'學生與家長',
  // neighbourhood
  'All':'全部','Groceries':'超市','Pizza':'披薩','Burgers':'漢堡','French':'法式','Asian':'亞洲料理','World food':'異國料理','Bakeries':'麵包甜點','Cafés':'咖啡廳','Pharmacies':'藥局',
  'Sushi':'壽司','Japanese':'日式','Chinese':'中式','Korean':'韓式','Poké':'夏威夷拌飯','bubble tea':'珍珠奶茶','Crêpes':'可麗餅','Italian':'義式','Lebanese':'黎巴嫩',
@@ -1804,7 +1766,7 @@ function LK(name){var u='#';LINKS.forEach(function(c){c.l.forEach(function(l){if
 
 /* ---------- to achieve before we fly ---------- */
 var GOALS=[
- ['Integrate green-light control into the bioreactor system','Bioreactor','','1-bioreactor','The rig running, 20 Jul','center 62%'],
+ ['Integrate green-light control into the bioreactor system','Bioreactor','','1-bioreactor','The reactor on 5 November, shell on and rack mounted','center 50%'],
  ['Assemble the acrylic box','Hardware','t-hw','2-case','B2 case, design render','',1],
  ['Upgrade the LPA red light bulb to 660 nm','LPA','t-lpa','3-lpa-bulbs','LPA bulbs lit, 11 Jul','center 30%'],
  ['Improve the LPA assays to show a clearer difference between green-light and red-light secretion','LPA','t-lpa','4-lpa-assay','Light-control assay, 19 Sep','center 40%'],
@@ -1822,7 +1784,8 @@ var TASKS={
   JUDGEPREP,PITCH,STAGEPREP,LABGOALS]}
 };
 var QHOME={t:'Answer the important questions',w:'Pick the ones you can answer, bring a figure and the numbers, then sign slide 1',hot:1,tag:'Due Saturday',l:[LK('Important Questions deck'),LK('Instructor question sheet'),['Open the homework','#homework']]};
-var STANDING={h:'Today\'s goals',l:[QHOME,JUDGEPREP,PITCH,STAGEPREP,LABGOALS]};
+var APPTASK={t:'Install the My iGEM App',w:'Sign in with your iGEM email and check your ticket is there, before Saturday',hot:1,tag:'Due Saturday',l:[['App Store','https://apps.apple.com/us/app/my-igem/id6747386789'],['Google Play','https://play.google.com/store/apps/details?id=org.igem.main&hl=en'],['What the app does','#app']]};
+var STANDING={h:'Today\'s goals',l:[QHOME,APPTASK,JUDGEPREP,PITCH,STAGEPREP,LABGOALS]};
 
 /* ================= render ================= */
 function rel(n){return LANG==='zh'?(n===0?'今天':n===1?'明天':n===-1?'昨天':n>0?n+' 天後':-n+' 天前'):(n===0?'today':n===1?'tomorrow':n===-1?'yesterday':n>0?'in '+n+' days':-n+' days ago')}
@@ -2136,7 +2099,7 @@ function pitch(){
 
 /* ---------- rooms ---------- */
 var ROOMS=[
- {h:'Triple rooms',n:'Waiting on the hotel',c:'t3',p:'T',r:[
+ {h:'Triple rooms',n:'Confirmed with the hotel',c:'t3',p:'T',r:[
   ['Abby Kao','Abby Tsai','Sophie Chen'],['Mia Guo','Olivia Du','Audrey Chu'],['Chars','Gabriel','Timmy',{ins:1}]]},
  {h:'Double rooms',n:'Two students',c:'t2',p:'D',r:[
   ['Anna Chuang','Olivia Lin'],['Audrey Hsieh','Sophie Liu'],['Chloe Wu','Jacquelyn'],['Naomi Lin','Sophia Lin'],['Phoebe Chen','Sarah Chou'],
@@ -2149,7 +2112,7 @@ function rooms(){
     h+='<div class="rgrp"><div class="rgrp-h"><h3>'+tx(g.h)+'</h3><span>'+tx(g.n)+' · '+L(g.r.length+' rooms',g.r.length+' 間')+'</span></div><div class="rooms '+g.c+'">';
     g.r.forEach(function(r,i){
       var o=typeof r[r.length-1]==='object'?r[r.length-1]:{},ns=r.filter(function(x){return typeof x==='string'});
-      h+='<div class="room rv" data-q="'+esc(ns.join('|').toLowerCase())+'"><div class="no">'+g.p+(i+1)+'</div>'+(o.ins?'<span class="tag ins">'+L('Instructors','指導老師')+'</span>':g.c==='t3'?'<span class="tag">'+L('Pending','待確認')+'</span>':'')+'<ul>';
+      h+='<div class="room rv" data-q="'+esc(ns.join('|').toLowerCase())+'"><div class="no">'+g.p+(i+1)+'</div>'+(o.ins?'<span class="tag ins">'+L('Instructors','指導老師')+'</span>':'')+'<ul>';
       ns.forEach(function(n){h+='<li data-n="'+esc(n.toLowerCase())+'">'+esc(n)+'</li>'});
       if(o.par)h+='<li class="par">'+L('+ parent','+ 家長')+'</li>';
       h+='</ul></div>';
