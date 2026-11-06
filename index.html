@@ -477,7 +477,8 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .lk a .arr{color:var(--ink3);font-size:15px}
 .lk a.star{background:linear-gradient(100deg,#EEF4FE,#E6FAF2);font-weight:600}
 .lk a .st{color:var(--amber);font-size:15px;margin-right:-2px}
-.pins{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:14px;padding:0 28px 18px}
+.pinh{padding:0 28px 10px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+.pins{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:0 28px 18px}
 .pin{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:20px;background:var(--grad);color:#fff;font-size:20px;font-weight:700;letter-spacing:-.02em;box-shadow:0 10px 28px rgba(1,103,239,.25);transition:transform .2s,box-shadow .2s}
 .pin:hover{text-decoration:none;transform:translateY(-2px);box-shadow:0 14px 34px rgba(1,103,239,.32)}
 .pin small{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
@@ -898,6 +899,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   .lsheet-head{padding:20px 16px 14px}
   .lsheet .links{padding:0 16px 24px}
   .pins{grid-template-columns:1fr;padding:0 16px 14px;gap:10px}
+  .pinh{padding:0 16px 8px}
   .pin{font-size:18px;padding:14px 16px}
   .fab{padding:12px 16px}
   .cal{display:none}
@@ -1659,6 +1661,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
     <div><span class="eyebrow" data-zh="重要連結">Important links</span><h2 id="lsheet-h" data-zh="所有文件，一鍵就到。">Every doc, one tap away.</h2></div>
     <button class="x" type="button" id="lclose" aria-label="Close">×</button>
   </div>
+  <div class="pinh" id="linkpinh"></div>
   <div class="pins" id="linkpins"></div>
   <div class="links" id="linkgrid"></div>
 </dialog>
@@ -1829,23 +1832,23 @@ var IC={
 };
 var LINKS=[
  {h:'Slides and Scripts',i:'slides',l:[
-  ['Say It In The Title','https://timmy97-tw.github.io/say-it-in-the-title/principles.html','site',1],
+  ['Say It In The Title','https://timmy97-tw.github.io/say-it-in-the-title/principles.html','site'],
   ['5-min judging session slides','https://canva.link/4un52gnl73sugqm','canva'],
   ['5-min slides and script','https://timmy97-tw.github.io/releaf-5min/','site'],
   ['10-min live stage talk slides','https://www.canva.com/design/DAHY4Rb8ADw/wdH48SGTnHNbMaRrJjx9ww/edit','canva'],
   ['Finalist presentation','','soon']]},
  {h:'Important Questions',i:'sheet',l:[
-  ['Important Questions deck','https://docs.google.com/presentation/d/1O95af9Q3xPGV_ucqMZ8s1sKE2wsrWGPISFywieWuuV0/edit','slides',1],
-  ['Instructor question sheet','https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=0#gid=0','sheet',1]]},
+  ['Important Questions deck','https://docs.google.com/presentation/d/1O95af9Q3xPGV_ucqMZ8s1sKE2wsrWGPISFywieWuuV0/edit','slides'],
+  ['Instructor question sheet','https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=0#gid=0','sheet']]},
  {h:'Judging',i:'judge',l:[
   ['2026 QA prep','https://docs.google.com/spreadsheets/d/1_35O9ugtBM8QZ_fXBo7MaY0TEIIgdYkDs_kvEkT5soo/edit?gid=1264413978#gid=1264413978','sheet'],
-  ['Judging Training Site','https://timmy97-tw.github.io/releaf-judging-qa/index.html','site',1],
-  ['Prize Answers','https://timmy97-tw.github.io/prize-answer/','site',1],
-  ['iGEM Bioreactor Landscape','https://timmy97-tw.github.io/igem-bioreactor-landscape/','site',1],
+  ['Judging Training Site','https://timmy97-tw.github.io/releaf-judging-qa/index.html','site'],
+  ['Prize Answers','https://timmy97-tw.github.io/prize-answer/','site'],
+  ['iGEM Bioreactor Landscape','https://timmy97-tw.github.io/igem-bioreactor-landscape/','site'],
   ['Plant Training Site','https://timmy97-tw.github.io/releaf-plant-judging/','site'],
   ['Real Judging Mocks','https://drive.google.com/drive/folders/1M_4D5hizf7bLNxvn6v1UTtYmuM28_LXl?usp=drive_link','drive']]},
  {h:'Booth Prep',i:'booth',l:[
-  ['Booth Pitch Prep','https://timmy97-tw.github.io/releaf-booth-prep/','site',1],
+  ['Booth Pitch Prep','https://timmy97-tw.github.io/releaf-booth-prep/','site'],
   ['Booth QA Prep','https://docs.google.com/document/d/1WWpt-QrhzUImdeOrxQaNPh0MMDN9oBoRBNehrWUy6Q0/edit?tab=t.0','doc'],
   ['Promotion Activity','https://docs.google.com/document/d/1rIxDi1PKDxf6Jo1m9gd9GCSyQjGFxaahD676QdyCEvI/edit?usp=sharing','doc'],
   ['Promotion Poster','https://www.canva.com/design/DAHY5mBWnKo/phSq8PpSBCCWyqAiuY5x8Q/edit?ui=e30','canva'],
@@ -1860,6 +1863,20 @@ var LINKS=[
   ['Competition program','https://jamboree.igem.org/2026/program/competition','igem']]}
 ];
 var KIND={doc:'Doc',sheet:'Sheet',slides:'Slides',canva:'Canva',site:'Site',drive:'Drive',igem:'iGEM',soon:'To be made'};
+/* the four shortcuts at the top of the links sheet: four, never more,
+   and they change with the week we are in. Names must match LINKS. */
+var PINS=[
+ {d:'2026-11-02',t:['Before Saturday','週六之前'],l:['Important Questions deck','Instructor question sheet','5-min slides and script','Judging Training Site']},
+ {d:'2026-11-08',t:['Before we fly','出發前'],l:['Materials to bring','Booth Pitch Prep','5-min slides and script','Important Questions deck']},
+ {d:'2026-11-11',t:['In Paris, before judging','在巴黎，評審之前'],l:['5-min slides and script','Judging Training Site','Important Questions deck','Booth Pitch Prep']},
+ {d:'2026-11-13',t:['Booth days','攤位日'],l:['Booth Pitch Prep','Booth QA Prep','Promotion Activity','Official schedule']},
+ {d:'2026-11-15',t:['Stage talk and final day','舞台演講與決賽日'],l:['10-min live stage talk slides','Stage Talk Prep','Official schedule','Booth Pitch Prep']}
+];
+function pinset(){
+  var tk=key(now(),homeTZ()),w=PINS[0];
+  PINS.forEach(function(p){if(p.d<=tk)w=p});
+  return w;
+}
 function LK(name){var u='#';LINKS.forEach(function(c){c.l.forEach(function(l){if(l[0]===name)u=l[1]})});return [name,u]}
 
 /* ---------- to achieve before we fly ---------- */
@@ -2119,15 +2136,23 @@ function shiftgrid(){
 
 /* ---------- links / packing ---------- */
 function links(){
-  var h='',top='';LINKS.forEach(function(c){
+  var win=pinset(),pick=win.l,h='',cards={};
+  LINKS.forEach(function(c){
     h+='<div class="card lk'+(c.official?' official':'')+'"><h3><span class="ic"><svg viewBox="0 0 24 24">'+IC[c.i]+'</svg></span>'+tx(c.h)+'<em>'+c.l.length+'</em></h3>';
     c.l.forEach(function(l){
+      var on=pick.indexOf(l[0])>-1&&!!l[1];
+      if(on)cards[l[0]]={c:c,l:l};
       if(!l[1]){h+='<span class="todo">'+esc(tx(l[0]))+'<span class="k '+l[2]+'">'+tx(KIND[l[2]])+'</span></span>';return}
-      h+='<a'+(l[3]?' class="star"':'')+' href="'+l[1]+'" target="_blank" rel="noopener">'+(l[3]?'<span class="st">★</span>':'')+esc(tx(l[0]))+'<span class="k '+l[2]+'">'+tx(KIND[l[2]])+'</span><span class="arr">↗</span></a>';
-      if(l[3])top+='<a class="pin" href="'+l[1]+'" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24">'+IC[c.i]+'</svg></span><span><small>'+esc(tx(c.h))+'</small>'+esc(tx(l[0]))+'</span><span class="arr">↗</span></a>';
+      h+='<a'+(on?' class="star"':'')+' href="'+l[1]+'" target="_blank" rel="noopener">'+(on?'<span class="st">★</span>':'')+esc(tx(l[0]))+'<span class="k '+l[2]+'">'+tx(KIND[l[2]])+'</span><span class="arr">↗</span></a>';
     });
     h+='</div>';
   });
+  var top='';
+  pick.forEach(function(name){
+    var e=cards[name];if(!e)return;
+    top+='<a class="pin" href="'+e.l[1]+'" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24">'+IC[e.c.i]+'</svg></span><span><small>'+esc(tx(e.c.h))+'</small>'+esc(tx(e.l[0]))+'</span><span class="arr">↗</span></a>';
+  });
+  $('linkpinh').textContent=L(win.t[0],win.t[1]);
   $('linkpins').innerHTML=top;
   $('linkgrid').innerHTML=h;
   var n=0;LINKS.forEach(function(c){n+=c.l.length});$('lcount').textContent=n;
