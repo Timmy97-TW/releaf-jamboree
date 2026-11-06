@@ -324,10 +324,21 @@ section.s{padding:84px 0 12px}
 @media (max-width:760px){.bfig{grid-template-columns:1fr;gap:10px}}
 
 .pstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
-.pstrip img{display:block;width:100%;height:clamp(118px,13vw,168px);object-fit:cover;border-radius:14px;background:#ECECF0}
-.pstrip.lead img:first-child{object-position:50% 35%}
+.pstrip img{display:block;width:100%;height:auto;aspect-ratio:1/1;max-height:300px;object-fit:cover;object-position:50% 25%;border-radius:14px;background:#ECECF0}
+/* judging carousel */
+.car{position:relative;margin-top:18px}
+.cartrack{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;list-style:none;margin:0;padding:0;scrollbar-width:none}
+.cartrack::-webkit-scrollbar{display:none}
+.cartrack li{flex:0 0 calc((100% - 20px)/3);scroll-snap-align:start}
+.cartrack img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 42%;border-radius:14px;background:#ECECF0}
+.carb{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.92);backdrop-filter:blur(8px);display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.1);transition:opacity .2s}
+.carb svg{width:20px;height:20px;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.carb.prev{left:-14px} .carb.next{right:-14px}
+.carb[disabled]{opacity:0;pointer-events:none}
+@media (hover:none){.carb{display:none}}
 .pcap{font-size:12.5px;color:var(--ink3);margin-top:8px;letter-spacing:.01em}
-@media (max-width:760px){.pstrip{grid-template-columns:1fr 1fr}.pstrip img:nth-child(3){display:none}}
+@media (max-width:760px){.pstrip{grid-template-columns:1fr 1fr}.pstrip img:nth-child(3){display:none}
+  .cartrack li{flex-basis:80%}}
 
 /* categories */
 .c-mock{--c:var(--blue)} .c-deliv{--c:var(--red)} .c-stage{--c:var(--green)} .c-final{--c:var(--violet)}
@@ -1152,10 +1163,23 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       </div>
       <p class="note" data-zh="投影片、已簽名、已作答是 11 月 6 日下午的版本；題庫欄是 11 月 3 日。商業與法規從 0 題變成 10 題已作答；植物十一題仍然全部空白，而整份投影片到現在還是只有一題附上了圖。">Deck, Named and Answered are from the deck on the afternoon of 6 November; the Sheet column is from 3 November. Business &amp; Legal went from no answers to ten. Plant&rsquo;s eleven are still blank, and in the whole deck exactly one answer has a figure in it.</p>
     </div>
-    <div class="pstrip rv">
-      <img src="img/mock/1.webp" alt="The team sitting in a circle during a judging practice session, questions on the screen behind" loading="lazy" decoding="async" width="1000" height="750">
-      <img src="img/mock/2.webp" alt="A student standing to answer a question during judging practice" loading="lazy" decoding="async" width="1000" height="750">
-      <img src="img/mock/3.webp" alt="A student answering a judging question with the whiteboard list behind her" loading="lazy" decoding="async" width="1000" height="750">
+    <div class="car rv" id="mockcar">
+      <button class="carb prev" type="button" data-car="-1" aria-label="Previous pictures"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <ul class="cartrack" id="mocktrack">
+        <li><img src="img/mock/1.webp" alt="The room during judging practice, the question list on the screen" decoding="async" width="1000" height="750"></li>
+        <li><img src="img/mock/2.webp" alt="The team at the table during judging practice" decoding="async" width="1000" height="750"></li>
+        <li><img src="img/mock/3.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
+        <li><img src="img/mock/4.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
+        <li><img src="img/mock/5.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
+        <li><img src="img/mock/6.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
+        <li><img src="img/mock/7.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
+        <li><img src="img/mock/8.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
+        <li><img src="img/mock/9.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
+        <li><img src="img/mock/10.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
+        <li><img src="img/mock/11.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
+        <li><img src="img/mock/12.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
+      </ul>
+      <button class="carb next" type="button" data-car="1" aria-label="More pictures"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
     <p class="pcap" data-zh="評審問答練習，在教室裡">Judging practice, in the classroom</p>
   </div>
@@ -1238,9 +1262,9 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <figcaption data-zh="反應器，11 月 5 日。綠光模組裝上、外殼合起來、層架固定。">The reactor on 5 November. Green light in, shell closed up, rack mounted.</figcaption>
     </figure>
     <div class="pstrip rv">
-      <img src="img/work/build.webp" alt="Two team members drilling and wiring the bioreactor frame" loading="lazy" decoding="async" width="1000" height="1333">
-      <img src="img/work/lab.webp" alt="A student at the bench holding a rack of sample tubes" loading="lazy" decoding="async" width="1000" height="1333">
-      <img src="img/work/bench.webp" alt="Students and an instructor working along the lab bench" loading="lazy" decoding="async" width="1000" height="804">
+      <img src="img/work/build.webp" style="object-position:50% 20%" alt="Two team members drilling and wiring the bioreactor frame" loading="lazy" decoding="async" width="1000" height="1333">
+      <img src="img/work/lab.webp" style="object-position:62% 20%" alt="A student at the bench holding a rack of sample tubes" loading="lazy" decoding="async" width="1000" height="1333">
+      <img src="img/work/bench.webp" style="object-position:42% 34%" alt="Students and an instructor working along the lab bench" loading="lazy" decoding="async" width="1000" height="804">
     </div>
     <p class="pcap" data-zh="出發前的最後幾週">The last weeks before we fly</p>
   </div>
@@ -2061,6 +2085,20 @@ function goals(force){
   GOALS.forEach(function(g,i){h+='<div class="goal rv"><img src="img/goals/'+g[3]+'.webp" alt="'+esc(g[4])+'" loading="lazy" decoding="async" class="'+(g[6]?'fit':'')+'"'+(g[5]?' style="object-position:'+g[5]+'"':'')+'><div><div class="gn"><i>0'+(i+1)+'</i><span class="tag '+g[2]+'">'+esc(tx(g[1]))+'</span><span class="tag go">'+L('Ongoing','進行中')+'</span></div><h3>'+esc(tx(g[0]))+'</h3></div></div>'});
   el.innerHTML=h;
 }
+function carousel(){
+  var t=document.getElementById('mocktrack');if(!t)return;
+  var box=document.getElementById('mockcar'),bs=box.querySelectorAll('[data-car]');
+  function sync(){
+    var max=t.scrollWidth-t.clientWidth-2;
+    bs[0].disabled=t.scrollLeft<=2; bs[1].disabled=t.scrollLeft>=max;
+  }
+  bs.forEach(function(b){b.addEventListener('click',function(){
+    t.scrollBy({left:(+b.dataset.car)*Math.round(t.clientWidth*0.8),behavior:'smooth'});
+  })});
+  t.addEventListener('scroll',sync,{passive:true});
+  window.addEventListener('resize',sync);
+  sync();
+}
 function packing(){
   var h='<thead><tr><th>'+L('Item','物品')+'</th><th>'+L('Who','負責人')+'</th><th>'+L('Status','狀態')+'</th></tr></thead><tbody>';
   MAT.forEach(function(m){h+='<tr><td>'+esc(tx(m[0]))+(m[1]?'<small class="q">'+esc(tx(m[1]))+'</small>':'')+'</td><td class="who">'+esc(OWNER[m[2]]||m[2])+'</td><td>'+(m[3]?'<span class="pill '+PILL[m[3]]+'">'+esc(tx(m[3]))+'</span>':'')+'</td></tr>'});
@@ -2311,7 +2349,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')menu(false)}
 document.addEventListener('click',function(e){if(nav.classList.contains('open')&&!nav.contains(e.target))menu(false)});
 
 /* ---------- boot ---------- */
-statics();hero();journey();homework();goals();today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();pitch();rooms();cityMap();hoodMap();weather();wxLoad();navSpy();
+statics();hero();journey();homework();goals();today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();pitch();rooms();cityMap();hoodMap();weather();wxLoad();carousel();navSpy();
 setInterval(hero,1000);setInterval(wxLoad,36e5);
 setInterval(function(){today();journey();homework();goals();if(inParis(now()))schedule()},60000);
 var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(schedule,150)});
