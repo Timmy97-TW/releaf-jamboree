@@ -339,12 +339,6 @@ html:lang(zh-Hant) .sday li{padding:3px 0;line-height:1.25}
 .hwask b{font-weight:600}
 .hwsign{display:flex;gap:11px;align-items:flex-start;margin-top:18px;padding:14px 16px;border-radius:14px;background:var(--mint);font-size:15px;line-height:1.45}
 .hwsign svg{width:19px;height:19px;flex:none;fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
-.hwdue{background:var(--navy);color:#fff;border-radius:var(--r);padding:22px 24px;position:relative;overflow:hidden}
-.hwdue:after{content:"";position:absolute;right:-80px;bottom:-110px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(1,103,239,.55),transparent 65%)}
-.hwdue>*{position:relative;z-index:1}
-.hwdue .label{color:rgba(255,255,255,.55)}
-.hwdue .n{font-size:52px;font-weight:700;letter-spacing:-.05em;line-height:1;margin-top:6px}
-.hwdue .u{font-size:15px;color:rgba(255,255,255,.72);margin-top:5px;line-height:1.35}
 .hwstats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
 .hwstats div{background:var(--card);border-radius:16px;padding:14px 14px 15px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
 .hwstats b{display:block;font-size:30px;font-weight:700;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
@@ -1063,7 +1057,6 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <li><a href="#booth"><i>02</i><span data-zh="攤位">Booth</span></a></li>
       <li id="nsat"><a href="#sat"><i>03</i><span data-zh="週六">Saturday</span></a></li>
       <li><a href="#today"><i>04</i><span data-zh="今日">Today</span></a></li>
-      <li><a href="#homework"><i>05</i><span data-zh="重要問題">Questions</span></a></li>
       <li><a href="#pitch"><i>06</i><span data-zh="介紹">Pitch</span></a></li>
       <li><a href="#calendar"><i>07</i><span data-zh="行事曆">Calendar</span></a></li>
       <li><a href="#trip"><i>08</i><span data-zh="行程">Trip</span></a></li>
@@ -1130,7 +1123,6 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
         </div>
         <div class="tkgo">
           <a href="https://docs.google.com/presentation/d/1O95af9Q3xPGV_ucqMZ8s1sKE2wsrWGPISFywieWuuV0/edit" target="_blank" rel="noopener"><span class="lb" data-zh="<small>在這裡作答</small>重要問題投影片"><small>Answer here</small>Important Questions deck</span><span class="arr">&#8599;</span></a>
-          <a class="ghost" href="#homework" data-zh="完整說明與六個主題">Full brief and the six topics<span class="arr">&#8595;</span></a>
         </div>
       </article>
 
@@ -1231,106 +1223,6 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <div class="card rv"><div class="label" id="today-label">On the calendar</div><h3 id="today-title"></h3><ul class="tlist" id="today-list"></ul></div>
       <div class="card rv"><div class="label" data-zh="即將到來">Coming up</div><h3 data-zh="接下來的行程">Next on the road</h3><ul class="tlist" id="next-list"></ul></div>
     </div>
-  </div>
-</section>
-
-<section class="s" id="homework">
-  <div class="wrap">
-    <span class="eyebrow" data-zh="全隊作業 · 週六模擬評審前">Team homework · before Saturday's mock</span>
-    <h2 data-zh="每一題都要有人回答，並簽上名字。">Every question gets an answer, and a name.</h2>
-    <p class="sub" data-zh="兩份清單，同樣六個主題。投影片是我們作答的地方；試算表是老師出的題，更精準也更尖銳。挑你答得出來的題目，附上一張關鍵圖和實際數據，然後在第 1 頁簽上你的名字。">Two lists, the same six topics. The deck is where we write the answers; the sheet is the instructors' version of the same questions, sharper and better aimed. Take the ones you can answer, bring one key figure and the real numbers, then sign your name on slide 1.</p>
-
-    <div class="hwpins">
-      <a class="pin" href="https://docs.google.com/presentation/d/1O95af9Q3xPGV_ucqMZ8s1sKE2wsrWGPISFywieWuuV0/edit" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/></svg></span><span data-zh="<small>在這裡作答</small>重要問題投影片"><small>Answer here</small>Important Questions deck</span><span class="arr">↗</span></a>
-      <a class="pin alt" href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=0#gid=0" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9.5h18M3 14.5h18M9 4v16M15 4v16"/></svg></span><span data-zh="<small>老師出的題</small>模擬評審題庫"><small>Instructors' questions</small>Mock judging question sheet</span><span class="arr">↗</span></a>
-    </div>
-
-    <div class="hwgrid">
-      <div class="card rv">
-        <div class="label" data-zh="每一題都要有的四樣東西">What every answer needs</div>
-        <ol class="hwask">
-          <li data-zh="<b>一張關鍵圖。</b>回答時可以直接指的那張圖。從我們的 wiki、結果頁或論文裡找，並註明來源。"><b>One key figure.</b> The picture you point at while you answer. Pull it from our wiki, our results or a paper, and say where it came from.</li>
-          <li data-zh="<b>實際數據。</b>數值、單位、重複數，以及數據出自哪一次實驗或哪張圖。"><b>The numbers.</b> Value, units, how many replicates, and which run or figure they come from.</li>
-          <li data-zh="<b>答題關鍵字。</b>三到四個不能漏掉的詞，這樣就算講得匆忙，答案還是站得住。"><b>Answer keywords.</b> Three or four words you cannot leave out, so the answer still holds when you are rushed.</li>
-          <li data-zh="<b>完整答案。</b>簡短、精準、完整——一分鐘內講得完的那個版本。"><b>The answer itself.</b> Short, precise and complete — the version you would say out loud in under a minute.</li>
-        </ol>
-        <div class="hwsign">
-          <svg viewBox="0 0 24 24"><path d="M3 17.5c3-1 4-6 6.5-6s1.5 4 4 4 3.5-3.5 7.5-3.5"/><path d="M15 7l2-2 2 2-2 2z"/></svg>
-          <span data-zh="完成一題，就在第 1 頁的題號旁打上你的名字。這樣大家才看得出哪些題有人認領、哪些還空著。">Finished one? Put your name next to that question number on slide 1. That is how we see what is taken and what is still open.</span>
-        </div>
-      </div>
-      <div>
-        <div class="hwdue rv" id="hwdue"></div>
-        <div class="hwstats rv">
-          <div><b>88</b><span data-zh="投影片題數">questions in the deck</span></div>
-          <div><b>30</b><span data-zh="已經有人簽名">have a name on them</span></div>
-          <div><b class="cru">30</b><span data-zh="已經寫上答案">have an answer</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card rv" style="margin-top:18px">
-      <div class="label" style="margin-bottom:2px" data-zh="誰認領了什麼 · 11 月 6 日下午的投影片">Who has taken what &middot; the deck on the afternoon of 6 November</div>
-      <div class="owns">
-        <article class="own">
-          <div class="oh"><b>Joshua Hong</b><i class="tw">14</i></div>
-          <p data-zh="硬體清單的前十題，H1 到 H10：光度計、雙光束、LPA、夾管閥、膜阻塞、BPT 管。再加上一般題的四題，包含農場電力和培養基更換。全部都寫完了。">The first ten questions on the hardware list, H1 to H10: the photometer, the dual beam, the LPA, the pinch valve, fouling, the BPT tubing. Plus four on the general list, including power on a farm and how the medium gets refilled. All written.</p>
-        </article>
-        <article class="own">
-          <div class="oh"><b>Sophie Liu</b><i class="tw">10</i></div>
-          <p data-zh="商業與法規整欄，十一題裡的十題：保護劑歸類為生物刺激素、誰是我們的客戶、買不起的小農怎麼辦、乾草培養基、反應器 2,280 美元、整套 5,300 美元、包裝與配送。全部寫完了，上週那一欄還是空的。">The whole Business &amp; Legal column, ten of its eleven: the protectant as a biostimulant, who the customer is, what happens to farmers who cannot buy one, the hay medium, the $2,280 reactor and the $5,300 package, packaging and delivery. All written, in a column that was empty last week.</p>
-        </article>
-        <article class="own">
-          <div class="oh"><b>Sophie Chen</b><i class="tw">3</i></div>
-          <p data-zh="為什麼用光而不用化學誘導、ACC deaminase 的實際分子量（35–42 kDa，推測是同源二聚體），以及密碼子最佳化的目的。整份投影片到現在唯一附上圖的答案，還是她的。">Why light and not a chemical inducer, the actual size of ACC deaminase (35&ndash;42 kDa, with a homodimer as the hypothesis), and what codon optimisation was for. Hers is still the only answer in the deck with a figure in it.</p>
-        </article>
-        <article class="own">
-          <div class="oh"><b>Olivia Lin</b><i class="tw">2</i></div>
-          <p data-zh="Csn 與 SamyQ 的分泌效率，已經寫了。「為什麼選這三個保護劑」簽了名，還空著。">Csn against SamyQ for secretion, written. &ldquo;Why these three protectants&rdquo; is signed and still blank.</p>
-        </article>
-        <article class="own">
-          <div class="oh"><b>Jacquelyn Inocencio</b><i class="tw">1</i></div>
-          <p data-zh="為什麼用光當誘導訊號：化學誘導劑要一直加、一直花錢，而光不用打開系統。">Why light is the inducer: a chemical inducer has to be added and paid for again and again, and light does not mean opening the system.</p>
-        </article>
-      </div>
-    </div>
-    <div class="card rv" style="margin-top:18px">
-      <div class="label" style="margin-bottom:4px" data-zh="六個主題，點主題名稱開啟該分頁">Six topics · topic names open that tab of the sheet</div>
-      <div class="tablewrap">
-        <table class="qtab">
-          <thead><tr><th data-zh="主題">Topic</th><th class="n" data-zh="投影片">Deck</th><th class="n" data-zh="題庫">Sheet</th><th class="n" data-zh="關鍵題">Crucial</th><th class="n" data-zh="已簽名">Named</th><th class="n" data-zh="已作答">Answered</th></tr></thead>
-          <tbody>
-      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=0#gid=0" target="_blank" rel="noopener" data-zh="一般">General</a></th><td class="n">16</td><td class="n">16</td><td class="n">7</td><td class="n">8</td><td class="n">7</td></tr>
-      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=790320425#gid=790320425" target="_blank" rel="noopener" data-zh="硬體">Hardware</a></th><td class="n">33</td><td class="n">33</td><td class="n">5</td><td class="n">10</td><td class="n">10</td></tr>
-      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=15714428#gid=15714428" target="_blank" rel="noopener" data-zh="商業與法規">Business &amp; Legal</a></th><td class="n">11</td><td class="n">13</td><td class="n">5</td><td class="n">10</td><td class="n">10</td></tr>
-      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=1628754936#gid=1628754936" target="_blank" rel="noopener" data-zh="推廣與人文實踐">Outreach &amp; iHP</a></th><td class="n">2</td><td class="n">2</td><td class="n">1</td><td class="n zero">0</td><td class="n">1</td></tr>
-      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=847492033#gid=847492033" target="_blank" rel="noopener" data-zh="植物">Plant</a></th><td class="n">11</td><td class="n">13</td><td class="n">1</td><td class="n zero">0</td><td class="n zero">0</td></tr>
-      <tr><th><a href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=1499663032#gid=1499663032" target="_blank" rel="noopener" data-zh="選殖">Cloning</a></th><td class="n">15</td><td class="n">18</td><td class="n">1</td><td class="n">2</td><td class="n">2</td></tr>
-          </tbody>
-          <tfoot><tr><th data-zh="合計">Total</th><td class="n">88</td><td class="n">95</td><td class="n">20</td><td class="n">30</td><td class="n">30</td></tr></tfoot>
-        </table>
-      </div>
-      <p class="note" data-zh="投影片、已簽名、已作答是 11 月 6 日下午的版本；題庫欄是 11 月 3 日。商業與法規從 0 題變成 10 題已作答；植物十一題仍然全部空白，而整份投影片到現在還是只有一題附上了圖。">Deck, Named and Answered are from the deck on the afternoon of 6 November; the Sheet column is from 3 November. Business &amp; Legal went from no answers to ten. Plant&rsquo;s eleven are still blank, and in the whole deck exactly one answer has a figure in it.</p>
-    </div>
-    <div class="car rv" id="mockcar">
-      <button class="carb prev" type="button" data-car="-1" aria-label="Previous pictures"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-      <ul class="cartrack" id="mocktrack">
-        <li><img src="img/mock/1.webp" alt="The room during judging practice, the question list on the screen" decoding="async" width="1000" height="750"></li>
-        <li><img src="img/mock/2.webp" alt="The team at the table during judging practice" decoding="async" width="1000" height="750"></li>
-        <li><img src="img/mock/3.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
-        <li><img src="img/mock/4.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
-        <li><img src="img/mock/5.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
-        <li><img src="img/mock/6.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
-        <li><img src="img/mock/7.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
-        <li><img src="img/mock/8.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
-        <li><img src="img/mock/9.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
-        <li><img src="img/mock/10.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
-        <li><img src="img/mock/11.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
-        <li><img src="img/mock/12.webp" alt="A student standing to answer a judging question, the team seated with the question list behind" loading="lazy" decoding="async" width="1000" height="750"></li>
-      </ul>
-      <button class="carb next" type="button" data-car="1" aria-label="More pictures"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-    </div>
-    <p class="pcap" data-zh="評審問答練習，在教室裡">Judging practice, in the classroom</p>
   </div>
 </section>
 
@@ -1968,7 +1860,7 @@ var TASKS={
   {t:'Meeting with Kyle, plant postdoc',w:'Go through the plant Q&As and learn how to present the plant data',hot:1,tag:'Important',l:[LK('Plant Training Site'),LK('2026 QA prep')]},
   JUDGEPREP,PITCH,STAGEPREP,LABGOALS]}
 };
-var QHOME={t:'Answer the important questions',w:'Pick the ones you can answer, bring a figure and the numbers, then sign slide 1',hot:1,tag:'Due Saturday',l:[LK('Important Questions deck'),LK('Instructor question sheet'),['Open the homework','#homework']]};
+var QHOME={t:'Answer the important questions',w:'Pick the ones you can answer, bring a figure and the numbers, then sign slide 1',hot:1,tag:'Due Saturday',l:[LK('Important Questions deck'),LK('Instructor question sheet')]};
 var APPTASK={t:'Install the My iGEM App',w:'Sign in with your iGEM email and check your ticket is there, before Saturday',hot:1,tag:'Due Saturday',l:[['App Store','https://apps.apple.com/us/app/my-igem/id6747386789'],['Google Play','https://play.google.com/store/apps/details?id=org.igem.main&hl=en'],['What the app does','#app']]};
 var STANDING={h:'Today\'s goals',l:[QHOME,APPTASK,JUDGEPREP,PITCH,STAGEPREP,LABGOALS]};
 
@@ -2241,14 +2133,6 @@ if(location.hash==='#links')openLinks();
 var heroEl=$('top');
 function fab(){$('fab').classList.toggle('on',heroEl.getBoundingClientRect().bottom<0)}
 window.addEventListener('scroll',fab,{passive:true});fab();
-function homework(){
-  var tk=key(now(),homeTZ()),d=dayDiff(tk,'2026-11-07'),lab='<div class="label">'+L('Due','截止')+'</div>',h;
-  if(d>1)h=lab+'<div class="n tw">'+d+'</div><div class="u">'+L('days until Saturday 7 November','天後就是 11 月 7 日（六）')+'</div>';
-  else if(d===1)h=lab+'<div class="n tw">1</div><div class="u">'+L('day left · Saturday 7 November','天 · 11 月 7 日（六）')+'</div>';
-  else if(d===0)h=lab+'<div class="n">'+L('Today','今天')+'</div><div class="u">'+L('Saturday 7 November, the judging mock','11 月 7 日（六），模擬評審')+'</div>';
-  else h=lab+'<div class="n">'+L('Open','持續')+'</div><div class="u">'+L('Saturday has passed. The questions without names still need them.','週六已過。還沒人簽名的題目仍等人回答。')+'</div>';
-  $('hwdue').innerHTML=h;
-}
 function goals(force){
   var tk=key(now(),homeTZ()),fly=dayDiff(tk,'2026-11-10'),el=$('achieve');
   var lead='<div class="label">'+L('Before we fly','出發前')+'</div>'+(fly>0?'<div class="n tw">'+fly+'</div><div class="u">'+L((fly===1?'day':'days')+' to finish all three','天內完成三項目標')+'</div>':'<div class="n">'+L('Go','出發')+'</div><div class="u">'+L('Wheels up','起飛')+'</div>');
@@ -2498,7 +2382,7 @@ function langThumb(){var b=$('lang').querySelector('button.on'),t=$('lang').quer
 window.addEventListener('resize',langThumb);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(langThumb);
 function setLang(l){
   if(l===LANG)return;LANG=l;try{localStorage.setItem('releaf-lang',l)}catch(e){}
-  statics();hero();journey();homework();goals(1);sat();today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();rooms();cityMap();hoodMap();weather();PITCHLAB();
+  statics();hero();journey();goals(1);sat();today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();rooms();cityMap();hoodMap();weather();PITCHLAB();
   document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
 }
 $('lang').onclick=function(e){var b=e.target.closest('button');if(b)setLang(b.dataset.l)};
@@ -2541,8 +2425,8 @@ var SG_A1=['Jacquelyn','Chloe Wu','Anton','Felix','Sophie Liu'],
     SG_B1=['Jacquelyn','Sophie Chen','Abby Tsai','Joshua','Olivia Du','Ethan Chang','Anna'],
     SG_B2=['Sophie Chen','Abby Tsai','Joshua','Olivia Du','Ethan Chang','Anna'],
     SG_P2=['Jacquelyn','Chloe Wu'],SG_P3=['Jacquelyn','Chloe Wu','Abigail'],
-    SG_BO=['Olivia Du','Sophia Yeh','Sophia Lin','Ethan Chang','Mia','Olivia Lin','Phoebe','Ryan Wei','Ryan Yuan','Sara Chen','Sarah Chou','Sophie Chen'],
-    SG_ST=['Anna','Eva','Abby Kao','Joshua','Abby Tsai','Alex Li','Sophie Huang','Ethan Liu','Audrey Chu','Audrey Hsieh'],
+    SG_BO=['Olivia Du','Sophia Yeh','Sophia Lin','Ethan Chang','Mia','Olivia Lin','Phoebe','Ryan Wei','Ryan Yuan','Sarah Chou','Sophie Chen'],
+    SG_ST=['Anna','Eva','Abby Kao','Joshua','Abby Tsai','Alex Li','Sophie Huang','Sara Chen','Ethan Liu','Audrey Chu','Audrey Hsieh'],
     SG_ALL=['Anton','Olivia Du','Sophia Yeh','Sophia Lin','Ethan Chang','Mia','Olivia Lin','Phoebe','Ryan Wei','Ryan Yuan','Sara Chen','Sarah Chou','Anna','Eva','Abby Kao','Joshua','Abby Tsai','Alex Li','Sophie Huang','Ethan Liu','Audrey Chu','Audrey Hsieh'];
 var SK={ /* [full name, board label, half-height label, label for blocks an hour or longer] */
  mockA:[['Judging mock · Group A','評審模擬 · A 組'],['Group A mock','A 組模擬'],['A mock','A 組']],
@@ -2672,9 +2556,9 @@ function satPick(n){
 $('satnames').addEventListener('click',function(e){var b=e.target.closest('button');if(b)satPick(b.dataset.n===ssel?null:b.dataset.n)});
 
 /* ---------- boot ---------- */
-statics();hero();journey();homework();goals();sat();today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();pitch();rooms();cityMap();hoodMap();weather();wxLoad();carousel();navSpy();
+statics();hero();journey();goals();sat();today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();pitch();rooms();cityMap();hoodMap();weather();wxLoad();carousel();navSpy();
 setInterval(hero,1000);setInterval(wxLoad,36e5);
-setInterval(function(){sat();today();journey();homework();goals();if(inParis(now()))schedule()},60000);
+setInterval(function(){sat();today();journey();goals();if(inParis(now()))schedule()},60000);
 var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(schedule,150)});
 if('IntersectionObserver' in window){
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -40px 0px'});
