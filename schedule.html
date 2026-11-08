@@ -138,40 +138,80 @@ html:lang(zh-Hant) .label,html:lang(zh-Hant) .eyebrow{letter-spacing:.04em}
   font-weight:600;color:var(--ink2);cursor:pointer}
 .fcount{font-size:13px;color:var(--ink3);margin-left:auto;white-space:nowrap}
 
-/* my five */
-.mine{display:grid;grid-template-columns:1fr 330px;gap:18px;align-items:start}
-@media (max-width:900px){.mine{grid-template-columns:1fr}}
-.pickrow{background:var(--card);border-radius:16px;padding:15px 17px;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-.pickrow .ph{display:flex;align-items:baseline;gap:10px}
-.pickrow .ph b{font-size:13px;font-weight:700;color:var(--blue);font-variant-numeric:tabular-nums}
-.pickrow .ph h3{font-size:16px;font-weight:650;line-height:1.3;flex:1}
-.pickrow .ph button{border:0;background:transparent;color:var(--ink3);font:inherit;font-size:19px;line-height:1;
+/* what you hand in, at the top */
+.handin{display:flex;gap:13px;align-items:flex-start;background:rgba(0,184,122,.1);
+  border:1px solid rgba(0,212,146,.28);border-radius:16px;padding:13px 17px;margin:0 0 22px;max-width:50em}
+.handin svg{width:19px;height:19px;flex:none;margin-top:2px;fill:none;stroke:var(--green2);stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
+.handin p{margin:0;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.74)}
+.handin b{color:#fff;font-weight:650}
+.handin p b.hl{display:block;font-size:12px;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--green2);margin-bottom:3px}
+
+/* the dock that follows you */
+.dock{position:fixed;z-index:70;background:var(--card);border-radius:20px;
+  box-shadow:0 18px 50px rgba(0,6,28,.22),0 0 0 1px rgba(0,0,0,.05);overflow:hidden;
+  display:flex;flex-direction:column}
+.dockbar{display:flex;align-items:center;gap:11px;width:100%;border:0;background:var(--navy);color:#fff;
+  font:inherit;text-align:left;padding:13px 15px;cursor:pointer}
+.dockbar .dn{width:30px;height:30px;flex:none;border-radius:10px;background:rgba(255,255,255,.14);
+  display:grid;place-items:center;font-size:14px;font-weight:700}
+.dock.ready .dockbar .dn{background:var(--green);}
+.dockbar .dtt{flex:1;min-width:0}
+.dockbar .dtt b{display:block;font-size:14.5px;font-weight:650;letter-spacing:-.01em}
+.dockbar .dtt small{display:block;font-size:11.5px;color:rgba(255,255,255,.58);white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+.dockbar .dchev{flex:none;transition:transform .25s}
+.dockbar .dchev svg{width:18px;height:18px;display:block;fill:none;stroke:rgba(255,255,255,.7);stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
+.dock.shut .dockbar .dchev{transform:rotate(180deg)}
+.dockbody{display:flex;flex-direction:column;min-height:0;transition:opacity .2s}
+.dock.shut .dockbody{display:none}
+.dockwho{display:flex;align-items:center;gap:9px;padding:11px 15px;border-bottom:1px solid var(--line);
+  background:var(--bg)}
+.dockwho label{font-size:12px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.05em;
+  white-space:nowrap}
+.dockwho select{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;background:#fff;
+  padding:7px 9px;font:inherit;font-size:13.5px;font-weight:600;color:var(--ink);cursor:pointer}
+.docklist{position:relative;overflow:auto;overscroll-behavior:contain;padding:11px 13px;flex:1;min-height:0}
+.dockfoot{padding:13px 15px;border-top:1px solid var(--line);background:var(--bg)}
+
+.pickrow{border-radius:14px;padding:11px 12px;margin-bottom:9px;background:var(--bg)}
+.pickrow:last-child{margin-bottom:0}
+.pickrow.fresh{animation:pop .45s ease}
+@keyframes pop{0%{transform:scale(.97);background:#E6F0FF}100%{transform:none;background:var(--bg)}}
+.pickrow .ph{display:flex;align-items:baseline;gap:9px}
+.pickrow .ph b{font-size:12px;font-weight:700;color:var(--blue);font-variant-numeric:tabular-nums}
+.pickrow .ph h3{font-size:14.5px;font-weight:650;line-height:1.3;flex:1;letter-spacing:-.01em}
+.pickrow .ph button{border:0;background:transparent;color:var(--ink3);font:inherit;font-size:18px;line-height:1;
   cursor:pointer;padding:0 2px}
 .pickrow .ph button:hover{color:var(--red)}
-.pickrow .pm{font-size:12.5px;color:var(--ink3);margin:3px 0 9px}
-.pickrow textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font:inherit;
-  font-size:14px;line-height:1.45;resize:vertical;min-height:62px;color:var(--ink);background:#fff}
+.pickrow .pm{font-size:11.5px;color:var(--ink3);margin:3px 0 8px}
+.pickrow textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 11px;font:inherit;
+  font-size:13.5px;line-height:1.45;resize:vertical;min-height:62px;color:var(--ink);background:#fff}
 .pickrow textarea:focus{outline:2px solid var(--blue2);outline-offset:1px}
-.pickrow .cnt{font-size:11.5px;color:var(--ink3);text-align:right;margin:4px 0 0}
+.pickrow .cnt{font-size:11px;color:var(--ink3);text-align:right;margin:4px 0 0}
 .pickrow .cnt.short{color:var(--amber)}
-.empty{background:var(--card);border-radius:16px;padding:28px 22px;text-align:center;color:var(--ink3);font-size:15px;
-  box-shadow:0 1px 2px rgba(0,0,0,.04)}
-.side .who{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;max-height:168px;overflow:auto}
-.side .who button{border:1px solid var(--line);background:#fff;color:var(--ink2);font:inherit;font-size:12.5px;
-  font-weight:600;padding:5px 10px;border-radius:999px;cursor:pointer}
-.side .who button.on{background:var(--navy);border-color:var(--navy);color:#fff}
-.gobar{margin-top:16px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:14px 18px;border:0;
-  border-radius:15px;background:var(--grad);color:#fff;font:inherit;font-size:16px;font-weight:700;cursor:pointer;
-  box-shadow:0 10px 26px rgba(1,103,239,.26)}
+.empty{padding:26px 16px;text-align:center;color:var(--ink3);font-size:14px;line-height:1.5}
+.empty b{color:var(--ink2)}
+.nohit{background:var(--card);border-radius:16px;padding:28px 22px;text-align:center;color:var(--ink3);
+  font-size:15px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:12px 18px;border:0;
+  border-radius:13px;background:var(--grad);color:#fff;font:inherit;font-size:15.5px;font-weight:700;cursor:pointer;
+  box-shadow:0 8px 20px rgba(1,103,239,.24)}
 .btn[disabled]{background:#D7D7DC;color:#8E8E93;box-shadow:none;cursor:not-allowed}
-.gohint{font-size:12.5px;color:var(--ink3);margin:9px 0 0;text-align:center}
-.steps{list-style:none;margin:14px 0 0;padding:0;counter-reset:st}
-.steps li{counter-increment:st;position:relative;padding:8px 0 8px 26px;font-size:14px;color:var(--ink2);
-  line-height:1.4;border-top:1px solid var(--line)}
-.steps li:first-child{border-top:0}
-.steps li:before{content:counter(st);position:absolute;left:0;top:9px;width:18px;height:18px;border-radius:50%;
-  background:var(--bg);color:var(--ink3);font-size:11px;font-weight:700;display:grid;place-items:center}
+.gohint{font-size:12px;color:var(--ink3);margin:8px 0 0;text-align:center}
+
+/* rail on a wide screen, bottom sheet on a narrow one */
+@media (min-width:1240px){
+  .dock{top:76px;right:18px;width:332px;max-height:calc(100dvh - 96px)}
+  body.dockon main{padding-right:350px}
+}
+@media (max-width:1239px){
+  .dock{left:12px;right:12px;bottom:12px;max-height:min(76dvh,660px);border-radius:18px}
+  .dock.shut{max-height:none}
+  main{padding-bottom:84px}
+}
 
 /* modal */
 .modal{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;padding:20px;
@@ -211,21 +251,26 @@ html:lang(zh-Hant) .label,html:lang(zh-Hant) .eyebrow{letter-spacing:.04em}
 
 <header class="top">
   <div class="wrap">
+    <div class="handin">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <p><b class="hl" data-zh="要交的是什麼">What you hand in</b>
+      <span data-zh="一張圖片卡片：三到五場，每一場一個理由。做好之後複製，貼到 Discord 的 <b>#jamboree</b> 頻道。11 月 10 日（週一）出發前。">One image card: three to five talks, each with a reason. Copy it and paste it into the <b>#jamboree</b> channel on Discord, before we fly on Monday 10 November.</span></p>
+    </div>
     <span class="eyebrow" data-zh="大會議程 · 作業">The Jamboree schedule · homework</span>
     <h1 data-zh="四天，三百七十六場。挑五場。">Four days, 376 sessions. Pick five.</h1>
-    <p class="lede" data-zh="大會不只有評審和攤位。每一個主題村都排了一整排談趨勢與前沿分析的演講、座談與工作坊——那是我們平常在台灣讀不到的東西。這一頁把官方議程整個搬過來，標出哪些和 ReLEAF 直接相關，哪些可能只跟你個人有關。">The Jamboree is not only judging and booth shifts. Every village runs a line of talks, panels and workshops on where its field is going, and that is the part you cannot read from Taiwan. This page holds the whole official schedule, marked up for what touches ReLEAF and what might only touch you.</p>
+    <p class="lede" data-zh="大會不只有評審和攤位。每一個主題村都排了一整排談趨勢與前沿分析的演講、座談與工作坊——那是我們平常在台灣讀不到的東西。這一頁把官方議程整個搬過來，可以用主題、場地、時間篩，剩下的就是你自己的判斷。">The Jamboree is not only judging and booth shifts. Every village runs a line of talks, panels and workshops on where its field is going, and that is the part you cannot read from Taiwan. This page holds the whole official schedule, filtered by topic, room and time. Which ones matter is your call.</p>
     <div class="hnums">
       <div><b class="tw">376</b><span data-zh="場次">sessions</span></div>
       <div><b class="tw">4</b><span data-zh="天">days</span></div>
       <div><b class="tw">11</b><span data-zh="個場地">rooms</span></div>
-      <div><b class="tw">18</b><span data-zh="我們先挑出來的">we flagged for you</span></div>
+      <div><b class="tw">3&ndash;5</b><span data-zh="你要挑出來的">you choose</span></div>
     </div>
 
     <div class="hw-box">
       <div class="label" data-zh="新作業">New homework</div>
       <h2 data-zh="選三到五場，寫下為什麼。">Choose three to five talks, and say why.</h2>
       <ol>
-        <li data-zh="把整份議程讀過一遍。先看我們標出來的十八場，再自己往下找。">Read the whole schedule. Start with the eighteen we flagged, then go looking yourself.</li>
+        <li data-zh="把整份議程讀過一遍。用主題標籤篩，或者直接搜尋你在乎的字。">Read the whole schedule. Filter by topic, or search the words you care about.</li>
         <li data-zh="挑三到五場你真的要去的——為了 ReLEAF，或者純粹為了你自己。">Choose three to five you are actually going to. For ReLEAF, or purely for yourself.</li>
         <li data-zh="每一場寫一兩句：為什麼是這一場，你想帶回什麼。">For each one, write a sentence or two: why this one, and what you want to bring back.</li>
         <li data-zh="按下「做出我的卡片」，把圖片複製起來，貼到 Discord。">Press &ldquo;Make my card&rdquo;, copy the image, and paste it into Discord.</li>
@@ -237,20 +282,11 @@ html:lang(zh-Hant) .label,html:lang(zh-Hant) .eyebrow{letter-spacing:.04em}
 
 <main>
 
-<section class="s" id="picks">
-  <div class="wrap">
-    <span class="eyebrow" data-zh="先看這些">Start here</span>
-    <h2 data-zh="十八場，我們讀過理由了。">Eighteen sessions, with the reason written out.</h2>
-    <p class="sub" data-zh="這些不是全部，只是我們讀完三百七十六場之後，認為對 ReLEAF 或對你最有用的。綠色那段是理由。你不一定要同意——不同意的話，自己去議程裡找更好的。">These are not all of them. They are what we picked after reading all 376, for ReLEAF or for you. The green line is the reason. You do not have to agree; if you do not, go find a better one in the schedule below.</p>
-    <div id="picklist"></div>
-  </div>
-</section>
-
 <section class="s tight" id="all">
   <div class="wrap">
     <span class="eyebrow" data-zh="完整議程">The whole schedule</span>
     <h2 data-zh="官方議程，巴黎時間。">The official schedule, Paris time.</h2>
-    <p class="sub" data-zh="台北時間請加 7 小時。「我有空的時段」會把和我們自己的行程（評審、攤位班、舞台演講、閉幕）衝突的場次藏起來——先在右邊選你的名字。">Add 7 hours for Taipei. &ldquo;When I am free&rdquo; hides anything that clashes with our own commitments: judging, your booth shift, the stage talk, the final show. Pick your name in the panel below first.</p>
+    <p class="sub" data-zh="台北時間請加 7 小時。按「加入」，那一場就會進到「我選的場次」面板，理由也在那裡寫。「我有空的時段」會把和我們自己的行程（評審、攤位班、舞台演講、閉幕）衝突的場次藏起來——先在面板裡選你的名字。">Add 7 hours for Taipei. Press Add on a session and it lands in the My picks panel, where you write the reason. &ldquo;When I am free&rdquo; hides anything that clashes with our own commitments &mdash; judging, your booth shift, the stage talk, the final show &mdash; once you have chosen your name in that panel.</p>
 
     <div class="filters">
       <div class="frow" id="fdays"></div>
@@ -269,39 +305,28 @@ html:lang(zh-Hant) .label,html:lang(zh-Hant) .eyebrow{letter-spacing:.04em}
   </div>
 </section>
 
-<section class="s" id="my">
-  <div class="wrap">
-    <span class="eyebrow" data-zh="我的場次">My picks</span>
-    <h2 data-zh="三到五場，各寫一個理由。">Three to five, each with a reason.</h2>
-    <p class="sub" data-zh="寫在這裡的東西只存在你自己的瀏覽器裡，沒有人看得到——直到你把卡片貼進 Discord。">What you type here stays in your own browser. Nobody sees it until you paste the card into Discord.</p>
-    <div class="mine">
-      <div>
-        <div id="picked"></div>
-      </div>
-      <aside class="side">
-        <div class="card">
-          <div class="label" data-zh="你是誰？">Who are you?</div>
-          <div class="who" id="who"></div>
-          <div class="gobar">
-            <button class="btn" type="button" id="make" disabled data-zh="做出我的卡片">Make my card</button>
-            <p class="gohint" id="gohint"></p>
-          </div>
-        </div>
-        <div class="card" style="margin-top:14px">
-          <div class="label" data-zh="接下來">Then</div>
-          <ol class="steps">
-            <li data-zh="按「複製圖片」。">Press &ldquo;Copy image&rdquo;.</li>
-            <li data-zh="打開 Discord 的 #jamboree 頻道。">Open the #jamboree channel in Discord.</li>
-            <li data-zh="直接貼上（⌘V），送出。">Paste it straight in (&#8984;V) and send.</li>
-            <li data-zh="在巴黎真的去。">Then actually go, in Paris.</li>
-          </ol>
-        </div>
-      </aside>
+</main>
+
+<aside class="dock" id="dock" aria-label="My picks">
+  <button class="dockbar" type="button" id="dockbar" aria-expanded="true" aria-controls="dockbody">
+    <span class="dn tw" id="dockn">0</span>
+    <span class="dtt"><b data-zh="我選的場次">My picks</b><small id="dockhint"></small></span>
+    <span class="dchev" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </span>
+  </button>
+  <div class="dockbody" id="dockbody">
+    <div class="dockwho">
+      <label for="who" data-zh="你是誰？">Who are you?</label>
+      <select id="who"></select>
+    </div>
+    <div class="docklist" id="picked"></div>
+    <div class="dockfoot">
+      <button class="btn" type="button" id="make" disabled data-zh="做出我的卡片">Make my card</button>
+      <p class="gohint" id="gohint"></p>
     </div>
   </div>
-</section>
-
-</main>
+</aside>
 
 <footer class="foot">
   <div class="wrap">
@@ -452,7 +477,10 @@ $('fkind').addEventListener('change',function(){F.kind=this.value;render()});
 $('q').addEventListener('input',function(){F.q=this.value.trim().toLowerCase();render()});
 $('fteam').addEventListener('click',function(){F.noteam=!F.noteam;syncChips();render()});
 $('ffree').addEventListener('click',function(){
-  if(!ME&&!F.free){alert(L('Pick your name first, in the panel further down.','請先在下面的面板選你的名字。'));return}
+  if(!ME&&!F.free){
+    dockOpen();flashDock();
+    alert(L('Choose your name first, in the My picks panel.','請先在「我選的場次」面板裡選你的名字。'));return;
+  }
   F.free=!F.free;syncChips();render();
 });
 
@@ -477,7 +505,7 @@ function tagHTML(s){
   if(c)h+='<span class="tg clash">'+L('Clashes with '+c,'和'+c+'衝突')+'</span>';
   return h;
 }
-function sessHTML(s,showWhy){
+function sessHTML(s){
   var on=idx(s.i)>=0;
   var meta=[esc(s.r),esc(s.k)];
   if(s.g)meta.push(esc(s.g));
@@ -489,15 +517,14 @@ function sessHTML(s,showWhy){
     '<div class="tags">'+tagHTML(s)+'</div></div>'+
     '<button class="add'+(on?' on':'')+'" type="button" data-add="'+s.i+'">'+
       (on?L('Picked','已選'):L('Add','加入'))+'</button>';
-  if(showWhy&&s.pw)h+='<p class="why"><b>'+L('Why this one:','為什麼是這場：')+'</b> '+esc(LANG==='zh'?s.pw[1]:s.pw[0])+'</p>';
   return h+'</article>';
 }
-function groupByDay(list,showWhy){
+function groupByDay(list){
   var out='',cur='';
   list.forEach(function(s){
     if(s.d!==cur){cur=s.d;out+='<div class="dayh"><b>'+dayLong(cur)+'</b><span>'+
       L('Paris time','巴黎時間')+'</span></div>'}
-    out+=sessHTML(s,showWhy);
+    out+=sessHTML(s);
   });
   return out;
 }
@@ -516,38 +543,64 @@ function passes(s){
   return true;
 }
 function render(){
-  $('picklist').innerHTML=groupByDay(JSESS.filter(function(s){return s.pick}),true);
   var list=JSESS.filter(passes);
-  $('list').innerHTML=list.length?groupByDay(list,false):
-    '<p class="empty">'+L('Nothing matches those filters. Loosen one.','這些條件下沒有場次。放寬一個試試。')+'</p>';
+  $('list').innerHTML=list.length?groupByDay(list):
+    '<p class="nohit">'+L('Nothing matches those filters. Loosen one.','這些條件下沒有場次。放寬一個試試。')+'</p>';
   $('fcount').textContent=L(list.length+' of '+JSESS.length+' sessions',
                             '共 '+JSESS.length+' 場，符合 '+list.length+' 場');
   $('gen').textContent=L('Pulled from the iGEM API on ','議程資料擷取時間：')+JMETA.gen+'.';
-  renderMine();renderWho();
+  renderWho();renderMine();
 }
+/* only the Add buttons change when a pick is made, so the list is never rebuilt
+   under the reader and nothing loses focus */
+function markPicked(){
+  document.querySelectorAll('.sess').forEach(function(el){
+    var on=idx(el.dataset.i)>=0,b=el.querySelector('[data-add]');
+    el.classList.toggle('on',on);
+    if(b){b.classList.toggle('on',on);b.textContent=on?L('Picked','已選'):L('Add','加入')}
+  });
+}
+var FRESH=null;
 document.addEventListener('click',function(e){
   var b=e.target.closest('[data-add]');if(!b)return;
   var i=b.dataset.add,k=idx(i);
-  if(k>=0)MY.splice(k,1);
+  if(k>=0){MY.splice(k,1);FRESH=null}
   else{
-    if(MY.length>=5){alert(L('Five is the maximum. Drop one first.','最多五場。先拿掉一場。'));return}
-    MY.push({i:i,why:''});
+    if(MY.length>=5){
+      dockOpen();flashDock();
+      alert(L('Five is the maximum. Drop one first.','最多五場。先拿掉一場。'));return;
+    }
+    MY.push({i:i,why:''});FRESH=i;
   }
-  saveMy();render();
+  saveMy();markPicked();renderMine();
+  if(FRESH){
+    dockOpen();
+    var row=$('picked').querySelector('[data-row="'+FRESH+'"]');
+    if(row){
+      row.classList.add('fresh');
+      /* scroll the dock's own list, never the page under the reader */
+      var dl=$('picked');
+      dl.scrollTop=Math.max(0,row.offsetTop-10);
+      var ta=row.querySelector('textarea');
+      if(ta&&window.matchMedia('(min-width:1240px)').matches)ta.focus({preventScroll:true});
+    }
+  }
 });
 
 /* ---------- my picks ---------- */
 function renderMine(){
   if(!MY.length){
     $('picked').innerHTML='<p class="empty">'+
-      L('Nothing picked yet. Press Add on a session above.','還沒有選。到上面的場次按「加入」。')+'</p>';
+      L('Nothing picked yet.<br>Press <b>Add</b> on any session and it lands here.',
+        '還沒有選。<br>在任何一場按<b>「加入」</b>，它就會出現在這裡。')+'</p>';
   }else{
     $('picked').innerHTML=MY.map(function(p,n){
       var s=BYID[p.i];if(!s)return '';
       var short=p.why.trim().length<15;
-      return '<div class="pickrow"><div class="ph"><b class="tw">'+(n+1)+'</b><h3>'+esc(s.t)+'</h3>'+
+      return '<div class="pickrow" data-row="'+s.i+'"><div class="ph"><b class="tw">'+
+        ('0'+(n+1)).slice(-2)+'</b><h3>'+esc(s.t)+'</h3>'+
         '<button type="button" data-rm="'+s.i+'" aria-label="Remove">&times;</button></div>'+
-        '<p class="pm tw">'+dayLabel(s.d)+' · '+s.s+'&ndash;'+s.e+' · '+esc(s.r)+' · '+esc(s.k)+'</p>'+
+        '<p class="pm tw">'+dayLabel(s.d)+' · '+s.s+'&ndash;'+s.e+' · '+esc(s.r)+'</p>'+
         '<textarea data-why="'+s.i+'" maxlength="260" placeholder="'+
           L('Why this one, and what you want to bring back.','為什麼是這一場，你想帶回什麼。')+
         '">'+esc(p.why)+'</textarea>'+
@@ -557,6 +610,18 @@ function renderMine(){
   }
   updateGate();
 }
+/* the dock bar */
+function dockOpen(){$('dock').classList.remove('shut');$('dockbar').setAttribute('aria-expanded','true');
+  try{localStorage.setItem('releaf-dock','open')}catch(e){}}
+function flashDock(){
+  var d=$('dock');d.style.transition='transform .18s';d.style.transform='scale(1.015)';
+  setTimeout(function(){d.style.transform=''},180);
+}
+$('dockbar').addEventListener('click',function(){
+  var d=$('dock'),shut=d.classList.toggle('shut');
+  this.setAttribute('aria-expanded',shut?'false':'true');
+  try{localStorage.setItem('releaf-dock',shut?'shut':'open')}catch(e){}
+});
 function updateGate(){
   var enough=MY.length>=3&&MY.every(function(p){return p.why.trim().length>=15})&&!!ME;
   $('make').disabled=!enough;
@@ -565,12 +630,16 @@ function updateGate(){
   if(MY.length<3)miss.push(L((3-MY.length)+' more talk'+(3-MY.length>1?'s':''),'再 '+(3-MY.length)+' 場'));
   var blank=MY.filter(function(p){return p.why.trim().length<15}).length;
   if(blank)miss.push(L(blank+' reason'+(blank>1?'s':''),blank+' 個理由'));
-  $('gohint').textContent=enough?L('Ready. '+MY.length+' talks.','可以了，'+MY.length+' 場。'):
+  var msg=enough?L('Ready. '+MY.length+' talks.','可以了，'+MY.length+' 場。'):
     L('Still needed: '+miss.join(', '),'還缺：'+miss.join('、'));
+  $('gohint').textContent=msg;
+  $('dockhint').textContent=enough?L('Ready to hand in','可以交了'):msg;
+  $('dockn').textContent=MY.length;
+  $('dock').classList.toggle('ready',enough);
 }
 document.addEventListener('click',function(e){
   var b=e.target.closest('[data-rm]');if(!b)return;
-  var k=idx(b.dataset.rm);if(k>=0){MY.splice(k,1);saveMy();render()}
+  var k=idx(b.dataset.rm);if(k>=0){MY.splice(k,1);saveMy();markPicked();renderMine()}
 });
 document.addEventListener('input',function(e){
   var t=e.target.closest('[data-why]');if(!t)return;
@@ -584,13 +653,13 @@ document.addEventListener('input',function(e){
 
 /* ---------- who ---------- */
 function renderWho(){
-  $('who').innerHTML=ALLNAMES.map(function(n){
-    return '<button type="button" data-n="'+esc(n)+'"'+(n===ME?' class="on"':'')+'>'+esc(n)+'</button>';
-  }).join('');
+  $('who').innerHTML='<option value="">'+L('Choose your name','選擇你的名字')+'</option>'+
+    ALLNAMES.map(function(n){
+      return '<option value="'+esc(n)+'"'+(n===ME?' selected':'')+'>'+esc(n)+'</option>';
+    }).join('');
 }
-$('who').addEventListener('click',function(e){
-  var b=e.target.closest('button');if(!b)return;
-  ME=b.dataset.n===ME?null:b.dataset.n;
+$('who').addEventListener('change',function(){
+  ME=this.value||null;
   try{ME?localStorage.setItem('releaf-me',ME):localStorage.removeItem('releaf-me')}catch(err){}
   render();
 });
@@ -721,6 +790,14 @@ $('copy').addEventListener('click',function(){
 });
 
 /* ---------- go ---------- */
+document.body.classList.add('dockon');
+(function(){
+  var pref=null;try{pref=localStorage.getItem('releaf-dock')}catch(e){}
+  /* on a phone the panel covers half the screen, so it starts as a bar and
+     opens itself the moment something is picked */
+  var shut=pref?pref==='shut':!window.matchMedia('(min-width:1240px)').matches;
+  if(shut){$('dock').classList.add('shut');$('dockbar').setAttribute('aria-expanded','false')}
+})();
 buildFilters();
 applyLang();
 </script>
