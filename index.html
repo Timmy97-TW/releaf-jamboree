@@ -560,6 +560,35 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .pill{display:inline-block;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
 .p-arr{background:#E6F7EE;color:#11804F} .p-print{background:#FFF4E0;color:#B26A00}
 .p-buy{background:#FDECEC;color:#C2343A} .p-paris{background:#F1EBFF;color:#6440D8} .p-none{color:var(--ink3);padding-left:0}
+/* the talks homework */
+.tkrow{display:grid;grid-template-columns:1fr 1.25fr;gap:18px;align-items:start}
+.tkex{background:var(--navy);color:#fff}
+.tkex .label{color:var(--green2)}
+.tkex h3{font-size:25px;margin:8px 0 5px;letter-spacing:-.02em}
+.tkex .tkwhen{font-size:13.5px;color:rgba(255,255,255,.55);margin:0 0 14px}
+.tkex .tkwhy{font-size:15.5px;line-height:1.5;color:rgba(255,255,255,.86);margin:0 0 14px}
+.tkex .tkwhy b{color:#fff}
+.tkex .tkhook{font-size:13.5px;line-height:1.45;color:rgba(255,255,255,.5);margin:0;padding-top:13px;
+  border-top:1px solid rgba(255,255,255,.12)}
+.tkhw h3{font-size:24px;margin:7px 0 4px}
+.tksteps{counter-reset:tk;list-style:none;margin:10px 0 0;padding:0}
+.tksteps li{counter-increment:tk;position:relative;padding:9px 0 9px 26px;font-size:15px;line-height:1.45;
+  color:var(--ink2);border-top:1px solid var(--line)}
+.tksteps li:first-child{border-top:0}
+.tksteps li:before{content:counter(tk);position:absolute;left:0;top:11px;font-size:12px;font-weight:700;
+  color:var(--blue);font-variant-numeric:tabular-nums}
+.tkdue{font-size:14.5px;line-height:1.5;color:var(--ink2);margin:14px 0 0;padding:13px 15px;border-radius:14px;
+  background:var(--bg)}
+.tkdue b{color:var(--ink)}
+.tkgo2{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
+.tkgo2 .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:14px;background:var(--grad);
+  color:#fff;font-size:16px;font-weight:700;box-shadow:0 10px 26px rgba(1,103,239,.24)}
+.tkgo2 .btn:hover{text-decoration:none}
+.tkgo2 .ghost2{display:inline-flex;align-items:center;gap:7px;padding:13px 16px;border-radius:14px;
+  border:1px solid var(--line);color:var(--ink2);font-size:14.5px;font-weight:600}
+.tkgo2 .ghost2:hover{text-decoration:none;border-color:var(--ink3)}
+@media (max-width:900px){.tkrow{grid-template-columns:1fr}}
+
 .matrow{display:grid;grid-template-columns:1.15fr 1fr;gap:18px;align-items:start}
 .hwkit h3{font-size:21px;letter-spacing:-.02em;margin:5px 0 16px}
 .hwcols{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
@@ -1071,6 +1100,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <li id="nsat"><a href="#sat"><i>03</i><span data-zh="週六">Saturday</span></a></li>
       <li><a href="#today"><i>04</i><span data-zh="今日">Today</span></a></li>
       <li><a href="#pitch"><i>06</i><span data-zh="介紹">Pitch</span></a></li>
+      <li><a href="#talks"><i>05</i><span data-zh="演講">Talks</span></a></li>
       <li><a href="#calendar"><i>07</i><span data-zh="行事曆">Calendar</span></a></li>
       <li><a href="#trip"><i>08</i><span data-zh="行程">Trip</span></a></li>
       <li><a href="#jamboree"><i>09</i><span data-zh="大會">Jamboree</span></a></li>
@@ -1299,6 +1329,41 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
           <input type="text" maxlength="120" placeholder="Highlight 2" data-zh-ph="亮點 2" aria-label="Highlight 2">
           <input type="text" maxlength="120" placeholder="Highlight 3" data-zh-ph="亮點 3" aria-label="Highlight 3">
         </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="talks">
+  <div class="wrap">
+    <span class="eyebrow" data-zh="新作業 · 出發前">New homework · before we fly</span>
+    <h2 data-zh="大會不是只有評審和攤位。">The Jamboree is not only judging and booth shifts.</h2>
+    <p class="sub" data-zh="7 號館裡每一個主題村都排了一整排演講、座談與工作坊，談的是各自領域現在正往哪裡走。那種東西在台灣讀不到，而且只有那四天。四天總共三百七十六場，我們讀過一遍，挑出十八場。">Every village in Pavilion 7 runs a line of talks, panels and workshops on where its field is going right now. That is not something you can read from Taiwan, and it only exists for four days. There are 376 sessions. We read them and flagged eighteen.</p>
+
+    <div class="tkrow">
+      <article class="card tkex rv">
+        <div class="label" data-zh="舉個例子">For example</div>
+        <h3>Next-Gen Biomanufacturing</h3>
+        <p class="tkwhen tw">Fri 13 Nov &middot; 10:10&ndash;11:10 &middot; Plaza 1, Innovation</p>
+        <p class="tkwhy" data-zh="我們提名的是<b>最佳生物製造村</b>。這一場就是那個領域正在被討論的房間，而且就在我們 12:00 評審場次前面。至少該有幾個人去坐在裡面。">We are nominated for <b>Best Biomanufacturing Village</b>. This is the room where that field is being argued, and it finishes fifty minutes before our judging session at 12:00. Some of us should be sitting in it.</p>
+        <p class="tkhook" data-zh="官方介紹：「以機器人與光控生物反應器放大生物生產，以及什麼樣的公司拿得到投資。」">The official line: &ldquo;Scaling biological production with robotics and light-steered bioreactors, plus what makes a company fundable.&rdquo;</p>
+      </article>
+
+      <div class="card tkhw rv">
+        <div class="label" data-zh="你要做的事">What you do</div>
+        <h3 data-zh="挑三到五場，寫下為什麼。">Choose three to five, and say why.</h3>
+        <ol class="tksteps">
+          <li data-zh="把議程讀過一遍。先看我們標出來的十八場，再自己往下找。">Read the schedule. Start with the eighteen we flagged, then go looking yourself.</li>
+          <li data-zh="挑三到五場你真的要去的——為了 ReLEAF，或者純粹為了你自己。">Choose three to five you are actually going to. For ReLEAF, or purely for yourself.</li>
+          <li data-zh="每一場寫一兩句：為什麼是這一場，你想帶回什麼。">For each, write a sentence or two: why this one, and what you want to bring back.</li>
+          <li data-zh="做出卡片，複製圖片，貼到 Discord 的 #jamboree。">Make the card, copy the image, paste it into #jamboree on Discord.</li>
+        </ol>
+        <p class="tkdue" data-zh="<b>11 月 10 日（週一）出發前完成。</b>網站會告訴你哪幾場和你的攤位班、評審場次或舞台演講撞在一起。">
+          <b>Due before we fly, Monday 10 November.</b> The site tells you which sessions clash with your own booth shift, our judging slot or the stage talk.</p>
+        <div class="tkgo2">
+          <a class="btn" href="schedule.html" data-zh="打開議程頁<span class='arr'>→</span>">Open the schedule page<span class="arr">&rarr;</span></a>
+          <a class="ghost2" href="https://jamboree.igem.org/2026/schedule" target="_blank" rel="noopener" data-zh="iGEM 官方議程">The official iGEM schedule<span class="arr">&#8599;</span></a>
         </div>
       </div>
     </div>
@@ -1764,6 +1829,9 @@ var ZH={
  // tasks
  'Judging prep':'評審準備','Answer your questions, learn the shape of an answer, then say it out loud':'答完你的題目，學會答題的結構，然後出聲練到說得出來',
  'Main focus':'本週重點','Delivery Lab':'答題技巧',
+ 'Choose the talks you are going to':'挑出你要去聽的場次','Three to five sessions, a reason for each, then paste the card in Discord':'三到五場，每一場寫一個理由，然後把卡片貼到 Discord',
+ 'Due before we fly':'出發前完成','Open the schedule page':'打開議程頁','The official iGEM schedule':'iGEM 官方議程','Why this matters':'為什麼要做這個',
+ 'Talks to go to':'要去聽的場次',
  '5-minute presentation':'5 分鐘簡報','The judging-session talk, Friday 13 November at 12:00':'評審場次的簡報，11 月 13 日（五）12:00',
  '10-minute live stage talk':'10 分鐘舞台演講','Sunday 15 November, 14:40 on the main stage':'11 月 15 日（日）14:40，主舞台',
  '5-min presentation':'5 分鐘簡報','10-min stage talk':'10 分鐘舞台演講','Pack your materials':'打包你負責的物資',
@@ -1906,6 +1974,9 @@ var LINKS=[
   ['Stuff to bring, add yours','https://docs.google.com/document/d/1PoFmy2dbwgP2qkbn1dD-8z3HgpzL1QlMIh7YgbhRbJk/edit?usp=sharing','doc']]},
  {h:'Live Stage Talk',i:'mic',l:[
   ['Stage Talk Prep','https://docs.google.com/document/d/1qlpVG-qzSOn_pK33xnhV74iUdd-cKgQ50VMGt9vtl7g/edit?usp=sharing','doc']]},
+ {h:'Talks to go to',i:'mic',l:[
+  ['Talks to go to','schedule.html','site'],
+  ['Official schedule','https://jamboree.igem.org/2026/schedule','igem']]},
  {h:'iGEM Jamboree',i:'globe',official:1,l:[
   ['Jamboree 2026','https://jamboree.igem.org/2026/home','igem'],
   ['Official schedule','https://jamboree.igem.org/2026/schedule','igem'],
@@ -1941,6 +2012,7 @@ var JUDGEPREP={t:'Judging prep',w:'Answer your questions, learn the shape of an 
 var FIVEMIN={t:'5-minute presentation',w:'The judging-session talk, Friday 13 November at 12:00',hot:1,tag:'Main focus',l:[LK('5-min slides and script'),LK('5-min judging session slides'),LK('Say It In The Title')]};
 var STAGEPREP={t:'10-minute live stage talk',w:'Sunday 15 November, 14:40 on the main stage',hot:1,tag:'Main focus',l:[LK('10-min live stage talk slides'),LK('Stage Talk Prep')]};
 var LABGOALS={t:'Before-we-fly lab goals',w:'Three to finish before 10 November',l:[['See the three','#achieve']]};
+var TALKTASK={t:'Choose the talks you are going to',w:'Three to five sessions, a reason for each, then paste the card in Discord',hot:1,tag:'Due before we fly',l:[['Open the schedule page','schedule.html'],['The official iGEM schedule','https://jamboree.igem.org/2026/schedule'],['Why this matters','#talks']]};
 var MATTASK={t:'Pack the item with your name on it',w:'The materials list has a name beside every item. Check yours before the 10th.',l:[LK('Materials to bring'),['The list','#packing']]};
 var PITCH={t:'Write your pitch, then say it out loud',w:'Nine students still have an empty tab in the pitch doc, and the plane leaves on the 10th',hot:1,tag:'9 still to write',l:[['Write yours in the doc','https://docs.google.com/document/d/1DX1fNK8tTVr0ZvPVkddWckGXLdTQNUaYQbmf-ut_m78/edit?tab=t.1bizq2cu3t6h'],LK('Booth Pitch Prep'),['Pitch it','#pitch']]};
 var TASKS={
@@ -1949,7 +2021,7 @@ var TASKS={
   JUDGEPREP,PITCH,STAGEPREP,LABGOALS]}
 };
 var QHOME={t:'Answer the important questions',w:'Fifty of the 145 are still blank. Take one, bring a figure and the numbers, then sign slide 1.',l:[LK('Important Questions deck'),LK('Instructor question sheet')]};
-var STANDING={h:'Today\'s goals',l:[JUDGEPREP,FIVEMIN,STAGEPREP,QHOME,PITCH,MATTASK,LABGOALS]};
+var STANDING={h:'Today\'s goals',l:[JUDGEPREP,FIVEMIN,STAGEPREP,TALKTASK,QHOME,PITCH,MATTASK,LABGOALS]};
 
 /* ================= render ================= */
 function rel(n){return LANG==='zh'?(n===0?'今天':n===1?'明天':n===-1?'昨天':n>0?n+' 天後':-n+' 天前'):(n===0?'today':n===1?'tomorrow':n===-1?'yesterday':n>0?'in '+n+' days':-n+' days ago')}

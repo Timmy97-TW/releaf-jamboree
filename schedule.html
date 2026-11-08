@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Talks to go to · ReLEAF to Paris</title>
+<meta name="description" content="The iGEM Grand Jamboree 2026 schedule, read for ReLEAF: which talks matter to the project, which matter to you, and the five you are going to.">
+<meta name="theme-color" content="#00061C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Talks to go to · ReLEAF">
+<meta property="og:description" content="376 sessions over four days. Pick five, say why, paste the card in Discord.">
+<meta property="og:url" content="https://timmy97-tw.github.io/releaf-jamboree/schedule.html">
+<link rel="icon" href="img/logo.png">
+<link rel="apple-touch-icon" href="img/logo.png">
+<style>
+:root{
+  --navy:#00061C; --navy2:#0A1433;
+  --blue:#0167EF; --blue2:#2887FF; --sky:#61ABFE;
+  --green:#00B87A; --green2:#00D492; --mint:#E6FAF2;
+  --ink:#1D1D1F; --ink2:#6E6E73; --ink3:#86868B;
+  --bg:#F5F5F7; --card:#FFFFFF; --line:rgba(0,0,0,.08);
+  --red:#E5484D; --violet:#7C5CFF; --amber:#F59E0B; --pink:#E8A6C1;
+  --grad:linear-gradient(100deg,var(--blue) 0%,#00A3C4 50%,var(--green) 100%);
+  --r:22px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue","PingFang TC","Noto Sans TC",Arial,sans-serif;
+  font-size:17px;line-height:1.47;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{margin:0;letter-spacing:-.025em;line-height:1.1}
+h1,h2,h3{text-wrap:balance}
+p,li{text-wrap:pretty}
+:focus-visible{outline:2px solid var(--blue2);outline-offset:3px;border-radius:6px}
+html:lang(zh-Hant) body{letter-spacing:.01em;line-height:1.6}
+html:lang(zh-Hant) h1,html:lang(zh-Hant) h2,html:lang(zh-Hant) h3{letter-spacing:0;line-height:1.3}
+html:lang(zh-Hant) .label,html:lang(zh-Hant) .eyebrow{letter-spacing:.04em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.tw{font-variant-numeric:tabular-nums}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:60;background:rgba(0,6,28,.86);backdrop-filter:saturate(180%) blur(18px);
+  -webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-in{max-width:1120px;margin:0 auto;padding:0 22px;height:56px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff}
+.brand:hover{text-decoration:none}
+.brand img{width:26px;height:26px;border-radius:7px;object-fit:cover}
+.brand b{font-size:15px;letter-spacing:-.02em;display:block;line-height:1.1}
+.brand small{font-size:10.5px;color:rgba(255,255,255,.55);letter-spacing:.1em;text-transform:uppercase}
+.navmid{margin-left:auto;display:flex;align-items:center;gap:8px}
+.back{display:inline-flex;align-items:center;gap:7px;color:rgba(255,255,255,.78);font-size:14px;font-weight:500;
+  padding:7px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.16)}
+.back:hover{text-decoration:none;color:#fff;background:rgba(255,255,255,.08)}
+.lang{display:inline-flex;background:rgba(255,255,255,.1);border-radius:999px;padding:3px;position:relative}
+.lang button{position:relative;z-index:1;border:0;background:transparent;color:rgba(255,255,255,.65);font:inherit;
+  font-size:13px;font-weight:600;padding:5px 11px;border-radius:999px;cursor:pointer}
+.lang button.on{color:var(--navy);background:#fff}
+
+/* hero */
+.top{background:var(--navy);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden}
+.top:before{content:"";position:absolute;inset:-40% -10% auto;height:420px;
+  background:radial-gradient(60% 60% at 30% 0%,rgba(1,103,239,.34),transparent 70%);pointer-events:none}
+.top .wrap{position:relative}
+.eyebrow{font-size:14px;font-weight:600;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+.top h1{font-size:clamp(34px,5vw,56px);font-weight:700;margin:8px 0 12px}
+.top .lede{font-size:18px;color:rgba(255,255,255,.72);max-width:44em;margin:0}
+.hnums{display:flex;flex-wrap:wrap;gap:12px 34px;margin-top:28px}
+.hnums div{display:flex;flex-direction:column;gap:3px}
+.hnums b{font-size:34px;font-weight:700;letter-spacing:-.04em;line-height:1}
+.hnums span{font-size:12.5px;color:rgba(255,255,255,.55)}
+.hw-box{margin-top:30px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;padding:20px 22px;max-width:54em}
+.hw-box .label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green2)}
+.hw-box h2{font-size:21px;margin:7px 0 9px}
+.hw-box ol{margin:0;padding-left:20px;color:rgba(255,255,255,.76);font-size:15.5px}
+.hw-box li{padding:3px 0}
+.hw-box .due{margin-top:12px;font-size:13.5px;color:rgba(255,255,255,.56)}
+
+/* sections */
+.s{padding:54px 0}
+.s.tight{padding:40px 0}
+.s h2{font-size:clamp(26px,3.2vw,38px);font-weight:700;margin:5px 0 9px}
+.s .sub{font-size:17px;color:var(--ink2);max-width:46em;margin:0 0 26px}
+.card{background:var(--card);border-radius:var(--r);padding:24px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.label{font-size:12.5px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+
+/* day heading inside a list */
+.dayh{display:flex;align-items:baseline;gap:10px;margin:30px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.dayh:first-child{margin-top:0}
+.dayh b{font-size:19px;font-weight:700;letter-spacing:-.02em}
+.dayh span{font-size:13.5px;color:var(--ink3)}
+
+/* a session row */
+.sess{display:grid;grid-template-columns:96px 1fr auto;gap:14px 16px;align-items:start;
+  background:var(--card);border-radius:16px;padding:15px 17px;margin-bottom:9px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.sess.on{box-shadow:0 0 0 2px var(--blue) inset,0 1px 2px rgba(0,0,0,.04)}
+.sess .when{font-size:14.5px;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums;padding-top:1px}
+.sess .when small{display:block;font-size:11.5px;font-weight:500;color:var(--ink3);letter-spacing:.01em}
+.sess h3{font-size:16.5px;line-height:1.3;margin:0 0 4px;font-weight:650}
+.sess .meta{font-size:12.5px;color:var(--ink3);display:flex;flex-wrap:wrap;gap:3px 10px;margin-bottom:5px}
+.sess .meta i{font-style:normal}
+.sess .hook{font-size:14px;color:var(--ink2);line-height:1.42;margin:0}
+.sess .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.tg{font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:999px;background:var(--bg);color:var(--ink2);white-space:nowrap}
+.tg.biomfg{background:#F1EBFF;color:#5B36C9} .tg.plant{background:#E9F8EC;color:#1C7A3A}
+.tg.hw{background:#EAF2FF;color:#0B57C9} .tg.ai{background:#FFF1E3;color:#A65A00}
+.tg.hp{background:#FFECF4;color:#B5296B} .tg.career{background:#EDF0F3;color:#4A5663}
+.tg.clash{background:#FDECEC;color:#C2343A}
+.sess .add{border:1px solid var(--line);background:#fff;color:var(--ink2);font:inherit;font-size:13px;font-weight:600;
+  padding:8px 13px;border-radius:11px;cursor:pointer;white-space:nowrap;transition:background .15s,color .15s,border-color .15s}
+.sess .add:hover{border-color:var(--blue);color:var(--blue)}
+.sess .add.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.sess .why{grid-column:1/-1;margin:2px 0 0;padding:11px 13px;border-radius:12px;background:var(--mint);
+  font-size:13.5px;line-height:1.45;color:#0D6B4B}
+.sess .why b{color:#07513A}
+.sess .clashline{grid-column:1/-1;margin:0;font-size:13px;color:var(--red);font-weight:600}
+@media (max-width:640px){
+  .sess{grid-template-columns:1fr auto;gap:8px 12px}
+  .sess .when{grid-column:1/-1}
+}
+
+/* filters */
+.filters{position:sticky;top:56px;z-index:40;background:rgba(245,245,247,.92);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);padding:12px 0 10px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+.frow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.frow+.frow{margin-top:8px}
+.chip{border:1px solid var(--line);background:#fff;color:var(--ink2);font:inherit;font-size:13px;font-weight:600;
+  padding:7px 13px;border-radius:999px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.chip:hover{border-color:var(--ink3)}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.chip.day.on{background:var(--blue);border-color:var(--blue)}
+.fsearch{flex:1;min-width:190px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 15px;
+  font:inherit;font-size:14px;color:var(--ink)}
+.fsel{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 13px;font:inherit;font-size:13px;
+  font-weight:600;color:var(--ink2);cursor:pointer}
+.fcount{font-size:13px;color:var(--ink3);margin-left:auto;white-space:nowrap}
+
+/* my five */
+.mine{display:grid;grid-template-columns:1fr 330px;gap:18px;align-items:start}
+@media (max-width:900px){.mine{grid-template-columns:1fr}}
+.pickrow{background:var(--card);border-radius:16px;padding:15px 17px;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.pickrow .ph{display:flex;align-items:baseline;gap:10px}
+.pickrow .ph b{font-size:13px;font-weight:700;color:var(--blue);font-variant-numeric:tabular-nums}
+.pickrow .ph h3{font-size:16px;font-weight:650;line-height:1.3;flex:1}
+.pickrow .ph button{border:0;background:transparent;color:var(--ink3);font:inherit;font-size:19px;line-height:1;
+  cursor:pointer;padding:0 2px}
+.pickrow .ph button:hover{color:var(--red)}
+.pickrow .pm{font-size:12.5px;color:var(--ink3);margin:3px 0 9px}
+.pickrow textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font:inherit;
+  font-size:14px;line-height:1.45;resize:vertical;min-height:62px;color:var(--ink);background:#fff}
+.pickrow textarea:focus{outline:2px solid var(--blue2);outline-offset:1px}
+.pickrow .cnt{font-size:11.5px;color:var(--ink3);text-align:right;margin:4px 0 0}
+.pickrow .cnt.short{color:var(--amber)}
+.empty{background:var(--card);border-radius:16px;padding:28px 22px;text-align:center;color:var(--ink3);font-size:15px;
+  box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.side .who{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;max-height:168px;overflow:auto}
+.side .who button{border:1px solid var(--line);background:#fff;color:var(--ink2);font:inherit;font-size:12.5px;
+  font-weight:600;padding:5px 10px;border-radius:999px;cursor:pointer}
+.side .who button.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.gobar{margin-top:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:14px 18px;border:0;
+  border-radius:15px;background:var(--grad);color:#fff;font:inherit;font-size:16px;font-weight:700;cursor:pointer;
+  box-shadow:0 10px 26px rgba(1,103,239,.26)}
+.btn[disabled]{background:#D7D7DC;color:#8E8E93;box-shadow:none;cursor:not-allowed}
+.gohint{font-size:12.5px;color:var(--ink3);margin:9px 0 0;text-align:center}
+.steps{list-style:none;margin:14px 0 0;padding:0;counter-reset:st}
+.steps li{counter-increment:st;position:relative;padding:8px 0 8px 26px;font-size:14px;color:var(--ink2);
+  line-height:1.4;border-top:1px solid var(--line)}
+.steps li:first-child{border-top:0}
+.steps li:before{content:counter(st);position:absolute;left:0;top:9px;width:18px;height:18px;border-radius:50%;
+  background:var(--bg);color:var(--ink3);font-size:11px;font-weight:700;display:grid;place-items:center}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;padding:20px;
+  background:rgba(0,6,28,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.modal.open{display:flex}
+.msheet{background:var(--card);border-radius:24px;max-width:720px;width:100%;max-height:92dvh;overflow:auto;
+  padding:24px;box-shadow:0 30px 80px rgba(0,6,28,.4)}
+.msheet h2{font-size:23px;margin:0 0 6px}
+.msheet p.mlede{font-size:15px;color:var(--ink2);margin:0 0 16px}
+.shot{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line);background:#fff}
+.mact{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+.mact button,.mact a{border:1px solid var(--line);background:#fff;color:var(--ink);font:inherit;font-size:14.5px;
+  font-weight:650;padding:11px 17px;border-radius:13px;cursor:pointer;text-decoration:none}
+.mact .prim{background:var(--navy);border-color:var(--navy);color:#fff}
+.mact .close{margin-left:auto;color:var(--ink2)}
+.mnote{font-size:13px;color:var(--ink3);margin:13px 0 0;line-height:1.45}
+.ok{color:var(--green);font-weight:650}
+
+/* footer */
+.foot{background:var(--navy);color:rgba(255,255,255,.5);padding:32px 0;font-size:13.5px}
+.foot a{color:rgba(255,255,255,.75)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="img/logo.png" alt=""><span><b>ReLEAF</b><small data-zh="巴黎 2026">Paris 2026</small></span></a>
+    <div class="navmid">
+      <a class="back" href="index.html#talks"><span aria-hidden="true">&#8592;</span><span data-zh="回到主頁">Back to the hub</span></a>
+      <div class="lang" id="lang" role="group" aria-label="Language">
+        <button type="button" data-l="en" lang="en">EN</button><button type="button" data-l="zh" lang="zh-Hant">中文</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="top">
+  <div class="wrap">
+    <span class="eyebrow" data-zh="大會議程 · 作業">The Jamboree schedule · homework</span>
+    <h1 data-zh="四天，三百七十六場。挑五場。">Four days, 376 sessions. Pick five.</h1>
+    <p class="lede" data-zh="大會不只有評審和攤位。每一個主題村都排了一整排談趨勢與前沿分析的演講、座談與工作坊——那是我們平常在台灣讀不到的東西。這一頁把官方議程整個搬過來，標出哪些和 ReLEAF 直接相關，哪些可能只跟你個人有關。">The Jamboree is not only judging and booth shifts. Every village runs a line of talks, panels and workshops on where its field is going, and that is the part you cannot read from Taiwan. This page holds the whole official schedule, marked up for what touches ReLEAF and what might only touch you.</p>
+    <div class="hnums">
+      <div><b class="tw">376</b><span data-zh="場次">sessions</span></div>
+      <div><b class="tw">4</b><span data-zh="天">days</span></div>
+      <div><b class="tw">11</b><span data-zh="個場地">rooms</span></div>
+      <div><b class="tw">18</b><span data-zh="我們先挑出來的">we flagged for you</span></div>
+    </div>
+
+    <div class="hw-box">
+      <div class="label" data-zh="新作業">New homework</div>
+      <h2 data-zh="選三到五場，寫下為什麼。">Choose three to five talks, and say why.</h2>
+      <ol>
+        <li data-zh="把整份議程讀過一遍。先看我們標出來的十八場，再自己往下找。">Read the whole schedule. Start with the eighteen we flagged, then go looking yourself.</li>
+        <li data-zh="挑三到五場你真的要去的——為了 ReLEAF，或者純粹為了你自己。">Choose three to five you are actually going to. For ReLEAF, or purely for yourself.</li>
+        <li data-zh="每一場寫一兩句：為什麼是這一場，你想帶回什麼。">For each one, write a sentence or two: why this one, and what you want to bring back.</li>
+        <li data-zh="按下「做出我的卡片」，把圖片複製起來，貼到 Discord。">Press &ldquo;Make my card&rdquo;, copy the image, and paste it into Discord.</li>
+      </ol>
+      <p class="due" data-zh="出發前完成：11 月 10 日（週一）。到了巴黎再排就來不及了，好的場次會滿。">Due before we fly, Monday 10 November. Working it out in Paris is too late; the good rooms fill up.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="s" id="picks">
+  <div class="wrap">
+    <span class="eyebrow" data-zh="先看這些">Start here</span>
+    <h2 data-zh="十八場，我們讀過理由了。">Eighteen sessions, with the reason written out.</h2>
+    <p class="sub" data-zh="這些不是全部，只是我們讀完三百七十六場之後，認為對 ReLEAF 或對你最有用的。綠色那段是理由。你不一定要同意——不同意的話，自己去議程裡找更好的。">These are not all of them. They are what we picked after reading all 376, for ReLEAF or for you. The green line is the reason. You do not have to agree; if you do not, go find a better one in the schedule below.</p>
+    <div id="picklist"></div>
+  </div>
+</section>
+
+<section class="s tight" id="all">
+  <div class="wrap">
+    <span class="eyebrow" data-zh="完整議程">The whole schedule</span>
+    <h2 data-zh="官方議程，巴黎時間。">The official schedule, Paris time.</h2>
+    <p class="sub" data-zh="台北時間請加 7 小時。「我有空的時段」會把和我們自己的行程（評審、攤位班、舞台演講、閉幕）衝突的場次藏起來——先在右邊選你的名字。">Add 7 hours for Taipei. &ldquo;When I am free&rdquo; hides anything that clashes with our own commitments: judging, your booth shift, the stage talk, the final show. Pick your name in the panel below first.</p>
+
+    <div class="filters">
+      <div class="frow" id="fdays"></div>
+      <div class="frow" id="fints"></div>
+      <div class="frow">
+        <input class="fsearch" id="q" type="search" placeholder="Search a title, a team, a keyword" data-zh-ph="搜尋標題、隊伍或關鍵字" aria-label="Search">
+        <select class="fsel" id="froom" aria-label="Room"></select>
+        <select class="fsel" id="fkind" aria-label="Type"></select>
+        <button class="chip" type="button" id="fteam" data-zh="隱藏隊伍演講">Hide team talks</button>
+        <button class="chip" type="button" id="ffree" data-zh="我有空的時段">When I am free</button>
+        <span class="fcount" id="fcount"></span>
+      </div>
+    </div>
+
+    <div id="list"></div>
+  </div>
+</section>
+
+<section class="s" id="my">
+  <div class="wrap">
+    <span class="eyebrow" data-zh="我的場次">My picks</span>
+    <h2 data-zh="三到五場，各寫一個理由。">Three to five, each with a reason.</h2>
+    <p class="sub" data-zh="寫在這裡的東西只存在你自己的瀏覽器裡，沒有人看得到——直到你把卡片貼進 Discord。">What you type here stays in your own browser. Nobody sees it until you paste the card into Discord.</p>
+    <div class="mine">
+      <div>
+        <div id="picked"></div>
+      </div>
+      <aside class="side">
+        <div class="card">
+          <div class="label" data-zh="你是誰？">Who are you?</div>
+          <div class="who" id="who"></div>
+          <div class="gobar">
+            <button class="btn" type="button" id="make" disabled data-zh="做出我的卡片">Make my card</button>
+            <p class="gohint" id="gohint"></p>
+          </div>
+        </div>
+        <div class="card" style="margin-top:14px">
+          <div class="label" data-zh="接下來">Then</div>
+          <ol class="steps">
+            <li data-zh="按「複製圖片」。">Press &ldquo;Copy image&rdquo;.</li>
+            <li data-zh="打開 Discord 的 #jamboree 頻道。">Open the #jamboree channel in Discord.</li>
+            <li data-zh="直接貼上（⌘V），送出。">Paste it straight in (&#8984;V) and send.</li>
+            <li data-zh="在巴黎真的去。">Then actually go, in Paris.</li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p style="margin:0" data-zh="議程資料取自 iGEM 官方 <a href='https://jamboree.igem.org/2026/schedule' target='_blank' rel='noopener'>Grand Jamboree 2026 議程</a>，時間為巴黎時間。資料擷取時間見下。">Schedule data from the official <a href="https://jamboree.igem.org/2026/schedule" target="_blank" rel="noopener">iGEM Grand Jamboree 2026 schedule</a>, in Paris time.</p>
+    <p style="margin:6px 0 0;opacity:.7" id="gen"></p>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mtitle">
+  <div class="msheet">
+    <h2 id="mtitle" data-zh="你的作業卡片">Your proof card</h2>
+    <p class="mlede" data-zh="複製這張圖片，貼到 Discord 的 #jamboree。這就是作業交了。">Copy this image and paste it into #jamboree on Discord. That is the homework handed in.</p>
+    <img class="shot" id="shot" alt="A card listing the talks you chose and why">
+    <div class="mact">
+      <button type="button" class="prim" id="copy" data-zh="複製圖片">Copy image</button>
+      <a id="dl" download="releaf-talks.png" data-zh="下載 PNG">Download PNG</a>
+      <button type="button" class="close" id="close" data-zh="關閉">Close</button>
+    </div>
+    <p class="mnote" id="mnote" data-zh="在手機上「複製圖片」可能不能用。那就長按圖片存起來，再在 Discord 上傳。">On a phone, &ldquo;Copy image&rdquo; may not work. Long-press the image to save it, then upload it in Discord.</p>
+  </div>
+</div>
+
+<script src="data/schedule.js"></script>
+<script>
+/* ---------- language ---------- */
+var LANG=(function(){try{var v=localStorage.getItem('releaf-lang');if(v==='en'||v==='zh')return v}catch(e){}
+  return /^zh/i.test(navigator.language||'')?'zh':'en'})();
+function L(en,zh){return LANG==='zh'?zh:en}
+function $(id){return document.getElementById(id)}
+
+function applyLang(){
+  document.documentElement.lang=LANG==='zh'?'zh-Hant':'en';
+  document.querySelectorAll('[data-zh]').forEach(function(el){
+    if(el.dataset.en===undefined)el.dataset.en=el.innerHTML;
+    el.innerHTML=LANG==='zh'?el.dataset.zh:el.dataset.en;
+  });
+  document.querySelectorAll('[data-zh-ph]').forEach(function(el){
+    if(el.dataset.enPh===undefined)el.dataset.enPh=el.placeholder;
+    el.placeholder=LANG==='zh'?el.dataset.zhPh:el.dataset.enPh;
+  });
+  $('lang').querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.l===LANG)});
+  buildFilters();
+  render();
+}
+$('lang').addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;
+  LANG=b.dataset.l;try{localStorage.setItem('releaf-lang',LANG)}catch(err){}
+  applyLang();
+});
+
+/* ---------- our own commitments ---------- */
+var GROUPS=[
+ ['Sara Chen','Ryan Wei','Olivia Du','Audrey Hsieh','Chloe Wu','Audrey Chu','Abby Tsai','Felix','Noah','Mia'],
+ ['Sophie Huang','Naomi','Olivia Lin','Alex Li','Sophie Chen','Ethan Liu','Abby Kao','Ryan Yuan','Joshua','Sophia Lin'],
+ ['Phoebe','Sarah Chou','Anna','Jacquelyn','Sophie Liu','Eva','Abigail','Ethan Chang','Anton','Renee']
+];
+var ALLNAMES=GROUPS[0].concat(GROUPS[1],GROUPS[2]).sort();
+/* [day, startMin, endMin, label EN, label ZH, group or 0 for everyone] */
+function M(h,m){return h*60+(m||0)}
+var BUSY=[
+ ['2026-11-13',M(9),M(9,45),'the Opening Show','開幕典禮',0],
+ ['2026-11-13',M(12),M(12,25),'our judging session','我們的評審場次',0],
+ ['2026-11-13',M(14),M(15),'your booth shift','你的攤位班',1],
+ ['2026-11-13',M(15),M(16),'your booth shift','你的攤位班',2],
+ ['2026-11-13',M(16),M(17),'your booth shift','你的攤位班',3],
+ ['2026-11-13',M(17),M(18),'the whole-team booth hour','全隊攤位時段',0],
+ ['2026-11-14',M(9),M(10),'your booth shift','你的攤位班',1],
+ ['2026-11-14',M(10),M(11),'your booth shift','你的攤位班',2],
+ ['2026-11-14',M(11),M(12),'your booth shift','你的攤位班',3],
+ ['2026-11-14',M(12),M(13),'your booth shift','你的攤位班',1],
+ ['2026-11-14',M(13),M(14),'your booth shift','你的攤位班',2],
+ ['2026-11-14',M(14),M(15),'your booth shift','你的攤位班',3],
+ ['2026-11-14',M(15),M(16),'your booth shift','你的攤位班',1],
+ ['2026-11-14',M(16),M(17),'your booth shift','你的攤位班',2],
+ ['2026-11-14',M(17),M(18),'your booth shift','你的攤位班',3],
+ ['2026-11-15',M(8),M(12),'team prep','團隊準備',0],
+ ['2026-11-15',M(14,40),M(14,50),'our live stage talk','我們的舞台演講',0],
+ ['2026-11-16',M(8),M(13),'finalist prep','決賽準備',0],
+ ['2026-11-16',M(14),M(18),'the Final Day show','決賽日典禮',0]
+];
+function myGroup(){
+  if(!ME)return 0;
+  for(var i=0;i<3;i++)if(GROUPS[i].indexOf(ME)>=0)return i+1;
+  return 0;
+}
+function clashOf(s){
+  /* the ceremonies are our commitments, so they cannot clash with themselves */
+  if(s.k==='Ceremony')return null;
+  var g=myGroup(),a=s.m,b=s.m+s.n,hit=null;
+  BUSY.forEach(function(x){
+    if(x[0]!==s.d)return;
+    if(x[5]&&x[5]!==g)return;
+    if(a<x[2]&&b>x[1]&&!hit)hit=L(x[3],x[4]);
+  });
+  return hit;
+}
+
+/* ---------- state ---------- */
+var ME=null;try{ME=localStorage.getItem('releaf-me')}catch(e){}
+var MY=[];try{MY=JSON.parse(localStorage.getItem('releaf-talks')||'[]')||[]}catch(e){MY=[]}
+function saveMy(){try{localStorage.setItem('releaf-talks',JSON.stringify(MY))}catch(e){}}
+function idx(i){for(var k=0;k<MY.length;k++)if(MY[k].i===i)return k;return -1}
+var BYID={};JSESS.forEach(function(s){BYID[s.i]=s});
+
+var INTS=[
+ ['biomfg','Biomanufacturing','生物製造'],['plant','Plants & agriculture','植物與農業'],
+ ['hw','Hardware & measurement','硬體與量測'],['ai','AI, models & software','AI、模型與軟體'],
+ ['hp','Human Practices & business','人文實踐與商業'],['career','For me, not the project','給我自己的']
+];
+var F={days:{},ints:{},room:'',kind:'',q:'',noteam:false,free:false};
+
+/* ---------- filter UI ---------- */
+function buildFilters(){
+  $('fdays').innerHTML=JMETA.days.map(function(d){
+    return '<button class="chip day" type="button" data-d="'+d[0]+'">'+(LANG==='zh'?d[2]:d[1])+'</button>';
+  }).join('')+'<button class="chip day" type="button" data-d="">'+L('All four days','四天全部')+'</button>';
+  $('fints').innerHTML=INTS.map(function(t){
+    return '<button class="chip int" type="button" data-t="'+t[0]+'">'+(LANG==='zh'?t[2]:t[1])+'</button>';
+  }).join('');
+  $('froom').innerHTML='<option value="">'+L('Every room','所有場地')+'</option>'+
+    JMETA.rooms.map(function(r){return '<option value="'+r+'">'+r+'</option>'}).join('');
+  $('fkind').innerHTML='<option value="">'+L('Every type','所有類型')+'</option>'+
+    JMETA.kinds.map(function(k){return '<option value="'+k+'">'+k+'</option>'}).join('');
+  $('froom').value=F.room;$('fkind').value=F.kind;
+  syncChips();
+}
+function syncChips(){
+  $('fdays').querySelectorAll('.chip').forEach(function(b){
+    var d=b.dataset.d;
+    b.classList.toggle('on',d?!!F.days[d]:Object.keys(F.days).length===0);
+  });
+  $('fints').querySelectorAll('.chip').forEach(function(b){b.classList.toggle('on',!!F.ints[b.dataset.t])});
+  $('fteam').classList.toggle('on',F.noteam);
+  $('ffree').classList.toggle('on',F.free);
+}
+$('fdays').addEventListener('click',function(e){
+  var b=e.target.closest('.chip');if(!b)return;
+  if(!b.dataset.d)F.days={};else{if(F.days[b.dataset.d])delete F.days[b.dataset.d];else F.days[b.dataset.d]=1}
+  syncChips();render();
+});
+$('fints').addEventListener('click',function(e){
+  var b=e.target.closest('.chip');if(!b)return;
+  if(F.ints[b.dataset.t])delete F.ints[b.dataset.t];else F.ints[b.dataset.t]=1;
+  syncChips();render();
+});
+$('froom').addEventListener('change',function(){F.room=this.value;render()});
+$('fkind').addEventListener('change',function(){F.kind=this.value;render()});
+$('q').addEventListener('input',function(){F.q=this.value.trim().toLowerCase();render()});
+$('fteam').addEventListener('click',function(){F.noteam=!F.noteam;syncChips();render()});
+$('ffree').addEventListener('click',function(){
+  if(!ME&&!F.free){alert(L('Pick your name first, in the panel further down.','請先在下面的面板選你的名字。'));return}
+  F.free=!F.free;syncChips();render();
+});
+
+/* ---------- rendering ---------- */
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function dayLabel(d){
+  var x=null;JMETA.days.forEach(function(y){if(y[0]===d)x=y});
+  return x?(LANG==='zh'?x[2]:x[1]):d;
+}
+function dayLong(d){
+  var n=d.slice(8);
+  return L('Day '+({'13':'1','14':'2','15':'3','16':'4'}[n]||n)+' · '+n+' November',
+           '第 '+({'13':'1','14':'2','15':'3','16':'4'}[n]||n)+' 天 · 11 月 '+n+' 日');
+}
+function tagHTML(s){
+  var h=s.rel.map(function(t){
+    var n='';INTS.forEach(function(x){if(x[0]===t)n=LANG==='zh'?x[2]:x[1]});
+    return '<span class="tg '+t+'">'+esc(n)+'</span>';
+  }).join('');
+  var c=clashOf(s);
+  if(c)h+='<span class="tg clash">'+L('Clashes with '+c,'和'+c+'衝突')+'</span>';
+  return h;
+}
+function sessHTML(s,showWhy){
+  var on=idx(s.i)>=0;
+  var meta=[esc(s.r),esc(s.k)];
+  if(s.g)meta.push(esc(s.g));
+  var h='<article class="sess'+(on?' on':'')+'" data-i="'+s.i+'">'+
+    '<div class="when tw">'+s.s+'<small>'+dayLabel(s.d)+' · '+s.e+'</small></div>'+
+    '<div><h3>'+esc(s.t)+'</h3>'+
+    '<div class="meta">'+meta.map(function(m){return '<i>'+m+'</i>'}).join('')+'</div>'+
+    (s.h?'<p class="hook">'+esc(s.h)+'</p>':'')+
+    '<div class="tags">'+tagHTML(s)+'</div></div>'+
+    '<button class="add'+(on?' on':'')+'" type="button" data-add="'+s.i+'">'+
+      (on?L('Picked','已選'):L('Add','加入'))+'</button>';
+  if(showWhy&&s.pw)h+='<p class="why"><b>'+L('Why this one:','為什麼是這場：')+'</b> '+esc(LANG==='zh'?s.pw[1]:s.pw[0])+'</p>';
+  return h+'</article>';
+}
+function groupByDay(list,showWhy){
+  var out='',cur='';
+  list.forEach(function(s){
+    if(s.d!==cur){cur=s.d;out+='<div class="dayh"><b>'+dayLong(cur)+'</b><span>'+
+      L('Paris time','巴黎時間')+'</span></div>'}
+    out+=sessHTML(s,showWhy);
+  });
+  return out;
+}
+function passes(s){
+  if(Object.keys(F.days).length&&!F.days[s.d])return false;
+  var ik=Object.keys(F.ints);
+  if(ik.length){var hit=false;ik.forEach(function(t){if(s.rel.indexOf(t)>=0)hit=true});if(!hit)return false}
+  if(F.room&&s.r!==F.room)return false;
+  if(F.kind&&s.k!==F.kind)return false;
+  if(F.noteam&&s.tt)return false;
+  if(F.free&&clashOf(s))return false;
+  if(F.q){
+    var blob=(s.t+' '+s.h+' '+(s.g||'')+' '+s.w.join(' ')+' '+s.v.join(' ')+' '+s.p.join(' ')+' '+s.r+' '+s.k).toLowerCase();
+    if(blob.indexOf(F.q)<0)return false;
+  }
+  return true;
+}
+function render(){
+  $('picklist').innerHTML=groupByDay(JSESS.filter(function(s){return s.pick}),true);
+  var list=JSESS.filter(passes);
+  $('list').innerHTML=list.length?groupByDay(list,false):
+    '<p class="empty">'+L('Nothing matches those filters. Loosen one.','這些條件下沒有場次。放寬一個試試。')+'</p>';
+  $('fcount').textContent=L(list.length+' of '+JSESS.length+' sessions',
+                            '共 '+JSESS.length+' 場，符合 '+list.length+' 場');
+  $('gen').textContent=L('Pulled from the iGEM API on ','議程資料擷取時間：')+JMETA.gen+'.';
+  renderMine();renderWho();
+}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('[data-add]');if(!b)return;
+  var i=b.dataset.add,k=idx(i);
+  if(k>=0)MY.splice(k,1);
+  else{
+    if(MY.length>=5){alert(L('Five is the maximum. Drop one first.','最多五場。先拿掉一場。'));return}
+    MY.push({i:i,why:''});
+  }
+  saveMy();render();
+});
+
+/* ---------- my picks ---------- */
+function renderMine(){
+  if(!MY.length){
+    $('picked').innerHTML='<p class="empty">'+
+      L('Nothing picked yet. Press Add on a session above.','還沒有選。到上面的場次按「加入」。')+'</p>';
+  }else{
+    $('picked').innerHTML=MY.map(function(p,n){
+      var s=BYID[p.i];if(!s)return '';
+      var short=p.why.trim().length<15;
+      return '<div class="pickrow"><div class="ph"><b class="tw">'+(n+1)+'</b><h3>'+esc(s.t)+'</h3>'+
+        '<button type="button" data-rm="'+s.i+'" aria-label="Remove">&times;</button></div>'+
+        '<p class="pm tw">'+dayLabel(s.d)+' · '+s.s+'&ndash;'+s.e+' · '+esc(s.r)+' · '+esc(s.k)+'</p>'+
+        '<textarea data-why="'+s.i+'" maxlength="260" placeholder="'+
+          L('Why this one, and what you want to bring back.','為什麼是這一場，你想帶回什麼。')+
+        '">'+esc(p.why)+'</textarea>'+
+        '<p class="cnt'+(short?' short':'')+'">'+p.why.trim().length+' / 260'+
+        (short?' &middot; '+L('a sentence or two, please','請至少寫一兩句'):'')+'</p></div>';
+    }).join('');
+  }
+  updateGate();
+}
+function updateGate(){
+  var enough=MY.length>=3&&MY.every(function(p){return p.why.trim().length>=15})&&!!ME;
+  $('make').disabled=!enough;
+  var miss=[];
+  if(!ME)miss.push(L('your name','你的名字'));
+  if(MY.length<3)miss.push(L((3-MY.length)+' more talk'+(3-MY.length>1?'s':''),'再 '+(3-MY.length)+' 場'));
+  var blank=MY.filter(function(p){return p.why.trim().length<15}).length;
+  if(blank)miss.push(L(blank+' reason'+(blank>1?'s':''),blank+' 個理由'));
+  $('gohint').textContent=enough?L('Ready. '+MY.length+' talks.','可以了，'+MY.length+' 場。'):
+    L('Still needed: '+miss.join(', '),'還缺：'+miss.join('、'));
+}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('[data-rm]');if(!b)return;
+  var k=idx(b.dataset.rm);if(k>=0){MY.splice(k,1);saveMy();render()}
+});
+document.addEventListener('input',function(e){
+  var t=e.target.closest('[data-why]');if(!t)return;
+  var k=idx(t.dataset.why);if(k<0)return;
+  MY[k].why=t.value;saveMy();
+  var row=t.closest('.pickrow'),c=row.querySelector('.cnt'),n=t.value.trim().length,short=n<15;
+  c.className='cnt'+(short?' short':'');
+  c.innerHTML=n+' / 260'+(short?' &middot; '+L('a sentence or two, please','請至少寫一兩句'):'');
+  updateGate();
+});
+
+/* ---------- who ---------- */
+function renderWho(){
+  $('who').innerHTML=ALLNAMES.map(function(n){
+    return '<button type="button" data-n="'+esc(n)+'"'+(n===ME?' class="on"':'')+'>'+esc(n)+'</button>';
+  }).join('');
+}
+$('who').addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;
+  ME=b.dataset.n===ME?null:b.dataset.n;
+  try{ME?localStorage.setItem('releaf-me',ME):localStorage.removeItem('releaf-me')}catch(err){}
+  render();
+});
+
+/* ---------- the proof card ---------- */
+function wrapText(ctx,text,max){
+  var words=String(text).split(/\s+/),lines=[],line='';
+  /* CJK has no spaces: fall back to per-character wrapping */
+  if(/[㐀-鿿　-〿＀-￯]/.test(text)&&words.length<4){
+    for(var i=0;i<text.length;i++){
+      var t=line+text[i];
+      if(ctx.measureText(t).width>max&&line){lines.push(line);line=text[i]}else line=t;
+    }
+    if(line)lines.push(line);return lines;
+  }
+  words.forEach(function(w){
+    var t=line?line+' '+w:w;
+    if(ctx.measureText(t).width>max&&line){lines.push(line);line=w}else line=t;
+  });
+  if(line)lines.push(line);
+  return lines;
+}
+function drawCard(){
+  var W=1100,PAD=58,scale=2;
+  var c=document.createElement('canvas'),ctx=c.getContext('2d');
+  var F='-apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang TC","Noto Sans TC",Arial,sans-serif';
+  /* measure first */
+  var items=MY.map(function(p){return {s:BYID[p.i],why:p.why.trim()}}).filter(function(x){return x.s});
+  var H=0;
+  function measure(){
+    var y=0;
+    y+=150;                         /* header */
+    y+=74;                          /* name line */
+    items.forEach(function(it){
+      ctx.font='650 27px '+F;
+      var tl=wrapText(ctx,it.s.t,W-PAD*2-74);
+      ctx.font='400 20px '+F;
+      var wl=wrapText(ctx,it.why,W-PAD*2-74);
+      y+=16+tl.length*35+30+wl.length*29+26;
+    });
+    y+=74;                          /* footer */
+    return y;
+  }
+  H=measure();
+  c.width=W*scale;c.height=H*scale;ctx.scale(scale,scale);
+
+  /* background */
+  ctx.fillStyle='#FFFFFF';ctx.fillRect(0,0,W,H);
+  var g=ctx.createLinearGradient(0,0,W,0);
+  g.addColorStop(0,'#0167EF');g.addColorStop(.5,'#00A3C4');g.addColorStop(1,'#00B87A');
+  ctx.fillStyle='#00061C';ctx.fillRect(0,0,W,150);
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,6);
+
+  ctx.fillStyle='#FFFFFF';ctx.font='700 38px '+F;
+  ctx.fillText(L('Talks I am going to','我要去的場次'),PAD,74);
+  ctx.fillStyle='rgba(255,255,255,.62)';ctx.font='500 21px '+F;
+  ctx.fillText(L('ReLEAF · GEMS Taiwan · iGEM Grand Jamboree, Paris, 13–16 November 2026',
+                 'ReLEAF · GEMS Taiwan · iGEM 大會，巴黎，2026 年 11 月 13–16 日'),PAD,112);
+
+  var y=150+52;
+  ctx.fillStyle='#1D1D1F';ctx.font='700 29px '+F;
+  var nm=ME||'';
+  ctx.fillText(nm,PAD,y);
+  var nw=ctx.measureText(nm).width;
+  ctx.fillStyle='#86868B';ctx.font='500 20px '+F;
+  ctx.fillText('·  '+items.length+L(' talks',' 場')+'  ·  '+
+    new Date().toLocaleDateString(LANG==='zh'?'zh-TW':'en-GB',{day:'numeric',month:'short'}),
+    PAD+nw+18,y);
+  y+=22;
+
+  items.forEach(function(it,n){
+    y+=16;
+    ctx.fillStyle='#F5F5F7';
+    /* number chip */
+    ctx.fillStyle='#0167EF';ctx.font='700 21px '+F;
+    ctx.fillText(String(n+1).padStart(2,'0'),PAD,y+26);
+
+    ctx.fillStyle='#1D1D1F';ctx.font='650 27px '+F;
+    var tl=wrapText(ctx,it.s.t,W-PAD*2-74);
+    tl.forEach(function(ln,k){ctx.fillText(ln,PAD+58,y+26+k*35)});
+    y+=tl.length*35;
+
+    ctx.fillStyle='#86868B';ctx.font='500 19px '+F;
+    ctx.fillText(dayLabel(it.s.d)+'  ·  '+it.s.s+'–'+it.s.e+'  ·  '+it.s.r+'  ·  '+it.s.k,PAD+58,y+24);
+    y+=30;
+
+    ctx.fillStyle='#4A4A4F';ctx.font='400 20px '+F;
+    var wl=wrapText(ctx,it.why,W-PAD*2-74);
+    wl.forEach(function(ln,k){ctx.fillText(ln,PAD+58,y+24+k*29)});
+    y+=wl.length*29+26;
+
+    if(n<items.length-1){
+      ctx.strokeStyle='rgba(0,0,0,.08)';ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(PAD,y-6);ctx.lineTo(W-PAD,y-6);ctx.stroke();
+    }
+  });
+
+  y+=28;
+  ctx.fillStyle='#86868B';ctx.font='500 18px '+F;
+  ctx.fillText(L('Chosen from the official schedule · timmy97-tw.github.io/releaf-jamboree/schedule.html',
+                 '從官方議程挑出 · timmy97-tw.github.io/releaf-jamboree/schedule.html'),PAD,y);
+  return c;
+}
+var CANVAS=null;
+$('make').addEventListener('click',function(){
+  CANVAS=drawCard();
+  var url=CANVAS.toDataURL('image/png');
+  $('shot').src=url;$('dl').href=url;
+  $('dl').download='releaf-talks-'+(ME||'me').replace(/\s+/g,'-').toLowerCase()+'.png';
+  $('copy').textContent=L('Copy image','複製圖片');
+  $('modal').classList.add('open');
+});
+$('close').addEventListener('click',function(){$('modal').classList.remove('open')});
+$('modal').addEventListener('click',function(e){if(e.target===this)this.classList.remove('open')});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')$('modal').classList.remove('open')});
+$('copy').addEventListener('click',function(){
+  var b=this;
+  if(!CANVAS||!navigator.clipboard||!window.ClipboardItem){
+    b.textContent=L('Use Download instead','請改用下載');return;
+  }
+  CANVAS.toBlob(function(blob){
+    navigator.clipboard.write([new ClipboardItem({'image/png':blob})]).then(function(){
+      b.innerHTML='<span class="ok">'+L('Copied. Now paste in Discord.','已複製，去 Discord 貼上。')+'</span>';
+    },function(){
+      b.textContent=L('Could not copy. Use Download.','複製失敗，請用下載。');
+    });
+  },'image/png');
+});
+
+/* ---------- go ---------- */
+buildFilters();
+applyLang();
+</script>
+</body>
+</html>
