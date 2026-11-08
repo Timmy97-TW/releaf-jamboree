@@ -1091,6 +1091,86 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
 .agenda .row.is-today{box-shadow:inset 0 0 0 2px var(--blue)}
 .agenda .row.jam{background:linear-gradient(160deg,#EEF4FE,#E6FAF2)}
 .agenda .ev{margin-top:0;margin-bottom:5px}
+/* notice: three screens for parents, pinned above the tasks */
+#notice .s{padding-bottom:20px}
+#notice .s+.s{padding-top:40px}
+.ntc{background:var(--card);border-radius:var(--r);padding:20px 22px;box-shadow:0 1px 2px rgba(0,0,0,.05),0 12px 30px rgba(0,6,28,.06)}
+.ntc h3{font-size:19px;font-weight:700;margin:4px 0 10px;letter-spacing:-.01em}
+.ntc .label{font-size:12px}
+.nt1{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:16px;align-items:start}
+.ntph img{display:block;width:100%;height:auto;border-radius:14px;background:#ECECF0;object-fit:cover}
+.ntph .main{aspect-ratio:3/2}
+.ntthumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+.ntthumbs img{aspect-ratio:3/2;border-radius:10px}
+.ntph p{font-size:13px;color:var(--ink3);margin:10px 2px 0}
+.ntspec{margin:0;font-size:14px;line-height:1.45}
+.ntspec div{display:grid;grid-template-columns:74px minmax(0,1fr);gap:10px;padding:7px 0;border-top:1px solid var(--line)}
+.ntspec div:first-child{border-top:0;padding-top:0}
+.ntspec dt{color:var(--ink3);font-weight:600;font-size:12.5px;padding-top:1px}
+.ntspec dd{margin:0;color:var(--ink)}
+.ntcol{display:grid;gap:16px}
+.ntbring{background:var(--mint);box-shadow:none;border:1px solid #B6E6CC}
+.ntbring .label{color:#14603F}
+.ntbring ul{list-style:none;margin:0;padding:0;font-size:14.5px;color:#0C4A30}
+.ntbring li{padding:6px 0 6px 24px;position:relative;border-top:1px solid rgba(12,74,48,.1)}
+.ntbring li:first-child{border-top:0;padding-top:0}
+.ntbring li:before{content:"";position:absolute;left:3px;top:12px;width:9px;height:9px;border-radius:50%;background:var(--green)}
+.ntbring li:first-child:before{top:6px}
+.ntbring li.no:before{background:transparent;border:2px solid #7FB89D;width:5px;height:5px}
+.ntgym{padding:0;overflow:hidden}
+.ntgym img{display:block;width:100%;height:auto;aspect-ratio:3/1;object-fit:cover;background:#ECECF0}
+.ntgym>div{padding:14px 18px 16px}
+.ntgym h3{margin:2px 0 6px;font-size:17px}
+.ntgym p{margin:0;font-size:14px;color:var(--ink2)}
+.nt2{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+.ntwin{display:flex;flex-direction:column}
+.ntwin .when{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--blue);background:rgba(1,103,239,.08);border-radius:999px;padding:5px 12px;margin-bottom:10px}
+.ntwin .when b{font-variant-numeric:tabular-nums}
+.ntwin.d11 .when{color:#9A5B00;background:#FFF2DC}
+.ntrows{display:grid;gap:8px;margin:2px 0 0}
+.ntrow{display:grid;grid-template-columns:128px minmax(0,1fr);gap:12px;align-items:start;background:var(--bg);border-radius:14px;padding:11px 14px;font-size:14.5px;line-height:1.45}
+.ntrow>b{font-size:13px;font-weight:700;color:var(--ink);padding-top:1px}
+.ntrow>span{color:var(--ink2)}
+.ntrow>span strong{color:var(--ink);font-weight:600}
+.ntsteps{list-style:none;margin:2px 0 0;padding:0;font-size:14.5px;line-height:1.45}
+.ntsteps li{display:grid;grid-template-columns:62px 14px minmax(0,1fr);gap:8px;padding:0 0 12px;position:relative}
+.ntsteps li:before{content:"";grid-column:2;width:10px;height:10px;border-radius:50%;background:#F5B544;margin-top:5px}
+.ntsteps li:after{content:"";position:absolute;left:66px;top:17px;bottom:-1px;width:2px;background:#F7D9A0}
+.ntsteps li:last-child:after{display:none}
+.ntsteps li>b{grid-column:1;grid-row:1;font-size:13px;font-weight:700;color:#9A5B00;font-variant-numeric:tabular-nums;padding-top:1px}
+.ntsteps li>span{grid-column:3;color:var(--ink2)}
+.ntsteps li>span strong{color:var(--ink);font-weight:600}
+.ntsteps li.if:before{background:#fff;border:2px solid #F5B544;width:6px;height:6px}
+.ntfoot{margin:14px 4px 0;font-size:14.5px;color:var(--ink2)}
+.ntfoot b{color:var(--ink)}
+.nt3{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;align-items:stretch}
+.ntnums{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;margin:4px 0 16px}
+.ntnums span{display:grid;place-items:center;aspect-ratio:1;border-radius:50%;background:rgba(0,184,122,.1);color:#0C7A52;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.ntcheck{list-style:none;margin:0;padding:0;font-size:14.5px;line-height:1.45}
+.ntcheck li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;padding:9px 0;border-top:1px solid var(--line)}
+.ntcheck li>b{font-size:13px;font-weight:700;color:var(--ink);padding-top:1px}
+.ntcheck li>span{color:var(--ink2)}
+.nthours{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:4px}
+.nthours td{padding:8px 0;border-top:1px solid var(--line)}
+.nthours td:first-child{color:var(--ink2)}
+.nthours td:last-child{text-align:right;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.nthours tr.hol td{color:#9A5B00}
+.nthours tr.hol td:last-child{color:#9A5B00}
+.nthours small{display:block;font-size:12px;color:#B07A1F;font-weight:500}
+.ntmart p{margin:0 0 10px;font-size:14.5px;color:var(--ink2)}
+.ntmart p b{color:var(--ink)}
+@media (max-width:1040px){
+  .nt1{grid-template-columns:1fr 1fr}
+  .nt1 .ntph{grid-column:1/-1}
+}
+@media (max-width:900px){.nt2,.nt3{grid-template-columns:1fr}}
+@media (max-width:760px){
+  .nt1{grid-template-columns:1fr}
+  .ntnums{gap:4px}
+  .ntnums span{font-size:11.5px}
+  .ntrow{grid-template-columns:1fr;gap:2px}
+  .ntcheck li{grid-template-columns:1fr;gap:2px}
+}
 </style>
 </head>
 <body>
@@ -1099,24 +1179,25 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
   <div class="nav-in">
     <a class="brand" href="#top" aria-label="ReLEAF, back to top"><img src="img/logo.png" alt=""><span class="bw"><b>ReLEAF</b><small data-zh="巴黎 2026">Paris 2026</small></span></a>
     <ul class="nlinks" id="nlinks">
-      <li><a href="#tasks"><i>01</i><span data-zh="作業">Tasks</span></a></li>
-      <li><a href="#booth"><i>02</i><span data-zh="攤位">Booth</span></a></li>
-      <li id="nsat"><a href="#sat"><i>03</i><span data-zh="週六">Saturday</span></a></li>
-      <li><a href="#today"><i>04</i><span data-zh="今日">Today</span></a></li>
+      <li><a href="#notice"><i>01</i><span data-zh="行前通知">Notice</span></a></li>
+      <li><a href="#tasks"><i>02</i><span data-zh="作業">Tasks</span></a></li>
+      <li><a href="#booth"><i>03</i><span data-zh="攤位">Booth</span></a></li>
+      <li id="nsat"><a href="#sat"><i>04</i><span data-zh="週六">Saturday</span></a></li>
+      <li><a href="#today"><i>05</i><span data-zh="今日">Today</span></a></li>
       <li><a href="#pitch"><i>06</i><span data-zh="介紹">Pitch</span></a></li>
-      <li><a href="#talks"><i>05</i><span data-zh="演講">Talks</span></a></li>
-      <li><a href="#calendar"><i>07</i><span data-zh="行事曆">Calendar</span></a></li>
-      <li><a href="#trip"><i>08</i><span data-zh="行程">Trip</span></a></li>
-      <li><a href="#jamboree"><i>09</i><span data-zh="大會">Jamboree</span></a></li>
-      <li><a href="#final"><i>10</i><span data-zh="決賽">Final</span></a></li>
-      <li><a href="#shifts"><i>11</i><span data-zh="排班">Shifts</span></a></li>
-      <li><a href="#rooms"><i>12</i><span data-zh="房間">Rooms</span></a></li>
-      <li><a href="#packing"><i>13</i><span data-zh="物資">Materials</span></a></li>
-      <li><a href="#paris"><i>14</i><span data-zh="巴黎">Paris</span></a></li>
-      <li><a href="#map"><i>15</i><span data-zh="住宿">Stay</span></a></li>
-      <li><a href="#sos" class="nsos"><i>16</i><span data-zh="緊急">Emergency</span></a></li>
-      <li><a href="#bring"><i>17</i><span data-zh="攜帶">Bring</span></a></li>
-      <li><a href="#app"><i>18</i><span>App</span></a></li>
+      <li><a href="#talks"><i>07</i><span data-zh="演講">Talks</span></a></li>
+      <li><a href="#calendar"><i>08</i><span data-zh="行事曆">Calendar</span></a></li>
+      <li><a href="#trip"><i>09</i><span data-zh="行程">Trip</span></a></li>
+      <li><a href="#jamboree"><i>10</i><span data-zh="大會">Jamboree</span></a></li>
+      <li><a href="#final"><i>11</i><span data-zh="決賽">Final</span></a></li>
+      <li><a href="#shifts"><i>12</i><span data-zh="排班">Shifts</span></a></li>
+      <li><a href="#rooms"><i>13</i><span data-zh="房間">Rooms</span></a></li>
+      <li><a href="#packing"><i>14</i><span data-zh="物資">Materials</span></a></li>
+      <li><a href="#paris"><i>15</i><span data-zh="巴黎">Paris</span></a></li>
+      <li><a href="#map"><i>16</i><span data-zh="住宿">Stay</span></a></li>
+      <li><a href="#sos" class="nsos"><i>17</i><span data-zh="緊急">Emergency</span></a></li>
+      <li><a href="#bring"><i>18</i><span data-zh="攜帶">Bring</span></a></li>
+      <li><a href="#app"><i>19</i><span>App</span></a></li>
       <li class="nl-links"><button type="button" data-links><span data-zh="重要連結">Important links</span></button></li>
     </ul>
     <div class="nact">
@@ -1151,6 +1232,134 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
 </header>
 
 <main>
+<div id="notice">
+
+<section class="s onescreen" id="hotel" aria-labelledby="hotel-h">
+  <div class="wrap">
+    <span class="eyebrow" data-zh="行前通知 1/3 · 飯店">Before we go · 1 of 3 · The hotel</span>
+    <h2 id="hotel-h" data-zh="飯店有的，就不用帶。">What the hotel has, you don't need to pack.</h2>
+    <p class="sub" data-zh="Courtyard by Marriott Paris Porte de Versailles，標準雙床房（兩張單人床）。">Courtyard by Marriott Paris Porte de Versailles, Standard Room with two twin beds.</p>
+
+    <div class="nt1">
+      <div class="ntph rv">
+        <img class="main" src="img/hotel/room-twin.webp" alt="Standard twin room: two single beds with white striped linen, a wood headboard, a desk and chair by a wide window" width="1140" height="760">
+        <div class="ntthumbs">
+          <img src="img/hotel/room-window.webp" alt="The room's floor-to-ceiling window, desk lamp and armchair" width="1140" height="761" loading="lazy">
+          <img src="img/hotel/room-door.webp" alt="Wall-mounted TV opposite the two beds, with the entrance door and a sliding bathroom door" width="1140" height="762" loading="lazy">
+          <img src="img/hotel/bathroom.webp" alt="Bathroom with a walk-in glass shower, wall-mounted shampoo and body wash, a basin and towels" width="1140" height="761" loading="lazy">
+        </div>
+        <p data-zh="飯店官方照片。實際房間可能略有不同。">The hotel's own photos. Your room may differ a little.</p>
+      </div>
+
+      <div class="ntc rv">
+        <div class="label" data-zh="房間裡有">In the room</div>
+        <h3 data-zh="標準雙床房">Standard twin room</h3>
+        <dl class="ntspec">
+          <div><dt data-zh="床">Beds</dt><dd data-zh="兩張單人床，最多住 2 人，不能加床">Two twin beds, two guests at most, no rollaway beds</dd></div>
+          <div><dt data-zh="大小">Size</dt><dd data-zh="22–24 平方公尺，有冷氣，全面禁菸">22–24 m², air-conditioned, non-smoking</dd></div>
+          <div><dt data-zh="浴室">Bathroom</dt><dd data-zh="洗髮乳、沐浴乳、吹風機">Shampoo, body wash, hair dryer</dd></div>
+          <div><dt data-zh="家具">Furniture</dt><dd data-zh="書桌（附插座）、房內保險箱、鬧鐘、熨斗與燙衣板、雙電壓插座">Desk with outlet, in-room safe, alarm clock, iron and ironing board, dual-voltage outlets</dd></div>
+          <div><dt data-zh="飲食">Food</dt><dd data-zh="小冰箱、熱水">Mini fridge, instant hot water</dd></div>
+          <div><dt data-zh="網路">Internet</dt><dd data-zh="免費 Wi-Fi 與有線網路，房內電話一支（有語音信箱）">Free Wi-Fi and wired internet, one phone with voicemail</dd></div>
+          <div><dt data-zh="電視">TV</dt><dd data-zh="Chromecast、有線／衛星頻道、CNN、電影頻道">Chromecast, cable and satellite, CNN, movie channels</dd></div>
+        </dl>
+      </div>
+
+      <div class="ntcol">
+        <div class="ntc ntbring rv">
+          <div class="label" data-zh="所以要帶">So pack</div>
+          <ul>
+            <li data-zh="<b>個人盥洗用品</b>：牙刷、牙膏、洗面乳和你平常用的東西"><b>Your own toiletries</b>: toothbrush, toothpaste, face wash and whatever you use every day</li>
+            <li data-zh="<b>保濕乳液</b>：巴黎 11 月的空氣比台灣乾很多"><b>Moisturiser</b>: Paris in November is much drier than Taiwan</li>
+            <li class="no" data-zh="不用帶：洗髮乳、沐浴乳、吹風機、熨斗">No need for shampoo, body wash, a hair dryer or an iron</li>
+          </ul>
+        </div>
+        <div class="ntc ntgym rv">
+          <img src="img/hotel/gym.webp" alt="The hotel fitness room: two elliptical trainers, an exercise bike, two treadmills and a rowing machine" width="1400" height="466" loading="lazy">
+          <div>
+            <div class="label" data-zh="健身房">Fitness centre</div>
+            <h3 data-zh="每天 24 小時開放">Open 24 hours, every day</h3>
+            <p data-zh="跑步機、橢圓機、飛輪、划船機、自由重量與重量訓練器材。">Treadmills, ellipticals, exercise bikes, a rowing machine, free weights and weight machines.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s onescreen" id="away" aria-labelledby="away-h">
+  <div class="wrap">
+    <span class="eyebrow" data-zh="行前通知 2/3 · 離隊時間">Before we go · 2 of 3 · Time away from the group</span>
+    <h2 id="away-h" data-zh="學生只在兩種時候離開團隊。">Students leave the group at two times only.</h2>
+    <p class="sub" data-zh="家長同意書已經寫明這兩種情形。其他時間，學生都和團隊在一起：在飯店準備、休息，或在會場。">Both are set out in the parent consent form. The rest of the time students are with the team: getting ready or resting at the hotel, or at the Jamboree.</p>
+
+    <div class="nt2">
+      <article class="ntc ntwin rv">
+        <span class="when" data-zh="<b>1</b> 每天的午餐與晚餐"><b>1</b> Lunch and dinner, every day</span>
+        <h3 data-zh="早餐一起吃，午餐和晚餐依同意書。">Breakfast together, lunch and dinner by the consent form.</h3>
+        <div class="ntrows">
+          <div class="ntrow"><b data-zh="早餐">Breakfast</b><span data-zh="全體在飯店一起吃。">The whole team eats together at the hotel.</span></div>
+          <div class="ntrow"><b data-zh="勾選「和老師一起」">Ticked “with an instructor”</b><span data-zh="<strong>至少一位老師</strong>全程和這位學生一起用餐。">At least <strong>one instructor</strong> eats with the student, start to finish.</span></div>
+          <div class="ntrow"><b data-zh="其他學生">Everyone else</b><span data-zh="和自己的朋友<strong>結伴成群</strong>，到飯店附近吃。">Goes <strong>in a group</strong> with their friends to eat near the hotel.</span></div>
+        </div>
+        <p class="ntfoot" style="margin-top:auto;padding-top:14px" data-zh="用餐時一律留在飯店與會場附近，手機保持有電，隨時回覆老師訊息。">At every meal students stay near the hotel and the venue, keep their phone charged and answer instructors' messages.</p>
+      </article>
+
+      <article class="ntc ntwin d11 rv">
+        <span class="when" data-zh="<b>2</b> 11/11（三）午餐後到 20:00"><b>2</b> Wed 11 Nov, after lunch until 20:00</span>
+        <h3 data-zh="抵達日下午，看當天巴黎的情況決定。">Arrival afternoon, planned around Paris that day.</h3>
+        <ol class="ntsteps">
+          <li><b>13:00</b><span data-zh="入住飯店，一起吃午餐。">Check in at the hotel, lunch together.</span></li>
+          <li><b data-zh="下午">Afternoon</b><span data-zh="老師帶學生在<strong>飯店附近</strong>走走：採買日用品，先到展場勘查。"><strong>Near the hotel</strong> with the instructors: shopping for what we need and a first look at the venue.</span></li>
+          <li class="if"><b data-zh="若安全">If safe</b><span data-zh="只有市區安全時，才考慮<strong>全隊一起</strong>去一到兩個景點。否則全體留在飯店附近。">Only if the city is safe do we consider one or two sights, <strong>as a whole team</strong>. Otherwise everyone stays near the hotel.</span></li>
+          <li><b data-zh="天黑前">Before dark</b><span data-zh="回到飯店附近吃晚餐。巴黎這天約 17:15 日落。">Back near the hotel for dinner. Sunset in Paris that day is around 17:15.</span></li>
+          <li><b>20:00</b><span data-zh="全員回到飯店，點名。">Everyone back at the hotel, roll call.</span></li>
+        </ol>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="s onescreen" id="rollcall" aria-labelledby="roll-h">
+  <div class="wrap">
+    <span class="eyebrow" data-zh="行前通知 3/3 · 點名與採買">Before we go · 3 of 3 · Roll call and shopping</span>
+    <h2 id="roll-h" data-zh="每次移動都點名，30 人到齊才走。">A roll call at every move. We leave when all 30 are there.</h2>
+    <p class="sub" data-zh="每位學生會拿到一個 1 到 30 的編號，用報數點名，快又不會漏。">Each student gets a number from 1 to 30. We count off by number, which is fast and misses no one.</p>
+
+    <div class="nt3">
+      <div class="ntc rv">
+        <div class="label" data-zh="點名">Roll call</div>
+        <h3 data-zh="老師什麼時候點名">When the instructors count</h3>
+        <div class="ntnums" aria-label="Student numbers 1 to 30"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span></div>
+        <ul class="ntcheck">
+          <li><b data-zh="每次移動">Every move</b><span data-zh="離開一個地點前、到達下一個地點後，都點到 30 人全部到齊。">Before leaving one place and on reaching the next, until all 30 are counted.</span></li>
+          <li><b data-zh="回到飯店">Back at the hotel</b><span data-zh="每天回到飯店後再點一次。">Again every day when we get back.</span></li>
+          <li><b>22:00</b><span data-zh="老師逐房敲門，確認每位學生都在房內。">Instructors knock on every door to check each student is in their room.</span></li>
+          <li><b data-zh="查房後">After the check</b><span data-zh="查房完成，統一公告。">One announcement once the check is done.</span></li>
+        </ul>
+      </div>
+
+      <div class="ntc ntmart rv">
+        <div class="label" data-zh="採買">Shopping</div>
+        <h3 data-zh="家樂福，步行 1 分鐘">Carrefour, one minute's walk</h3>
+        <p data-zh="飯店旁就有家樂福。學生可以和朋友<b>結伴</b>去買東西，不單獨行動。">There is a Carrefour right next to the hotel. Students can go with friends, <b>in a group</b>, never alone.</p>
+        <table class="nthours">
+          <tbody>
+            <tr class="hol"><td data-zh="11/11（三）<small>停戰紀念日，假日時間</small>">Wed 11 Nov<small>Armistice Day, holiday hours</small></td><td>09:00–20:00</td></tr>
+            <tr><td data-zh="11/12（四）">Thu 12 Nov</td><td>07:00–22:00</td></tr>
+            <tr><td data-zh="11/13（五）">Fri 13 Nov</td><td>07:00–22:00</td></tr>
+            <tr><td data-zh="11/14（六）">Sat 14 Nov</td><td>07:00–22:00</td></tr>
+            <tr class="hol"><td data-zh="11/15（日）<small>只開上午</small>">Sun 15 Nov<small>Mornings only</small></td><td>09:00–13:00</td></tr>
+            <tr><td data-zh="11/16（一）">Mon 16 Nov</td><td>07:00–22:00</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
 <section class="s onescreen" id="tasks">
   <div class="wrap">
     <span class="eyebrow" data-zh="本週三件事">This week, three things</span>
