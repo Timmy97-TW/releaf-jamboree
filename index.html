@@ -211,12 +211,12 @@ section.s{padding:84px 0 12px}
 
 /* three task columns */
 .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
-.tcard{display:flex;flex-direction:column;background:var(--card);border-radius:var(--r);padding:22px 22px 20px;
-  box-shadow:0 1px 2px rgba(0,0,0,.05),0 12px 30px rgba(0,6,28,.06);border-top:3px solid var(--tc,var(--blue))}
-.tcard .tno{display:flex;align-items:center;gap:9px;margin-bottom:12px}
-.tcard .tno b{width:26px;height:26px;border-radius:8px;background:var(--tc,var(--blue));color:#fff;
-  font-size:12px;font-weight:700;display:grid;place-items:center;font-variant-numeric:tabular-nums}
-.tcard .tno span{font-size:12.5px;font-weight:600;color:var(--tc,var(--blue));letter-spacing:.01em}
+.tcard{display:flex;flex-direction:column;background:var(--card);border-radius:var(--r);padding:24px 24px 22px;
+  box-shadow:0 1px 2px rgba(0,0,0,.05),0 12px 30px rgba(0,6,28,.06)}
+.tcard .tno{display:flex;align-items:baseline;gap:11px;margin-bottom:13px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.tcard .tno b{font-size:12.5px;font-weight:700;color:var(--tc,var(--blue));letter-spacing:.08em;
+  font-variant-numeric:tabular-nums}
+.tcard .tno span{font-size:12.5px;font-weight:600;color:var(--ink3);letter-spacing:.01em}
 .tcard h3{font-size:21px;line-height:1.2;margin-bottom:8px}
 .tcard .td{font-size:14.5px;color:var(--ink2);line-height:1.5;margin:0 0 14px}
 .tcard .tnums{display:flex;gap:16px;margin:0 0 14px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -235,6 +235,12 @@ section.s{padding:84px 0 12px}
 .tcard .tkgo a .arr{margin-left:auto;opacity:.6;font-size:12px}
 .tcard .tkgo a small{display:block;font-size:11.5px;font-weight:500;opacity:.75;margin-bottom:1px}
 .tcard .tkgo a .lb{display:flex;flex-direction:column;line-height:1.2}
+.tsteps{counter-reset:ts;list-style:none;margin:0 0 16px;padding:0}
+.tsteps li{counter-increment:ts;position:relative;padding:8px 0 8px 24px;font-size:14px;line-height:1.4;color:var(--ink2);border-top:1px solid var(--line)}
+.tsteps li:first-child{border-top:0}
+.tsteps li:before{content:counter(ts);position:absolute;left:0;top:9px;font-size:11.5px;font-weight:700;
+  color:var(--tc,var(--blue));font-variant-numeric:tabular-nums}
+.tsteps b{font-weight:600;color:var(--ink)}
 
 /* today, compressed */
 #today .today{gap:16px}
@@ -554,6 +560,15 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .pill{display:inline-block;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
 .p-arr{background:#E6F7EE;color:#11804F} .p-print{background:#FFF4E0;color:#B26A00}
 .p-buy{background:#FDECEC;color:#C2343A} .p-paris{background:#F1EBFF;color:#6440D8} .p-none{color:var(--ink3);padding-left:0}
+.matrow{display:grid;grid-template-columns:1.15fr 1fr;gap:18px;align-items:start}
+.hwkit h3{font-size:21px;letter-spacing:-.02em;margin:5px 0 16px}
+.hwcols{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
+.hwcols b{display:block;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
+.hwcols ul{list-style:none;margin:0;padding:0}
+.hwcols li{font-size:14px;line-height:1.35;color:var(--ink2);padding:5px 0 5px 15px;position:relative}
+.hwcols li:before{content:"";position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:var(--ink3);opacity:.45}
+@media (max-width:980px){.matrow{grid-template-columns:1fr}}
+@media (max-width:520px){.hwcols{grid-template-columns:1fr;gap:16px}}
 
 /* paris */
 .stats{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:18px}
@@ -629,10 +644,8 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .nband b{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .ncol{grid-row:2;min-width:0}
 .nd{height:100%;margin:0 5px;background:var(--card);border-radius:20px;padding:18px 16px 20px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 10px 30px rgba(0,6,28,.05);position:relative;overflow:hidden}
-.nd:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--c)}
 .nd.k-depart{--c:var(--navy)} .nd.k-arrive{--c:var(--navy)} .nd.k-prep{--c:var(--violet)} .nd.k-home{--c:var(--navy)}
 .nd.k-jam{background:linear-gradient(170deg,#F2F7FF,#EAFAF3);padding:18px 13px 20px}
-.nd.k-jam:before{background:var(--grad)}
 .nd .dn{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
 .nd.k-jam .dn{color:#0B7FB8}
 .nd .dt{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 8px;margin:6px 0 2px}
@@ -842,7 +855,7 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .rgrp-h h3{font-size:21px}
 .rgrp-h span{font-size:14px;color:var(--ink2)}
 .rooms{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
-.room{position:relative;background:var(--card);border-radius:18px;padding:16px 18px 16px;box-shadow:0 1px 2px rgba(0,0,0,.04);border-top:4px solid var(--c,var(--blue));transition:opacity .2s,transform .2s,box-shadow .2s}
+.room{position:relative;background:var(--card);border-radius:18px;padding:16px 18px 16px;box-shadow:0 1px 2px rgba(0,0,0,.04);transition:opacity .2s,transform .2s,box-shadow .2s}
 .room .no{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c,var(--blue))}
 .room ul{list-style:none;margin:8px 0 0;padding:0}
 .room li{font-size:16px;font-weight:600;padding:3px 0;display:flex;align-items:center;gap:8px}
@@ -1064,7 +1077,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <li><a href="#final"><i>10</i><span data-zh="決賽">Final</span></a></li>
       <li><a href="#shifts"><i>11</i><span data-zh="排班">Shifts</span></a></li>
       <li><a href="#rooms"><i>12</i><span data-zh="房間">Rooms</span></a></li>
-      <li><a href="#packing"><i>13</i><span data-zh="行李">Packing</span></a></li>
+      <li><a href="#packing"><i>13</i><span data-zh="物資">Materials</span></a></li>
       <li><a href="#paris"><i>14</i><span data-zh="巴黎">Paris</span></a></li>
       <li><a href="#map"><i>15</i><span data-zh="住宿">Stay</span></a></li>
       <li><a href="#sos" class="nsos"><i>16</i><span data-zh="緊急">Emergency</span></a></li>
@@ -1107,47 +1120,55 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
 <section class="s onescreen" id="tasks">
   <div class="wrap">
     <span class="eyebrow" data-zh="本週三件事">This week, three things</span>
-    <h2 data-zh="三份作業，週六之前。">Three tasks, before Saturday.</h2>
-    <p class="sub" data-zh="答出你的題目、把評審票上那三十題練到能說出口，並在週六之前裝好 My iGEM App。每一欄下面都有完整版。">Answer your questions, drill the thirty questions on the ballot, and install the My iGEM App before Saturday. The full version of each sits further down or one click away.</p>
+    <h2 data-zh="先答出來，再練到說得出口。">Write the answers, then learn to say them.</h2>
+    <p class="sub" data-zh="投影片上還有五十題空白。寫完之後，答案還要練成評審聽得懂的形狀，再到其他評審訓練網站上反覆演練。">Fifty questions in the deck are still blank. Once they are written, the answer still has to come out in a shape a judge can follow, and that only comes from drilling it on the training sites.</p>
 
     <div class="tgrid">
 
       <article class="tcard rv" style="--tc:#0167EF;--tw:rgba(1,103,239,.08)">
-        <div class="tno"><b>01</b><span data-zh="全隊作業 · 週六模擬評審前">Team homework · before Saturday's mock</span></div>
-        <h3 data-zh="每一題都要有人回答，並簽上名字。">Every question gets an answer, and a name.</h3>
-        <p class="td" data-zh="商業與法規十一題已經有十題寫完。植物十一題和推廣兩題仍然沒有人認領，硬體還有二十三題空著。挑你答得出來的，附一張關鍵圖和實際數據，然後在第 1 頁簽名。">Ten of the eleven Business &amp; Legal questions are now written. Plant&rsquo;s eleven and Outreach&rsquo;s two have nobody on them, and twenty-three hardware questions are still open. Take the ones you can answer, bring one key figure and the real numbers, then sign slide 1.</p>
+        <div class="tno"><b>01</b><span data-zh="重要問題投影片 · 出發前">The Important Questions deck · before we fly</span></div>
+        <h3 data-zh="九十五題寫好了，五十題還空著。">Ninety-five written, fifty still blank.</h3>
+        <p class="td" data-zh="一週前只有三十題掛名，現在認領牆上有七十三個名字。空白最多的是硬體，三十九題裡有二十二題沒寫；植物還有六題、選殖九題、一般問題四題，模型與軟體的評分題還有七題。挑你答得出來的，附一張關鍵圖和實際數據，然後在第 1 頁簽名。">A week ago thirty questions carried a name; the ownership board now has seventy-three. Hardware is where the hole is &mdash; twenty-two of its thirty-nine are blank. Plant has six left, cloning nine, the general block four, and the model and software criteria seven. Take the ones you can answer, bring one key figure and the real numbers, then sign slide 1.</p>
         <div class="tnums">
-          <div><b>88</b><span data-zh="投影片題數">in the deck</span></div>
-          <div><b>30</b><span data-zh="已簽名">with a name</span></div>
-          <div><b style="color:var(--red)">58</b><span data-zh="還沒人認領">still open</span></div>
+          <div><b>145</b><span data-zh="投影片題數">in the deck</span></div>
+          <div><b style="color:var(--green)">95</b><span data-zh="已寫好答案">answered</span></div>
+          <div><b style="color:var(--red)">50</b><span data-zh="仍然空白">still blank</span></div>
         </div>
         <div class="tkgo">
           <a href="https://docs.google.com/presentation/d/1O95af9Q3xPGV_ucqMZ8s1sKE2wsrWGPISFywieWuuV0/edit" target="_blank" rel="noopener"><span class="lb" data-zh="<small>在這裡作答</small>重要問題投影片"><small>Answer here</small>Important Questions deck</span><span class="arr">&#8599;</span></a>
+          <a class="ghost" href="https://docs.google.com/spreadsheets/d/11DxPQkJwYzY2gap9-jY2Q7yg2QIOcwj-K6XhVOi14-k/edit?gid=0#gid=0" target="_blank" rel="noopener" data-zh="老師出題的題目表">The instructor question sheet<span class="arr">&#8599;</span></a>
         </div>
       </article>
 
       <article class="tcard rv" style="--tc:#00A86B;--tw:rgba(0,168,107,.09)">
-        <div class="tno"><b>02</b><span data-zh="獎項答題 · 評審票上的問題">Prize answers · the ballot questions</span></div>
-        <h3 data-zh="評審替我們打分數的那三十題。">The thirty questions the judges score us on.</h3>
-        <p class="td" data-zh="四個提名獎項的評分面向，加上決定入圍的九個 Project 問題。每題都有要背的關鍵字、可以指的圖，和一段說得出口的回答。中英文都有。">The aspects our four nominated awards are scored on, plus the nine Project questions that choose the finalists. Each one has the keywords to memorise, the figures to point at, and one answer to say out loud, in English and 中文.</p>
-        <div class="tnums">
-          <div><b>4</b><span data-zh="提名獎項">awards</span></div>
-          <div><b>30</b><span data-zh="題">questions</span></div>
-          <div><b>161</b><span data-zh="張圖">figures</span></div>
-        </div>
+        <div class="tno"><b>02</b><span data-zh="答題結構 · 從現在開始練">The shape of an answer · start now</span></div>
+        <h3 data-zh="好答案有固定的形狀。先學會它。">A good answer has a shape. Learn it first.</h3>
+        <p class="td" data-zh="兩個學生知道同一件事，分數卻不同，因為其中一個回答了問題，另一個只是在講話。六十到九十秒，照這個順序說：">Two students can know the same thing and score differently, because one answered the question and the other just talked. Sixty to ninety seconds, in this order:</p>
+        <ol class="tsteps">
+          <li data-zh="<b>簡短道謝</b>，而且不要每題都說"><b>Thanks</b>, briefly, and not every time</li>
+          <li data-zh="<b>答案本身</b>，第一句就帶一個數字或名稱"><b>The answer</b>, first sentence, with a number or a name</li>
+          <li data-zh="<b>我們真正有的證據</b>，說出頁面或圖號"><b>The evidence we have</b>, named down to the figure</li>
+          <li data-zh="<b>限制</b>，用你自己的話，一個子句"><b>The limit</b>, in your own words, one clause</li>
+          <li data-zh="<b>最後才講下一步</b>，而且只有 wiki 上寫了才講"><b>Then the next step</b>, and only if the wiki says it</li>
+        </ol>
         <div class="tkgo">
-          <a href="https://timmy97-tw.github.io/prize-answer/" target="_blank" rel="noopener"><span class="lb" data-zh="<small>完整網站</small>獎項答題"><small>The full site</small>Prize Answers</span><span class="arr">&#8599;</span></a>
-          <a class="ghost" href="https://timmy97-tw.github.io/releaf-judging-qa/prize.html" target="_blank" rel="noopener" data-zh="也在評審演練系統裡">Also inside the Judging Trainer<span class="arr">&#8599;</span></a>
+          <a href="https://timmy97-tw.github.io/releaf-judging-qa/delivery.html" target="_blank" rel="noopener"><span class="lb" data-zh="<small>拆解一個真實回答</small>答題技巧"><small>One real answer, taken apart</small>Delivery Lab</span><span class="arr">&#8599;</span></a>
         </div>
       </article>
 
       <article class="tcard rv" style="--tc:#7C5CFF;--tw:rgba(124,92,255,.09)">
-        <div class="tno"><b>03</b><span data-zh="My iGEM App · 週六之前">My iGEM App · before Saturday</span></div>
-        <h3 data-zh="週六以前，每個人都要裝好 App。">Everyone installs the app before Saturday.</h3>
-        <p class="td" data-zh="票券、議程、地圖和大會通知都在 App 裡，報到時也是用它進場。用你報名 iGEM 的信箱登入，確認看得到自己的票和我們的評審場次。別等到巴黎才裝。">Your ticket, the schedule, the map and every announcement live in the app, and it is what gets you through the door at check-in. Sign in with the email you registered to iGEM with, and check that you can see your ticket and our judging session. Do not leave it until Paris.</p>
+        <div class="tno"><b>03</b><span data-zh="繼續練 · 每天一輪">Keep drilling · a round a day</span></div>
+        <h3 data-zh="寫過不等於說得出來。">Having written it is not the same as being able to say it.</h3>
+        <p class="td" data-zh="答案寫完以後，就到訓練網站上一題一題練，出聲念、計時，念到不用看稿。每個站的題目都不一樣，別只練同一個。獎項答題收的是評審票上那三十題，每題都有關鍵字、可以指的圖和一段說得出口的回答，中英文都有。">Once your answers are written, practise them one at a time on the training sites: out loud, on a clock, until you do not need the script. Each site asks different questions, so do not stay on just one. Prize Answers holds the thirty questions on the ballot, each with the keywords, the figures to point at and one answer to say out loud, in English and 中文.</p>
+        <div class="tnums">
+          <div><b>4</b><span data-zh="提名獎項">awards</span></div>
+          <div><b>30</b><span data-zh="評審票上的題目">ballot questions</span></div>
+          <div><b>161</b><span data-zh="張圖">figures</span></div>
+        </div>
         <div class="tkgo">
-          <a href="https://apps.apple.com/us/app/my-igem/id6747386789" target="_blank" rel="noopener"><span class="lb" data-zh="<small>iPhone</small>App Store"><small>iPhone</small>App Store</span><span class="arr">&#8599;</span></a>
-          <a class="ghost" href="#app" data-zh="App 裡有什麼">What the app does<span class="arr">&#8595;</span></a>
+          <a href="https://timmy97-tw.github.io/prize-answer/" target="_blank" rel="noopener"><span class="lb" data-zh="<small>評審票上的三十題</small>獎項答題"><small>The thirty questions on the ballot</small>Prize Answers</span><span class="arr">&#8599;</span></a>
+          <a class="ghost" href="https://timmy97-tw.github.io/releaf-judging-qa/index.html" target="_blank" rel="noopener" data-zh="評審演練系統">Judging Trainer<span class="arr">&#8599;</span></a>
+          <a class="ghost" href="https://timmy97-tw.github.io/releaf-plant-judging/" target="_blank" rel="noopener" data-zh="植物訓練網站">Plant Training Site<span class="arr">&#8599;</span></a>
         </div>
       </article>
 
@@ -1301,12 +1322,12 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       <aside class="goals" id="achieve" aria-label="To achieve before we fly"></aside>
     </div>
     <div class="pgrid rv">
-      <img src="img/build-1105.webp" style="object-position:50% 45%" alt="The ReLEAF bioreactor on 5 November: shell panels on, the mesh rack mounted, wiring and the green-light board in place" loading="lazy" decoding="async" width="1100" height="1467">
-      <img src="img/booth/reactor-1106.webp" style="object-position:50% 50%" alt="The bioreactor running on 6 November with the green light on and the dashboard on the screen above it" loading="lazy" decoding="async" width="1000" height="1333">
-      <img src="img/work/build.webp" style="object-position:50% 22%" alt="Two team members drilling and wiring the bioreactor frame" loading="lazy" decoding="async" width="1000" height="1333">
-      <img src="img/work/pair.webp" style="object-position:50% 34%" alt="Two students at the bench going over a sample together" loading="lazy" decoding="async" width="1200" height="675">
-      <img src="img/work/lab.webp" style="object-position:62% 20%" alt="A student at the bench holding a rack of sample tubes" loading="lazy" decoding="async" width="1000" height="1333">
-      <img src="img/work/bench.webp" style="object-position:42% 34%" alt="Students and an instructor working along the lab bench" loading="lazy" decoding="async" width="1000" height="804">
+      <img src="img/1108/team.webp" style="object-position:50% 38%" alt="The whole team crowded behind a long table with the cake in the middle, on the last Saturday before Paris" loading="lazy" decoding="async" width="1600" height="1200">
+      <img src="img/1108/candles.webp" style="object-position:50% 45%" alt="Four students standing behind the lit candles on the cake, the room clapping" loading="lazy" decoding="async" width="1600" height="1200">
+      <img src="img/1108/cake.webp" style="object-position:50% 50%" alt="A cream cake with cherries around the rim, iced ReLEAF Together We Win" loading="lazy" decoding="async" width="1600" height="1200">
+      <img src="img/1108/lab.webp" style="object-position:50% 50%" alt="A student in a lab coat and gloves at the bench, working through the last round of samples" loading="lazy" decoding="async" width="1600" height="1200">
+      <img src="img/1108/pack.webp" style="object-position:50% 40%" alt="A student lifting the photometer frame out of a tote bag while packing the hardware for Paris" loading="lazy" decoding="async" width="1600" height="1200">
+      <img src="img/1108/room.webp" style="object-position:50% 55%" alt="The workroom with the tables pushed into rows and the whiteboard wiped, before the team arrives" loading="lazy" decoding="async" width="1600" height="1200">
     </div>
   </div>
 </section>
@@ -1373,9 +1394,60 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
 
 <section class="s" id="packing">
   <div class="wrap">
-    <span class="eyebrow" data-zh="行李">Packing</span>
-    <h2 data-zh="行李箱裡要放什麼。">What goes in the suitcase.</h2>
-    <div class="card rv"><div class="label" style="margin-bottom:6px" data-zh="團隊物品">Team materials</div><div class="tablewrap"><table class="mat" id="mat"></table></div></div>
+    <span class="eyebrow" data-zh="要帶去巴黎的東西">Materials to bring</span>
+    <h2 data-zh="每一樣東西都有人負責。">Every item has a name on it.</h2>
+    <p class="sub" data-zh="這份清單來自團隊的「Materials to bring」文件。找到寫著你名字的那幾行，出發前一晚自己檢查一次——11 月 10 日當天不會有人替你檢查。">This list comes from the team&rsquo;s Materials to bring doc. Find the rows with your name on them and check them yourself the night before. Nobody will check them for you on the 10th.</p>
+    <div class="matrow">
+      <div class="card rv"><div class="label" style="margin-bottom:6px" data-zh="團隊物品">Team materials</div><div class="tablewrap"><table class="mat" id="mat"></table></div></div>
+      <div class="card rv hwkit">
+        <div class="label" data-zh="硬體整套 · Anton、Noah、Joshua">The hardware kit · Anton, Noah, Joshua</div>
+        <h3 data-zh="反應器拆成一個箱子。">The reactor, packed as one box.</h3>
+        <div class="hwcols">
+          <div>
+            <b data-zh="硬體">Hardware</b>
+            <ul>
+              <li data-zh="電子件（主機板與周邊、電源供應器）">Electronics (mainboard and attached components, power supply)</li>
+              <li data-zh="鍵盤、滑鼠、顯示器">Keyboard, mouse, display screen</li>
+              <li data-zh="中空纖維膜">Hollow fiber membrane</li>
+              <li data-zh="大儲液瓶">Large reservoir bottle</li>
+              <li data-zh="磁力攪拌器">Magnetic stirrer</li>
+              <li data-zh="pH 瓶">pH bottle</li>
+              <li data-zh="保護劑瓶">Protectant bottle</li>
+              <li data-zh="Pro 光度計">Pro photometer</li>
+              <li data-zh="Slim 光度計">Slim photometer</li>
+              <li data-zh="幫浦（大、小）">Pumps (large and small)</li>
+              <li data-zh="綠光燈條">Green light strip</li>
+              <li data-zh="夾管閥">Pinch valve</li>
+              <li data-zh="Luer 閥伺服機">Luer valve servo</li>
+            </ul>
+          </div>
+          <div>
+            <b data-zh="備品">Spares</b>
+            <ul>
+              <li data-zh="列印件（X 型樑、把手、門閂）">Printed parts (&ldquo;X&rdquo; beams, handles, door latch)</li>
+              <li data-zh="管材">Tubing</li>
+              <li data-zh="電線">Wires</li>
+              <li data-zh="電阻">Resistors</li>
+              <li data-zh="光度計 LED">Photometer LED</li>
+            </ul>
+            <b style="margin-top:14px" data-zh="工具">Tools</b>
+            <ul>
+              <li data-zh="螺絲起子（8/32 星型、⅛ 六角）">Screwdrivers (8/32 star, &#8539; hex)</li>
+              <li data-zh="螺絲與螺帽（8/32、10/32）">Screws and nuts (8/32, 10/32)</li>
+              <li data-zh="束線帶">Zip ties</li>
+              <li data-zh="焊錫">Solder</li>
+              <li data-zh="布膠帶、電火布">Duct tape, electrical tape</li>
+              <li data-zh="剪刀">Scissors</li>
+              <li data-zh="電工工具箱">Electrical toolbox</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bring-cta">
+      <a class="btn" href="https://docs.google.com/document/d/14rMX7ayF6gBxn-k27UF4gVkV9TuztLe7UpjvqsucVx4/edit?tab=t.0" target="_blank" rel="noopener" data-zh="要帶的東西（完整文件）<span class='arr'>↗</span>">Materials to bring, the doc<span class="arr">↗</span></a>
+      <p data-zh="名字旁邊的東西還沒買到，或是你想到清單上漏了什麼，直接寫進文件裡。">If something beside your name is still not bought, or the list is missing something, write it into the doc.</p>
+    </div>
   </div>
 </section>
 
@@ -1669,7 +1741,8 @@ var ZH={
  // roster
  'HP':'人文實踐','Bioreactor / Dry lab':'生物反應器 / 乾實驗','Plant model':'植物模型','Math model':'數學模型','Wet lab':'濕實驗',
  // materials
- 'Pens':'筆','Sticky notes':'便利貼','Folders':'資料夾','Bioreactor':'生物反應器','Hardware':'硬體','Team banner':'團隊布條','Backup UNO Q':'備用 UNO Q','Scissors':'剪刀',
+ 'Pens':'筆','Sticky notes':'便利貼','Folders':'資料夾','Bioreactor':'生物反應器','Bioreactor box':'反應器運送箱','Hardware':'硬體',
+ 'the full kit, spares and tools':'整套硬體、備品與工具','Team banner':'團隊布條','Backup UNO Q':'備用 UNO Q','Scissors':'剪刀',
  'Double-sided tape':'雙面膠','Tape':'膠帶','Backup luer valves':'備用 luer 閥','Photometer':'光度計','Hardware demos':'硬體展示品','Lab notebook':'實驗紀錄本',
  'Mini plant pots':'迷你盆栽','Slime materials':'史萊姆材料','Name cards':'名牌','Invitation cards':'邀請卡','Seeds':'種子','Soft PET film':'軟質 PET 膜',
  'Epoxy glue':'環氧樹脂膠','Stickers for the pots':'盆栽貼紙','1 box':'1 盒','1 pack':'1 包','4 packs':'4 包','1 long strand':'1 長條',
@@ -1689,8 +1762,14 @@ var ZH={
  'Improve the LPA assays to show a clearer difference between green-light and red-light secretion':'改進 LPA 檢測，更清楚呈現綠光與紅光下分泌量的差異',
  'Run replicates of the hydroponics plant assay':'完成水耕植物實驗的重複試驗','Plants':'植物',
  // tasks
- 'Judging session prep':'評審場次準備','Five-minute slides and the Q&A sheet, ahead of Saturday\'s mock':'週六模擬評審前，準備五分鐘簡報與問答表',
- 'Live stage talk prep':'舞台演講準備','Two run-throughs on Saturday 31 October':'10 月 31 日（六）兩次彩排','Before-we-fly lab goals':'出發前的實驗目標',
+ 'Judging prep':'評審準備','Answer your questions, learn the shape of an answer, then say it out loud':'答完你的題目，學會答題的結構，然後出聲練到說得出來',
+ 'Main focus':'本週重點','Delivery Lab':'答題技巧',
+ '5-minute presentation':'5 分鐘簡報','The judging-session talk, Friday 13 November at 12:00':'評審場次的簡報，11 月 13 日（五）12:00',
+ '10-minute live stage talk':'10 分鐘舞台演講','Sunday 15 November, 14:40 on the main stage':'11 月 15 日（日）14:40，主舞台',
+ '5-min presentation':'5 分鐘簡報','10-min stage talk':'10 分鐘舞台演講','Pack your materials':'打包你負責的物資',
+ 'Pack the item with your name on it':'把寫著你名字的東西打包好','The materials list has a name beside every item. Check yours before the 10th.':'物資清單上每一項都有負責人。出發前自己確認一次。','The list':'查看清單',
+ 'Fifty of the 145 are still blank. Take one, bring a figure and the numbers, then sign slide 1.':'145 題裡還有 50 題空白。挑一題，附上圖與數據，然後在第 1 頁簽名。',
+ 'Before-we-fly lab goals':'出發前的實驗目標',
  'Three to finish before 10 November':'11 月 10 日前完成三項','See the three':'查看三項目標','Write your pitch, then say it out loud':'寫下你的講稿，然後大聲練習',
  'Nine students still have an empty tab in the pitch doc, and the plane leaves on the 10th':'還有九位同學的分頁是空白的，而我們 11 月 10 日就要出發','9 still to write':'九人未寫',
  'Write yours in the doc':'在文件裡寫你的版本','Pitch it':'開始練習',
@@ -1711,11 +1790,14 @@ function txs(s){return String(s).split(' · ').map(tx).join(' · ')}
 
 /* ---------- calendar data (from the team calendar) ---------- */
 var MOCK=['Judging Mock','mock'], SLIDES=['Judging Slides','deliv'], LST=['Live Stage Talk ×2','stage'], MERCH=['Merch Prep','stage'];
+var JP=['Judging prep','mock'], P5=['5-min presentation','deliv'], P10=['10-min stage talk','stage'];
 var CAL={
   '2026-11-07':[MOCK,SLIDES,LST,MERCH,['Finalist Slides Prep','final'],['Paris Prep','paris']],
-  '2026-11-10':[['Fly to Paris · BR087 23:30','travel',1]],
+  '2026-11-08':[JP,P5,P10],
+  '2026-11-09':[JP,P5,P10],
+  '2026-11-10':[JP,P5,['Pack your materials','paris'],['Fly to Paris · BR087 23:30','travel',1]],
   '2026-11-11':[['Land in Paris 07:45','travel',1],['Settle in · Carrefour run','paris'],['Team prep 21:00','stage']],
-  '2026-11-12':[['Prep day at the hotel','stage'],['Badge pickup 13:00','deliv',1]],
+  '2026-11-12':[JP,P5,P10,['Badge pickup 13:00','deliv',1]],
   '2026-11-13':[['Jamboree Day 1','jam'],['Judging 12:00','deliv',1]],
   '2026-11-14':[['Jamboree Day 2 · Booth','jam']],
   '2026-11-15':[['Jamboree Day 3','jam'],['Live Stage Talk 14:40','stage',1]],
@@ -1772,15 +1854,19 @@ var GCOL=['var(--g1)','var(--g2)','var(--g3)'];
 
 /* ---------- material list ---------- */
 var MAT=[
- ['Pens','1 box','Mia',''],['Sticky notes','1 pack','Mia',''],['Folders','4 packs','Mia','Arriving'],
- ['Bioreactor','','Noah',''],['Hardware','','Noah',''],['Team banner','','Olivia','To be printed'],
- ['Backup UNO Q','','Abby K',''],['Scissors','','Olivia',''],['Double-sided tape','','Olivia',''],['Tape','','Olivia',''],
- ['Backup luer valves','','Abby K',''],['Photometer','','Felix',''],['Hardware demos','','Felix',''],['Lab notebook','','Abby K',''],
- ['Mini plant pots','100','Mia','Arriving'],['Slime materials','','—','Buy in Paris'],['Name cards','35','Audrey H','To be printed'],
- ['Invitation cards','200','Audrey H','To be printed'],['Seeds','','Olivia','Arriving'],['Soft PET film','1 long strand','Audrey H',''],
- ['Epoxy glue','','Olivia',''],['Stickers for the pots','','Mia','To be purchased']
+ ['Pens','1 box','Mia',''],['Sticky notes','1 pack','Sophia L',''],['Folders','4 packs','Renee','Arriving'],
+ ['Bioreactor box','','Chars',''],['Hardware','the full kit, spares and tools','Anton, Noah, Joshua',''],
+ ['Team banner','','Olivia D','To be printed'],
+ ['Backup UNO Q','','Abby K',''],['Scissors','','Olivia D',''],['Double-sided tape','','Olivia D',''],['Tape','','Olivia D',''],
+ ['Backup luer valves','','Abby K',''],['Photometer','','Felix',''],['Hardware demos','','Joshua',''],
+ ['Lab notebook','','Abby T + Abby K',''],
+ ['Mini plant pots','100','Mia','Arriving'],['Slime materials','','Renee','Buy in Paris'],['Name cards','35','Audrey H','To be printed'],
+ ['Invitation cards','200','Audrey H','To be printed'],['Seeds','','Sophia L','Arriving'],['Soft PET film','1 long strand','Audrey H',''],
+ ['Epoxy glue','','Olivia D',''],['Stickers for the pots','','Mia','To be purchased']
 ];
-var OWNER={'Mia':'Mia','Noah':'Noah','Felix':'Felix','Abby K':'Abby Kao','Audrey H':'Audrey Hsieh'};
+var OWNER={'Mia':'Mia','Noah':'Noah','Felix':'Felix','Abby K':'Abby Kao','Audrey H':'Audrey Hsieh',
+ 'Olivia D':'Olivia Du','Sophia L':'Sophia Lin','Abby T + Abby K':'Abby Tsai + Abby Kao','Renee':'Renee','Joshua':'Joshua','Chars':'Chars',
+ 'Anton, Noah, Joshua':'Anton · Noah · Joshua'};
 var PILL={'Arriving':'p-arr','To be printed':'p-print','To be purchased':'p-buy','Buy in Paris':'p-paris'};
 
 /* ---------- links (10_25 Important Links) ---------- */
@@ -1851,18 +1937,19 @@ var GOALS=[
 ];
 
 /* ---------- today's goals, by Taipei date ---------- */
-var JUDGEPREP={t:'Judging session prep',w:'Five-minute slides and the Q&A sheet, ahead of Saturday\'s mock',l:[LK('Say It In The Title'),LK('Judging Training Site'),LK('Prize Answers'),LK('5-min slides and script'),LK('2026 QA prep'),LK('Plant Training Site')]};
-var STAGEPREP={t:'Live stage talk prep',w:'Two run-throughs on Saturday 31 October',l:[LK('Stage Talk Prep'),LK('10-min live stage talk slides')]};
+var JUDGEPREP={t:'Judging prep',w:'Answer your questions, learn the shape of an answer, then say it out loud',hot:1,tag:'Main focus',l:[LK('Important Questions deck'),['Delivery Lab','https://timmy97-tw.github.io/releaf-judging-qa/delivery.html'],LK('Prize Answers'),LK('Judging Training Site'),LK('Plant Training Site'),LK('2026 QA prep')]};
+var FIVEMIN={t:'5-minute presentation',w:'The judging-session talk, Friday 13 November at 12:00',hot:1,tag:'Main focus',l:[LK('5-min slides and script'),LK('5-min judging session slides'),LK('Say It In The Title')]};
+var STAGEPREP={t:'10-minute live stage talk',w:'Sunday 15 November, 14:40 on the main stage',hot:1,tag:'Main focus',l:[LK('10-min live stage talk slides'),LK('Stage Talk Prep')]};
 var LABGOALS={t:'Before-we-fly lab goals',w:'Three to finish before 10 November',l:[['See the three','#achieve']]};
+var MATTASK={t:'Pack the item with your name on it',w:'The materials list has a name beside every item. Check yours before the 10th.',l:[LK('Materials to bring'),['The list','#packing']]};
 var PITCH={t:'Write your pitch, then say it out loud',w:'Nine students still have an empty tab in the pitch doc, and the plane leaves on the 10th',hot:1,tag:'9 still to write',l:[['Write yours in the doc','https://docs.google.com/document/d/1DX1fNK8tTVr0ZvPVkddWckGXLdTQNUaYQbmf-ut_m78/edit?tab=t.1bizq2cu3t6h'],LK('Booth Pitch Prep'),['Pitch it','#pitch']]};
 var TASKS={
  '2026-10-28':{h:'Plant meeting with Kyle',l:[
   {t:'Meeting with Kyle, plant postdoc',w:'Go through the plant Q&As and learn how to present the plant data',hot:1,tag:'Important',l:[LK('Plant Training Site'),LK('2026 QA prep')]},
   JUDGEPREP,PITCH,STAGEPREP,LABGOALS]}
 };
-var QHOME={t:'Answer the important questions',w:'Pick the ones you can answer, bring a figure and the numbers, then sign slide 1',hot:1,tag:'Due Saturday',l:[LK('Important Questions deck'),LK('Instructor question sheet')]};
-var APPTASK={t:'Install the My iGEM App',w:'Sign in with your iGEM email and check your ticket is there, before Saturday',hot:1,tag:'Due Saturday',l:[['App Store','https://apps.apple.com/us/app/my-igem/id6747386789'],['Google Play','https://play.google.com/store/apps/details?id=org.igem.main&hl=en'],['What the app does','#app']]};
-var STANDING={h:'Today\'s goals',l:[QHOME,APPTASK,JUDGEPREP,PITCH,STAGEPREP,LABGOALS]};
+var QHOME={t:'Answer the important questions',w:'Fifty of the 145 are still blank. Take one, bring a figure and the numbers, then sign slide 1.',l:[LK('Important Questions deck'),LK('Instructor question sheet')]};
+var STANDING={h:'Today\'s goals',l:[JUDGEPREP,FIVEMIN,STAGEPREP,QHOME,PITCH,MATTASK,LABGOALS]};
 
 /* ================= render ================= */
 function rel(n){return LANG==='zh'?(n===0?'今天':n===1?'明天':n===-1?'昨天':n>0?n+' 天後':-n+' 天前'):(n===0?'today':n===1?'tomorrow':n===-1?'yesterday':n>0?'in '+n+' days':-n+' days ago')}
