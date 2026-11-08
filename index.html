@@ -235,6 +235,10 @@ section.s{padding:84px 0 12px}
 .tcard .tkgo a .arr{margin-left:auto;opacity:.6;font-size:12px}
 .tcard .tkgo a small{display:block;font-size:11.5px;font-weight:500;opacity:.75;margin-bottom:1px}
 .tcard .tkgo a .lb{display:flex;flex-direction:column;line-height:1.2}
+.tkmini{display:flex;flex-wrap:wrap;gap:6px}
+.tcard .tkgo .tkmini a{display:inline-flex;padding:7px 11px;border-radius:999px;border:1px solid var(--line);
+  background:transparent;color:var(--ink2);font-size:12.5px;font-weight:600}
+.tcard .tkgo .tkmini a:hover{border-color:var(--tc,var(--blue));color:var(--tc,var(--blue))}
 .tsteps{counter-reset:ts;list-style:none;margin:0 0 16px;padding:0}
 .tsteps li{counter-increment:ts;position:relative;padding:8px 0 8px 24px;font-size:14px;line-height:1.4;color:var(--ink2);border-top:1px solid var(--line)}
 .tsteps li:first-child{border-top:0}
@@ -1150,8 +1154,8 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
 <section class="s onescreen" id="tasks">
   <div class="wrap">
     <span class="eyebrow" data-zh="本週三件事">This week, three things</span>
-    <h2 data-zh="先答出來，再練到說得出口。">Write the answers, then learn to say them.</h2>
-    <p class="sub" data-zh="投影片上還有五十題空白。寫完之後，答案還要練成評審聽得懂的形狀，再到其他評審訓練網站上反覆演練。">Fifty questions in the deck are still blank. Once they are written, the answer still has to come out in a shape a judge can follow, and that only comes from drilling it on the training sites.</p>
+    <h2 data-zh="答出來、說得出口，再決定要去哪裡。">Answer them, say them, then choose where to be.</h2>
+    <p class="sub" data-zh="投影片上還有五十題空白；寫完之後，答案還要練成評審聽得懂的形狀；而 7 號館裡有三百七十六場，等你自己挑出要去的那幾場。三件都在出發前。">Fifty questions in the deck are still blank. The answers still have to come out in a shape a judge can follow. And 376 sessions in Pavilion 7 are waiting for you to choose between them. All three before we fly.</p>
 
     <div class="tgrid">
 
@@ -1171,8 +1175,8 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
       </article>
 
       <article class="tcard rv" style="--tc:#00A86B;--tw:rgba(0,168,107,.09)">
-        <div class="tno"><b>02</b><span data-zh="答題結構 · 從現在開始練">The shape of an answer · start now</span></div>
-        <h3 data-zh="好答案有固定的形狀。先學會它。">A good answer has a shape. Learn it first.</h3>
+        <div class="tno"><b>02</b><span data-zh="答題結構 · 每天練一輪">The shape of an answer · a round a day</span></div>
+        <h3 data-zh="好答案有固定的形狀。學會它，然後練。">A good answer has a shape. Learn it, then drill it.</h3>
         <p class="td" data-zh="兩個學生知道同一件事，分數卻不同，因為其中一個回答了問題，另一個只是在講話。六十到九十秒，照這個順序說：">Two students can know the same thing and score differently, because one answered the question and the other just talked. Sixty to ninety seconds, in this order:</p>
         <ol class="tsteps">
           <li data-zh="<b>簡短道謝</b>，而且不要每題都說"><b>Thanks</b>, briefly, and not every time</li>
@@ -1181,24 +1185,29 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
           <li data-zh="<b>限制</b>，用你自己的話，一個子句"><b>The limit</b>, in your own words, one clause</li>
           <li data-zh="<b>最後才講下一步</b>，而且只有 wiki 上寫了才講"><b>Then the next step</b>, and only if the wiki says it</li>
         </ol>
+        <p class="td" data-zh="然後出聲練、計時，練到不用看稿。三個訓練網站的題目都不一樣，別只練同一個。">Then drill it out loud, on a clock, until you do not need the script. The three training sites ask different questions, so do not stay on just one.</p>
         <div class="tkgo">
           <a href="https://timmy97-tw.github.io/releaf-judging-qa/delivery.html" target="_blank" rel="noopener"><span class="lb" data-zh="<small>拆解一個真實回答</small>答題技巧"><small>One real answer, taken apart</small>Delivery Lab</span><span class="arr">&#8599;</span></a>
+          <div class="tkmini">
+            <a href="https://timmy97-tw.github.io/prize-answer/" target="_blank" rel="noopener" data-zh="獎項答題">Prize Answers</a>
+            <a href="https://timmy97-tw.github.io/releaf-judging-qa/index.html" target="_blank" rel="noopener" data-zh="評審演練">Judging Trainer</a>
+            <a href="https://timmy97-tw.github.io/releaf-plant-judging/" target="_blank" rel="noopener" data-zh="植物訓練">Plant Training</a>
+          </div>
         </div>
       </article>
 
       <article class="tcard rv" style="--tc:#7C5CFF;--tw:rgba(124,92,255,.09)">
-        <div class="tno"><b>03</b><span data-zh="繼續練 · 每天一輪">Keep drilling · a round a day</span></div>
-        <h3 data-zh="寫過不等於說得出來。">Having written it is not the same as being able to say it.</h3>
-        <p class="td" data-zh="答案寫完以後，就到訓練網站上一題一題練，出聲念、計時，念到不用看稿。每個站的題目都不一樣，別只練同一個。獎項答題收的是評審票上那三十題，每題都有關鍵字、可以指的圖和一段說得出口的回答，中英文都有。">Once your answers are written, practise them one at a time on the training sites: out loud, on a clock, until you do not need the script. Each site asks different questions, so do not stay on just one. Prize Answers holds the thirty questions on the ballot, each with the keywords, the figures to point at and one answer to say out loud, in English and 中文.</p>
+        <div class="tno"><b>03</b><span data-zh="要去聽的場次 · 出發前">Talks to go to · before we fly</span></div>
+        <h3 data-zh="挑三到五場，寫下為什麼。">Choose three to five talks, and say why.</h3>
+        <p class="td" data-zh="7 號館裡每個主題村都排了一整排演講、座談與工作坊，談的是各自領域現在正往哪裡走。四天三百七十六場，挑三到五場你真的要去的——為了 ReLEAF，或純粹為了你自己——每一場寫一兩句理由，做出卡片，貼到 Discord 的 #jamboree。網站會告訴你哪幾場和你的攤位班或評審場次撞在一起。">Every village in Pavilion 7 runs a line of talks, panels and workshops on where its field is going right now. Out of 376 sessions, choose three to five you are actually going to &mdash; for ReLEAF, or purely for yourself &mdash; write a sentence or two on each, then make the card and paste it into #jamboree on Discord. The site flags anything that clashes with your booth shift or our judging slot.</p>
         <div class="tnums">
-          <div><b>4</b><span data-zh="提名獎項">awards</span></div>
-          <div><b>30</b><span data-zh="評審票上的題目">ballot questions</span></div>
-          <div><b>161</b><span data-zh="張圖">figures</span></div>
+          <div><b>376</b><span data-zh="場次">sessions</span></div>
+          <div><b>4</b><span data-zh="天">days</span></div>
+          <div><b style="color:var(--violet)">3&ndash;5</b><span data-zh="你要挑出來的">you choose</span></div>
         </div>
         <div class="tkgo">
-          <a href="https://timmy97-tw.github.io/prize-answer/" target="_blank" rel="noopener"><span class="lb" data-zh="<small>評審票上的三十題</small>獎項答題"><small>The thirty questions on the ballot</small>Prize Answers</span><span class="arr">&#8599;</span></a>
-          <a class="ghost" href="https://timmy97-tw.github.io/releaf-judging-qa/index.html" target="_blank" rel="noopener" data-zh="評審演練系統">Judging Trainer<span class="arr">&#8599;</span></a>
-          <a class="ghost" href="https://timmy97-tw.github.io/releaf-plant-judging/" target="_blank" rel="noopener" data-zh="植物訓練網站">Plant Training Site<span class="arr">&#8599;</span></a>
+          <a href="schedule.html"><span class="lb" data-zh="<small>整份議程，可以篩</small>要去聽的場次"><small>The whole schedule, filtered</small>Talks to go to</span><span class="arr">&rarr;</span></a>
+          <a class="ghost" href="#talks" data-zh="為什麼要做這個">Why this matters<span class="arr">&#8595;</span></a>
         </div>
       </article>
 
