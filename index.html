@@ -2166,7 +2166,7 @@ var GCOL=['var(--g1)','var(--g2)','var(--g3)'];
 var MANAGERS={1:['Abby Tsai','Mia'],2:['Joshua','Alex Li'],3:['Anna','Renee']};
 function isMgr(n){for(var g in MANAGERS)if(MANAGERS[g].indexOf(n)>=0)return +g;return 0}
 /* the six judges: fill in name + img (e.g. 'img/judges/1.webp') when the photos are in */
-var JUDGES=[{n:'',img:''},{n:'',img:''},{n:'',img:''},{n:'',img:''},{n:'',img:''},{n:'',img:''}];
+var JUDGES=[{n:'',img:'img/judges/1.webp'},{n:'',img:'img/judges/2.webp'},{n:'',img:'img/judges/3.webp'},{n:'',img:'img/judges/4.webp'},{n:'',img:''},{n:'',img:''}];
 
 /* ---------- material list ---------- */
 var MAT=[
@@ -2502,7 +2502,7 @@ function managers(){
    +'<li><i>2</i><span>'+L('<b>Nobody walks past unattended.</b> Anyone who slows down at the booth gets a booth member talking to them; reassign people when one side is idle.','<b>不讓任何人被冷落。</b>經過攤位放慢腳步的人，都要有組員上前接待；哪一邊閒著就調人過去。')+'</span></li>'
    +'<li class="alert"><i>3</i><span>'+L('<b>Judges arrive → call everyone back.</b> The moment any of the six judges shows up, alert the whole team to run back to the booth.','<b>評審一到 → 叫全隊回來。</b>六位評審任何一位出現，立刻通知全隊跑回攤位。')+'</span></li></ol></div>';
   h+='<div class="card rv in"><div class="label">'+L('Our six judges · know their faces','我們的六位評審 · 認得他們的臉')+'</div><div class="judges">';
-  JUDGES.forEach(function(j,i){h+='<figure><div class="ph">'+(j.img?'<img src="'+esc(j.img)+'" alt="'+esc(j.n||L('Judge '+(i+1),'評審 '+(i+1)))+'" loading="lazy">':(i+1))+'</div><figcaption>'+(j.n?esc(j.n):L('Photo coming','照片待補'))+'</figcaption></figure>'});
+  JUDGES.forEach(function(j,i){h+='<figure><div class="ph">'+(j.img?'<img src="'+esc(j.img)+'" alt="'+esc(j.n||L('Judge '+(i+1),'評審 '+(i+1)))+'" decoding="async">':(i+1))+'</div><figcaption>'+(j.n?esc(j.n):j.img?L('Judge '+(i+1),'評審 '+(i+1)):L('Photo coming','照片待補'))+'</figcaption></figure>'});
   h+='</div><p class="jnote">'+L('Spot one at the booth? Managers call the team back.','在攤位看到其中一位？負責人叫全隊回來。')+'</p></div>';
   $('mgr').innerHTML=h;
 }
