@@ -520,6 +520,30 @@ table.roster{width:100%;border-collapse:collapse;font-size:15px}
 .shiftgrid .rl{color:var(--ink2);font-weight:600;text-align:left;padding-left:0}
 .shiftgrid .gx{color:#fff;font-weight:600}
 .shiftgrid .nx{background:#F0F0F3}
+.shiftgrid .gx small{display:block;font-size:10.5px;font-weight:500;opacity:.85;line-height:1.2;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* booth managers */
+.mgr{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:18px;margin-bottom:18px}
+.mgr .card{padding:22px 24px}
+.mgr-g{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0 16px}
+.mgr-g>div{border-radius:12px;padding:12px 14px;background:color-mix(in srgb,var(--c) 9%,#fff);border:1.5px solid color-mix(in srgb,var(--c) 40%,#fff)}
+.mgr-g b{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.mgr-g span{display:block;font-size:17px;font-weight:600;margin-top:4px;line-height:1.3}
+.mgr-g small{display:block;font-size:12px;color:var(--ink3);margin-top:4px}
+.mgr ol{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.mgr ol li{display:grid;grid-template-columns:24px 1fr;gap:8px;font-size:14.5px;line-height:1.45}
+.mgr ol li i{font-style:normal;font-weight:700;font-size:12px;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;margin-top:1px}
+.mgr ol li.alert i{background:var(--red)}
+.mgr ol li.alert b{color:var(--red)}
+.judges{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.judges figure{margin:0;text-align:center}
+.judges .ph{aspect-ratio:1;border-radius:12px;background:#F0F0F3;border:1.5px dashed #C9C9D1;display:grid;place-items:center;color:var(--ink3);font-size:22px;font-weight:700;overflow:hidden}
+.judges .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.judges figcaption{font-size:12.5px;color:var(--ink2);margin-top:5px;line-height:1.25}
+.mgr .jnote{font-size:13px;color:var(--ink3);margin:10px 0 0}
+.roster span.mg,.rg em.mg{font-weight:700}
+.roster span.mg:after,.rg em.mg:after{content:"MGR";font-size:10px;font-weight:700;letter-spacing:.05em;color:#fff;background:var(--c,var(--ink));border-radius:999px;padding:1px 6px;margin-left:6px;vertical-align:1px}
+@media (max-width:980px){.mgr{grid-template-columns:1fr}.judges{grid-template-columns:repeat(6,1fr)}}
+@media (max-width:760px){.mgr{gap:12px}.mgr-g{grid-template-columns:1fr;gap:6px;margin:10px 0 12px}.mgr-g>div{padding:8px 12px;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px}.mgr-g span{font-size:15px;margin:0}.mgr-g small{width:100%;margin:0}.mgr ol li{font-size:13.5px}.judges{grid-template-columns:repeat(6,1fr);gap:6px}.judges figcaption{font-size:10px}.judges .ph{font-size:15px;border-radius:8px}.mgr .card{padding:16px}}
 
 /* links */
 .links{columns:3;column-gap:18px}
@@ -1654,6 +1678,7 @@ footer img{width:44px;height:44px;border-radius:50%;margin-bottom:10px}
         <div><span data-zh="11 月 14 日（六）">Sat 14 Nov</span><b class="tw">09:00–18:00</b></div>
       </div>
     </div>
+    <div class="mgr" id="mgr"></div>
     <div class="who">
       <div class="card rv"><div class="label" style="margin-bottom:14px" data-zh="你是誰？">Who are you?</div><div class="names" id="names"></div></div>
       <div class="me-card idle rv" id="me"></div>
@@ -2137,6 +2162,11 @@ var ROLES=[
       ['Phoebe','Sarah Chou','Anna','Jacquelyn','Sophie Liu','Eva','Abigail','Ethan Chang','Anton','Renee']]]
 ];
 var GCOL=['var(--g1)','var(--g2)','var(--g3)'];
+/* two booth managers per group */
+var MANAGERS={1:['Abby Tsai','Mia'],2:['Joshua','Alex Li'],3:['Anna','Renee']};
+function isMgr(n){for(var g in MANAGERS)if(MANAGERS[g].indexOf(n)>=0)return +g;return 0}
+/* the six judges: fill in name + img (e.g. 'img/judges/1.webp') when the photos are in */
+var JUDGES=[{n:'',img:''},{n:'',img:''},{n:'',img:''},{n:'',img:''},{n:'',img:''},{n:'',img:''}];
 
 /* ---------- material list ---------- */
 var MAT=[
@@ -2441,7 +2471,7 @@ $('names').addEventListener('click',function(e){var b=e.target.closest('button')
 function meCard(){
   var el=$('me');document.body.classList.toggle('me',!!sel);
   if(!sel){el.className='me-card idle';el.innerHTML='<div class="label" style="margin-top:0">'+L('Your Jamboree','你的大會')+'</div><h3>'+L('Pick your name.','選擇你的名字。')+'</h3><p>'+L('Your booth hours, your role and the things you\'re bringing show up here, and your hours light up on the Jamboree board.','你的攤位時段、角色和要帶的東西會顯示在這裡，你的時段也會在大會看板上亮起。')+'</p>';return}
-  var p=PEOPLE[sel],h='<button class="clear" id="clr">'+L('Clear','清除')+'</button><div class="label" style="margin-top:0">'+L('Your Jamboree','你的大會')+'</div><h3>'+esc(sel)+'</h3><div class="role">'+p.roles.filter(Boolean).map(function(r){return esc(tx(r))+' · '}).join('');
+  var p=PEOPLE[sel],h='<button class="clear" id="clr">'+L('Clear','清除')+'</button><div class="label" style="margin-top:0">'+L('Your Jamboree','你的大會')+'</div><h3>'+esc(sel)+'</h3><div class="role">'+p.roles.filter(Boolean).map(function(r){return esc(tx(r))+' · '}).join('')+(isMgr(sel)?L('Booth manager · ','攤位負責人 · '):'');
   h+=p.groups.map(function(g){return '<span class="gpill" style="--c:'+GCOL[g-1]+'">'+L('Group '+g,'第 '+g+' 組')+'</span>'}).join('')+'</div>';
   var sh=[];p.groups.forEach(function(g){SHIFTS[g].forEach(function(s){sh.push([s[0],s[1],g])})});
   sh.push(['Fri 13',17,0]);
@@ -2458,11 +2488,23 @@ function meCard(){
 }
 function roster(){
   var h='<thead><tr>';for(var g=1;g<=GCOL.length;g++)h+='<th><i style="background:'+GCOL[g-1]+'"></i>'+L('Group '+g,'第 '+g+' 組')+'</th>';h+='</tr></thead><tbody>';
-  ROLES.forEach(function(r){h+='<tr>'+(r[0]?'<th>'+tx(r[0])+'</th>':'');r[1].forEach(function(ns){h+='<td>'+(ns.length?'':'<span class="none">—</span>')+ns.map(function(n){return '<span class="'+(n===sel?'hit':'')+'">'+esc(n)+'</span>'}).join('')+'</td>'});h+='</tr>'});
+  ROLES.forEach(function(r){h+='<tr>'+(r[0]?'<th>'+tx(r[0])+'</th>':'');r[1].forEach(function(ns){h+='<td>'+(ns.length?'':'<span class="none">—</span>')+ns.map(function(n){return '<span style="--c:'+GCOL[groupsOf(n)[0]-1]+'" class="'+(n===sel?'hit':'')+(isMgr(n)?' mg':'')+'">'+esc(n)+'</span>'}).join('')+'</td>'});h+='</tr>'});
   $('roster').innerHTML=h+'</tbody>';
   var m='';for(var g=1;g<=GCOL.length;g++){m+='<div class="rg" style="--c:'+GCOL[g-1]+'"><b>'+L('Group '+g,'第 '+g+' 組')+'</b>';
-    ROLES.forEach(function(r){if(!r[1][g-1].length)return;m+='<div'+(r[0]?'':' class="nr"')+'>'+(r[0]?'<span>'+tx(r[0])+'</span>':'')+'<p>'+r[1][g-1].map(function(n){return '<em class="'+(n===sel?'hit':'')+'">'+esc(n)+'</em>'}).join(', ')+'</p></div>'});m+='</div>'}
+    ROLES.forEach(function(r){if(!r[1][g-1].length)return;m+='<div'+(r[0]?'':' class="nr"')+'>'+(r[0]?'<span>'+tx(r[0])+'</span>':'')+'<p>'+r[1][g-1].map(function(n){return '<em class="'+(n===sel?'hit':'')+(isMgr(n)?' mg':'')+'">'+esc(n)+'</em>'}).join(', ')+'</p></div>'});m+='</div>'}
   $('roster-m').innerHTML=m;
+}
+function managers(){
+  var h='<div class="card rv in"><div class="label">'+L('Booth managers · two per shift','攤位負責人 · 每組兩位')+'</div><div class="mgr-g">';
+  [1,2,3].forEach(function(g){h+='<div style="--c:'+GCOL[g-1]+'"><b>'+L('Group '+g,'第 '+g+' 組')+'</b><span>'+MANAGERS[g].map(esc).join(' &amp; ')+'</span><small>'+L('Fri ','五 ')+SHIFTS[g][0][1]+':00 · '+L('Sat ','六 ')+SHIFTS[g].slice(1).map(function(s){return s[1]+':00'}).join(', ')+'</small></div>'});
+  h+='</div><div class="label" style="margin-bottom:10px">'+L('The job','負責的事')+'</div><ol>'
+   +'<li><i>1</i><span>'+L('<b>Run the traffic flow.</b> Keep the front of H-17 open, move crowds along the table, and steer visitors to whichever demo is free.','<b>管理人流。</b>讓 H-17 前面保持暢通，引導人群沿著桌子移動，把訪客帶到空著的展示。')+'</span></li>'
+   +'<li><i>2</i><span>'+L('<b>Nobody walks past unattended.</b> Anyone who slows down at the booth gets a booth member talking to them; reassign people when one side is idle.','<b>不讓任何人被冷落。</b>經過攤位放慢腳步的人，都要有組員上前接待；哪一邊閒著就調人過去。')+'</span></li>'
+   +'<li class="alert"><i>3</i><span>'+L('<b>Judges arrive → call everyone back.</b> The moment any of the six judges shows up, alert the whole team to run back to the booth.','<b>評審一到 → 叫全隊回來。</b>六位評審任何一位出現，立刻通知全隊跑回攤位。')+'</span></li></ol></div>';
+  h+='<div class="card rv in"><div class="label">'+L('Our six judges · know their faces','我們的六位評審 · 認得他們的臉')+'</div><div class="judges">';
+  JUDGES.forEach(function(j,i){h+='<figure><div class="ph">'+(j.img?'<img src="'+esc(j.img)+'" alt="'+esc(j.n||L('Judge '+(i+1),'評審 '+(i+1)))+'" loading="lazy">':(i+1))+'</div><figcaption>'+(j.n?esc(j.n):L('Photo coming','照片待補'))+'</figcaption></figure>'});
+  h+='</div><p class="jnote">'+L('Spot one at the booth? Managers call the team back.','在攤位看到其中一位？負責人叫全隊回來。')+'</p></div>';
+  $('mgr').innerHTML=h;
 }
 function shiftgrid(){
   var hrs=[9,10,11,12,13,14,15,16,17],h='<div class="shiftgrid"><div class="hd"></div>';
@@ -2471,10 +2513,10 @@ function shiftgrid(){
     h+='<div class="rl">'+r[0]+'</div>';
     hrs.forEach(function(x){
       var g=null;DAYS[r[1]].b.forEach(function(b){if((b.g||b.all)&&b.s===x)g=b.all?'all':b.g});
-      h+=g==='all'?'<div class="gx" style="background:var(--grad)">'+L('All','全隊')+'</div>':g?'<div class="gx" style="background:'+GCOL[g-1]+'">G'+g+'</div>':'<div class="nx">'+(r[1]===0&&x===12?'J':'')+'</div>';
+      h+=g==='all'?'<div class="gx" style="background:var(--grad)">'+L('All','全隊')+'</div>':g?'<div class="gx" style="background:'+GCOL[g-1]+'">G'+g+'<small>'+MANAGERS[g].map(function(n){return n.split(' ')[0]}).join(' · ')+'</small></div>':'<div class="nx">'+(r[1]===0&&x===12?'J':'')+'</div>';
     });
   });
-  $('shiftgrid').innerHTML=h+'</div><p class="note" style="margin:10px 0 0">'+L('Paris time. J is our judging session. The last hour on Friday is the whole team.','巴黎時間。J 是我們的評審場次。週五最後一小時全隊到攤位。')+'</p>';
+  $('shiftgrid').innerHTML=h+'</div><p class="note" style="margin:10px 0 0">'+L('Paris time. Names under each block are that hour\'s booth managers. J is our judging session. The last hour on Friday is the whole team.','巴黎時間。每格下方是該時段的攤位負責人。J 是我們的評審場次。週五最後一小時全隊到攤位。')+'</p>';
 }
 
 /* ---------- links / packing ---------- */
@@ -2759,7 +2801,7 @@ function langThumb(){var b=$('lang').querySelector('button.on'),t=$('lang').quer
 window.addEventListener('resize',langThumb);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(langThumb);
 function setLang(l){
   if(l===LANG)return;LANG=l;try{localStorage.setItem('releaf-lang',l)}catch(e){}
-  statics();hero();journey();goals(1);sat();today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();rooms();cityMap();hoodMap();weather();PITCHLAB();
+  statics();hero();journey();goals(1);sat();today();calendar();trip();names();meCard();roster();schedule();moments();managers();shiftgrid();links();packing();rooms();cityMap();hoodMap();weather();PITCHLAB();
   document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
 }
 $('lang').onclick=function(e){var b=e.target.closest('button');if(b)setLang(b.dataset.l)};
@@ -2933,7 +2975,7 @@ function satPick(n){
 $('satnames').addEventListener('click',function(e){var b=e.target.closest('button');if(b)satPick(b.dataset.n===ssel?null:b.dataset.n)});
 
 /* ---------- boot ---------- */
-statics();hero();journey();goals();sat();today();calendar();trip();names();meCard();roster();schedule();moments();shiftgrid();links();packing();pitch();rooms();cityMap();hoodMap();weather();wxLoad();carousel();navSpy();
+statics();hero();journey();goals();sat();today();calendar();trip();names();meCard();roster();schedule();moments();managers();shiftgrid();links();packing();pitch();rooms();cityMap();hoodMap();weather();wxLoad();carousel();navSpy();
 setInterval(hero,1000);setInterval(wxLoad,36e5);
 setInterval(function(){sat();today();journey();goals();if(inParis(now()))schedule()},60000);
 var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(schedule,150)});
